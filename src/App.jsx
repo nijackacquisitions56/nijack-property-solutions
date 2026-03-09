@@ -155,11 +155,11 @@ export default function NijackPropertySolutionsWebsite() {
 
             <div id="contact" className="rounded-[28px] border border-stone-200 bg-white p-6 shadow-xl shadow-stone-200/70 sm:p-8">
               <h2 className="text-center text-3xl font-bold tracking-tight text-stone-900">Get Started Today</h2>
-              <p className="mt-2 text-center text-base font-semibold text-stone-700">Tell Us About The Property And We’ll Reach Out.</p>
+              <p className="mt-2 text-center text-base font-semibold text-stone-700">Tell Us About The Property And We'll Review It Right Away.</p>
 
               <form
                 className="mt-6 space-y-4"
-                action="https://formsubmit.co/nicole@nijackpropertysolutions.com"
+                action="https://formsubmit.co/info@nijackpropertysolutions.com"
                 method="POST"
               >
                 <div className="grid gap-4 sm:grid-cols-2">
@@ -180,10 +180,13 @@ export default function NijackPropertySolutionsWebsite() {
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
                 <div className="rounded-2xl bg-emerald-50 p-4 text-center text-sm text-emerald-800">
-                  <span className="font-semibold text-emerald-900">Response Speed:</span> Typically Within 24 Hours
+                  <span className="font-semibold text-emerald-900">Typical Response Time:</span> Within 24 Hours
                 </div>
                 <button type="submit" className="w-full rounded-xl bg-emerald-700 px-5 py-3.5 font-semibold text-white transition hover:bg-emerald-800">
                   Request My Cash Offer
+                </button>
+                <p className="text-xs text-center text-stone-500">Your information is kept private and used only to review your property.</p>
+                <button type="submit" className="hidden">
                 </button>
                 <div className="text-center space-y-3">
                   <p className="text-sm leading-6 font-medium text-stone-600">
@@ -260,9 +263,9 @@ export default function NijackPropertySolutionsWebsite() {
                 Reach out with the address and a few details. We’ll let you know if the property looks like a fit.
               </p>
               <div className="mt-6 space-y-3 text-sm text-emerald-50">
-                <div><span className="font-semibold text-white">Phone:</span> (555) 123-4567</div>
+                <div><span className="font-semibold text-white">Phone:</span> (Your Phone Number)</div>
                 <div><span className="font-semibold text-white">Email:</span> nicole@nijackpropertysolutions.com</div>
-                <div><span className="font-semibold text-white">Area:</span> Based in Ohio. Buying virtually nationwide.</div>
+                <div><span className="font-semibold text-white">Area:</span> Based In Ohio — Serving Homeowners Nationwide</div>
               </div>
               <a href="#contact" className="mt-6 inline-flex rounded-2xl bg-white px-5 py-3 font-semibold text-emerald-800 transition hover:bg-amber-50 mx-auto">
                 Request an Offer
@@ -305,4 +308,3 @@ export default function NijackPropertySolutionsWebsite() {
     </div>
   );
 }
-            
