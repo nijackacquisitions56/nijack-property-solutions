@@ -145,19 +145,27 @@ export default function NijackPropertySolutionsWebsite() {
               <h2 className="text-3xl font-bold tracking-tight text-stone-900">Get started today</h2>
               <p className="mt-2 text-sm text-stone-500">Tell us about the property and we’ll reach out.</p>
 
-              <form className="mt-6 space-y-4">
+              <form
+                className="mt-6 space-y-4"
+                action="https://formsubmit.co/nicole@nijackpropertysolutions.com"
+                method="POST"
+              >
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <input className="h-12 rounded-xl border border-stone-200 px-4 outline-none ring-0 transition focus:border-emerald-400" type="text" placeholder="Your name" />
-                  <input className="h-12 rounded-xl border border-stone-200 px-4 outline-none ring-0 transition focus:border-emerald-400" type="tel" placeholder="Phone number" />
+                  <input className="h-12 rounded-xl border border-stone-200 px-4 outline-none ring-0 transition focus:border-emerald-400" type="text" name="name" placeholder="Your name" required />
+                  <input className="h-12 rounded-xl border border-stone-200 px-4 outline-none ring-0 transition focus:border-emerald-400" type="tel" name="phone" placeholder="Phone number" required />
                 </div>
-                <input className="h-12 w-full rounded-xl border border-stone-200 px-4 outline-none ring-0 transition focus:border-emerald-400" type="email" placeholder="Email address" />
-                <input className="h-12 w-full rounded-xl border border-stone-200 px-4 outline-none ring-0 transition focus:border-emerald-400" type="text" placeholder="Property address" />
-                <input className="h-12 w-full rounded-xl border border-stone-200 px-4 outline-none ring-0 transition focus:border-emerald-400" type="text" placeholder="Ideal selling timeline" />
-                <textarea className="min-h-[120px] w-full rounded-xl border border-stone-200 px-4 py-3 outline-none ring-0 transition focus:border-emerald-400" placeholder="Share anything helpful about the home, repairs needed, inherited situation, tenants, or why you want to sell." />
+                <input className="h-12 w-full rounded-xl border border-stone-200 px-4 outline-none ring-0 transition focus:border-emerald-400" type="email" name="email" placeholder="Email address" required />
+                <input className="h-12 w-full rounded-xl border border-stone-200 px-4 outline-none ring-0 transition focus:border-emerald-400" type="text" name="property_address" placeholder="Property address" required />
+                <input className="h-12 w-full rounded-xl border border-stone-200 px-4 outline-none ring-0 transition focus:border-emerald-400" type="text" name="timeline" placeholder="Ideal selling timeline" />
+                <textarea className="min-h-[120px] w-full rounded-xl border border-stone-200 px-4 py-3 outline-none ring-0 transition focus:border-emerald-400" name="details" placeholder="Share anything helpful about the home, repairs needed, inherited situation, tenants, or why you want to sell." />
+                <input type="hidden" name="_subject" value="New lead from Nijack Property Solutions" />
+                <input type="hidden" name="_next" value="https://www.nijackpropertysolutions.com/?submitted=true" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
                 <div className="rounded-2xl bg-emerald-50 p-4 text-sm text-emerald-800">
                   <span className="font-semibold text-emerald-900">Response speed:</span> Typically within 24 hours
                 </div>
-                <button type="button" className="w-full rounded-xl bg-emerald-700 px-5 py-3.5 font-semibold text-white transition hover:bg-emerald-800">
+                <button type="submit" className="w-full rounded-xl bg-emerald-700 px-5 py-3.5 font-semibold text-white transition hover:bg-emerald-800">
                   Request My Cash Offer
                 </button>
                 <p className="text-xs leading-5 text-stone-500">
@@ -229,7 +237,7 @@ export default function NijackPropertySolutionsWebsite() {
               </p>
               <div className="mt-6 space-y-3 text-sm text-emerald-50">
                 <div><span className="font-semibold text-white">Phone:</span> (555) 123-4567</div>
-                <div><span className="font-semibold text-white">Email:</span> info@nijackpropertysolutions.com</div>
+                <div><span className="font-semibold text-white">Email:</span> nicole@nijackpropertysolutions.com</div>
                 <div><span className="font-semibold text-white">Area:</span> Serving local homeowners</div>
               </div>
               <a href="#contact" className="mt-6 inline-flex rounded-2xl bg-white px-5 py-3 font-semibold text-emerald-800 transition hover:bg-amber-50">
