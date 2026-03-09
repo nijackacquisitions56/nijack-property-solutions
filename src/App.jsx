@@ -175,9 +175,16 @@ export default function NijackPropertySolutionsWebsite() {
                 <button type="submit" className="w-full rounded-xl bg-emerald-700 px-5 py-3.5 font-semibold text-white transition hover:bg-emerald-800">
                   Request My Cash Offer
                 </button>
-                <p className="text-sm leading-6 font-medium text-stone-600 text-center">
-                  By submitting, you agree to be contacted by Nijack Property Solutions about your property inquiry.
-                </p>
+                <div className="text-center space-y-3">
+                  <p className="text-sm leading-6 font-medium text-stone-600">
+                    By submitting, you agree to be contacted by Nijack Property Solutions about your property inquiry.
+                  </p>
+                  <div className="mx-auto max-w-sm rounded-xl border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
+                    <div className="font-semibold">A Simple, Seller‑Friendly Process</div>
+                    <div>No Obligation To Accept Any Offer</div>
+                    <div>Professional Closing Through Licensed Title Companies</div>
+                  </div>
+                </div>
               </form>
             </div>
           </div>
