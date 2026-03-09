@@ -125,6 +125,8 @@ export default function NijackPropertySolutionsWebsite() {
               <div className="mx-auto mt-6 max-w-2xl rounded-2xl border border-stone-200/90 bg-white/80 px-6 py-4 shadow-sm shadow-stone-200/40">
                 <p className="text-center text-lg leading-8 text-stone-600">
                   Nijack Property Solutions Helps Homeowners Explore a Simple Cash Sale Option for Unwanted, Inherited, Vacant, or Repair-Heavy Properties. We Work With Licensed Title Companies To Ensure Every Transaction Is Handled Professionally And Securely.
+                  
+                  Many homeowners simply want to explore their options first — there is absolutely no obligation to accept any offer.
                 </p>
               </div>
 
