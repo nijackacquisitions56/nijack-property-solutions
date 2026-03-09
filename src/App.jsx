@@ -103,6 +103,16 @@ export default function NijackPropertySolutionsWebsite() {
         <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.14),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(245,158,11,0.10),transparent_24%)]">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.15fr_0.95fr] lg:px-8 lg:py-24">
             <div className="flex flex-col justify-center">
+              <div className="mx-auto mb-6 flex items-center justify-center gap-6 text-3xl text-emerald-700">
+                <span title="Call">📞</span>
+                <span className="text-xl text-stone-400">→</span>
+                <span title="Property">🏠</span>
+                <span className="text-xl text-stone-400">→</span>
+                <span title="Cash Offer">💵</span>
+                <span className="text-xl text-stone-400">→</span>
+                <span title="Problem Solved">✔</span>
+              </div>
+
               <div className="mx-auto inline-flex w-fit items-center gap-2 rounded-full border border-emerald-100 bg-white px-4 py-2 text-sm font-semibold text-emerald-800 shadow-sm">
                 <span>✔</span>
                 <span>Sell Your House As-Is With Less Hassle</span>
@@ -295,3 +305,4 @@ export default function NijackPropertySolutionsWebsite() {
     </div>
   );
 }
+            
