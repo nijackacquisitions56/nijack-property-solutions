@@ -2,14 +2,14 @@ import React from "react";
 
 export default function NijackPropertySolutionsWebsite() {
 
-  const sections = [
+  const benefits = [
     {
       title: "Fair Cash Offer",
       text: "Get a straightforward offer without agent commissions, hidden fees, or drawn-out negotiations."
     },
     {
       title: "Sell As-Is",
-      text: "No repairs, cleanup, or showings required. You can explore selling the property exactly as it sits."
+      text: "No repairs, cleanup, or showings required. Explore selling the property exactly as it sits."
     },
     {
       title: "Flexible Closing",
@@ -31,7 +31,7 @@ export default function NijackPropertySolutionsWebsite() {
       text: "We review the property and local market activity."
     },
     {
-      title: "Receive A No‑Pressure Offer",
+      title: "Receive A No-Pressure Offer",
       text: "You'll receive a fair offer with absolutely no obligation."
     },
     {
@@ -43,11 +43,11 @@ export default function NijackPropertySolutionsWebsite() {
   const faq = [
     {
       q: "Do I need to make repairs before selling?",
-      a: "No. Many homeowners explore selling options because the property needs repairs or updates. Selling as‑is may be possible."
+      a: "No. Many homeowners explore selling options because the property needs repairs or updates. Selling as-is may be possible."
     },
     {
       q: "How fast can closing happen?",
-      a: "Some situations allow closing in just a few weeks while others may need more time. Timelines can often be flexible depending on your situation."
+      a: "Some situations allow closing in a few weeks while others may require more time. Timelines can often be flexible depending on your situation."
     },
     {
       q: "What if I still owe money on the property?",
@@ -57,6 +57,18 @@ export default function NijackPropertySolutionsWebsite() {
       q: "Are there commissions or fees?",
       a: "Traditional listings often involve commissions and closing costs. A direct sale option may help avoid many of those expenses."
     }
+  ];
+
+  const situations = [
+    "Inherited Property",
+    "Vacant Or Abandoned Homes",
+    "Homes Needing Major Repairs",
+    "Landlords Ready To Sell",
+    "Behind On Property Taxes",
+    "Problem Tenants",
+    "Divorce Or Life Changes",
+    "Out Of State Owners",
+    "Homeowners Wanting A Simple Sale"
   ];
 
   return (
@@ -125,40 +137,32 @@ export default function NijackPropertySolutionsWebsite() {
             <span className="text-xl">✔</span>
 
             <span className="font-medium">
-              Sell Your House As‑Is With Less Hassle
+              Sell Your House As-Is With Less Hassle
             </span>
 
           </div>
 
           <h1 className="mb-6 text-4xl font-bold leading-tight">
-
             Need To Sell A House
             <br/>
             Without The Usual Stress?
-
           </h1>
 
           <p className="mb-4 text-gray-600">
-
             Nijack Property Solutions helps homeowners explore a simple
-            cash‑sale option without repairs, commissions, or delays.
-
+            cash-sale option without repairs, commissions, or delays.
           </p>
 
           <p className="mb-6 text-gray-600">
-
             We work with a network of experienced real estate buyers and
             help homeowners explore simple selling options for their
             property.
-
           </p>
 
           <div className="text-emerald-700 font-semibold text-lg">
-
             Call Or Text For A Quick Property Review
             <br/>
             (Your Phone Number)
-
           </div>
 
         </div>
@@ -171,11 +175,11 @@ export default function NijackPropertySolutionsWebsite() {
           className="rounded-2xl border bg-white p-8 shadow-lg"
         >
 
-          <h2 className="mb-2 text-3xl font-bold">
+          <h2 className="mb-2 text-3xl font-bold text-center">
             Get Started Today
           </h2>
 
-          <p className="mb-6 text-gray-600">
+          <p className="mb-6 text-gray-600 text-center">
             Tell Us About The Property And We'll Review It Right Away.
           </p>
 
@@ -267,7 +271,7 @@ export default function NijackPropertySolutionsWebsite() {
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
 
-            {sections.map((item,i)=>(
+            {benefits.map((item,i)=>(
 
               <div key={i} className="rounded-xl border p-6 shadow-sm">
 
@@ -290,9 +294,39 @@ export default function NijackPropertySolutionsWebsite() {
       </section>
 
 
+      {/* SITUATIONS */}
+
+      <section className="bg-emerald-50 py-16">
+
+        <div className="mx-auto max-w-6xl px-6">
+
+          <h2 className="text-3xl font-bold text-center mb-10">
+            Situations We Often Help Homeowners With
+          </h2>
+
+          <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+            Many homeowners reach out when they want to explore selling
+            options without repairs, listings, or delays.
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
+
+            {situations.map((s,i)=>(
+              <div key={i} className="rounded-xl border bg-white p-4">
+                {s}
+              </div>
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
       {/* HOW IT WORKS */}
 
-      <section id="how" className="bg-emerald-50 py-16">
+      <section id="how" className="bg-white py-16">
 
         <div className="mx-auto max-w-7xl px-6">
 
@@ -381,11 +415,9 @@ export default function NijackPropertySolutionsWebsite() {
         </p>
 
         <p className="text-xs text-gray-400 max-w-xl mx-auto">
-
           Nijack Property Solutions works with a network of real estate buyers
           and investors. We help homeowners explore selling options and may
           refer properties to partner buyers.
-
         </p>
 
         <p className="text-xs text-gray-400 mt-6">
