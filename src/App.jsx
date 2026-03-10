@@ -249,7 +249,7 @@ export default function NijackPropertySolutionsWebsite() {
             </p>
 
             <p className="text-xs text-gray-400 text-center">
-              By submitting, you agree we may contact you regarding your property.
+              <strong>By submitting, you agree we may contact you regarding your property.
             </p>
 
           </form>
