@@ -105,7 +105,7 @@ export default function NijackPropertySolutionsWebsite() {
             <div className="flex flex-col justify-center">
               <div className="mx-auto mb-6 w-full max-w-xl">
                 <img
-                  src="/symbols-home-sale-banner.png"
+                  src="symbols-home-sale-banner.png"
                   alt="Simple home selling process illustration with house, phone, keys, and cash symbols"
                   className="w-full rounded-2xl shadow-md"
                 />
