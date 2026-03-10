@@ -1,39 +1,314 @@
-export default function NijackPropertySolutionsWebsite() {
-  const sections = [
+import React from "react";
+
+export default function App() {
+
+  const benefits = [
     {
-      title: "Fair Cash Offers",
-      icon: "💵",
-      text: "Get a straightforward offer without agent commissions, hidden fees, or drawn-out negotiations.",
+      title: "Fair Cash Offer",
+      text: "Get a straightforward offer without agent commissions, hidden fees, or drawn-out negotiations."
     },
     {
       title: "Sell As-Is",
-      icon: "🛠️",
-      text: "No repairs, no cleanup, and no need to get the house show-ready before you talk with us.",
+      text: "No repairs, no cleanup, and no showings. Sell the property exactly as it sits."
     },
     {
       title: "Flexible Closing",
-      icon: "⏱️",
-      text: "Close quickly when you need speed, or pick a timeline that works better for your move.",
+      text: "Close quickly or choose a timeline that works best for your situation."
     },
     {
       title: "Simple Process",
-      icon: "🛡️",
-      text: "We keep things clear, respectful, and easy to understand from first conversation to closing.",
-    },
+      text: "Clear communication and a simple closing process from start to finish."
+    }
   ];
 
   const steps = [
     {
-      number: "01",
-      title: "Tell Us About the Property",
-      text: "Share the address and a few details about the home, condition, and your timeline.",
+      title: "Tell Us About The Property",
+      text: "Share the address and a few details about the home."
     },
     {
-      number: "02",
-      title: "We Review the Numbers",
-      text: "We look at the property, local market activity, and repair needs to determine a fair cash offer.",
+      title: "We Review The Numbers",
+      text: "We review the property and local market activity."
     },
     {
-      number: "03",
-      title: "You Get a No-Pressure Offer",
-      text: "
+      title: "You Receive An Offer",
+      text: "You'll get a fair no-pressure cash offer."
+    },
+    {
+      title: "Close On Your Schedule",
+      text: "Choose a closing date that works for you."
+    }
+  ];
+
+  return (
+
+    <div className="min-h-screen bg-gradient-to-br from-white to-emerald-50 text-gray-800">
+
+      {/* HEADER */}
+
+      <header className="border-b bg-white">
+
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+
+          <div className="flex items-center gap-3">
+
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-700 text-xl text-white">
+              🏠
+            </div>
+
+            <div>
+              <div className="font-semibold text-lg">
+                Nijack Property Solutions
+              </div>
+              <div className="text-sm text-gray-500">
+                Serving Homeowners Nationwide
+              </div>
+            </div>
+
+          </div>
+
+          <nav className="hidden md:flex items-center gap-8 text-sm">
+
+            <a href="#how">How It Works</a>
+            <a href="#why">Why Sell To Us</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+
+            <a
+              href="#contact"
+              className="rounded-xl bg-emerald-700 px-5 py-2 text-white"
+            >
+              Get a Cash Offer
+            </a>
+
+          </nav>
+
+        </div>
+
+      </header>
+
+
+      {/* HERO */}
+
+      <section className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-16 lg:grid-cols-2">
+
+        {/* LEFT SIDE */}
+
+        <div className="flex flex-col justify-center">
+
+          <img
+            src="/symbols-home-sale-banner.png"
+            alt="Simple home selling process"
+            className="mb-8 w-full max-w-3xl"
+          />
+
+          <div className="mb-6 inline-flex w-fit items-center gap-3 rounded-full border border-emerald-300 bg-white px-6 py-3 text-emerald-700 shadow-sm">
+
+            <span className="text-xl">✔</span>
+
+            <span className="font-medium">
+              Sell Your House As-Is With Less Hassle
+            </span>
+
+          </div>
+
+          <h1 className="mb-6 text-4xl font-bold leading-tight">
+
+            Need To Sell A House  
+            <br />
+            Without The Usual Stress?
+
+          </h1>
+
+          <p className="mb-6 text-gray-600">
+
+            Nijack Property Solutions helps homeowners explore a simple
+            cash-sale option without repairs, commissions, or delays.
+
+          </p>
+
+        </div>
+
+
+        {/* FORM */}
+
+        <div
+          id="contact"
+          className="rounded-2xl border bg-white p-8 shadow-lg"
+        >
+
+          <h2 className="mb-2 text-3xl font-bold">
+            Get Started Today
+          </h2>
+
+          <p className="mb-6 text-gray-600">
+
+            Tell Us About The Property And We'll Review It Right Away.
+
+          </p>
+
+          <form className="space-y-4">
+
+            <div className="grid grid-cols-2 gap-4">
+
+              <input
+                placeholder="Your name"
+                className="rounded-xl border p-3"
+              />
+
+              <input
+                placeholder="Phone number"
+                className="rounded-xl border p-3"
+              />
+
+            </div>
+
+            <input
+              placeholder="Email address"
+              className="w-full rounded-xl border p-3"
+            />
+
+            <input
+              placeholder="Property address"
+              className="w-full rounded-xl border p-3"
+            />
+
+            <div className="grid grid-cols-3 gap-4">
+
+              <input
+                placeholder="Sq ft"
+                className="rounded-xl border p-3"
+              />
+
+              <input
+                placeholder="Beds"
+                className="rounded-xl border p-3"
+              />
+
+              <input
+                placeholder="Baths"
+                className="rounded-xl border p-3"
+              />
+
+            </div>
+
+            <input
+              placeholder="Ideal selling timeline"
+              className="w-full rounded-xl border p-3"
+            />
+
+            <textarea
+              placeholder="Share anything helpful about the home, repairs needed, inherited situation, tenants, or why you need to sell."
+              className="h-28 w-full rounded-xl border p-3"
+            />
+
+            <button
+              className="w-full rounded-xl bg-emerald-700 py-3 font-semibold text-white"
+            >
+              Request Your Offer
+            </button>
+
+            <p className="text-xs text-gray-500 text-center">
+
+              By submitting, you agree we may contact you regarding your
+              property.
+
+            </p>
+
+          </form>
+
+        </div>
+
+      </section>
+
+
+      {/* WHY SELL TO US */}
+
+      <section id="why" className="bg-white py-16">
+
+        <div className="mx-auto max-w-7xl px-6">
+
+          <h2 className="mb-10 text-center text-3xl font-bold">
+
+            Why Homeowners Work With Us
+
+          </h2>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+
+            {benefits.map((item, i) => (
+
+              <div
+                key={i}
+                className="rounded-xl border p-6 shadow-sm"
+              >
+
+                <h3 className="mb-3 font-semibold">
+                  {item.title}
+                </h3>
+
+                <p className="text-sm text-gray-600">
+                  {item.text}
+                </p>
+
+              </div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* HOW IT WORKS */}
+
+      <section id="how" className="bg-emerald-50 py-16">
+
+        <div className="mx-auto max-w-7xl px-6">
+
+          <h2 className="mb-10 text-center text-3xl font-bold">
+            How It Works
+          </h2>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+
+            {steps.map((step, i) => (
+
+              <div
+                key={i}
+                className="rounded-xl border bg-white p-6 shadow-sm"
+              >
+
+                <h3 className="mb-3 font-semibold">
+                  {step.title}
+                </h3>
+
+                <p className="text-sm text-gray-600">
+                  {step.text}
+                </p>
+
+              </div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* FOOTER */}
+
+      <footer className="border-t bg-white py-8 text-center text-sm text-gray-500">
+
+        © {new Date().getFullYear()} Nijack Property Solutions
+
+      </footer>
+
+    </div>
+
+  );
+}
