@@ -103,7 +103,7 @@ export default function NijackPropertySolutionsWebsite() {
         <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.14),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(245,158,11,0.10),transparent_24%)]">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.15fr_0.95fr] lg:px-8 lg:py-24">
             <div className="flex flex-col justify-center">
-              <div className="mx-auto mb-6 w-full max-w-xl">
+              <div className="mx-auto mb-6 w-full max-w-2xl">
                 <img
                   src="symbols-home-sale-banner.png"
                   alt="Simple home selling process illustration with house, phone, keys, and cash symbols"
