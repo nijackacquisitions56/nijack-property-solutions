@@ -460,8 +460,29 @@ export default function NijackPropertySolutionsWebsite() {
         <p className="text-xs text-gray-400 mt-6">
           © {new Date().getFullYear()} Nijack Property Solutions. All rights reserved.
         </p>
+<section id="privacy" className="mx-auto max-w-4xl px-4 py-16 text-sm text-stone-600">
+  <h2 className="text-center text-3xl font-bold text-stone-900 mb-6">Privacy Policy</h2>
 
-      </footer>
+  <p className="mb-4">
+  Nijack Property Solutions respects your privacy. Any information submitted through this website,
+  including your name, phone number, email address, and property details, is used solely to review
+  your property and respond to your inquiry.
+  </p>
+
+  <p className="mb-4">
+  Your information will never be sold to third parties. Property details may be shared with trusted
+  real estate buyers or partners solely for the purpose of evaluating a potential purchase.
+  </p>
+
+  <p className="mb-4">
+  By submitting your information on this website you agree that Nijack Property Solutions may contact
+  you by phone, text message, or email regarding your property inquiry.
+  </p>
+
+  <p>
+  If you have questions about this policy you may contact us using the information listed on this website.
+  </p>
+</section>      </footer>
 
     </div>
 
