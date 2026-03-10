@@ -124,7 +124,7 @@ export default function NijackPropertySolutionsWebsite() {
 
       <section className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-16 lg:grid-cols-2">
 
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center items-center text-center">
 
           <img
             src="/symbols-home-sale-banner.png"
@@ -136,7 +136,7 @@ export default function NijackPropertySolutionsWebsite() {
 
             <span className="text-xl">✔</span>
 
-            <span className="font-medium">
+            <span className="font-medium text-center">
               Sell Your House As-Is With Less Hassle
             </span>
 
@@ -159,7 +159,7 @@ export default function NijackPropertySolutionsWebsite() {
             property.
           </p>
 
-          <div className="text-emerald-700 font-semibold text-lg">
+          <div className="text-emerald-700 font-semibold text-lg text-center mx-auto">
             Call Or Text For A Quick Property Review
             <br/>
             (Your Phone Number)
@@ -249,7 +249,7 @@ export default function NijackPropertySolutionsWebsite() {
             </p>
 
             <p className="text-xs text-gray-400 text-center">
-              <strong></strong>By submitting, you agree we may contact you regarding your property.
+              By submitting, you agree we may contact you regarding your property.
             </p>
 
           </form>
@@ -394,7 +394,40 @@ export default function NijackPropertySolutionsWebsite() {
       </section>
 
 
-      {/* FOOTER */}
+      {{/* PRIVACY POLICY */}
+
+      <section id="privacy" className="bg-stone-50 py-16">
+        <div className="mx-auto max-w-4xl px-6 text-sm text-stone-600">
+
+          <h2 className="text-3xl font-bold text-center mb-8 text-stone-900">
+            Privacy Policy
+          </h2>
+
+          <p className="mb-4">
+            Nijack Property Solutions respects your privacy and is committed to protecting the information you provide through this website.
+          </p>
+
+          <p className="mb-4">
+            When you submit information through this website we may collect your name, phone number, email address, property address, and any details you choose to provide about your property.
+          </p>
+
+          <p className="mb-4">
+            This information is used solely to review your property and contact you regarding potential selling options. Property details may be shared with trusted real estate buyers or partners for evaluation purposes.
+          </p>
+
+          <p className="mb-4">
+            Nijack Property Solutions does not sell personal information to third parties.
+          </p>
+
+          <p>
+            If you have questions about this policy you may contact us using the information provided on this website.
+          </p>
+
+        </div>
+      </section>
+
+
+      {/* FOOTER */}}
 
       <footer className="border-t bg-white py-10 text-center text-sm text-gray-500">
 
@@ -419,6 +452,10 @@ export default function NijackPropertySolutionsWebsite() {
           and investors. We help homeowners explore selling options and may
           refer properties to partner buyers.
         </p>
+
+        <div className="flex justify-center gap-6 text-sm mb-4">
+          <a href="#privacy" className="hover:text-emerald-700">Privacy Policy</a>
+        </div>
 
         <p className="text-xs text-gray-400 mt-6">
           © {new Date().getFullYear()} Nijack Property Solutions. All rights reserved.
