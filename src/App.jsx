@@ -72,398 +72,208 @@ export default function NijackPropertySolutionsWebsite() {
   ];
 
   return (
-
-    <div className="min-h-screen bg-gradient-to-br from-white to-emerald-50 text-gray-800">
+    <div className="min-h-screen bg-gradient-to-br from-white to-emerald-50 text-gray-800 scroll-smooth">
 
       {/* HEADER */}
-
-      <header className="border-b bg-white">
-
+      <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-
           <div className="flex items-center gap-3">
-
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-700 text-xl text-white">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-700 text-xl text-white shadow-sm">
               🏠
             </div>
-
             <div>
-              <div className="font-semibold text-lg">
+              <div className="font-semibold text-lg leading-tight text-emerald-900">
                 Nijack Property Solutions
               </div>
-
               <div className="text-sm text-gray-500">
                 Serving Homeowners Nationwide
               </div>
             </div>
-
           </div>
 
-          <nav className="hidden md:flex items-center gap-8 text-sm">
-
-            <a href="#how">How It Works</a>
-            <a href="#why">Why Sell To Us</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
-
-            <a
-              href="#contact"
-              className="rounded-xl bg-emerald-700 px-5 py-2 text-white"
-            >
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+            <a href="#how" className="hover:text-emerald-700 transition-colors">How It Works</a>
+            <a href="#why" className="hover:text-emerald-700 transition-colors">Why Sell To Us</a>
+            <a href="#faq" className="hover:text-emerald-700 transition-colors">FAQ</a>
+            <a href="#contact" className="rounded-xl bg-emerald-700 px-5 py-2 text-white hover:bg-emerald-800 transition-colors">
               Get a Cash Offer
             </a>
-
           </nav>
-
         </div>
-
       </header>
 
-
-      {/* HERO */}
-
-      <section className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-16 lg:grid-cols-2">
-
-        <div className="flex flex-col justify-center items-center text-center">
-
+      {/* HERO SECTION */}
+      <section className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 lg:grid-cols-2">
+        <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
           <img
             src="/symbols-home-sale-banner.png"
-            alt="Simple home selling process"
-            className="mb-8 w-full max-w-3xl"
+            alt="Simple home selling process illustration"
+            className="mb-8 w-full max-w-xl rounded-2xl"
           />
-
-          <div className="mb-6 inline-flex w-fit items-center gap-3 rounded-full border border-emerald-300 bg-white px-6 py-3 text-emerald-700 shadow-sm">
-
+          <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-emerald-300 bg-white px-6 py-2 text-emerald-700 shadow-sm">
             <span className="text-xl">✔</span>
-
-            <span className="font-medium text-center">
-              Sell Your House As-Is With Less Hassle
-            </span>
-
+            <span className="font-medium">Sell Your House As-Is With Less Hassle</span>
           </div>
-
-          <h1 className="mb-6 text-4xl font-bold leading-tight">
-            Need To Sell A House
-            <br/>
-            Without The Usual Stress?
+          <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl">
+            Need To Sell A House<br/>Without The Usual Stress?
           </h1>
-
-          <p className="mb-4 text-gray-600">
-            Nijack Property Solutions helps homeowners explore a simple
-            cash-sale option without repairs, commissions, or delays.
+          <p className="mb-4 text-lg text-gray-600">
+            Nijack Property Solutions helps homeowners explore a simple cash-sale option without repairs, commissions, or delays.
           </p>
-
-          <p className="mb-6 text-gray-600">
-            We work with a network of experienced real estate buyers and
-            help homeowners explore simple selling options for their
-            property.
+          <p className="mb-8 text-gray-600">
+            We work with a network of experienced real estate buyers and help homeowners explore simple selling options for their property.
           </p>
-
-          <div className="text-emerald-700 font-semibold text-lg text-center mx-auto">
-            Call Or Text For A Quick Property Review
-            <br/>
-            (Your Phone Number)
+          <div className="rounded-2xl bg-emerald-50 p-6 border border-emerald-100 w-full max-w-md">
+            <div className="text-emerald-800 font-bold text-xl mb-1">
+              Call Or Text For A Quick Review
+            </div>
+            <div className="text-2xl font-black text-emerald-700">
+              (Your Phone Number)
+            </div>
           </div>
-
         </div>
-
 
         {/* FORM */}
-
-        <div
-          id="contact"
-          className="rounded-2xl border bg-white p-8 shadow-lg"
-        >
-
-          <h2 className="mb-2 text-3xl font-bold text-center">
-            Get Started Today
-          </h2>
-
-          <p className="mb-6 text-gray-600 text-center">
-            Tell Us About The Property And We'll Review It Right Away.
-          </p>
-
+        <div id="contact" className="rounded-3xl border border-gray-100 bg-white p-8 shadow-2xl lg:mt-4">
+          <h2 className="mb-2 text-3xl font-bold text-center text-gray-900">Get Started Today</h2>
+          <p className="mb-6 text-gray-600 text-center">Tell Us About The Property & We'll Review It Right Away.</p>
           <form className="space-y-4">
-
-            <div className="grid grid-cols-2 gap-4">
-
-              <input
-                placeholder="Your name"
-                className="rounded-xl border p-3"
-              />
-
-              <input
-                placeholder="Phone number"
-                className="rounded-xl border p-3"
-              />
-
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input placeholder="Your name" className="rounded-xl border border-gray-200 bg-gray-50 p-4 focus:outline-emerald-500" />
+              <input placeholder="Phone number" className="rounded-xl border border-gray-200 bg-gray-50 p-4 focus:outline-emerald-500" />
             </div>
-
-            <input
-              placeholder="Email address"
-              className="w-full rounded-xl border p-3"
-            />
-
-            <input
-              placeholder="Property address"
-              className="w-full rounded-xl border p-3"
-            />
-
+            <input placeholder="Email address" className="w-full rounded-xl border border-gray-200 bg-gray-50 p-4 focus:outline-emerald-500" />
+            <input placeholder="Property address" className="w-full rounded-xl border border-gray-200 bg-gray-50 p-4 focus:outline-emerald-500" />
             <div className="grid grid-cols-3 gap-4">
-
-              <input
-                placeholder="Sq ft"
-                className="rounded-xl border p-3"
-              />
-
-              <input
-                placeholder="Beds"
-                className="rounded-xl border p-3"
-              />
-
-              <input
-                placeholder="Baths"
-                className="rounded-xl border p-3"
-              />
-
+              <input placeholder="Sq ft" className="rounded-xl border border-gray-200 bg-gray-50 p-4 focus:outline-emerald-500" />
+              <input placeholder="Beds" className="rounded-xl border border-gray-200 bg-gray-50 p-4 focus:outline-emerald-500" />
+              <input placeholder="Baths" className="rounded-xl border border-gray-200 bg-gray-50 p-4 focus:outline-emerald-500" />
             </div>
-
-            <input
-              placeholder="Ideal selling timeline"
-              className="w-full rounded-xl border p-3"
-            />
-
-            <textarea
-              placeholder="Share anything helpful about the home, repairs needed, inherited situation, tenants, or why you need to sell."
-              className="h-28 w-full rounded-xl border p-3"
-            />
-
-            <button
-              className="w-full rounded-xl bg-emerald-700 py-3 font-semibold text-white"
-            >
+            <input placeholder="Ideal selling timeline" className="w-full rounded-xl border border-gray-200 bg-gray-50 p-4 focus:outline-emerald-500" />
+            <textarea placeholder="Share anything helpful: repairs needed, inherited situation, tenants, etc." className="h-28 w-full rounded-xl border border-gray-200 bg-gray-50 p-4 focus:outline-emerald-500" />
+            <button className="w-full rounded-xl bg-emerald-700 py-4 font-bold text-white shadow-lg hover:bg-emerald-800 transition-all transform hover:-translate-y-1">
               Request Your Offer
             </button>
-
-            <p className="text-xs text-gray-500 text-center">
-              No obligation. No pressure. Just information about your options.
-            </p>
-
-            <p className="text-xs text-gray-400 text-center">
+            <p className="text-xs text-gray-500 text-center">No obligation. No pressure. Just options.</p>
+            <p className="text-xs text-gray-400 text-center px-4">
               <strong>By submitting this form you agree to be contacted by Nijack Property Solutions regarding your property inquiry.</strong>
             </p>
-
           </form>
-
         </div>
-
       </section>
 
-
-      {/* WHY SELL */}
-
-      <section id="why" className="bg-white py-16">
-
+      {/* WHY SELL SECTION */}
+      <section id="why" className="bg-white py-20 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-6">
-
-          <h2 className="mb-10 text-center text-3xl font-bold">
-            Why Homeowners Work With Us
-          </h2>
-
+          <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl">Why Homeowners Work With Us</h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-
-            {benefits.map((item,i)=>(
-
-              <div key={i} className="rounded-xl border p-6 shadow-sm">
-
-                <h3 className="mb-3 font-semibold">
-                  {item.title}
-                </h3>
-
-                <p className="text-sm text-gray-600">
-                  {item.text}
-                </p>
-
+            {benefits.map((item, i) => (
+              <div key={i} className="rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow bg-emerald-50/30">
+                <h3 className="mb-4 font-bold text-emerald-900 text-lg">{item.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{item.text}</p>
               </div>
-
             ))}
-
           </div>
-
         </div>
-
       </section>
 
-
-      {/* SITUATIONS */}
-
-      <section className="bg-emerald-50 py-16">
-
+      {/* SITUATIONS SECTION */}
+      <section className="bg-emerald-700 py-20 text-white">
         <div className="mx-auto max-w-6xl px-6">
-
-          <h2 className="text-3xl font-bold text-center mb-10">
-            Situations We Often Help Homeowners With
-          </h2>
-
-          <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
-            Many homeowners reach out when they want to explore selling
-            options without repairs, listings, or delays.
+          <h2 className="text-3xl font-bold text-center mb-6 md:text-4xl">Situations We Can Help With</h2>
+          <p className="text-center text-emerald-100 mb-12 max-w-3xl mx-auto text-lg">
+            Many homeowners reach out when they want to explore selling options without repairs, listings, or delays.
           </p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
-
-            {situations.map((s,i)=>(
-              <div key={i} className="rounded-xl border bg-white p-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {situations.map((s, i) => (
+              <div key={i} className="rounded-xl bg-white/10 backdrop-blur-md p-5 border border-white/20 hover:bg-white/20 transition-all">
                 {s}
               </div>
             ))}
-
           </div>
-
         </div>
-
       </section>
 
-
-      {/* HOW IT WORKS */}
-
-      <section id="how" className="bg-white py-16">
-
+      {/* HOW IT WORKS SECTION */}
+      <section id="how" className="bg-white py-20 scroll-mt-20">
         <div className="mx-auto max-w-7xl px-6">
-
-          <h2 className="mb-10 text-center text-3xl font-bold">
-            How It Works
-          </h2>
-
+          <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl">The Simple 4-Step Process</h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-
-            {steps.map((step,i)=>(
-
-              <div key={i} className="rounded-xl border bg-white p-6 shadow-sm">
-
-                <h3 className="mb-3 font-semibold">
-                  {step.title}
-                </h3>
-
-                <p className="text-sm text-gray-600">
-                  {step.text}
-                </p>
-
+            {steps.map((step, i) => (
+              <div key={i} className="relative rounded-2xl border border-gray-100 p-8 text-center bg-white shadow-sm">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 h-10 w-10 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold">
+                  {i + 1}
+                </div>
+                <h3 className="mb-4 mt-2 font-bold text-emerald-900">{step.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{step.text}</p>
               </div>
-
             ))}
-
           </div>
-
         </div>
-
       </section>
 
-
-      {/* FAQ */}
-
-      <section id="faq" className="bg-white py-16">
-
+      {/* FAQ SECTION */}
+      <section id="faq" className="bg-emerald-50/50 py-20 scroll-mt-20">
         <div className="mx-auto max-w-4xl px-6">
-
-          <h2 className="text-3xl font-bold text-center mb-10">
-            Common Questions
-          </h2>
-
+          <h2 className="text-3xl font-bold text-center mb-12 md:text-4xl">Common Questions</h2>
           <div className="space-y-6">
-
-            {faq.map((item,i)=>(
-
-              <div key={i}>
-
-                <h3 className="font-semibold mb-1">
-                  {item.q}
-                </h3>
-
-                <p className="text-gray-600 text-sm">
-                  {item.a}
-                </p>
-
+            {faq.map((item, i) => (
+              <div key={i} className="rounded-2xl bg-white p-6 shadow-sm border border-emerald-100">
+                <h3 className="font-bold text-emerald-900 mb-2">{item.q}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.a}</p>
               </div>
-
             ))}
-
           </div>
-
-        </div>
-
-      </section>
-
-
-      {/* PRIVACY POLICY */}
-
-      <section id="privacy" className="bg-stone-50 py-16">
-        <div className="mx-auto max-w-4xl px-6 text-sm text-stone-600">
-
-          <h2 className="text-3xl font-bold text-center mb-8 text-stone-900">
-            Privacy Policy
-          </h2>
-
-          <p className="mb-4">
-            Nijack Property Solutions respects your privacy and is committed to protecting the information you provide through this website.
-          </p>
-
-          <p className="mb-4">
-            When you submit information through this website we may collect your name, phone number, email address, property address, and any details you choose to provide about your property.
-          </p>
-
-          <p className="mb-4">
-            This information is used solely to review your property and contact you regarding potential selling options. Property details may be shared with trusted real estate buyers or partners for evaluation purposes.
-          </p>
-
-          <p className="mb-4">
-            Nijack Property Solutions does not sell personal information to third parties.
-          </p>
-
-          <p>
-            If you have questions about this policy you may contact us using the information provided on this website.
-          </p>
-
         </div>
       </section>
 
+      {/* PRIVACY POLICY SECTION */}
+      <section id="privacy" className="bg-stone-50 py-20 scroll-mt-20 border-t">
+        <div className="mx-auto max-w-4xl px-6">
+          <h2 className="text-3xl font-bold text-center mb-10 text-stone-900">Privacy Policy</h2>
+          <div className="space-y-6 text-stone-700 leading-relaxed text-sm md:text-base">
+            <p>
+              <strong>Nijack Property Solutions</strong> respects your privacy and is committed to protecting the information you provide through this website.
+            </p>
+            <p>
+              <strong>Information Collection:</strong> When you submit a request, we collect details such as your name, phone number, email address, property address, and specifics regarding your home's condition.
+            </p>
+            <p>
+              <strong>How We Use Your Info:</strong> This information is used solely to evaluate your property and contact you with potential selling options. Property details (not your private contact info) may be shared with our network of trusted real estate buyers for valuation purposes.
+            </p>
+            <p>
+              <strong>No Third-Party Sales:</strong> We do not sell, rent, or lease your personal contact information to third-party marketing companies.
+            </p>
+            <p>
+              <strong>Communication:</strong> By submitting your info, you provide consent for Nijack Property Solutions to contact you regarding your inquiry.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* FOOTER */}
+      <footer className="bg-white py-12 border-t">
+        <div className="mx-auto max-w-7xl px-6 text-center">
+          <div className="font-bold text-emerald-900 mb-2 text-lg">Nijack Property Solutions</div>
+          <p className="text-gray-500 mb-1">Serving Homeowners Nationwide</p>
+          <p className="text-gray-500 mb-1">Call Or Text: (Your Phone Number)</p>
+          <p className="text-gray-500 mb-6">Email: info@nijackpropertysolutions.com</p>
+          
+          <div className="flex flex-wrap justify-center gap-6 text-sm font-medium text-emerald-800 mb-8">
+            <a href="#how" className="hover:underline">How It Works</a>
+            <a href="#why" className="hover:underline">Benefits</a>
+            <a href="#privacy" className="hover:underline">Privacy Policy</a>
+          </div>
 
-      <footer className="border-t bg-white py-10 text-center text-sm text-gray-500">
-
-        <p className="mb-2">
-          Nijack Property Solutions
-        </p>
-
-        <p className="mb-2">
-          Serving Homeowners Nationwide
-        </p>
-
-        <p className="mb-2">
-          Call Or Text: (Your Phone Number)
-        </p>
-
-        <p className="mb-4">
-          Email: info@nijackpropertysolutions.com
-        </p>
-
-        <p className="text-xs text-gray-400 max-w-xl mx-auto">
-          Nijack Property Solutions works with a network of real estate buyers
-          and investors. We help homeowners explore selling options and may
-          refer properties to partner buyers.
-        </p>
-
-        <div className="flex justify-center gap-6 text-sm mb-4">
-          <a href="#privacy" className="hover:text-emerald-700">Privacy Policy</a>
+          <p className="text-xs text-gray-400 max-w-2xl mx-auto leading-relaxed mb-8">
+            Disclaimer: Nijack Property Solutions works with a network of real estate buyers and investors. We help homeowners explore selling options and may refer properties to partner buyers for cash offers.
+          </p>
+          
+          <p className="text-xs text-gray-400">
+            © {new Date().getFullYear()} Nijack Property Solutions. All rights reserved.
+          </p>
         </div>
-
-        <p className="text-xs text-gray-400 mt-6">
-          © {new Date().getFullYear()} Nijack Property Solutions. All rights reserved.
-        </p>
-
       </footer>
-
     </div>
-
   );
 }
