@@ -5,294 +5,160 @@ export default function NijackPropertySolutionsWebsite() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In a real app, this is where the email would be sent
     setSubmitted(true);
   };
 
   const benefits = [
-    {
-      title: "Fair Cash Offer",
-      text: "Get a straightforward offer without agent commissions, hidden fees, or drawn-out negotiations."
-    },
-    {
-      title: "Sell As-Is",
-      text: "No repairs, cleanup, or showings required. Explore selling the property exactly as it sits."
-    },
-    {
-      title: "Flexible Closing",
-      text: "Close quickly if needed or choose a timeline that works best for your situation."
-    },
-    {
-      title: "Simple Process",
-      text: "Clear communication and a straightforward process from first conversation to closing."
-    }
-  ];
-
-  const steps = [
-    {
-      title: "Tell Us About The Property",
-      text: "Share the address and a few details about the home."
-    },
-    {
-      title: "We Review The Numbers",
-      text: "We review the property and local market activity."
-    },
-    {
-      title: "Receive A No-Pressure Offer",
-      text: "You'll receive a fair offer with absolutely no obligation."
-    },
-    {
-      title: "Close On Your Schedule",
-      text: "Choose a closing timeline that works best for your situation."
-    }
-  ];
-
-  const faq = [
-    {
-      q: "Do I need to make repairs before selling?",
-      a: "No. Many homeowners explore selling options because the property needs repairs or updates. Selling as-is may be possible."
-    },
-    {
-      q: "How fast can closing happen?",
-      a: "Some situations allow closing in a few weeks while others may require more time. Timelines can often be flexible depending on your situation."
-    },
-    {
-      q: "What if I still owe money on the property?",
-      a: "Many homeowners still have mortgages, taxes, or liens. Each situation can be reviewed individually."
-    },
-    {
-      q: "Are there commissions or fees?",
-      a: "Traditional listings often involve commissions and closing costs. A direct sale option may help avoid many of those expenses."
-    }
+    { title: "Fair Cash Offer", text: "Straightforward offers without agent commissions or hidden closing fees." },
+    { title: "Sell As-Is", text: "No repairs or cleanup needed. We buy properties in any condition, nationwide." },
+    { title: "Virtual Closing", text: "We handle the paperwork remotely so you can close from the comfort of your home." },
+    { title: "Fast & Reliable", text: "Clear communication and a simple process designed to save you time." }
   ];
 
   const situations = [
-    "Inherited Property",
-    "Vacant Or Abandoned Homes",
-    "Homes Needing Major Repairs",
-    "Landlords Ready To Sell",
-    "Behind On Property Taxes",
-    "Problem Tenants",
-    "Divorce Or Life Changes",
-    "Out Of State Owners",
-    "Homeowners Wanting A Simple Sale"
+    "Inherited Property", "Vacant Homes", "Major Repairs Needed", 
+    "Behind on Taxes", "Out-of-State Owners", "Problem Tenants"
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white to-emerald-50 text-gray-800 scroll-smooth">
+    <div className="min-h-screen bg-gradient-to-br from-white to-emerald-50 text-gray-800 scroll-smooth font-sans">
 
       {/* HEADER */}
       <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-700 text-xl text-white shadow-sm">
-              🏠
-            </div>
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-700 text-white shadow-md font-bold">NP</div>
             <div>
-              <div className="font-semibold text-lg leading-tight text-emerald-900">
-                Nijack Property Solutions
-              </div>
-              <div className="text-sm text-gray-500">
-                Serving Homeowners Nationwide
-              </div>
+              <div className="font-bold text-lg text-emerald-900 leading-tight">Nijack Property Solutions</div>
+              <div className="text-xs text-gray-500 uppercase tracking-widest text-center">National Home Buying Solutions</div>
             </div>
           </div>
-
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+          <nav className="hidden md:flex items-center gap-8 text-sm font-semibold">
             <a href="#how" className="hover:text-emerald-700 transition-colors">How It Works</a>
-            <a href="#why" className="hover:text-emerald-700 transition-colors">Why Sell To Us</a>
-            <a href="#faq" className="hover:text-emerald-700 transition-colors">FAQ</a>
-            <a href="#contact" className="rounded-xl bg-emerald-700 px-5 py-2 text-white hover:bg-emerald-800 transition-colors shadow-md">
-              Get a Cash Offer
-            </a>
+            <a href="#about" className="hover:text-emerald-700 transition-colors">Our Story</a>
+            <a href="#contact" className="rounded-full bg-emerald-700 px-6 py-2 text-white hover:bg-emerald-800 shadow-md transition-all">Get Cash Offer</a>
           </nav>
         </div>
       </header>
 
-      {/* HERO SECTION - NO BORDER, CENTERED LAYOUT */}
-      <section className="mx-auto max-w-7xl px-6 py-16 flex flex-col items-center text-center">
+      {/* HERO SECTION */}
+      <section className="mx-auto max-w-7xl px-6 py-12 flex flex-col items-center text-center">
+        <img src="/symbols-home-sale-banner.png" alt="Sell Your House Virtually" className="mb-8 w-full max-w-2xl rounded-3xl shadow-2xl" />
         
-        <img
-          src="/symbols-home-sale-banner.png"
-          alt="Simple home selling process illustration"
-          className="mb-10 w-full max-w-2xl rounded-2xl shadow-lg"
-        />
-
-        <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-emerald-300 bg-white px-6 py-2 text-emerald-700 shadow-sm">
-          <span className="text-xl">✔</span>
-          <span className="font-medium">Sell Your House As-Is With Less Hassle</span>
+        <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-1 text-emerald-700 text-sm font-bold border border-emerald-200">
+          <span>🌎</span> Buying Houses in Ohio & Nationwide
         </div>
 
-        <h1 className="mb-6 text-4xl font-extrabold leading-tight md:text-6xl text-gray-900">
-          Need To Sell A House<br/>Without The Usual Stress?
+        <h1 className="mb-6 text-4xl font-black md:text-6xl text-gray-900 tracking-tight">
+          Sell Your House Fast.<br/><span className="text-emerald-700">Any Condition. Anywhere.</span>
         </h1>
 
-        <p className="mb-4 text-xl text-gray-600 max-w-3xl">
-          Nijack Property Solutions helps homeowners explore a simple cash-sale option without repairs, commissions, or delays.
+        <p className="mb-10 text-xl text-gray-600 max-w-2xl leading-relaxed">
+          Get a fair cash offer without leaving your couch. We specialize in simple, remote closings for homeowners across the country.
         </p>
 
-        <p className="mb-8 text-gray-600 max-w-2xl">
-          We work with a network of experienced real estate buyers and help homeowners explore simple selling options for their property.
-        </p>
-
-        {/* CENTERED PHONE NUMBER BOX - MOVED UP & SIZED TO FORM BOX */}
-        <div className="rounded-3xl bg-white p-8 border-2 border-emerald-100 shadow-xl w-full max-w-md transition-transform hover:scale-105">
-          <div className="text-emerald-900 font-bold text-lg mb-2 uppercase tracking-wide">
-            Call Or Text For A Quick Review
-          </div>
-          <a 
-            href="tel:3303319070" 
-            className="text-4xl font-black text-emerald-700 hover:text-emerald-800 transition-colors block"
-          >
-            330-331-9070
-          </a>
-          <p className="text-sm text-gray-400 mt-2 italic">Tap to call directly from your phone</p>
+        <div className="mb-16 rounded-3xl bg-white p-8 border-2 border-emerald-100 shadow-xl w-full max-w-md">
+          <p className="text-emerald-900 font-bold text-sm mb-1 uppercase tracking-widest">Call Or Text Nicole Directly</p>
+          <a href="tel:3303319070" className="text-4xl font-black text-emerald-700 hover:text-emerald-800 transition-colors">330-331-9070</a>
+          <p className="text-xs text-gray-400 mt-2 italic">A Trusted, Ohio-Based Company</p>
         </div>
-
       </section>
 
-      {/* FORM SECTION - CENTERED */}
-      <section id="contact" className="mx-auto max-w-3xl px-6 pb-20 scroll-mt-20">
-        <div className="rounded-3xl border border-gray-100 bg-white p-8 shadow-2xl min-h-[400px] flex flex-col justify-center">
+      {/* FORM SECTION */}
+      <section id="contact" className="mx-auto max-w-3xl px-6 pb-24 scroll-mt-20">
+        <div className="rounded-3xl bg-white p-8 md:p-12 shadow-2xl border border-gray-100">
           {!submitted ? (
             <>
-              <h2 className="mb-2 text-3xl font-bold text-center text-gray-900">Get Started Today</h2>
-              <p className="mb-8 text-gray-600 text-center">Tell Us About The Property & We'll Review It Right Away.</p>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input required placeholder="Your name" className="rounded-xl border border-gray-200 bg-gray-50 p-4 focus:ring-2 focus:ring-emerald-500 focus:outline-none" />
-                  <input required placeholder="Phone number" className="rounded-xl border border-gray-200 bg-gray-50 p-4 focus:ring-2 focus:ring-emerald-500 focus:outline-none" />
+              <div className="text-center mb-10">
+                <h2 className="text-3xl font-bold text-gray-900">Get Your No-Obligation Offer</h2>
+                <p className="text-gray-500 mt-2">Submit your property details below for a quick review.</p>
+              </div>
+              
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-gray-500 ml-1">NAME</label>
+                    <input required placeholder="Your Name" className="w-full rounded-xl border border-gray-200 bg-gray-50 p-4 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition-all" />
+                  </div>
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-gray-500 ml-1">PHONE</label>
+                    <input required placeholder="Phone Number" className="w-full rounded-xl border border-gray-200 bg-gray-50 p-4 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition-all" />
+                  </div>
                 </div>
-                <input required type="email" placeholder="Email address" className="w-full rounded-xl border border-gray-200 bg-gray-50 p-4 focus:ring-2 focus:ring-emerald-500 focus:outline-none" />
-                <input required placeholder="Property address" className="w-full rounded-xl border border-gray-200 bg-gray-50 p-4 focus:ring-2 focus:ring-emerald-500 focus:outline-none" />
-                <div className="grid grid-cols-3 gap-4">
-                  <input placeholder="Sq ft" className="rounded-xl border border-gray-200 bg-gray-50 p-4 focus:ring-2 focus:ring-emerald-500 focus:outline-none" />
-                  <input placeholder="Beds" className="rounded-xl border border-gray-200 bg-gray-50 p-4 focus:ring-2 focus:ring-emerald-500 focus:outline-none" />
-                  <input placeholder="Baths" className="rounded-xl border border-gray-200 bg-gray-50 p-4 focus:ring-2 focus:ring-emerald-500 focus:outline-none" />
+
+                <div className="space-y-1">
+                  <label className="text-xs font-bold text-gray-500 ml-1">PROPERTY ADDRESS (Include City & State)</label>
+                  <input required placeholder="123 Main St, City, State" className="w-full rounded-xl border border-gray-200 bg-gray-50 p-4 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition-all" />
                 </div>
-                <input placeholder="Ideal selling timeline" className="w-full rounded-xl border border-gray-200 bg-gray-50 p-4 focus:ring-2 focus:ring-emerald-500 focus:outline-none" />
-                <textarea placeholder="Share anything helpful: repairs needed, inherited situation, tenants, etc." className="h-28 w-full rounded-xl border border-gray-200 bg-gray-50 p-4 focus:ring-2 focus:ring-emerald-500 focus:outline-none" />
-                <button type="submit" className="w-full rounded-xl bg-emerald-700 py-4 font-bold text-white shadow-lg hover:bg-emerald-800 transition-all">
-                  Request Your Offer
+
+                <button type="submit" className="w-full rounded-xl bg-emerald-700 py-5 font-black text-white text-lg shadow-lg hover:bg-emerald-800 transition-all uppercase tracking-wider">
+                  Request My Cash Offer
                 </button>
-                <p className="text-xs text-gray-400 text-center mt-4">
-                  <strong>By submitting this form you agree to be contacted by Nijack Property Solutions regarding your property inquiry.</strong>
+
+                <p className="text-[10px] text-gray-400 text-center leading-relaxed px-4">
+                  By clicking "Request My Cash Offer", you agree to be contacted by Nijack Property Solutions regarding your inquiry. We respect your privacy and never sell your data.
                 </p>
               </form>
             </>
           ) : (
-            <div className="text-center py-10 animate-in fade-in zoom-in duration-500">
-              <div className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-full bg-emerald-100 text-4xl text-emerald-700">
-                ✅
-              </div>
-              <h2 className="mb-4 text-3xl font-bold text-gray-900">Thank You!</h2>
-              <p className="mb-8 text-lg text-gray-600">
-                We have received your property details. Nicole or a team member will review the information and contact you shortly at <strong>330-331-9070</strong> to discuss your options.
+            <div className="text-center py-12">
+              <div className="text-5xl mb-4">✅</div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">Offer Request Sent!</h2>
+              <p className="text-lg text-gray-600 mb-8">
+                Nicole will review your property details and contact you at **330-331-9070** shortly.
               </p>
-              <button 
-                onClick={() => setSubmitted(false)}
-                className="text-emerald-700 font-semibold hover:underline"
-              >
-                ← Back to form
-              </button>
             </div>
           )}
         </div>
       </section>
 
-      {/* WHY SELL SECTION */}
-      <section id="why" className="bg-white py-20 scroll-mt-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl text-gray-900">Why Homeowners Work With Us</h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {benefits.map((item, i) => (
-              <div key={i} className="rounded-2xl border border-gray-100 p-8 shadow-sm bg-emerald-50/30">
-                <h3 className="mb-4 font-bold text-emerald-900 text-lg">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SITUATIONS SECTION */}
-      <section className="bg-emerald-700 py-20 text-white">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-3xl font-bold text-center mb-12 md:text-4xl">Situations We Can Help With</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {situations.map((s, i) => (
-              <div key={i} className="rounded-xl bg-white/10 backdrop-blur-md p-5 border border-white/20">
-                {s}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* HOW IT WORKS SECTION */}
-      <section id="how" className="bg-white py-20 scroll-mt-20">
-        <div className="mx-auto max-w-7xl px-6 text-center">
-          <h2 className="mb-12 text-3xl font-bold md:text-4xl text-gray-900">The Simple 4-Step Process</h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 text-left">
-            {steps.map((step, i) => (
-              <div key={i} className="relative rounded-2xl border border-gray-100 p-8 bg-white shadow-sm">
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 h-10 w-10 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold">
-                  {i + 1}
-                </div>
-                <h3 className="mb-4 mt-2 font-bold text-emerald-900">{step.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{step.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ SECTION */}
-      <section id="faq" className="bg-emerald-50/50 py-20 scroll-mt-20">
-        <div className="mx-auto max-w-4xl px-6">
-          <h2 className="text-3xl font-bold text-center mb-12 md:text-4xl text-gray-900">Common Questions</h2>
-          <div className="space-y-6">
-            {faq.map((item, i) => (
-              <div key={i} className="rounded-2xl bg-white p-6 shadow-sm border border-emerald-100">
-                <h3 className="font-bold text-emerald-900 mb-2">{item.q}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PRIVACY POLICY SECTION */}
-      <section id="privacy" className="bg-stone-50 py-20 scroll-mt-20 border-t">
+      {/* ABOUT ME SECTION (VIRTUAL READY) */}
+      <section id="about" className="bg-emerald-900 py-24 text-white scroll-mt-20">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-3xl font-bold mb-10 text-stone-900 underlined decoration-emerald-700 underline-offset-8">Privacy Policy</h2>
-          <div className="space-y-6 text-stone-700 leading-relaxed text-sm md:text-base max-w-2xl mx-auto">
-            <p><strong>Nijack Property Solutions</strong> respects your privacy. We collect your contact info and property details solely to provide a cash offer review.</p>
-            <p><strong>Sharing:</strong> Property data may be shared with our network of buyers to evaluate your home. We do not sell your personal contact info to marketing lists.</p>
-            <p><strong>Consent:</strong> By submitting your info, you provide Nijack Property Solutions permission to contact you regarding your inquiry.</p>
+          <h2 className="text-3xl md:text-4xl font-black mb-8">About Nijack Property Solutions</h2>
+          <div className="space-y-6 text-emerald-50 text-lg leading-relaxed">
+            <p>
+              Hi, I’m Nicole. Based in the heart of the Midwest, I founded <strong>Nijack Property Solutions</strong> to help homeowners navigate difficult property situations with ease. While our roots are in <strong>Northeast Ohio</strong>, we leverage modern technology to buy houses cash across many different states.
+            </p>
+            <p>
+              Virtual wholesaling allows us to provide the same honest, fast, and transparent service to a homeowner in Florida or Texas as we do to a neighbor right here in <strong>Cuyahoga Falls</strong>. We specialize in remote closings, meaning you can sell your house without ever having to meet in person or deal with stressful showings.
+            </p>
+            <div className="pt-8 italic font-bold text-2xl text-white">
+              "Providing honest real estate solutions, no matter where your property is located."
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY US */}
+      <section id="why" className="bg-white py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-center text-3xl md:text-4xl font-black mb-16 text-gray-900">The Nijack Advantage</h2>
+          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+            {benefits.map((item, i) => (
+              <div key={i} className="rounded-3xl p-8 bg-emerald-50/50 border border-emerald-100/50">
+                <div className="text-emerald-700 text-2xl mb-4 font-bold italic">0{i+1}</div>
+                <h3 className="font-bold text-xl mb-3 text-emerald-900">{item.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-white py-12 border-t text-center">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="font-bold text-emerald-900 mb-2 text-xl tracking-tight">Nijack Property Solutions</div>
-          <p className="text-gray-500 mb-1 text-sm">Serving Homeowners Nationwide</p>
-          <p className="text-gray-500 mb-1 text-sm">
-            Call Or Text: <a href="tel:3303319070" className="underline font-semibold text-emerald-800">330-331-9070</a>
-          </p>
-          <p className="text-gray-500 mb-8 font-medium italic underline text-xs">info@nijackpropertysolutions.com</p>
-          
-          <div className="flex justify-center gap-6 text-sm font-semibold text-emerald-800 mb-8">
-            <a href="#how" className="hover:underline">How It Works</a>
-            <a href="#why" className="hover:underline">Benefits</a>
-            <a href="#privacy" className="hover:underline">Privacy Policy</a>
+      <footer className="bg-white py-16 border-t border-gray-100">
+        <div className="mx-auto max-w-7xl px-6 text-center">
+          <div className="font-black text-2xl text-emerald-900 mb-2">Nijack Property Solutions</div>
+          <p className="text-gray-500 text-sm">A Professional Real Estate Investment Company</p>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-6 text-sm font-bold text-emerald-800 mt-8 mb-12">
+            <a href="tel:3303319070" className="hover:text-emerald-900">📞 330-331-9070</a>
+            <a href="mailto:info@nijackpropertysolutions.com" className="lowercase italic hover:text-emerald-900">info@nijackpropertysolutions.com</a>
           </div>
-          
-          <p className="text-[10px] text-gray-400 mt-6 uppercase tracking-widest">
-            © {new Date().getFullYear()} Nijack Property Solutions. All rights reserved.
+          <p className="text-[10px] text-gray-400 max-w-2xl mx-auto mb-4 leading-relaxed">
+            Nijack Property Solutions works with a nationwide network of buyers. We are not real estate agents and do not provide legal or financial advice. We specialize in providing cash-sale alternatives for properties in any condition.
           </p>
+          <p className="text-[10px] text-gray-400 tracking-widest uppercase">© {new Date().getFullYear()} Nijack Property Solutions</p>
         </div>
       </footer>
     </div>
