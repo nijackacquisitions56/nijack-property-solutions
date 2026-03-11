@@ -57,7 +57,7 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
       </header>
 
-      {/* HERO SECTION - UPDATED GEOGRAPHY */}
+      {/* HERO SECTION */}
       <section className="mx-auto max-w-7xl px-6 py-12 flex flex-col items-center text-center">
         <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-1 text-emerald-700 text-sm font-bold border border-emerald-200">
           <span>🌎</span> Buying Houses in Ohio & Major Markets Nationwide
@@ -71,11 +71,10 @@ export default function NijackPropertySolutionsWebsite() {
           Skip the repairs, the agents, and the months of waiting. See if your property qualifies for a fair, no-obligation cash offer.
         </p>
 
-        {/* CALL TO ACTION BOX */}
         <div className="mb-16 rounded-3xl bg-white p-8 border-2 border-emerald-100 shadow-xl w-full max-w-md">
           <p className="text-emerald-900 font-bold text-sm mb-1 uppercase tracking-widest text-center">Speak With Our Acquisition Team</p>
           <a href="tel:3303319070" className="text-4xl font-black text-emerald-700 hover:text-emerald-800 transition-colors block text-center">330-331-9070</a>
-          <p className="text-xs text-gray-400 mt-2 italic text-center">A Trusted, Ohio-Based Company</p>
+          <p className="text-xs text-gray-400 mt-2 italic text-center text-center">A Trusted, Ohio-Based Company</p>
         </div>
       </section>
 
@@ -221,16 +220,22 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* FOOTER - CLICKABLE PRIVACY LINK ADDED */}
       <footer className="bg-white py-16 border-t border-gray-100">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <div className="font-black text-2xl text-emerald-900 mb-2 text-center">Nijack Property Solutions</div>
           <p className="text-gray-500 text-sm mb-8 italic text-center">Ohio & Select Markets Nationwide</p>
           
-          <div className="flex flex-col md:flex-row justify-center items-center gap-6 text-sm font-bold text-emerald-800 mb-12 text-center">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-6 text-sm font-bold text-emerald-800 mb-8 text-center">
             <a href="tel:3303319070" className="hover:text-emerald-900 transition-all text-center">📞 330-331-9070</a>
             <span className="hidden md:block text-gray-200">|</span>
             <a href="mailto:info@nijackpropertysolutions.com" className="lowercase italic hover:text-emerald-900 transition-all text-center">info@nijackpropertysolutions.com</a>
+          </div>
+
+          <div className="flex justify-center gap-6 mb-8 text-xs font-bold text-gray-400 uppercase tracking-widest">
+            <a href="#how" className="hover:text-emerald-700 transition-colors">Process</a>
+            <a href="#faq" className="hover:text-emerald-700 transition-colors">FAQ</a>
+            <a href="#privacy" className="hover:text-emerald-700 transition-colors">Privacy Policy</a>
           </div>
 
           <p className="text-[10px] text-gray-400 max-w-2xl mx-auto mb-4 leading-relaxed uppercase tracking-tighter text-center">
