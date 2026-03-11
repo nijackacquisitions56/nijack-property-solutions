@@ -67,14 +67,23 @@ export default function NijackPropertySolutionsWebsite() {
       {/* HERO SECTION */}
       <section className="bg-gradient-to-br from-[#003366] via-[#002244] to-[#001122] text-white py-24 border-b-4 border-[#D4AF37]">
         <div className="mx-auto max-w-5xl px-6 text-center">
-          <div className="mb-6 inline-flex rounded-full bg-[#D4AF37]/20 border border-[#D4AF37] px-4 py-1 text-[#D4AF37] text-sm font-bold">
+          <div className="mb-6 inline-flex rounded-full bg-[#D4AF37]/20 border border-[#D4AF37] px-4 py-1 text-[#D4AF37] text-sm font-bold tracking-wide">
             Serving Homeowners in Ohio & Nationwide
           </div>
-          <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
-            Sell Your House <span className="text-[#D4AF37]">FAST</span> For <span className="text-[#D4AF37]">CASH</span>
+          <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight leading-tight">
+            Sell Your House <br/>
+            <span className="relative inline-block">
+              FAST
+              <div className="absolute -bottom-2 left-0 w-full h-2 bg-[#D4AF37] rounded-full opacity-80"></div>
+            </span> 
+            {" "}For{" "}
+            <span className="relative inline-block text-[#D4AF37]">
+              CASH
+              <div className="absolute -bottom-2 left-0 w-full h-1.5 bg-white rounded-full opacity-40"></div>
+            </span>
           </h1>
-          <p className="text-xl opacity-90 font-medium">
-            No Repairs. No Commissions. Flexible Closing.
+          <p className="text-xl opacity-90 font-medium max-w-2xl mx-auto italic">
+            "The Brooklyn Hustle meets Ohio Heart."
           </p>
         </div>
       </section>
@@ -94,16 +103,27 @@ export default function NijackPropertySolutionsWebsite() {
                 </div>
                 <input required placeholder="Property Address" className="rounded-xl border border-gray-200 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none" />
                 
-                <select required className="rounded-xl border border-gray-200 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none bg-white">
-                  <option value="">How Soon Are You Looking To Sell?</option>
-                  <option>ASAP (Within 30 Days)</option>
-                  <option>30-60 Days</option>
-                  <option>60-90 Days</option>
-                  <option>3-6 Months</option>
-                  <option>Just Exploring Options</option>
-                </select>
+                {/* TIMELINE DROP-DOWN WITH ARROW HELPER */}
+                <div className="relative group">
+                  <div className="absolute -left-10 top-4 text-[#D4AF37] animate-bounce hidden xl:block">
+                    <span className="text-3xl">➔</span>
+                  </div>
+                  <select required className="rounded-xl border-2 border-gray-100 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none bg-white font-bold text-[#003366] appearance-none cursor-pointer shadow-sm">
+                    <option value="">📅 HOW SOON ARE YOU LOOKING TO SELL? (Click Here)</option>
+                    <option>ASAP (Within 30 Days)</option>
+                    <option>30-60 Days</option>
+                    <option>60-90 Days</option>
+                    <option>3-6 Months</option>
+                    <option>Just Exploring Options</option>
+                  </select>
+                  <div className="absolute right-4 top-5 pointer-events-none text-[#D4AF37]">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
 
-                <div className="p-4 bg-gray-50 rounded-xl">
+                <div className="p-4 bg-gray-50 rounded-xl border border-gray-100">
                   <p className="font-bold mb-3 text-[#003366]">What best describes your situation?</p>
                   <div className="grid grid-cols-2 gap-2 text-sm">
                     {["Inherited property", "Needs repairs", "Behind on taxes", "Problem tenants", "Vacant", "Relocating", "Life change"].map((label) => (
@@ -125,7 +145,7 @@ export default function NijackPropertySolutionsWebsite() {
             <div className="text-center py-12">
               <div className="text-6xl mb-4 text-[#D4AF37]">✅</div>
               <h2 className="text-3xl font-bold mb-2 text-[#003366]">Property Details Received</h2>
-              <p className="text-gray-600">Our team will review your property and contact you shortly.</p>
+              <p className="text-gray-600 font-medium">I've received your info. I'll review it and reach out shortly!</p>
             </div>
           )}
         </div>
@@ -175,9 +195,9 @@ export default function NijackPropertySolutionsWebsite() {
              <p className="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.4em] mt-1">Real Estate Investment Solutions</p>
           </div>
           
-          <div className="flex flex-col md:flex-row justify-center gap-8 mb-10 text-sm">
-            <a href="tel:3303319070" className="font-bold hover:text-[#D4AF37] transition">📞 330-331-9070</a>
-            <a href="mailto:info@nijackpropertysolutions.com" className="font-bold hover:text-[#D4AF37] transition">✉️ info@nijackpropertysolutions.com</a>
+          <div className="flex flex-col md:flex-row justify-center gap-8 mb-10 text-sm font-bold">
+            <a href="tel:3303319070" className="hover:text-[#D4AF37] transition">📞 330-331-9070</a>
+            <a href="mailto:info@nijackpropertysolutions.com" className="hover:text-[#D4AF37] transition">✉️ info@nijackpropertysolutions.com</a>
           </div>
 
           <div className="border-t border-white/10 pt-8 mt-8">
