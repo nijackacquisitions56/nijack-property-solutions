@@ -113,10 +113,11 @@ export default function NijackPropertySolutionsWebsite() {
                   </div>
                 </div>
 
+                {/* PROPERTY SITUATION - LEVELED OUT GRID */}
                 <div className="p-4 bg-gray-50 rounded-xl border border-gray-100">
                   <p className="font-bold mb-3 text-[#003366]">Property Situation:</p>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
-                    {["Probate / Inherited", "Pre-foreclosure", "Code Violations", "Needs Repairs", "Problem Tenants", "Vacant", "Relocating", "Taxes Behind"].map((label) => (
+                    {["Probate / Inherited", "Pre-foreclosure", "Code Violations", "Needs Repairs", "Problem Tenants", "Vacant", "Relocating", "Taxes Behind", "Other"].map((label) => (
                       <label key={label} className="flex gap-2 items-center cursor-pointer">
                         <input type="checkbox" className="accent-[#003366]" /> {label}
                       </label>
@@ -137,7 +138,7 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
       </section>
 
-      {/* HOW IT WORKS - MOVED UP TIGHTER */}
+      {/* HOW IT WORKS */}
       <section id="how" className="py-8 bg-white">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h2 className="text-3xl font-black mb-8 text-[#003366]">Your Simple 4-Step Process</h2>
@@ -153,7 +154,7 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
       </section>
 
-      {/* FAQ - MOVED UP TIGHTER */}
+      {/* FAQ */}
       <section id="faq" className="bg-gray-50 py-12">
         <div className="mx-auto max-w-4xl px-6">
           <h2 className="text-3xl font-black text-center mb-10 text-[#003366]">Common Questions</h2>
@@ -168,7 +169,7 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
       </section>
 
-      {/* FOOTER - MOVED UP TIGHTER */}
+      {/* FOOTER */}
       <footer className="bg-[#001122] text-white py-12 text-center border-t-8 border-[#D4AF37]">
         <div className="mx-auto max-w-4xl px-6 text-center">
            <div className="h-10 w-10 bg-[#003366] rounded-xl flex items-center justify-center mx-auto mb-3 border border-white/10"><span className="text-white font-black text-xl">N</span></div>
