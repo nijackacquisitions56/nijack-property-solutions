@@ -67,9 +67,14 @@ export default function NijackPropertySolutionsWebsite() {
           We Buy Houses Cash.<br/><span className="text-emerald-700 underline decoration-emerald-200">Any Condition. No Hassle.</span>
         </h1>
 
-        <p className="mb-10 text-xl text-gray-600 max-w-2xl leading-relaxed">
-          Skip the repairs, the agents, and the months of waiting. See if your property qualifies for a fair, no-obligation cash offer.
-        </p>
+        <div className="max-w-2xl mb-10">
+          <p className="text-xl text-gray-600 leading-relaxed mb-2">
+            Skip the repairs, the agents, and the months of waiting. See if your property qualifies for a fair, no-obligation cash offer.
+          </p>
+          <p className="text-emerald-800 font-bold text-lg leading-relaxed">
+            We specialize in homes that need repairs, inherited properties, vacant houses, and difficult situations.
+          </p>
+        </div>
 
         <div className="mb-16 rounded-3xl bg-white p-8 border-2 border-emerald-100 shadow-xl w-full max-w-md">
           <p className="text-emerald-900 font-bold text-sm mb-1 uppercase tracking-widest text-center">Speak With Our Acquisition Team</p>
@@ -220,7 +225,7 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
       </section>
 
-      {/* FOOTER - CLICKABLE PRIVACY LINK ADDED */}
+      {/* FOOTER */}
       <footer className="bg-white py-16 border-t border-gray-100">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <div className="font-black text-2xl text-emerald-900 mb-2 text-center">Nijack Property Solutions</div>
