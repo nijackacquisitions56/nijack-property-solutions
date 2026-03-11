@@ -29,17 +29,21 @@ export default function NijackPropertySolutionsWebsite() {
       <header className="sticky top-0 z-50 border-b bg-white shadow-sm">
         <div className="mx-auto max-w-7xl px-6 py-4 flex justify-between items-center">
           
-          {/* CSS LOGO (No Image File Needed) */}
-          <div className="flex items-center gap-3">
-            <div className="relative h-10 w-10 bg-[#003366] rounded-lg flex items-center justify-center shadow-md">
-              <div className="absolute -top-1 -right-1 text-[#D4AF37] text-xl">↗</div>
-              <span className="text-white font-black text-xl">N</span>
+          {/* REFINED CSS LOGO */}
+          <div className="flex items-center gap-3 group">
+            <div className="relative">
+              <div className="h-11 w-11 bg-[#003366] rounded-xl flex items-center justify-center shadow-lg transform group-hover:rotate-3 transition-transform">
+                <span className="text-white font-black text-2xl tracking-tighter">N</span>
+              </div>
+              <div className="absolute -top-1 -right-1 bg-white rounded-md shadow-sm p-0.5 border border-gray-100">
+                <div className="text-[#D4AF37] text-xs font-bold leading-none">↗</div>
+              </div>
             </div>
             <div>
-              <div className="font-extrabold text-xl text-[#003366] leading-tight">
+              <div className="font-black text-xl text-[#003366] leading-tight flex items-center gap-1 uppercase">
                 NIJACK <span className="text-[#D4AF37]">PROPERTY</span>
               </div>
-              <div className="text-[10px] text-gray-500 uppercase tracking-[0.2em] font-bold">
+              <div className="text-[11px] text-gray-400 uppercase tracking-[0.3em] font-bold">
                 Solutions
               </div>
             </div>
@@ -53,7 +57,7 @@ export default function NijackPropertySolutionsWebsite() {
                 Get Offer
               </a>
             </nav>
-            <a href="tel:3303319070" className="font-bold text-[#003366] text-lg hidden sm:block">
+            <a href="tel:3303319070" className="font-bold text-[#003366] text-lg hidden lg:block">
               📞 330-331-9070
             </a>
           </div>
@@ -61,13 +65,13 @@ export default function NijackPropertySolutionsWebsite() {
       </header>
 
       {/* HERO SECTION */}
-      <section className="bg-gradient-to-br from-[#003366] via-[#002244] to-[#001122] text-white py-20 border-b-4 border-[#D4AF37]">
+      <section className="bg-gradient-to-br from-[#003366] via-[#002244] to-[#001122] text-white py-24 border-b-4 border-[#D4AF37]">
         <div className="mx-auto max-w-5xl px-6 text-center">
           <div className="mb-6 inline-flex rounded-full bg-[#D4AF37]/20 border border-[#D4AF37] px-4 py-1 text-[#D4AF37] text-sm font-bold">
             Serving Homeowners in Ohio & Nationwide
           </div>
           <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
-            Sell Your House <span className="text-[#D4AF37]">Fast</span> For Cash
+            Sell Your House <span className="text-[#D4AF37]">FAST</span> For <span className="text-[#D4AF37]">CASH</span>
           </h1>
           <p className="text-xl opacity-90 font-medium">
             No Repairs. No Commissions. Flexible Closing.
@@ -75,7 +79,7 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
       </section>
 
-      {/* LEAD FORM */}
+      {/* LEAD FORM SECTION */}
       <section id="contact" className="mx-auto max-w-3xl px-6 -mt-12 pb-16">
         <div className="bg-white rounded-3xl p-10 shadow-2xl border border-gray-100">
           {!submitted ? (
@@ -110,7 +114,7 @@ export default function NijackPropertySolutionsWebsite() {
                   </div>
                 </div>
 
-                <textarea placeholder="Tell us about the property..." className="rounded-xl border border-gray-200 p-4 w-full h-32 focus:ring-2 focus:ring-[#D4AF37] outline-none" />
+                <textarea placeholder="Tell us about the property (repairs, tenants, taxes, etc.)" className="rounded-xl border border-gray-200 p-4 w-full h-32 focus:ring-2 focus:ring-[#D4AF37] outline-none" />
 
                 <button type="submit" className="w-full rounded-xl bg-[#003366] py-5 font-black text-white text-xl shadow-lg hover:bg-[#002244] transition-all transform hover:-translate-y-1">
                   Get My Cash Offer
@@ -119,9 +123,9 @@ export default function NijackPropertySolutionsWebsite() {
             </>
           ) : (
             <div className="text-center py-12">
-              <div className="text-6xl mb-4">🏠</div>
+              <div className="text-6xl mb-4 text-[#D4AF37]">✅</div>
               <h2 className="text-3xl font-bold mb-2 text-[#003366]">Property Details Received</h2>
-              <p className="text-gray-600">Our team will review your data and contact you shortly.</p>
+              <p className="text-gray-600">Our team will review your property and contact you shortly.</p>
             </div>
           )}
         </div>
@@ -163,17 +167,30 @@ export default function NijackPropertySolutionsWebsite() {
       {/* FOOTER */}
       <footer className="bg-[#001122] text-white py-16 text-center border-t-8 border-[#D4AF37]">
         <div className="mx-auto max-w-4xl px-6">
-          <div className="font-black text-2xl mb-2 tracking-tighter">NIJACK PROPERTY SOLUTIONS</div>
-          <p className="text-[#D4AF37] text-sm font-bold uppercase tracking-widest mb-8">Serving Homeowners Nationwide</p>
+          <div className="flex flex-col items-center mb-6">
+             <div className="h-12 w-12 bg-[#003366] rounded-xl flex items-center justify-center shadow-lg border border-white/10 mb-4">
+                <span className="text-white font-black text-2xl">N</span>
+             </div>
+             <div className="font-black text-2xl tracking-tighter">NIJACK PROPERTY SOLUTIONS</div>
+             <p className="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.4em] mt-1">Real Estate Investment Solutions</p>
+          </div>
           
-          <div className="flex flex-col md:flex-row justify-center gap-8 mb-12">
-            <a href="tel:3303319070" className="text-lg font-bold">📞 330-331-9070</a>
-            <a href="mailto:info@nijackpropertysolutions.com" className="text-lg font-bold">✉️ info@nijackpropertysolutions.com</a>
+          <div className="flex flex-col md:flex-row justify-center gap-8 mb-10 text-sm">
+            <a href="tel:3303319070" className="font-bold hover:text-[#D4AF37] transition">📞 330-331-9070</a>
+            <a href="mailto:info@nijackpropertysolutions.com" className="font-bold hover:text-[#D4AF37] transition">✉️ info@nijackpropertysolutions.com</a>
           </div>
 
-          <p className="text-xs opacity-40 max-w-2xl mx-auto leading-loose">
-            Nijack Property Solutions is a real estate investment company. We purchase properties directly and work with a network of partners to provide solutions for homeowners. © {new Date().getFullYear()}
-          </p>
+          <div className="border-t border-white/10 pt-8 mt-8">
+            <h4 className="text-[#D4AF37] font-bold text-lg mb-4">Privacy Policy</h4>
+            <p className="text-xs opacity-50 max-w-2xl mx-auto leading-loose mb-8">
+              Information submitted through this website is used only to evaluate the property and respond to your inquiry. 
+              We do not sell your personal information. Nijack Property Solutions is a real estate investment company. 
+              We may purchase properties directly or assign contracts to investment partners.
+            </p>
+            <p className="text-[10px] opacity-30 uppercase tracking-widest">
+              © {new Date().getFullYear()} Nijack Property Solutions
+            </p>
+          </div>
         </div>
       </footer>
     </div>
