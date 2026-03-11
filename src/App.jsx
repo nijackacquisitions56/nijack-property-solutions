@@ -25,7 +25,7 @@ const faq = [
 
 return (
 
-<div className="min-h-screen bg-gradient-to-br from-white to-emerald-50 text-gray-800 font-sans">
+<div className="min-h-screen bg-white text-gray-800 font-sans">
 
 {/* HEADER */}
 
@@ -74,33 +74,37 @@ className="font-bold text-emerald-700 text-lg"
 
 {/* HERO */}
 
-<section className="mx-auto max-w-5xl px-6 py-14 text-center">
+<section className="bg-gradient-to-r from-emerald-700 to-emerald-600 text-white py-14">
 
-<div className="mb-4 inline-flex rounded-full bg-emerald-100 px-4 py-1 text-emerald-700 text-sm font-bold">
+<div className="mx-auto max-w-5xl px-6 text-center">
+
+<div className="mb-4 inline-flex rounded-full bg-white/20 px-4 py-1 text-white text-sm font-bold">
 
 Serving Homeowners in Ohio & Nationwide
 
 </div>
 
-<h1 className="text-4xl md:text-6xl font-black mb-6">
+<h1 className="text-4xl md:text-6xl font-black mb-4">
 
 Sell Your House Fast For Cash
 
 </h1>
 
-<p className="text-xl text-gray-600 mb-10">
+<p className="text-xl opacity-90">
 
 No Repairs. No Commissions. Flexible Closing.
 
 </p>
 
+</div>
+
 </section>
 
 {/* FORM */}
 
-<section id="contact" className="mx-auto max-w-3xl px-6 pb-24">
+<section id="contact" className="mx-auto max-w-3xl px-6 py-16">
 
-<div className="bg-white rounded-3xl p-10 shadow-xl border">
+<div className="bg-white rounded-3xl p-10 shadow-2xl border border-emerald-100">
 
 {!submitted ? (
 
@@ -157,7 +161,7 @@ className="rounded-xl border p-4 w-full"
 
 <button
 type="submit"
-className="w-full rounded-xl bg-emerald-700 py-5 font-bold text-white text-lg hover:bg-emerald-800">
+className="w-full rounded-xl bg-emerald-700 py-5 font-black text-white text-lg shadow-lg hover:bg-emerald-800 transition">
 
 Get My Cash Offer
 
@@ -197,20 +201,20 @@ Our team will review your property and contact you shortly.
 
 {/* HOW IT WORKS */}
 
-<section id="how" className="bg-white py-24">
+<section id="how" className="bg-white py-20">
 
 <div className="mx-auto max-w-6xl px-6 text-center">
 
-<h2 className="text-4xl font-black mb-16">
+<h2 className="text-4xl font-black mb-14">
 How It Works
 </h2>
 
 <div className="grid md:grid-cols-4 gap-10">
 
 {steps.map((step,i)=>(
-<div key={i}>
+<div key={i} className="bg-emerald-50 rounded-xl p-6">
 
-<div className="text-emerald-700 font-black text-xl mb-2">
+<div className="h-12 w-12 rounded-full bg-emerald-700 text-white flex items-center justify-center font-black mx-auto mb-4">
 {i+1}
 </div>
 
@@ -233,7 +237,7 @@ How It Works
 
 {/* FAQ */}
 
-<section id="faq" className="bg-emerald-50 py-24">
+<section id="faq" className="bg-emerald-50 py-20">
 
 <div className="mx-auto max-w-4xl px-6">
 
