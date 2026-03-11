@@ -27,8 +27,8 @@ export default function NijackPropertySolutionsWebsite() {
       
       {/* HEADER */}
       <header className="sticky top-0 z-50 border-b bg-white shadow-sm">
-        <div className="mx-auto max-w-7xl px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-3 group">
+        <div className="mx-auto max-w-7xl px-6 py-4 flex justify-between items-center text-center sm:text-left">
+          <div className="flex items-center gap-3 group mx-auto sm:mx-0">
             <div className="relative">
               <div className="h-11 w-11 bg-[#003366] rounded-xl flex items-center justify-center shadow-lg transform group-hover:rotate-3 transition-transform">
                 <span className="text-white font-black text-2xl tracking-tighter">N</span>
@@ -44,19 +44,19 @@ export default function NijackPropertySolutionsWebsite() {
               <div className="text-[11px] text-gray-400 uppercase tracking-[0.3em] font-bold">Solutions</div>
             </div>
           </div>
-          <div className="flex items-center gap-6">
-            <nav className="hidden md:flex gap-8 text-sm font-bold text-[#003366]">
+          <div className="hidden md:flex items-center gap-6">
+            <nav className="flex gap-8 text-sm font-bold text-[#003366]">
               <a href="#how" className="hover:text-[#D4AF37] transition">How It Works</a>
               <a href="#faq" className="hover:text-[#D4AF37] transition">FAQ</a>
               <a href="#contact" className="bg-[#D4AF37] text-white px-6 py-2 rounded-full hover:bg-[#B8860B] transition shadow-lg">Get Offer</a>
             </nav>
-            <a href="tel:3303319070" className="font-bold text-[#003366] text-lg hidden lg:block">📞 330-331-9070</a>
+            <a href="tel:3303319070" className="font-bold text-[#003366] text-lg lg:block">📞 330-331-9070</a>
           </div>
         </div>
       </header>
 
       {/* HERO SECTION */}
-      <section className="bg-gradient-to-br from-[#003366] via-[#002244] to-[#001122] text-white py-24 border-b-4 border-[#D4AF37]">
+      <section className="bg-gradient-to-br from-[#003366] via-[#002244] to-[#001122] text-white py-20 border-b-4 border-[#D4AF37]">
         <div className="mx-auto max-w-5xl px-6 text-center">
           <div className="mb-6 inline-flex rounded-full bg-[#D4AF37]/20 border border-[#D4AF37] px-4 py-1 text-[#D4AF37] text-sm font-bold tracking-wide uppercase">
             Locally Owned & Mission Driven
@@ -84,8 +84,8 @@ export default function NijackPropertySolutionsWebsite() {
       </section>
 
       {/* LEAD FORM SECTION */}
-      <section id="contact" className="mx-auto max-w-3xl px-6 -mt-12 pb-16">
-        <div className="bg-white rounded-3xl p-10 shadow-2xl border border-gray-100">
+      <section id="contact" className="mx-auto max-w-3xl px-6 -mt-12 pb-8">
+        <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl border border-gray-100">
           {!submitted ? (
             <>
               <h2 className="text-3xl font-bold text-center mb-8 text-[#003366]">Request Your Cash Offer</h2>
@@ -113,9 +113,8 @@ export default function NijackPropertySolutionsWebsite() {
                   </div>
                 </div>
 
-                {/* UPDATED SITUATIONS */}
                 <div className="p-4 bg-gray-50 rounded-xl border border-gray-100">
-                  <p className="font-bold mb-3 text-[#003366]">Select any that apply:</p>
+                  <p className="font-bold mb-3 text-[#003366]">Property Situation:</p>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
                     {["Probate / Inherited", "Pre-foreclosure", "Code Violations", "Needs Repairs", "Problem Tenants", "Vacant", "Relocating", "Taxes Behind"].map((label) => (
                       <label key={label} className="flex gap-2 items-center cursor-pointer">
@@ -124,7 +123,7 @@ export default function NijackPropertySolutionsWebsite() {
                     ))}
                   </div>
                 </div>
-                <textarea placeholder="Tell us more about the property's situation..." className="rounded-xl border border-gray-200 p-4 w-full h-32 focus:ring-2 focus:ring-[#D4AF37] outline-none" />
+                <textarea placeholder="Tell us more about the property's situation..." className="rounded-xl border border-gray-200 p-4 w-full h-24 focus:ring-2 focus:ring-[#D4AF37] outline-none" />
                 <button type="submit" className="w-full rounded-xl bg-[#003366] py-5 font-black text-white text-xl shadow-lg hover:bg-[#002244] transition-all transform hover:-translate-y-1">Get My Cash Offer</button>
               </form>
             </>
@@ -138,15 +137,15 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section id="how" className="py-12 bg-white -mt-8">
+      {/* HOW IT WORKS - MOVED UP TIGHTER */}
+      <section id="how" className="py-8 bg-white">
         <div className="mx-auto max-w-6xl px-6 text-center">
-          <h2 className="text-3xl font-black mb-10 text-[#003366]">Your Simple 4-Step Process</h2>
-          <div className="grid md:grid-cols-4 gap-6">
+          <h2 className="text-3xl font-black mb-8 text-[#003366]">Your Simple 4-Step Process</h2>
+          <div className="grid md:grid-cols-4 gap-4">
             {steps.map((step, i) => (
               <div key={i} className="p-6 rounded-2xl bg-white border border-gray-100 shadow-md">
                 <div className="h-10 w-10 rounded-full bg-[#003366] text-white flex items-center justify-center text-lg font-black mx-auto mb-4">{i + 1}</div>
-                <h3 className="font-extrabold text-[#003366] mb-2">{step.title}</h3>
+                <h3 className="font-extrabold text-[#003366] mb-1">{step.title}</h3>
                 <p className="text-gray-500 text-xs leading-relaxed">{step.text}</p>
               </div>
             ))}
@@ -154,32 +153,34 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section id="faq" className="bg-gray-50 py-24">
+      {/* FAQ - MOVED UP TIGHTER */}
+      <section id="faq" className="bg-gray-50 py-12">
         <div className="mx-auto max-w-4xl px-6">
-          <h2 className="text-4xl font-black text-center mb-16 text-[#003366]">Common Questions</h2>
-          {faq.map((item, i) => (
-            <div key={i} className="mb-4 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-              <h3 className="font-bold text-[#003366] mb-2 flex items-center gap-2"><span className="text-[#D4AF37]">Q.</span> {item.q}</h3>
-              <p className="text-gray-600 text-sm pl-6">{item.a}</p>
-            </div>
-          ))}
+          <h2 className="text-3xl font-black text-center mb-10 text-[#003366]">Common Questions</h2>
+          <div className="space-y-3">
+            {faq.map((item, i) => (
+              <div key={i} className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+                <h3 className="font-bold text-[#003366] mb-1 flex items-center gap-2 text-sm md:text-base"><span className="text-[#D4AF37]">Q.</span> {item.q}</h3>
+                <p className="text-gray-600 text-xs md:text-sm pl-6">{item.a}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="bg-[#001122] text-white py-16 text-center border-t-8 border-[#D4AF37]">
+      {/* FOOTER - MOVED UP TIGHTER */}
+      <footer className="bg-[#001122] text-white py-12 text-center border-t-8 border-[#D4AF37]">
         <div className="mx-auto max-w-4xl px-6 text-center">
-           <div className="h-10 w-10 bg-[#003366] rounded-xl flex items-center justify-center mx-auto mb-4 border border-white/10"><span className="text-white font-black text-xl">N</span></div>
+           <div className="h-10 w-10 bg-[#003366] rounded-xl flex items-center justify-center mx-auto mb-3 border border-white/10"><span className="text-white font-black text-xl">N</span></div>
            <div className="font-black text-2xl tracking-tighter uppercase">NIJACK PROPERTY SOLUTIONS</div>
-           <p className="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.4em] mb-8">Real Estate Investment Solutions</p>
-           <div className="flex justify-center gap-8 mb-10 text-sm font-bold">
-            <a href="tel:3303319070">📞 330-331-9070</a>
-            <a href="mailto:info@nijackpropertysolutions.com">✉️ info@nijackpropertysolutions.com</a>
+           <p className="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.4em] mb-6">Real Estate Investment Solutions</p>
+           <div className="flex justify-center gap-8 mb-8 text-sm font-bold">
+            <a href="tel:3303319070" className="hover:text-[#D4AF37] transition">📞 330-331-9070</a>
+            <a href="mailto:info@nijackpropertysolutions.com" className="hover:text-[#D4AF37] transition">✉️ Email Us</a>
           </div>
-          <div className="border-t border-white/10 pt-8 mt-8">
-            <h4 className="text-[#D4AF37] font-bold text-lg mb-4">Privacy Policy</h4>
-            <p className="text-xs opacity-50 max-w-2xl mx-auto leading-loose mb-4">Information submitted is used only to evaluate the property. We do not sell your personal information. Nijack Property Solutions is a real estate investment company.</p>
+          <div className="border-t border-white/10 pt-6">
+            <h4 className="text-[#D4AF37] font-bold text-base mb-2">Privacy Policy</h4>
+            <p className="text-[10px] opacity-50 max-w-2xl mx-auto leading-relaxed mb-4">Information submitted is used only to evaluate the property. We do not sell your personal information. Nijack Property Solutions is a real estate investment company.</p>
             <p className="text-[10px] opacity-30 tracking-widest uppercase">© {new Date().getFullYear()} Nijack Property Solutions</p>
           </div>
         </div>
