@@ -16,16 +16,16 @@ export default function NijackPropertySolutionsWebsite() {
   ];
 
   const faq = [
-    { q: "Do I need to make repairs before selling?", a: "No. We buy houses as-is." },
-    { q: "How fast can closing happen?", a: "Many closings happen within 14-21 days depending on title work." },
-    { q: "What areas do you buy in?", a: "We serve homeowners in Ohio and nationwide through our investor network." },
-    { q: "Are there commissions or fees?", a: "No commissions when we purchase the property." }
+    { q: "Do I need to make repairs before selling?", a: "No. We buy houses as-is in any condition." },
+    { q: "How fast can closing happen?", a: "Many closings happen within 14-21 days, depending on title work and your specific timeline." },
+    { q: "What areas do you buy in?", a: "We are based in Northeast Ohio, but we work with a network of trusted investment partners to provide solutions for homeowners nationwide." },
+    { q: "Are there commissions or fees?", a: "No. Since we are buying the property directly or through our partners, there are no realtor commissions or hidden fees." }
   ];
 
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans">
       
-      {/* HEADER - 10/10 LOCKED */}
+      {/* HEADER */}
       <header className="sticky top-0 z-50 border-b bg-white shadow-sm">
         <div className="mx-auto max-w-7xl px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3 group">
@@ -55,7 +55,7 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
       </header>
 
-      {/* HERO SECTION - NEW SWOOSHES & TAGLINE */}
+      {/* HERO SECTION */}
       <section className="bg-gradient-to-br from-[#003366] via-[#002244] to-[#001122] text-white py-24 border-b-4 border-[#D4AF37]">
         <div className="mx-auto max-w-5xl px-6 text-center">
           <div className="mb-6 inline-flex rounded-full bg-[#D4AF37]/20 border border-[#D4AF37] px-4 py-1 text-[#D4AF37] text-sm font-bold tracking-wide uppercase">
@@ -113,17 +113,18 @@ export default function NijackPropertySolutionsWebsite() {
                   </div>
                 </div>
 
+                {/* UPDATED SITUATIONS */}
                 <div className="p-4 bg-gray-50 rounded-xl border border-gray-100">
-                  <p className="font-bold mb-3 text-[#003366]">Situation?</p>
-                  <div className="grid grid-cols-2 gap-2 text-sm">
-                    {["Inherited", "Needs repairs", "Tax issues", "Tenants", "Vacant", "Relocating"].map((label) => (
+                  <p className="font-bold mb-3 text-[#003366]">Select any that apply:</p>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
+                    {["Probate / Inherited", "Pre-foreclosure", "Code Violations", "Needs Repairs", "Problem Tenants", "Vacant", "Relocating", "Taxes Behind"].map((label) => (
                       <label key={label} className="flex gap-2 items-center cursor-pointer">
                         <input type="checkbox" className="accent-[#003366]" /> {label}
                       </label>
                     ))}
                   </div>
                 </div>
-                <textarea placeholder="Property notes..." className="rounded-xl border border-gray-200 p-4 w-full h-32 focus:ring-2 focus:ring-[#D4AF37] outline-none" />
+                <textarea placeholder="Tell us more about the property's situation..." className="rounded-xl border border-gray-200 p-4 w-full h-32 focus:ring-2 focus:ring-[#D4AF37] outline-none" />
                 <button type="submit" className="w-full rounded-xl bg-[#003366] py-5 font-black text-white text-xl shadow-lg hover:bg-[#002244] transition-all transform hover:-translate-y-1">Get My Cash Offer</button>
               </form>
             </>
@@ -131,13 +132,13 @@ export default function NijackPropertySolutionsWebsite() {
             <div className="text-center py-12">
               <div className="text-6xl mb-4 text-[#D4AF37]">✅</div>
               <h2 className="text-3xl font-bold mb-2 text-[#003366]">Received!</h2>
-              <p className="text-gray-600 font-medium">I'll review it and reach out shortly!</p>
+              <p className="text-gray-600 font-medium">I'll review your property details and reach out shortly.</p>
             </div>
           )}
         </div>
       </section>
 
-      {/* HOW IT WORKS - TIGHTER SPACING */}
+      {/* HOW IT WORKS */}
       <section id="how" className="py-12 bg-white -mt-8">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h2 className="text-3xl font-black mb-10 text-[#003366]">Your Simple 4-Step Process</h2>
@@ -153,7 +154,7 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
       </section>
 
-      {/* FAQ & FOOTER REMAIN 10/10 LOCKED */}
+      {/* FAQ */}
       <section id="faq" className="bg-gray-50 py-24">
         <div className="mx-auto max-w-4xl px-6">
           <h2 className="text-4xl font-black text-center mb-16 text-[#003366]">Common Questions</h2>
@@ -166,6 +167,7 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
       </section>
 
+      {/* FOOTER */}
       <footer className="bg-[#001122] text-white py-16 text-center border-t-8 border-[#D4AF37]">
         <div className="mx-auto max-w-4xl px-6 text-center">
            <div className="h-10 w-10 bg-[#003366] rounded-xl flex items-center justify-center mx-auto mb-4 border border-white/10"><span className="text-white font-black text-xl">N</span></div>
@@ -177,7 +179,7 @@ export default function NijackPropertySolutionsWebsite() {
           </div>
           <div className="border-t border-white/10 pt-8 mt-8">
             <h4 className="text-[#D4AF37] font-bold text-lg mb-4">Privacy Policy</h4>
-            <p className="text-xs opacity-50 max-w-2xl mx-auto leading-loose mb-4">Information submitted is used only to evaluate the property. We do not sell your personal information.</p>
+            <p className="text-xs opacity-50 max-w-2xl mx-auto leading-loose mb-4">Information submitted is used only to evaluate the property. We do not sell your personal information. Nijack Property Solutions is a real estate investment company.</p>
             <p className="text-[10px] opacity-30 tracking-widest uppercase">© {new Date().getFullYear()} Nijack Property Solutions</p>
           </div>
         </div>
