@@ -45,9 +45,11 @@ Real Estate Investment Solutions
 
 </div>
 
+<div className="flex items-center gap-6">
+
 <nav className="hidden md:flex gap-6 text-sm font-bold text-emerald-900">
 
-<a href="#process">Process</a>
+<a href="#how">How It Works</a>
 
 <a href="#faq">FAQ</a>
 
@@ -56,6 +58,15 @@ Get Offer
 </a>
 
 </nav>
+
+<a
+href="tel:3303319070"
+className="font-bold text-emerald-700 text-lg"
+>
+📞 330-331-9070
+</a>
+
+</div>
 
 </div>
 
@@ -139,10 +150,13 @@ What best describes your situation?
 
 </div>
 
-<textarea placeholder="Tell us about the property (repairs, tenants, taxes, etc.)"
-className="rounded-xl border p-4 w-full"/>
+<textarea
+placeholder="Tell us about the property (repairs, tenants, taxes, etc.)"
+className="rounded-xl border p-4 w-full"
+/>
 
-<button type="submit"
+<button
+type="submit"
 className="w-full rounded-xl bg-emerald-700 py-5 font-bold text-white text-lg hover:bg-emerald-800">
 
 Get My Cash Offer
@@ -181,39 +195,14 @@ Our team will review your property and contact you shortly.
 
 </section>
 
-{/* PHONE */}
+{/* HOW IT WORKS */}
 
-<section className="text-center pb-20">
-
-<p className="text-sm uppercase text-gray-500 font-bold">
-
-Prefer to speak with someone?
-
-</p>
-
-<a href="tel:3303319070"
-className="text-4xl font-black text-emerald-700 block mt-2">
-
-330-331-9070
-
-</a>
-
-<p className="text-xs text-gray-400 mt-2 italic">
-Local Ohio Real Estate Investment Company
-</p>
-
-</section>
-
-{/* PROCESS */}
-
-<section id="process" className="bg-white py-24">
+<section id="how" className="bg-white py-24">
 
 <div className="mx-auto max-w-6xl px-6 text-center">
 
 <h2 className="text-4xl font-black mb-16">
-
-Our Simple 4-Step Process
-
+How It Works
 </h2>
 
 <div className="grid md:grid-cols-4 gap-10">
@@ -225,9 +214,13 @@ Our Simple 4-Step Process
 {i+1}
 </div>
 
-<h3 className="font-bold mb-2">{step.title}</h3>
+<h3 className="font-bold mb-2">
+{step.title}
+</h3>
 
-<p className="text-gray-600 text-sm">{step.text}</p>
+<p className="text-gray-600 text-sm">
+{step.text}
+</p>
 
 </div>
 ))}
@@ -245,13 +238,10 @@ Our Simple 4-Step Process
 <div className="mx-auto max-w-4xl px-6">
 
 <h2 className="text-4xl font-black text-center mb-16">
-
 Frequently Asked Questions
-
 </h2>
 
 {faq.map((item,i)=>(
-
 <div key={i} className="mb-6 bg-white p-6 rounded-xl shadow">
 
 <h3 className="font-bold text-emerald-900 mb-2">
@@ -263,7 +253,6 @@ Frequently Asked Questions
 </p>
 
 </div>
-
 ))}
 
 </div>
@@ -279,10 +268,8 @@ Privacy Policy
 </h2>
 
 <p className="text-sm text-gray-600 max-w-xl mx-auto">
-
 Information submitted through this website is used only to evaluate the
 property and respond to your inquiry. We do not sell your personal information.
-
 </p>
 
 </section>
@@ -299,25 +286,19 @@ Nijack Property Solutions
 Serving Homeowners in Ohio & Nationwide
 </p>
 
-<div className="flex flex-col md:flex-row justify-center items-center gap-6 text-sm font-bold text-emerald-800 mb-8">
+<div className="flex justify-center gap-6 text-sm font-bold text-emerald-800 mb-8">
 
 <a href="tel:3303319070">📞 330-331-9070</a>
 
-<span className="hidden md:block text-gray-300">|</span>
-
 <a href="mailto:info@nijackpropertysolutions.com">
-
 info@nijackpropertysolutions.com
-
 </a>
 
 </div>
 
 <p className="text-xs text-gray-400 max-w-xl mx-auto">
-
 Nijack Property Solutions is a real estate investment company. We may purchase
 properties directly or assign contracts to investment partners.
-
 </p>
 
 <p className="text-xs text-gray-400 mt-4">
@@ -329,5 +310,4 @@ properties directly or assign contracts to investment partners.
 </div>
 
 );
-
 }
