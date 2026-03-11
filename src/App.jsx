@@ -18,12 +18,12 @@ export default function NijackPropertySolutionsWebsite() {
   const steps = [
     { title: "Share The Details", text: "Tell us about the property and your situation." },
     { title: "Property Review", text: "We review market data and evaluate if the property fits our buying criteria." },
-    { title: "Receive Your Offer", text: "If it's a good fit we present a clear, no-obligation cash offer." },
+    { title: "Receive Your Offer", text: "If it fits our buying criteria we present a clear, no-obligation cash offer." },
     { title: "Choose Your Closing", text: "Close through a local title company on a date that works for you." }
   ];
 
   const faq = [
-    { q: "Do I need to make repairs before selling?", a: "No. We buy houses in 'as-is' condition. You don't need to repair or clean anything." },
+    { q: "Do I need to make repairs before selling?", a: "No. We buy houses in 'as-is' condition. You do not need to repair or clean anything." },
     { q: "How fast can closing happen?", a: "Many closings happen within 14-21 days depending on the property and title work." },
     { q: "What areas do you buy in?", a: "We focus primarily in Ohio and work with investment partners in select markets nationwide." },
     { q: "Are there commissions or fees?", a: "No agent commissions. If we purchase the property there are no traditional listing fees." }
@@ -47,10 +47,15 @@ export default function NijackPropertySolutionsWebsite() {
       {/* HEADER */}
       <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+
           <div className="flex items-center gap-3">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-700 text-white font-bold text-xl">🏠</div>
+
             <div>
-              <div className="font-bold text-lg text-emerald-900">Nijack Property Solutions</div>
+              <div className="font-bold text-lg text-emerald-900">
+                Nijack Property Solutions
+              </div>
+
               <div className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold">
                 Real Estate Investment Solutions
               </div>
@@ -65,8 +70,10 @@ export default function NijackPropertySolutionsWebsite() {
               Get Offer
             </a>
           </nav>
+
         </div>
       </header>
+
 
       {/* HERO */}
       <section className="mx-auto max-w-7xl px-6 py-16 text-center">
@@ -84,10 +91,11 @@ export default function NijackPropertySolutionsWebsite() {
         </p>
 
         <p className="text-emerald-800 font-bold mb-10">
-          We help homeowners sell quickly — even if the house needs repairs or has difficult circumstances.
+          Even if your property needs repairs or has difficult circumstances.
         </p>
 
         <div className="mb-10 rounded-3xl bg-white p-8 border shadow-xl w-full max-w-md mx-auto">
+
           <p className="text-emerald-900 font-bold text-sm uppercase tracking-widest">
             Speak With Our Acquisition Team
           </p>
@@ -99,19 +107,23 @@ export default function NijackPropertySolutionsWebsite() {
           <p className="text-xs text-gray-400 mt-2 italic">
             Local Ohio Based Investment Company
           </p>
+
         </div>
+
       </section>
 
-      {/* FORM */}
+
+      {/* CONTACT FORM */}
       <section id="contact" className="mx-auto max-w-3xl px-6 pb-24">
 
         <div className="rounded-3xl bg-white p-8 md:p-12 shadow-2xl border">
 
           {!submitted ? (
             <>
+
               <div className="text-center mb-10">
                 <h2 className="text-3xl font-bold">Request Your Cash Offer</h2>
-                <p className="text-gray-500 mt-2">No Obligations</p>
+                <p className="text-gray-500 mt-2">No obligations</p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-5">
@@ -152,11 +164,11 @@ export default function NijackPropertySolutionsWebsite() {
                 </button>
 
                 <p className="text-xs text-gray-400 text-center">
-                  By submitting you consent to be contacted by Nijack Property Solutions
-                  regarding your property.
+                  By submitting you consent to be contacted by Nijack Property Solutions regarding your property.
                 </p>
 
               </form>
+
             </>
           ) : (
 
@@ -169,7 +181,7 @@ export default function NijackPropertySolutionsWebsite() {
               </h2>
 
               <p className="text-gray-600">
-                We will review the information and contact you shortly.
+                Our team will review your property and contact you shortly.
               </p>
 
             </div>
@@ -179,6 +191,7 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
 
       </section>
+
 
       {/* HOW IT WORKS */}
       <section id="how" className="bg-white py-24">
@@ -217,6 +230,67 @@ export default function NijackPropertySolutionsWebsite() {
 
       </section>
 
+
+      {/* BENEFITS */}
+      <section className="bg-emerald-50 py-24">
+
+        <div className="mx-auto max-w-7xl px-6 text-center">
+
+          <h2 className="text-4xl font-black mb-16">
+            Why Sellers Work With Us
+          </h2>
+
+          <div className="grid md:grid-cols-4 gap-8">
+
+            {benefits.map((item, i) => (
+
+              <div key={i} className="bg-white p-6 rounded-xl shadow">
+
+                <h3 className="font-bold text-emerald-900 mb-2">
+                  {item.title}
+                </h3>
+
+                <p className="text-gray-600 text-sm">
+                  {item.text}
+                </p>
+
+              </div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* SITUATIONS */}
+      <section className="bg-emerald-800 py-24 text-white">
+
+        <div className="mx-auto max-w-5xl px-6 text-center">
+
+          <h2 className="text-4xl font-black mb-12">
+            Common Situations We Help With
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+            {situations.map((s, i) => (
+
+              <div key={i} className="border border-white/20 p-4 rounded-lg text-sm">
+                {s}
+              </div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
       {/* ABOUT */}
       <section id="about" className="bg-white py-24">
 
@@ -227,16 +301,16 @@ export default function NijackPropertySolutionsWebsite() {
           </h2>
 
           <p className="text-gray-600 text-lg leading-relaxed">
-            Nijack Property Solutions is a real estate investment company
-            based in Northeast Ohio. We purchase properties directly and
-            also work with a network of investment partners to help
-            homeowners find solutions when selling a property quickly
-            makes the most sense.
+            Nijack Property Solutions is a real estate investment company based
+            in Northeast Ohio. We purchase properties directly and also work
+            with a trusted network of investment partners to help homeowners
+            find solutions when selling quickly makes the most sense.
           </p>
 
         </div>
 
       </section>
+
 
       {/* FAQ */}
       <section id="faq" className="bg-emerald-50 py-24">
@@ -267,6 +341,42 @@ export default function NijackPropertySolutionsWebsite() {
 
       </section>
 
+
+      {/* PRIVACY POLICY */}
+      <section id="privacy" className="bg-stone-50 py-16 border-t">
+
+        <div className="mx-auto max-w-4xl px-6 text-center">
+
+          <h2 className="text-2xl font-bold mb-8 uppercase tracking-widest">
+            Privacy Policy
+          </h2>
+
+          <div className="space-y-4 text-sm text-gray-600 max-w-2xl mx-auto">
+
+            <p>
+              Nijack Property Solutions respects your privacy. Information
+              submitted through this website is used only to evaluate the
+              property and respond to your inquiry.
+            </p>
+
+            <p>
+              Property information may be reviewed internally or shared with
+              trusted real estate investment partners for evaluation purposes.
+              We do not sell your personal contact information.
+            </p>
+
+            <p>
+              By submitting your information you consent to be contacted
+              regarding your property inquiry.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
       {/* FOOTER */}
       <footer className="bg-white py-12 border-t text-center">
 
@@ -277,6 +387,14 @@ export default function NijackPropertySolutionsWebsite() {
         <p className="text-gray-500 text-sm mb-4">
           Ohio Real Estate Investment Company
         </p>
+
+        <div className="flex justify-center gap-6 text-sm mb-6">
+
+          <a href="#how">Process</a>
+          <a href="#faq">FAQ</a>
+          <a href="#privacy">Privacy Policy</a>
+
+        </div>
 
         <p className="text-xs text-gray-400 max-w-xl mx-auto">
           Nijack Property Solutions is a real estate investment company.
