@@ -90,12 +90,21 @@ export default function NijackPropertySolutionsWebsite() {
           {!submitted ? (
             <>
               <h2 className="text-3xl font-bold text-center mb-8 text-[#003366]">Request Your Cash Offer</h2>
-              <form 
-                action="https://formspree.io/f/xaqpozbn" 
-                method="POST" 
-                data-netlify="true"
-                onSubmit={handleSubmit} 
-                className="space-y-5"
+              <form
+  action="https://formspree.io/f/xaqpozbn"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="nicole@nijackpropertysolutions.com" name="nicole@nicole@nijackpropertysolutions.com">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
               >
                 <input type="hidden" name="form-name" value="contact-leads" />
                 <div className="grid md:grid-cols-2 gap-5">
