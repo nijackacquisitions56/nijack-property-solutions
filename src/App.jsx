@@ -202,4 +202,13 @@ export default function NijackPropertySolutionsWebsite() {
             <h4 className="text-[#D4AF37] font-black text-lg mb-4 uppercase tracking-widest">Privacy Policy</h4>
             <div className="space-y-4 text-sm text-gray-300 leading-relaxed">
               <p>At <span className="text-white font-bold">Nijack Property Solutions</span>, we value your privacy. We collect your contact and property information solely to provide a cash offer. Your data is protected and will <span className="text-[#D4AF37] font-bold underline">NEVER</span> be sold to third-party telemarketers.</p>
-              <p className="italic opacity-60">We are a real estate investment firm based in Cuyahoga Falls,
+              <p className="italic opacity-60">We are a real estate investment firm based in Cuyahoga Falls, Ohio. We are not real estate agents and do not charge commissions.</p>
+            </div>
+          </div>
+
+          <p className="text-[10px] opacity-30 uppercase tracking-[0.3em]">© {new Date().getFullYear()} Nijack Property Solutions</p>
+        </div>
+      </footer>
+    </div>
+  );
+}
