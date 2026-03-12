@@ -91,7 +91,7 @@ export default function NijackPropertySolutionsWebsite() {
             <>
               <h2 className="text-3xl font-bold text-center mb-8 text-[#003366]">Request Your Cash Offer</h2>
               <form 
-                name="contact-leads" 
+                action="https://formspree.io/f/xaqpozbn" 
                 method="POST" 
                 data-netlify="true"
                 onSubmit={handleSubmit} 
