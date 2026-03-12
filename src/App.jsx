@@ -66,12 +66,12 @@ export default function NijackPropertySolutionsWebsite() {
               <a href="#how" className="hover:text-[#D4AF37] transition">How It Works</a>
               <a href="#faq" className="hover:text-[#D4AF37] transition">FAQ</a>
             </nav>
-            <a href="tel:3303319070" className="font-bold text-[#003366] text-lg">📞 330-331-9070</a>
+            <a href="tel:3303319070" className="font-bold text-[#003366] text-lg underline decoration-[#D4AF37] decoration-2">📞 330-331-9070</a>
           </div>
         </div>
       </header>
 
-      {/* HERO SECTION WITH SWOOSHES */}
+      {/* HERO SECTION */}
       <section className="bg-[#003366] text-white py-16 border-b-4 border-[#D4AF37]">
         <div className="mx-auto max-w-5xl px-6 text-center">
           <h1 className="text-4xl md:text-7xl font-black mb-6 tracking-tight leading-tight">
@@ -102,19 +102,24 @@ export default function NijackPropertySolutionsWebsite() {
           {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-5">
               <input type="hidden" name="_subject" value="New Seller Lead - Nijack Property Solutions" />
-              <input type="text" name="_gotcha" style={{display:"none"}} />
+              <input type="text" name="_gotcha" className="hidden" />
 
-              <h2 className="text-2xl font-bold text-center text-[#003366]">Get Your Offer</h2>
+              <h2 className="text-2xl font-bold text-center text-[#003366]">Get Your No-Obligation Offer</h2>
               
               <div className="grid md:grid-cols-2 gap-4">
-                <input name="Full Name" required placeholder="Full Name" className="rounded-xl border border-gray-200 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none" />
-                <input name="Phone" required type="tel" placeholder="Phone Number" className="rounded-xl border border-gray-200 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none" />
+                <input name="full_name" required placeholder="Full Name" className="rounded-xl border border-gray-200 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none" />
+                <input name="phone" required type="tel" placeholder="Phone Number" className="rounded-xl border border-gray-200 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none" />
               </div>
-              <input name="Property Address" required placeholder="Property Address" className="rounded-xl border border-gray-200 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none" />
-              <input name="Asking Price" placeholder="What price are you hoping to get?" className="rounded-xl border border-gray-200 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none" />
+              
+              <div className="grid md:grid-cols-2 gap-4">
+                <input name="property_address" required placeholder="Property Address" className="rounded-xl border border-gray-200 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none" />
+                <input name="email" type="email" placeholder="Email Address (Optional)" className="rounded-xl border border-gray-200 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none" />
+              </div>
+              
+              <input name="asking_price" placeholder="What price are you hoping to get?" className="rounded-xl border border-gray-200 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none" />
 
               <div className="relative">
-                <select name="Timeline" required className="rounded-xl border-2 border-gray-100 p-4 pr-12 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none bg-white font-bold text-[#003366] appearance-none cursor-pointer text-sm">
+                <select name="timeline" required className="rounded-xl border-2 border-gray-100 p-4 pr-12 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none bg-white font-bold text-[#003366] appearance-none cursor-pointer text-sm">
                   <option value="">📅 SELL TIMELINE? (Click Here)</option>
                   <option value="ASAP">ASAP (Within 30 Days)</option>
                   <option value="30-60 Days">30-60 Days</option>
@@ -137,18 +142,22 @@ export default function NijackPropertySolutionsWebsite() {
                     "Fire Damage", "Downsizing", "Other"
                   ].map((label) => (
                     <label key={label} className="flex gap-3 items-center cursor-pointer">
-                      <input type="checkbox" name="Situation" value={label} className="h-5 w-5 accent-[#003366] rounded border-gray-300 flex-shrink-0" /> 
+                      <input type="checkbox" name="situation" value={label} className="h-5 w-5 accent-[#003366] rounded border-gray-300 flex-shrink-0" /> 
                       <span className="text-[#003366] font-semibold">{label}</span>
                     </label>
                   ))}
                 </div>
               </div>
 
-              <textarea name="Extra Details" placeholder="Tell us more about the property..." className="rounded-xl border border-gray-200 p-4 w-full h-24 focus:ring-2 focus:ring-[#D4AF37] outline-none" />
+              <textarea name="extra_details" placeholder="Tell us more about the property's condition or your situation..." className="rounded-xl border border-gray-200 p-4 w-full h-24 focus:ring-2 focus:ring-[#D4AF37] outline-none" />
               
               <button type="submit" className="w-full rounded-xl bg-[#003366] py-5 font-black text-white text-xl shadow-lg hover:bg-[#002244] transition-all transform hover:-translate-y-1">
                 Get My Cash Offer
               </button>
+              
+              <p className="text-center text-xs text-gray-500">
+                No obligation. No pressure. Your information stays private.
+              </p>
             </form>
           ) : (
             <div className="text-center py-12 animate-fade-in">
@@ -163,12 +172,33 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
       </section>
 
+      {/* REASSURANCE SECTION (THE MISSING PIECE) */}
+      <section className="py-12 bg-white px-6">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl font-black mb-8 text-[#003366]">Why Homeowners Work With Us</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: "🛠️", title: "No Repairs", desc: "Sell as-is. We handle all the cleanup and fixing." },
+              { icon: "💰", title: "No Fees", desc: "No commissions. No hidden closing costs." },
+              { icon: "📅", title: "Your Timeline", desc: "Close in 14 days or 6 months. You choose." },
+              { icon: "📍", title: "Local Team", desc: "Based right here in Northeast Ohio." }
+            ].map((item, i) => (
+              <div key={i} className="p-4 rounded-xl border border-gray-100 shadow-sm bg-gray-50">
+                <div className="text-3xl mb-2">{item.icon}</div>
+                <h4 className="font-bold text-[#003366] mb-1">{item.title}</h4>
+                <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* HOW IT WORKS SECTION */}
-      <section id="how" className="py-16 bg-white text-center px-6 border-b">
+      <section id="how" className="py-16 bg-gray-50 text-center px-6">
         <h2 className="text-3xl font-black mb-12 text-[#003366]">Our Simple 4-Step Process</h2>
         <div className="mx-auto max-w-6xl grid md:grid-cols-4 gap-6">
           {steps.map((step, i) => (
-            <div key={i} className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition">
+            <div key={i} className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm">
               <div className="h-12 w-12 rounded-full bg-[#003366] text-white flex items-center justify-center text-xl font-black mx-auto mb-4">{i+1}</div>
               <h3 className="font-bold text-[#003366] mb-2">{step.title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">{step.text}</p>
@@ -178,12 +208,12 @@ export default function NijackPropertySolutionsWebsite() {
       </section>
 
       {/* FAQ SECTION */}
-      <section id="faq" className="py-16 bg-gray-50 px-6">
+      <section id="faq" className="py-16 bg-white px-6">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-3xl font-black mb-12 text-[#003366] text-center">Common Questions</h2>
           <div className="space-y-6">
             {faq.map((item, i) => (
-              <div key={i} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+              <div key={i} className="bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-sm">
                 <h3 className="font-black text-[#003366] mb-2">Q: {item.q}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">A: {item.a}</p>
               </div>
@@ -199,10 +229,12 @@ export default function NijackPropertySolutionsWebsite() {
           <p className="text-[#D4AF37] text-xs font-bold tracking-[0.4em] mb-12">Real Estate Investment Solutions</p>
 
           <div className="bg-white/5 rounded-2xl p-8 text-left border border-white/10 mb-12">
-            <h4 className="text-[#D4AF37] font-black text-lg mb-4 uppercase tracking-widest">Privacy Policy</h4>
+            <h4 className="text-[#D4AF37] font-black text-lg mb-4 uppercase tracking-widest">Legal & Privacy</h4>
             <div className="space-y-4 text-sm text-gray-300 leading-relaxed">
-              <p>At <span className="text-white font-bold">Nijack Property Solutions</span>, we value your privacy. We collect your contact and property information solely to provide a cash offer. Your data is protected and will <span className="text-[#D4AF37] font-bold underline">NEVER</span> be sold to third-party telemarketers.</p>
-              <p className="italic opacity-60">We are a real estate investment firm based in Cuyahoga Falls, Ohio. We are not real estate agents and do not charge commissions.</p>
+              <p>At <span className="text-white font-bold">Nijack Property Solutions</span>, we value your privacy. Information collected is used solely to provide evaluation services. Your data will <span className="text-[#D4AF37] font-bold underline">NEVER</span> be sold to third-party telemarketers.</p>
+              <p className="italic opacity-80">
+                Nijack Property Solutions is a real estate investment firm based in Cuyahoga Falls, Ohio. We are not licensed real estate agents and do not charge commissions. We may purchase properties directly or assign contracts to investment partners.
+              </p>
             </div>
           </div>
 
