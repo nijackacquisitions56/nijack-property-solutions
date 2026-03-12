@@ -74,7 +74,7 @@ export default function NijackPropertySolutionsWebsite() {
       {/* HERO SECTION */}
       <section className="bg-[#003366] text-white py-16 border-b-4 border-[#D4AF37]">
         <div className="mx-auto max-w-5xl px-6 text-center">
-          <h1 className="text-4xl md:text-7xl font-black mb-6 tracking-tight leading-tight">
+          <h1 className="text-4xl md:text-7xl font-black mb-4 tracking-tight leading-tight">
             Sell Your House <br/>
             <span className="relative inline-block px-2">
               FAST
@@ -90,7 +90,10 @@ export default function NijackPropertySolutionsWebsite() {
               </svg>
             </span>
           </h1>
-          <p className="text-xl opacity-90 font-medium italic">
+          <p className="mt-4 text-lg md:text-xl opacity-90 font-bold tracking-wide">
+            No repairs. No commissions. Flexible closing options.
+          </p>
+          <p className="mt-2 text-sm md:text-base opacity-70 italic">
             "Rooted in Care, Driven by Results."
           </p>
         </div>
@@ -155,7 +158,7 @@ export default function NijackPropertySolutionsWebsite() {
                 Get My Cash Offer
               </button>
               
-              <p className="text-center text-xs text-gray-500">
+              <p className="text-center text-xs text-gray-500 font-medium">
                 No obligation. No pressure. Your information stays private.
               </p>
             </form>
@@ -172,11 +175,11 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
       </section>
 
-      {/* REASSURANCE SECTION (THE MISSING PIECE) */}
+      {/* REASSURANCE SECTION */}
       <section className="py-12 bg-white px-6">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-black mb-8 text-[#003366]">Why Homeowners Work With Us</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
             {[
               { icon: "🛠️", title: "No Repairs", desc: "Sell as-is. We handle all the cleanup and fixing." },
               { icon: "💰", title: "No Fees", desc: "No commissions. No hidden closing costs." },
@@ -189,6 +192,14 @@ export default function NijackPropertySolutionsWebsite() {
                 <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
               </div>
             ))}
+          </div>
+          
+          {/* GEOGRAPHIC TRUST SIGNALS */}
+          <div className="pt-6 border-t border-gray-100">
+            <p className="text-[#003366] font-bold text-sm uppercase tracking-widest mb-2">Serving homeowners throughout Northeast Ohio</p>
+            <p className="text-gray-400 text-xs font-semibold">
+              Akron • Cleveland • Cuyahoga Falls • Medina • Canton
+            </p>
           </div>
         </div>
       </section>
