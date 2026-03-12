@@ -4,8 +4,6 @@ export default function NijackPropertySolutionsWebsite() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
-    // If you aren't using Netlify's auto-detection, 
-    // you would handle the fetch request here.
     e.preventDefault();
     setSubmitted(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -30,7 +28,7 @@ export default function NijackPropertySolutionsWebsite() {
       
       {/* HEADER */}
       <header className="sticky top-0 z-50 border-b bg-white shadow-sm">
-        <div className="mx-auto max-w-7xl px-6 py-4 flex justify-between items-center">
+        <div className="mx-auto max-w-7xl px-6 py-4 flex justify-between items-center text-center sm:text-left">
           <div className="flex items-center gap-3 group mx-auto sm:mx-0">
             <div className="relative">
               <div className="h-11 w-11 bg-[#003366] rounded-xl flex items-center justify-center shadow-lg transform group-hover:rotate-3 transition-transform">
@@ -92,7 +90,6 @@ export default function NijackPropertySolutionsWebsite() {
           {!submitted ? (
             <>
               <h2 className="text-3xl font-bold text-center mb-8 text-[#003366]">Request Your Cash Offer</h2>
-              {/* Form Configured for Netlify / Formspree Detection */}
               <form 
                 name="contact-leads" 
                 method="POST" 
@@ -107,9 +104,10 @@ export default function NijackPropertySolutionsWebsite() {
                 </div>
                 <input name="property_address" required placeholder="Property Address" className="rounded-xl border border-gray-200 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none" />
                 
+                {/* FIXED SHORTER MOBILE DROPDOWN */}
                 <div className="relative group">
                   <select name="timeline" required className="rounded-xl border-2 border-gray-100 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none bg-white font-bold text-[#003366] appearance-none cursor-pointer shadow-sm text-sm md:text-base">
-                    <option value="">📅 SELLING TIMELINE? (Click Here)</option>
+                    <option value="">📅 SELL TIMELINE? (Click Here)</option>
                     <option value="ASAP">ASAP (Within 30 Days)</option>
                     <option value="30-60 Days">30-60 Days</option>
                     <option value="60-90 Days">60-90 Days</option>
@@ -142,7 +140,7 @@ export default function NijackPropertySolutionsWebsite() {
               </form>
             </>
           ) : (
-            <div className="text-center py-12 animate-fade-in">
+            <div className="text-center py-12">
               <div className="text-7xl mb-6">🤝</div>
               <h2 className="text-3xl font-black mb-4 text-[#003366]">Information Received!</h2>
               <p className="text-gray-600 font-bold mb-6">Thank you. I will review your property details and reach out shortly.</p>
@@ -154,7 +152,7 @@ export default function NijackPropertySolutionsWebsite() {
 
       {/* FOOTER */}
       <footer className="bg-[#001122] text-white py-12 text-center border-t-8 border-[#D4AF37]">
-        <div className="mx-auto max-w-4xl px-6">
+        <div className="mx-auto max-w-4xl px-6 text-center">
            <div className="h-10 w-10 bg-[#003366] rounded-xl flex items-center justify-center mx-auto mb-3 border border-white/10"><span className="text-white font-black text-xl">N</span></div>
            <div className="font-black text-2xl tracking-tighter uppercase">NIJACK PROPERTY SOLUTIONS</div>
            <p className="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.4em] mb-6">Real Estate Investment Solutions</p>
