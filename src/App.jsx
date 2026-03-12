@@ -96,12 +96,13 @@ export default function NijackPropertySolutionsWebsite() {
                 </div>
                 <input required placeholder="Property Address" className="rounded-xl border border-gray-200 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none" />
                 
+                {/* MOBILE RESPONSIVE DROPDOWN */}
                 <div className="relative group">
                   <div className="absolute -left-10 top-4 text-[#D4AF37] animate-bounce hidden xl:block">
                     <span className="text-3xl">➔</span>
                   </div>
-                  <select required className="rounded-xl border-2 border-gray-100 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none bg-white font-bold text-[#003366] appearance-none cursor-pointer shadow-sm">
-                    <option value="">📅 HOW SOON ARE YOU LOOKING TO SELL? (Click Here)</option>
+                  <select required className="rounded-xl border-2 border-gray-100 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none bg-white font-bold text-[#003366] appearance-none cursor-pointer shadow-sm text-sm md:text-base">
+                    <option value="">📅 SELLING TIMELINE? (Click Here)</option>
                     <option>ASAP (Within 30 Days)</option>
                     <option>30-60 Days</option>
                     <option>60-90 Days</option>
@@ -113,11 +114,16 @@ export default function NijackPropertySolutionsWebsite() {
                   </div>
                 </div>
 
-                {/* PROPERTY SITUATION - LEVELED OUT GRID */}
+                {/* PROPERTY SITUATION - BALANCED 12-ITEM GRID */}
                 <div className="p-4 bg-gray-50 rounded-xl border border-gray-100">
-                  <p className="font-bold mb-3 text-[#003366]">Property Situation:</p>
+                  <p className="font-bold mb-3 text-[#003366]">Property Situation (Check any that apply):</p>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
-                    {["Probate / Inherited", "Pre-foreclosure", "Code Violations", "Needs Repairs", "Problem Tenants", "Vacant", "Relocating", "Taxes Behind", "Other"].map((label) => (
+                    {[
+                      "Probate / Inherited", "Pre-foreclosure", "Code Violations", 
+                      "Needs Repairs", "Tired Landlord", "Problem Tenants", 
+                      "Vacant", "Relocating", "Taxes Behind", 
+                      "Fire Damage", "Downsizing", "Other"
+                    ].map((label) => (
                       <label key={label} className="flex gap-2 items-center cursor-pointer">
                         <input type="checkbox" className="accent-[#003366]" /> {label}
                       </label>
