@@ -37,18 +37,19 @@ export default function NijackPropertySolutionsWebsite() {
 
   const faq = [
     { q: "Do I need to make repairs before selling?", a: "No. We buy houses as-is in any condition." },
-    { q: "How fast can closing happen?", a: "Many closings happen within 14-21 days, depending on title work." },
-    { q: "What areas do you buy in?", a: "We are based in Northeast Ohio, serving Akron, Cleveland, and surrounding areas." },
-    { q: "Are there commissions or fees?", a: "No. There are zero realtor commissions or hidden fees." }
+    { q: "How fast can closing happen?", a: "Many closings happen within 14-30 days, depending on title work and your specific timeline." },
+    { q: "What areas do you buy in?", a: "We are based in Northeast Ohio, but we serve homeowners throughout the region including Akron and Cleveland." },
+    { q: "Are there commissions or fees?", a: "No. Since we are buying the property directly, there are no realtor commissions or hidden fees." }
   ];
 
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans">
       
-      {/* HEADER WITH N.P.S. FLARE */}
+      {/* HEADER WITH NAVIGATION & N.P.S. FLARE */}
       <header className="sticky top-0 z-50 border-b bg-white shadow-sm">
         <div className="mx-auto max-w-7xl px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3 group">
+            {/* THE N.P.S. GOLD-FLARE ICON */}
             <div className="h-12 w-auto px-4 bg-[#003366] rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(212,175,55,0.4)] border-b-4 border-r-4 border-[#D4AF37] transform -rotate-1 group-hover:rotate-0 transition-all duration-300">
               <span className="text-white font-black text-xl tracking-tighter uppercase">N.P.S.</span>
             </div>
@@ -59,7 +60,13 @@ export default function NijackPropertySolutionsWebsite() {
               <div className="text-[10px] text-gray-400 uppercase tracking-[0.4em] font-bold">Solutions</div>
             </div>
           </div>
-          <div className="hidden md:flex items-center gap-6">
+
+          {/* TOP NAVIGATION LINKS */}
+          <div className="hidden md:flex items-center gap-8">
+            <nav className="flex gap-6 text-xs font-black text-[#003366] uppercase tracking-widest">
+              <a href="#how-it-works" className="hover:text-[#D4AF37] transition">How It Works</a>
+              <a href="#faq" className="hover:text-[#D4AF37] transition">FAQ</a>
+            </nav>
             <a href="tel:3303319070" className="font-bold text-[#003366] text-lg underline decoration-[#D4AF37] decoration-2">📞 330-331-9070</a>
           </div>
         </div>
@@ -84,7 +91,7 @@ export default function NijackPropertySolutionsWebsite() {
               </svg>
             </span>
           </h1>
-          <p className="mt-6 text-lg md:text-xl opacity-90 font-bold tracking-wide uppercase">
+          <p className="mt-8 text-lg md:text-xl opacity-90 font-bold tracking-wide uppercase">
             No repairs. No commissions. No stress.
           </p>
           <p className="mt-2 text-sm md:text-base opacity-70 italic">
@@ -128,7 +135,7 @@ export default function NijackPropertySolutionsWebsite() {
                 <div className="flex justify-between items-center text-sm md:text-base">
                   <span className="text-red-500 font-black uppercase w-[40%]">90+ Day Wait</span>
                   <span className="text-[#D4AF37] text-xl font-bold">➔</span>
-                  <span className="text-[#003366] font-black uppercase w-[40%] text-center">N.P.S: 14 Days</span>
+                  <span className="text-[#003366] font-black uppercase w-[40%] text-center">N.P.S: 14-30 Days</span>
                 </div>
               </div>
             </div>
@@ -179,7 +186,7 @@ export default function NijackPropertySolutionsWebsite() {
       </section>
 
       {/* HOW IT WORKS SECTION */}
-      <section className="py-16 bg-white text-center px-6 border-b border-gray-100">
+      <section id="how-it-works" className="py-16 bg-white text-center px-6 border-b border-gray-100">
         <h2 className="text-3xl font-black mb-12 text-[#003366] uppercase tracking-tight">Our Simple Process</h2>
         <div className="mx-auto max-w-6xl grid md:grid-cols-4 gap-6">
           {steps.map((step, i) => (
@@ -213,7 +220,6 @@ export default function NijackPropertySolutionsWebsite() {
           <div className="font-black text-2xl uppercase mb-2 tracking-tighter">NIJACK PROPERTY SOLUTIONS</div>
           <p className="text-[#D4AF37] text-xs font-bold tracking-[0.4em] mb-12">REAL ESTATE INVESTMENT SOLUTIONS</p>
           
-          {/* THE PRIVACY POLICY BLOCK */}
           <div className="bg-white/5 rounded-2xl p-8 text-left border border-white/10 mb-12 text-xs text-gray-300 leading-relaxed max-w-2xl mx-auto">
             <p className="mb-4">At <span className="text-white font-bold">Nijack Property Solutions</span>, we value your privacy. Your data will <span className="text-[#D4AF37] font-bold underline">NEVER</span> be sold to third-party telemarketers.</p>
             <p className="italic opacity-80">Nijack Property Solutions is based in Cuyahoga Falls, Ohio. We are not real estate agents and do not charge commissions. We purchase properties directly or through investment partners to provide you the best possible solution.</p>
