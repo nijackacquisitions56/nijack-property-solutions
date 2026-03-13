@@ -65,13 +65,31 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
       </header>
 
-      {/* HERO */}
+      {/* HERO SECTION WITH WAVY UNDERLINES */}
       <section className="bg-[#003366] text-white py-16 border-b-4 border-[#D4AF37]">
-        <div className="mx-auto max-w-5xl px-6 text-center uppercase">
-          <h1 className="text-4xl md:text-7xl font-black mb-4 tracking-tight leading-tight">
-            Sell Your House <span className="text-[#D4AF37]">Fast</span> For <span className="text-[#D4AF37]">Cash</span>
+        <div className="mx-auto max-w-5xl px-6 text-center">
+          <h1 className="text-4xl md:text-7xl font-black mb-4 tracking-tight leading-tight uppercase">
+            Sell Your House <br/>
+            <span className="relative inline-block px-2">
+              FAST
+              <svg className="absolute -bottom-3 left-0 w-full h-4 text-[#D4AF37] opacity-80" viewBox="0 0 100 10" preserveAspectRatio="none">
+                <path d="M0 5 Q 50 12 100 5" stroke="currentColor" strokeWidth="5" fill="transparent" strokeLinecap="round" />
+              </svg>
+            </span> 
+            {" "}For{" "}
+            <span className="relative inline-block px-2 text-[#D4AF37]">
+              CASH
+              <svg className="absolute -bottom-3 left-0 w-full h-4 text-white opacity-40" viewBox="0 0 100 10" preserveAspectRatio="none">
+                <path d="M0 8 Q 50 2 100 8" stroke="currentColor" strokeWidth="4" fill="transparent" strokeLinecap="round" />
+              </svg>
+            </span>
           </h1>
-          <p className="mt-4 text-lg md:text-xl opacity-90 font-bold tracking-wide">No repairs. No commissions. No stress.</p>
+          <p className="mt-6 text-lg md:text-xl opacity-90 font-bold tracking-wide uppercase">
+            No repairs. No commissions. No stress.
+          </p>
+          <p className="mt-2 text-sm md:text-base opacity-70 italic">
+            "Rooted in Care, Driven by Results."
+          </p>
         </div>
       </section>
 
@@ -83,9 +101,14 @@ export default function NijackPropertySolutionsWebsite() {
           </h2>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center text-left">
-            {/* VIDEO PLACEHOLDER */}
-            <div className="relative aspect-video bg-[#001122] rounded-3xl shadow-2xl overflow-hidden border-4 border-white flex items-center justify-center">
-               <p className="text-white font-black tracking-widest uppercase text-[10px]">Your Video Will Play Here</p>
+            {/* VIDEO PLAYER */}
+            <div className="relative aspect-video bg-[#001122] rounded-3xl shadow-2xl overflow-hidden border-4 border-white flex items-center justify-center group">
+              <div className="text-center px-6">
+                <div className="w-16 h-16 bg-[#D4AF37] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform cursor-pointer">
+                  <span className="text-white text-2xl ml-1">▶</span>
+                </div>
+                <p className="text-white font-black tracking-widest uppercase text-[10px]">Watch: How Nicole Helps Homeowners</p>
+              </div>
             </div>
 
             {/* QUICK COMPARISON TABLE */}
@@ -93,19 +116,19 @@ export default function NijackPropertySolutionsWebsite() {
               <h3 className="text-2xl font-black text-[#003366] mb-8 uppercase text-center border-b pb-4">How We Compare</h3>
               <div className="space-y-6">
                 <div className="flex justify-between items-center text-sm md:text-base">
-                  <span className="text-red-500 font-black uppercase w-1/3">Agent: 6% Fee</span>
+                  <span className="text-red-500 font-black uppercase w-[40%]">Agent: 6% Fee</span>
                   <span className="text-[#D4AF37] text-xl font-bold">➔</span>
-                  <span className="text-[#003366] font-black uppercase w-1/3 text-right">N.P.S: $0 Fees</span>
+                  <span className="text-[#003366] font-black uppercase w-[40%] text-center">N.P.S: $0 Fees</span>
                 </div>
                 <div className="flex justify-between items-center text-sm md:text-base">
-                  <span className="text-red-500 font-black uppercase w-1/3">Repairs Needed</span>
+                  <span className="text-red-500 font-black uppercase w-[40%]">Repairs Needed</span>
                   <span className="text-[#D4AF37] text-xl font-bold">➔</span>
-                  <span className="text-[#003366] font-black uppercase w-1/3 text-right">N.P.S: As-Is</span>
+                  <span className="text-[#003366] font-black uppercase w-[40%] text-center">N.P.S: AS-IS</span>
                 </div>
                 <div className="flex justify-between items-center text-sm md:text-base">
-                  <span className="text-red-500 font-black uppercase w-1/3">90+ Day Wait</span>
+                  <span className="text-red-500 font-black uppercase w-[40%]">90+ Day Wait</span>
                   <span className="text-[#D4AF37] text-xl font-bold">➔</span>
-                  <span className="text-[#003366] font-black uppercase w-1/3 text-right">N.P.S: 14 Days</span>
+                  <span className="text-[#003366] font-black uppercase w-[40%] text-center">N.P.S: 14 Days</span>
                 </div>
               </div>
             </div>
@@ -113,17 +136,17 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
       </section>
 
-      {/* LEAD FORM */}
+      {/* LEAD FORM SECTION */}
       <section id="contact" className="mx-auto max-w-3xl px-6 -mt-10 pb-16">
         <div className="bg-white rounded-3xl p-6 md:p-10 shadow-2xl border border-gray-100 relative z-10">
           {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-5">
               <h2 className="text-2xl font-black text-center text-[#003366] uppercase">Get Your Cash Offer</h2>
               <div className="grid md:grid-cols-2 gap-4">
-                <input name="full_name" required placeholder="Full Name" className="rounded-xl border border-gray-200 p-4 w-full" />
-                <input name="phone" required type="tel" placeholder="Phone Number" className="rounded-xl border border-gray-200 p-4 w-full" />
+                <input name="full_name" required placeholder="Full Name" className="rounded-xl border border-gray-200 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none" />
+                <input name="phone" required type="tel" placeholder="Phone Number" className="rounded-xl border border-gray-200 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none" />
               </div>
-              <input name="property_address" required placeholder="Property Address" className="rounded-xl border border-gray-200 p-4 w-full" />
+              <input name="property_address" required placeholder="Property Address" className="rounded-xl border border-gray-200 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none" />
               
               <div className="p-4 bg-gray-50 rounded-xl border border-gray-100">
                 <p className="font-bold mb-4 text-[#003366] text-sm uppercase text-center tracking-tighter">Your Situation (Check all that apply):</p>
@@ -136,7 +159,7 @@ export default function NijackPropertySolutionsWebsite() {
                   ].map((label) => (
                     <label key={label} className="flex gap-2 items-center cursor-pointer">
                       <input type="checkbox" name="situation" value={label} className="h-4 w-4 accent-[#003366]" /> 
-                      <span className="text-[#003366] font-semibold text-[12px]">{label}</span>
+                      <span className="text-[#003366] font-semibold text-[11px] leading-tight">{label}</span>
                     </label>
                   ))}
                 </div>
@@ -147,47 +170,57 @@ export default function NijackPropertySolutionsWebsite() {
               </button>
             </form>
           ) : (
-            <div className="text-center py-12">
-              <h2 className="text-3xl font-black mb-4 text-[#003366]">Nicole is on it!</h2>
-              <p className="text-gray-600 font-bold">Expect a call shortly.</p>
+            <div className="text-center py-12 text-[#003366]">
+              <h2 className="text-3xl font-black mb-4 uppercase text-[#D4AF37]">Nicole is on it!</h2>
+              <p className="font-bold uppercase tracking-widest">Expect a call shortly.</p>
             </div>
           )}
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="py-16 bg-white text-center px-6">
-        <h2 className="text-3xl font-black mb-12 text-[#003366] uppercase">Simple 4-Step Process</h2>
+      {/* HOW IT WORKS SECTION */}
+      <section className="py-16 bg-white text-center px-6 border-b border-gray-100">
+        <h2 className="text-3xl font-black mb-12 text-[#003366] uppercase tracking-tight">Our Simple Process</h2>
         <div className="mx-auto max-w-6xl grid md:grid-cols-4 gap-6">
           {steps.map((step, i) => (
-            <div key={i} className="p-6 rounded-2xl bg-gray-50 border border-gray-100">
-              <div className="h-10 w-10 rounded-full bg-[#003366] text-white flex items-center justify-center font-black mx-auto mb-4">{i+1}</div>
-              <h3 className="font-bold text-[#003366] mb-2 uppercase">{step.title}</h3>
-              <p className="text-gray-500 text-sm">{step.text}</p>
+            <div key={i} className="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-sm">
+              <div className="h-10 w-10 rounded-full bg-[#D4AF37] text-white flex items-center justify-center font-black mx-auto mb-4">{i+1}</div>
+              <h3 className="font-black text-[#003366] mb-2 uppercase text-sm">{step.title}</h3>
+              <p className="text-gray-500 text-xs leading-relaxed font-bold">{step.text}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-16 bg-gray-50 px-6">
+      {/* FAQ SECTION */}
+      <section id="faq" className="py-16 bg-gray-50 px-6">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-3xl font-black mb-10 text-[#003366] text-center uppercase tracking-tight">Common Questions</h2>
           <div className="space-y-4">
             {faq.map((item, i) => (
               <div key={i} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                 <p className="font-black text-[#003366] mb-2 uppercase text-sm">Q: {item.q}</p>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.a}</p>
+                <p className="text-gray-600 text-sm leading-relaxed font-medium">{item.a}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="bg-[#001122] text-white py-12 border-t-8 border-[#D4AF37] text-center">
-        <div className="font-black text-xl uppercase mb-2">NIJACK PROPERTY SOLUTIONS</div>
-        <p className="text-[#D4AF37] text-[10px] font-bold tracking-[0.4em]">© {new Date().getFullYear()} Cuyahoga Falls, OH</p>
+      {/* FOOTER & PRIVACY POLICY */}
+      <footer className="bg-[#001122] text-white py-16 border-t-8 border-[#D4AF37]">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <div className="font-black text-2xl uppercase mb-2 tracking-tighter">NIJACK PROPERTY SOLUTIONS</div>
+          <p className="text-[#D4AF37] text-xs font-bold tracking-[0.4em] mb-12">REAL ESTATE INVESTMENT SOLUTIONS</p>
+          
+          {/* THE PRIVACY POLICY BLOCK */}
+          <div className="bg-white/5 rounded-2xl p-8 text-left border border-white/10 mb-12 text-xs text-gray-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="mb-4">At <span className="text-white font-bold">Nijack Property Solutions</span>, we value your privacy. Your data will <span className="text-[#D4AF37] font-bold underline">NEVER</span> be sold to third-party telemarketers.</p>
+            <p className="italic opacity-80">Nijack Property Solutions is based in Cuyahoga Falls, Ohio. We are not real estate agents and do not charge commissions. We purchase properties directly or through investment partners to provide you the best possible solution.</p>
+          </div>
+          
+          <p className="text-[10px] opacity-30 uppercase tracking-[0.3em]">© {new Date().getFullYear()} Cuyahoga Falls, OH</p>
+        </div>
       </footer>
     </div>
   );
