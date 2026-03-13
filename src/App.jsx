@@ -47,12 +47,13 @@ export default function NijackPropertySolutionsWebsite() {
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans">
       
-      {/* HEADER */}
+      {/* HEADER WITH RECLAIMED FLARE */}
       <header className="sticky top-0 z-50 border-b bg-white shadow-sm">
         <div className="mx-auto max-w-7xl px-6 py-4 flex justify-between items-center text-center sm:text-left">
           <div className="flex items-center gap-3 group mx-auto sm:mx-0">
-            <div className="h-11 w-11 bg-[#003366] rounded-xl flex items-center justify-center shadow-lg">
-              <span className="text-white font-black text-2xl">N</span>
+            {/* THE FLARE ICON */}
+            <div className="h-12 w-12 bg-[#003366] rounded-xl flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,0.3)] border-b-4 border-r-4 border-[#D4AF37] transform -rotate-3 group-hover:rotate-0 transition-transform">
+              <span className="text-white font-black text-2xl tracking-tighter">N</span>
             </div>
             <div>
               <div className="font-black text-xl text-[#003366] leading-tight uppercase">
@@ -99,9 +100,61 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
       </section>
 
+      {/* AGENT VS CASH BUYER SECTION */}
+      <section className="py-16 bg-gray-50 border-b border-gray-100">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-black text-[#003366] mb-4 uppercase">
+              Agent vs. Cash Buyer: <span className="text-[#D4AF37]">The Truth</span>
+            </h2>
+            <p className="text-gray-600 font-bold max-w-2xl mx-auto">
+              Selling a home in Northeast Ohio is a big decision. We believe in transparency so you can choose the path that fits your goals.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* VIDEO PLACEHOLDER */}
+            <div className="relative aspect-video bg-[#001122] rounded-3xl shadow-2xl overflow-hidden border-4 border-white flex items-center justify-center group">
+              <div className="text-center px-6">
+                <div className="w-16 h-16 bg-[#D4AF37] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform cursor-pointer">
+                  <span className="text-white text-2xl ml-1">▶</span>
+                </div>
+                <p className="text-white font-bold tracking-widest uppercase text-[10px]">Watch: How Nicole Helps Homeowners</p>
+              </div>
+            </div>
+
+            {/* COMPARISON QUICK TABLE */}
+            <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
+              <h3 className="text-xl font-black text-[#003366] mb-6 uppercase tracking-tight">How we compare</h3>
+              <div className="space-y-4">
+                <div className="flex justify-between border-b pb-2 text-xs md:text-sm">
+                  <span className="text-gray-400 font-bold uppercase">Fees/Commissions</span>
+                  <span className="text-[#003366] font-black">NIJACK: $0 | AGENT: 6%</span>
+                </div>
+                <div className="flex justify-between border-b pb-2 text-xs md:text-sm">
+                  <span className="text-gray-400 font-bold uppercase">Repairs Needed</span>
+                  <span className="text-[#003366] font-black">NIJACK: NONE | AGENT: MANY</span>
+                </div>
+                <div className="flex justify-between border-b pb-2 text-xs md:text-sm">
+                  <span className="text-gray-400 font-bold uppercase">Cleaning/Showings</span>
+                  <span className="text-[#003366] font-black">NIJACK: 0 | AGENT: DOZENS</span>
+                </div>
+                <div className="flex justify-between border-b pb-2 text-xs md:text-sm">
+                  <span className="text-gray-400 font-bold uppercase">Closing Time</span>
+                  <span className="text-[#003366] font-black">NIJACK: 14 DAYS | AGENT: 60-90 DAYS</span>
+                </div>
+              </div>
+              <p className="mt-6 text-[10px] text-gray-500 italic leading-relaxed">
+                *Cash offers are often below retail value to account for repair costs and market risk, but provide the fastest, most convenient exit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* LEAD FORM SECTION */}
       <section id="contact" className="mx-auto max-w-3xl px-6 -mt-10 pb-8">
-        <div className="bg-white rounded-3xl p-6 md:p-10 shadow-2xl border border-gray-100">
+        <div className="bg-white rounded-3xl p-6 md:p-10 shadow-2xl border border-gray-100 relative z-10">
           {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-5">
               <input type="hidden" name="_subject" value="New Seller Lead - Nijack Property Solutions" />
@@ -152,22 +205,18 @@ export default function NijackPropertySolutionsWebsite() {
                 </div>
               </div>
 
-              <textarea name="extra_details" placeholder="Tell us more about the property's condition or your situation..." className="rounded-xl border border-gray-200 p-4 w-full h-24 focus:ring-2 focus:ring-[#D4AF37] outline-none" />
+              <textarea name="extra_details" placeholder="Tell us more about the property's condition..." className="rounded-xl border border-gray-200 p-4 w-full h-24 focus:ring-2 focus:ring-[#D4AF37] outline-none" />
               
               <button type="submit" className="w-full rounded-xl bg-[#003366] py-5 font-black text-white text-xl shadow-lg hover:bg-[#002244] transition-all transform hover:-translate-y-1">
                 Get My Cash Offer
               </button>
-              
-              <p className="text-center text-xs text-gray-500 font-medium">
-                No obligation. No pressure. Your information stays private.
-              </p>
             </form>
           ) : (
-            <div className="text-center py-12 animate-fade-in">
+            <div className="text-center py-12">
               <div className="text-7xl mb-6 text-[#D4AF37]">🤝</div>
               <h2 className="text-3xl font-black mb-4 text-[#003366]">Thank You—We’re On It!</h2>
               <p className="text-gray-600 font-bold mb-6 max-w-md mx-auto">
-                Nicole will personally review your property details today. Expect a friendly call or text from us shortly to discuss your options.
+                Nicole will personally review your property details today. Expect a friendly call or text from us shortly.
               </p>
               <button onClick={() => setSubmitted(false)} className="text-[#D4AF37] font-bold underline">Submit another property</button>
             </div>
@@ -193,61 +242,22 @@ export default function NijackPropertySolutionsWebsite() {
               </div>
             ))}
           </div>
-          
           <div className="pt-6 border-t border-gray-100">
             <p className="text-[#003366] font-bold text-sm uppercase tracking-widest mb-2">Serving homeowners throughout Northeast Ohio</p>
-            <p className="text-gray-400 text-xs font-semibold">
-              Akron • Cleveland • Cuyahoga Falls • Medina • Canton
-            </p>
+            <p className="text-gray-400 text-xs font-semibold">Akron • Cleveland • Cuyahoga Falls • Medina • Canton</p>
           </div>
         </div>
       </section>
 
-      {/* HOW IT WORKS SECTION */}
-      <section id="how" className="py-16 bg-gray-50 text-center px-6">
-        <h2 className="text-3xl font-black mb-12 text-[#003366]">Our Simple 4-Step Process</h2>
-        <div className="mx-auto max-w-6xl grid md:grid-cols-4 gap-6">
-          {steps.map((step, i) => (
-            <div key={i} className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm">
-              <div className="h-12 w-12 rounded-full bg-[#003366] text-white flex items-center justify-center text-xl font-black mx-auto mb-4">{i+1}</div>
-              <h3 className="font-bold text-[#003366] mb-2">{step.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{step.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* FAQ SECTION */}
-      <section id="faq" className="py-16 bg-white px-6">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-black mb-12 text-[#003366] text-center">Common Questions</h2>
-          <div className="space-y-6">
-            {faq.map((item, i) => (
-              <div key={i} className="bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-sm">
-                <h3 className="font-black text-[#003366] mb-2">Q: {item.q}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">A: {item.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FOOTER & PRIVACY POLICY */}
+      {/* FOOTER */}
       <footer className="bg-[#001122] text-white py-16 border-t-8 border-[#D4AF37]">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <div className="font-black text-2xl uppercase mb-2">NIJACK PROPERTY SOLUTIONS</div>
           <p className="text-[#D4AF37] text-xs font-bold tracking-[0.4em] mb-12">Real Estate Investment Solutions</p>
-
-          <div className="bg-white/5 rounded-2xl p-8 text-left border border-white/10 mb-12">
-            <h4 className="text-[#D4AF37] font-black text-lg mb-4 uppercase tracking-widest">Legal & Privacy</h4>
-            <div className="space-y-4 text-sm text-gray-300 leading-relaxed">
-              <p>At <span className="text-white font-bold">Nijack Property Solutions</span>, we value your privacy. Information collected is used solely to provide evaluation services. Your data will <span className="text-[#D4AF37] font-bold underline">NEVER</span> be sold to third-party telemarketers.</p>
-              <p className="italic opacity-80">
-                Nijack Property Solutions is a real estate investment firm based in Cuyahoga Falls, Ohio. We are not licensed real estate agents and do not charge commissions. We may purchase properties directly or assign contracts to investment partners.
-              </p>
-            </div>
+          <div className="bg-white/5 rounded-2xl p-8 text-left border border-white/10 mb-12 text-sm text-gray-300 leading-relaxed">
+            <p className="mb-4">At <span className="text-white font-bold">Nijack Property Solutions</span>, we value your privacy. Your data will <span className="text-[#D4AF37] font-bold underline">NEVER</span> be sold to third-party telemarketers.</p>
+            <p className="italic opacity-80">Nijack Property Solutions is based in Cuyahoga Falls, Ohio. We are not real estate agents and do not charge commissions. We purchase properties directly or through investment partners.</p>
           </div>
-
           <p className="text-[10px] opacity-30 uppercase tracking-[0.3em]">© {new Date().getFullYear()} Nijack Property Solutions</p>
         </div>
       </footer>
