@@ -70,7 +70,7 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
       </header>
 
-      {/* HERO SECTION */}
+      {/* HERO SECTION WITH WAVY UNDERLINES */}
       <section className="bg-[#003366] text-white py-16 border-b-4 border-[#D4AF37]">
         <div className="mx-auto max-w-5xl px-6 text-center">
           <h1 className="text-4xl md:text-7xl font-black mb-4 tracking-tight leading-tight uppercase">
@@ -149,4 +149,83 @@ export default function NijackPropertySolutionsWebsite() {
                 <input name="full_name" required placeholder="Full Name" className="rounded-xl border border-gray-200 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none" />
                 <input name="phone" required type="tel" placeholder="Phone Number" className="rounded-xl border border-gray-200 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none" />
               </div>
-              <input name="property_address" required placeholder="Property Address" className="rounded
+              <input name="property_address" required placeholder="Property Address" className="rounded-xl border border-gray-200 p-4 w-full focus:ring-2 focus:ring-[#D4AF37] outline-none" />
+              
+              <div className="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                <p className="font-bold mb-4 text-[#003366] text-sm uppercase text-center tracking-tighter">Your Situation (Check all that apply):</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-sm">
+                  {[
+                    "Probate / Inherited", "Pre-foreclosure", "Code Violations", 
+                    "Needs Repairs", "Tired Landlord", "Problem Tenants", 
+                    "Vacant", "Relocating", "Taxes Behind", 
+                    "Fire Damage", "Downsizing", "Just shopping around"
+                  ].map((label) => (
+                    <label key={label} className="flex gap-2 items-center cursor-pointer">
+                      <input type="checkbox" name="situation" value={label} className="h-4 w-4 accent-[#003366]" /> 
+                      <span className="text-[#003366] font-semibold text-[11px] leading-tight">{label}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <button type="submit" className="w-full rounded-xl bg-[#003366] py-5 font-black text-white text-xl shadow-lg hover:bg-[#002244] transition-all transform hover:-translate-y-1">
+                GET MY CASH OFFER
+              </button>
+            </form>
+          ) : (
+            <div className="text-center py-12 text-[#003366]">
+              <h2 className="text-3xl font-black mb-4 uppercase text-[#D4AF37]">Request Received!</h2>
+              <p className="font-bold uppercase tracking-widest">We will reach out to you shortly.</p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* HOW IT WORKS SECTION */}
+      <section id="how-it-works" className="py-16 bg-white text-center px-6 border-b border-gray-100">
+        <h2 className="text-3xl font-black mb-12 text-[#003366] uppercase tracking-tight">Our Simple Process</h2>
+        <div className="mx-auto max-w-6xl grid md:grid-cols-4 gap-6">
+          {steps.map((step, i) => (
+            <div key={i} className="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-sm">
+              <div className="h-10 w-10 rounded-full bg-[#D4AF37] text-white flex items-center justify-center font-black mx-auto mb-4">{i+1}</div>
+              <h3 className="font-black text-[#003366] mb-2 uppercase text-sm">{step.title}</h3>
+              <p className="text-gray-500 text-xs leading-relaxed font-bold">{step.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ SECTION */}
+      <section id="faq" className="py-16 bg-gray-50 px-6">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-3xl font-black mb-10 text-[#003366] text-center uppercase tracking-tight">Common Questions</h2>
+          <div className="space-y-4">
+            {faq.map((item, i) => (
+              <div key={i} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <p className="font-black text-[#003366] mb-2 uppercase text-sm">Q: {item.q}</p>
+                <p className="text-gray-600 text-sm leading-relaxed font-medium">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER & PRIVACY POLICY */}
+      <footer className="bg-[#001122] text-white py-16 border-t-8 border-[#D4AF37]">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <div className="font-black text-2xl uppercase mb-2 tracking-tighter">NIJACK PROPERTY SOLUTIONS</div>
+          <p className="text-[#D4AF37] text-xs font-bold tracking-[0.4em] mb-12 uppercase font-black">Northeast Ohio Real Estate Investment Solutions</p>
+          
+          <div className="bg-white/5 rounded-2xl p-8 text-left border border-white/10 mb-12 text-xs text-gray-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="mb-4 font-bold">At <span className="text-white">Nijack Property Solutions</span>, we value your privacy. Your information is used strictly for property analysis and will <span className="text-[#D4AF37] underline">NEVER</span> be sold to third-party telemarketers.</p>
+            <p className="italic opacity-80">Nijack Property Solutions is a real estate investment company serving Northeast Ohio. We are not licensed real estate agents and do not charge commissions. We purchase properties directly or through our network of investment partners.</p>
+          </div>
+          
+          <p className="text-[12px] opacity-70 uppercase tracking-[0.2em] font-black text-white">
+            © {new Date().getFullYear()} NIJACK PROPERTY SOLUTIONS. ALL RIGHTS RESERVED.
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+}
