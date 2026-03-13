@@ -62,8 +62,8 @@ export default function NijackPropertySolutionsWebsite() {
 
           <div className="hidden md:flex items-center gap-8">
             <nav className="flex gap-6 text-xs font-black text-[#003366] uppercase tracking-widest">
-              <a href="#how-it-works" className="hover:text-[#D4AF37] transition">How It Works</a>
-              <a href="#faq" className="hover:text-[#D4AF37] transition">FAQ</a>
+              <a href="#how-it-works" className="hover:text-[#D4AF37] transition text-[10px]">How It Works</a>
+              <a href="#faq" className="hover:text-[#D4AF37] transition text-[10px]">FAQ</a>
             </nav>
             <a href="tel:3303319070" className="font-bold text-[#003366] text-lg underline decoration-[#D4AF37] decoration-2">📞 330-331-9070</a>
           </div>
@@ -98,7 +98,7 @@ export default function NijackPropertySolutionsWebsite() {
         </div>
       </section>
 
-      {/* COMPARISON / VIDEO SECTION */}
+      {/* COMPARISON SECTION */}
       <section className="py-16 bg-gray-50 border-b border-gray-100">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-[#003366] mb-12 uppercase">
@@ -218,10 +218,10 @@ export default function NijackPropertySolutionsWebsite() {
           
           <div className="bg-white/5 rounded-2xl p-8 text-left border border-white/10 mb-12 text-xs text-gray-300 leading-relaxed max-w-2xl mx-auto">
             <p className="mb-4 font-bold">At <span className="text-white">Nijack Property Solutions</span>, we value your privacy. Your information is used strictly for property analysis and will <span className="text-[#D4AF37] underline">NEVER</span> be sold to third-party telemarketers.</p>
-            <p className="italic opacity-80">Nijack Property Solutions is a real estate investment company serving Northeast Ohio. We are not licensed real estate agents and do not charge commissions. We purchase properties directly or through our network of investment partners.</p>
+            <p className="italic opacity-80 uppercase tracking-widest text-[10px]">Nijack Property Solutions is a real estate investment company serving Northeast Ohio. We are not licensed real estate agents and do not charge commissions.</p>
           </div>
           
-          <p className="text-[12px] opacity-70 uppercase tracking-[0.2em] font-black text-white">
+          <p className="text-[12px] opacity-90 uppercase tracking-[0.2em] font-black text-white">
             © {new Date().getFullYear()} NIJACK PROPERTY SOLUTIONS. ALL RIGHTS RESERVED.
           </p>
         </div>
