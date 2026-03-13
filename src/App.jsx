@@ -142,7 +142,7 @@ export default function NijackPropertySolutionsWebsite() {
                     "Probate / Inherited", "Pre-foreclosure", "Code Violations", 
                     "Needs Repairs", "Tired Landlord", "Problem Tenants", 
                     "Vacant", "Relocating", "Taxes Behind", 
-                    "Fire Damage", "Downsizing", "Other"
+                    "Fire Damage", "Downsizing", "Just shopping around / Curious"
                   ].map((label) => (
                     <label key={label} className="flex gap-3 items-center cursor-pointer">
                       <input type="checkbox" name="situation" value={label} className="h-5 w-5 accent-[#003366] rounded border-gray-300 flex-shrink-0" /> 
@@ -194,7 +194,6 @@ export default function NijackPropertySolutionsWebsite() {
             ))}
           </div>
           
-          {/* GEOGRAPHIC TRUST SIGNALS */}
           <div className="pt-6 border-t border-gray-100">
             <p className="text-[#003366] font-bold text-sm uppercase tracking-widest mb-2">Serving homeowners throughout Northeast Ohio</p>
             <p className="text-gray-400 text-xs font-semibold">
