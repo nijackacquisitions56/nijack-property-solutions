@@ -55,15 +55,15 @@ export default function NijackPropertySolutionsMaster() {
         </div>
       </section>
 
-      {/* VIDEO SPOTLIGHT */}
+      {/* VIDEO SECTION */}
       <section className="mx-auto max-w-4xl px-6 -mt-20 mb-20">
         <div className="bg-[#001122] rounded-3xl shadow-2xl border-4 border-white overflow-hidden aspect-video relative group">
            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 bg-gradient-to-br from-[#003366] to-[#001122]">
               <div className="w-16 h-16 bg-[#D4AF37] rounded-full flex items-center justify-center mb-4 shadow-lg transition-transform group-hover:scale-110">
                 <span className="text-white text-2xl ml-1">▶</span>
               </div>
-              <h3 className="text-white font-black text-2xl uppercase tracking-tighter">Virtual Solutions for Northeast Ohio</h3>
-              <p className="text-[#D4AF37] font-bold uppercase text-[10px] tracking-widest italic">2-Minute Video Processing...</p>
+              <h3 className="text-white font-black text-2xl uppercase tracking-tighter">How We Help Sellers In Northeast Ohio</h3>
+              <p className="text-[#D4AF37] font-bold uppercase text-[10px] tracking-widest italic">Video Ready Tomorrow</p>
            </div>
         </div>
       </section>
@@ -72,7 +72,7 @@ export default function NijackPropertySolutionsMaster() {
       <main className="py-16 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-12 gap-12 items-start">
           
-          {/* LEAD FORM (WITH SITUATION SECTION) */}
+          {/* LEAD FORM WITH SITUATION CHECKBOXES */}
           <div className="lg:col-span-7 bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100">
             {!submitted ? (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -83,7 +83,6 @@ export default function NijackPropertySolutionsMaster() {
                 </div>
                 <input name="property_address" required placeholder="Property Address" className="rounded-xl border border-gray-200 p-4 w-full" />
                 
-                {/* SITUATION CHECKBOXES RESTORED */}
                 <div className="p-5 bg-gray-50 rounded-2xl border border-gray-100">
                   <p className="text-[10px] font-black text-[#003366] uppercase mb-4 text-center tracking-widest opacity-70 italic">What is your current situation?</p>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-[10px]">
@@ -105,7 +104,7 @@ export default function NijackPropertySolutionsMaster() {
             )}
           </div>
 
-          {/* SIDEBAR */}
+          {/* SIDEBAR COMPARISON & PDF */}
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
               <h3 className="text-xl font-black text-[#003366] mb-6 uppercase border-b pb-4">The Nijack Advantage</h3>
@@ -123,26 +122,26 @@ export default function NijackPropertySolutionsMaster() {
                 ))}
               </div>
             </div>
-            {/* LEAD MAGNET */}
+            
             <div className="bg-[#003366] rounded-3xl p-6 text-white text-center shadow-lg">
               <p className="text-[9px] font-bold uppercase mb-2 tracking-[0.2em] opacity-80">Free Strategy Guide</p>
               <h4 className="text-sm font-black mb-4 uppercase tracking-tight">Agent vs. Cash Comparison PDF</h4>
-              <a href="#" className="inline-block bg-[#D4AF37] text-white px-8 py-2 rounded-full font-black text-[10px] hover:scale-105 transition-transform">DOWNLOAD NOW</a>
+              <a href="#" className="inline-block bg-[#D4AF37] text-white px-8 py-2 rounded-full font-black text-[10px] hover:scale-105 transition-transform shadow-md">DOWNLOAD NOW</a>
             </div>
           </div>
         </div>
       </main>
 
-      {/* FAQ SECTION RESTORED */}
+      {/* FAQ SECTION */}
       <section id="faq" className="py-20 bg-white border-t border-gray-100">
         <div className="mx-auto max-w-4xl px-6">
           <h2 className="text-3xl font-black text-[#003366] text-center uppercase mb-12 tracking-tight">Common Questions</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 text-left">
             {[
-              { q: "Do I need to clean or fix anything?", a: "No. We buy properties in 100% as-is condition. You can even leave unwanted items behind." },
-              { q: "How long does the process take?", a: "We typically close in 14-30 days, but we can move faster or slower depending on your needs." },
-              { q: "Are there any commissions?", a: "None. We are direct buyers, not agents. You pay $0 in realtor fees or hidden commissions." },
-              { q: "What areas do you buy in?", a: "We focus specifically on Northeast Ohio, including Akron, Cleveland, and surrounding suburbs." }
+              { q: "Do I need to fix anything?", a: "No. We buy properties in 100% as-is condition. You can even leave unwanted items behind." },
+              { q: "How long does it take?", a: "We typically close in 14-30 days, but we can move on your timeline." },
+              { q: "Are there fees?", a: "Zero. We are direct buyers, not agents. You pay $0 in realtor fees or commissions." },
+              { q: "Where do you buy?", a: "We focus on Northeast Ohio, including Akron, Cleveland, and surrounding suburbs." }
             ].map((item, i) => (
               <div key={i} className="space-y-2">
                 <p className="font-black text-[#003366] uppercase text-xs">Q: {item.q}</p>
@@ -153,11 +152,22 @@ export default function NijackPropertySolutionsMaster() {
         </div>
       </section>
 
+      {/* FAMILY PROMISE SECTION */}
+      <section className="py-16 bg-[#003366]/5 px-6 border-y border-gray-100 text-center">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-2xl font-black text-[#003366] uppercase mb-4 tracking-tighter underline decoration-[#D4AF37] decoration-4">The Nijack Promise</h2>
+          <p className="text-gray-600 font-bold leading-relaxed uppercase text-[11px] tracking-widest px-4 max-w-2xl mx-auto">
+            "When you call Nijack, you're talking to us. Nicole handles the research while Jay works with you directly to find a solution that fits your timeline. Rooted in care, driven by results."
+          </p>
+          <div className="mt-8 font-black text-[#003366] text-xs uppercase italic">Nicole & Jay — Your Virtual Property Partners</div>
+        </div>
+      </section>
+
       {/* FOOTER */}
       <footer className="bg-[#001122] text-white py-16 border-t-8 border-[#D4AF37] text-center">
         <div className="mx-auto max-w-4xl px-6">
           <div className="font-black text-2xl uppercase mb-2">NIJACK PROPERTY SOLUTIONS</div>
-          <p className="text-[#D4AF37] text-[10px] font-bold tracking-[0.5em] mb-12 uppercase">Northeast Ohio Real Estate Investment Solutions</p>
+          <p className="text-[#D4AF37] text-[10px] font-bold tracking-[0.5em] mb-12 uppercase font-black">Northeast Ohio Real Estate Investment Solutions</p>
           <div className="bg-white/5 rounded-2xl p-8 text-left border border-white/10 mb-12 text-[10px] text-gray-400 leading-relaxed max-w-2xl mx-auto uppercase font-bold tracking-tighter">
             <p>At <span className="text-white">Nijack Property Solutions</span>, we value your privacy. Your data will <span className="text-[#D4AF37] underline">NEVER</span> be sold. Serving Northeast Ohio. 14-30 day typical closing.</p>
           </div>
