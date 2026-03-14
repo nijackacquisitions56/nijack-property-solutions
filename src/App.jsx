@@ -32,7 +32,7 @@ export default function NijackPropertySolutionsElite() {
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans selection:bg-[#D4AF37] selection:text-white text-[15px]">
       
-      {/* HEADER WITH RESTORED LINKS */}
+      {/* HEADER */}
       <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur-sm shadow-sm">
         <div className="mx-auto max-w-7xl px-6 py-3 flex justify-between items-center">
           <div className="flex items-center gap-3">
@@ -41,7 +41,7 @@ export default function NijackPropertySolutionsElite() {
             </div>
             <div className="text-left leading-tight hidden sm:block">
               <div className="font-black text-lg text-[#003366] uppercase tracking-tight">NIJACK <span className="text-[#D4AF37]">PROPERTY</span></div>
-              <div className="text-[9px] text-gray-400 uppercase tracking-[0.3em] font-bold">Solutions</div>
+              <div className="text-[9px] text-gray-400 uppercase tracking-[0.4em] font-bold">Solutions</div>
             </div>
           </div>
           
@@ -56,7 +56,7 @@ export default function NijackPropertySolutionsElite() {
         </div>
       </header>
 
-      {/* REVISED HERO: SMALLER ON MOBILE, BETTER UNDERLINE SPACING */}
+      {/* HERO SECTION */}
       <section className="bg-[#003366] text-white pt-10 pb-28 md:pt-12 md:pb-32 border-b-4 border-[#D4AF37]">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h1 className="text-3xl md:text-8xl font-black mb-4 uppercase tracking-tighter leading-[1.1] md:leading-[0.9]">
@@ -80,25 +80,29 @@ export default function NijackPropertySolutionsElite() {
                 <span className="text-white text-xl ml-1">▶</span>
               </div>
               <h3 className="text-white font-black text-lg uppercase tracking-tighter">Process Walkthrough</h3>
-              <p className="text-[#D4AF37] font-bold uppercase text-[8px] tracking-widest italic text-center">Ready Tomorrow</p>
+              <p className="text-[#D4AF37] font-bold uppercase text-[8px] tracking-widest italic text-center">Coming Soon</p>
            </div>
         </div>
       </section>
 
-      {/* FAQ MOVED UP */}
-      <section id="faq" className="py-10 bg-white px-6">
+      {/* CORRECTED FAQ SECTION */}
+      <section id="faq" className="py-12 bg-white px-6">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-black text-[#003366] text-center uppercase mb-10 tracking-tighter">Common Questions</h2>
-          <div className="grid md:grid-cols-2 gap-10 text-left">
+          <h2 className="text-3xl font-black text-[#003366] text-center uppercase mb-10 tracking-tighter">Common Questions</h2>
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 text-left">
             {[
-              { q: "Fix anything?", a: "No. We buy 100% as-is. Leave what you don't want." },
-              { q: "How long?", a: "14-30 days typically. You choose the date." },
-              { q: "Fees?", a: "Zero commissions. Zero hidden costs." },
-              { q: "Where?", a: "Northeast Ohio: Akron, Cleveland, & Suburbs." }
+              { q: "Do I need to fix anything?", a: "No. We purchase properties in 100% as-is condition. You can even leave unwanted items or trash behind; we handle the cleanup." },
+              { q: "How long does the process take?", a: "We typically close within 14-30 days, but we can move as fast or as slow as your specific situation requires." },
+              { q: "Are there any hidden fees?", a: "Zero. We are direct buyers, not agents. You pay no commissions, no closing costs, and no hidden service fees." },
+              { q: "What areas do you serve?", a: "We are based in Northeast Ohio (Akron/Cleveland), but through our network of investment partners, we can provide solutions nationwide." }
             ].map((item, i) => (
-              <div key={i} className="space-y-1">
-                <p className="font-black text-[#003366] uppercase text-xs">Q: {item.q}</p>
-                <p className="text-gray-600 font-bold uppercase tracking-tighter leading-relaxed">{item.a}</p>
+              <div key={i} className="space-y-3">
+                <p className="font-black text-[#003366] uppercase text-sm tracking-tight border-l-4 border-[#D4AF37] pl-3">
+                  {item.q}
+                </p>
+                <p className="text-gray-600 font-medium leading-relaxed text-[14px]">
+                  {item.a}
+                </p>
               </div>
             ))}
           </div>
@@ -106,10 +110,9 @@ export default function NijackPropertySolutionsElite() {
       </section>
 
       {/* MAIN CAPTURE GRID */}
-      <main className="py-12 bg-gray-50">
+      <main className="py-12 bg-gray-50 border-y border-gray-100">
         <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-12 gap-10 items-start">
           
-          {/* FORM WITH BORDERED OTHER BOX */}
           <div className="lg:col-span-7 bg-white rounded-2xl p-6 md:p-10 shadow-xl border border-gray-100">
             {!submitted && !isShopping ? (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -156,12 +159,12 @@ export default function NijackPropertySolutionsElite() {
             ) : (
               <div className="text-center py-16">
                 <h2 className="text-3xl font-black text-[#D4AF37] uppercase tracking-tighter">Review Initiated!</h2>
-                <p className="font-bold text-[#003366] uppercase mt-2">Our team will be in touch shortly.</p>
+                <p className="font-bold text-[#003366] uppercase mt-2 text-center">Our team will be in touch shortly.</p>
               </div>
             )}
           </div>
 
-          {/* CENTERED ARROW ADVANTAGE */}
+          {/* ADVANTAGE BLOCK */}
           <div className="lg:col-span-5 space-y-8">
             <div className="bg-white rounded-2xl p-8 shadow-md border border-gray-100">
               <h3 className="text-2xl font-black text-[#003366] mb-8 uppercase border-b-4 border-[#D4AF37] pb-4 text-center tracking-tighter">The Advantage</h3>
@@ -189,11 +192,11 @@ export default function NijackPropertySolutionsElite() {
       </main>
 
       {/* PROCESS SECTION */}
-      <section id="how-it-works" className="py-12 bg-white border-y border-gray-100 px-6">
+      <section id="how-it-works" className="py-16 bg-white px-6">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="text-3xl font-black text-[#003366] uppercase mb-12 tracking-tighter">How Our Process Works</h2>
           <div className="grid md:grid-cols-3 gap-10">
-            {[{t:"Talk",d:"Complete the form. We analyze your data immediately."}, {t:"Review",d:"Connect for a brief virtual walkthrough or provide photos."}, {t:"Paid",d:"Sign digitally and get paid on your timeline."}].map((s,i) => (
+            {[{t:"Talk",d:"Complete the form. Our analysts review your property data immediately."}, {t:"Review",d:"Connect for a brief virtual walkthrough or provide photos for a fast assessment."}, {t:"Paid",d:"Sign digitally and get paid on your specific timeline."}].map((s,i) => (
               <div key={i} className="space-y-3">
                 <div className="text-3xl font-black text-[#D4AF37]">0{i+1}</div>
                 <h4 className="font-black text-[#003366] uppercase text-sm tracking-widest">{s.t}</h4>
@@ -204,13 +207,14 @@ export default function NijackPropertySolutionsElite() {
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* FOOTER WITH RESTORED DISCLAIMER */}
       <footer className="bg-[#001122] text-white py-16 border-t-4 border-[#D4AF37] text-center px-6">
         <div className="mx-auto max-w-4xl">
           <div className="font-black text-2xl uppercase mb-2 tracking-tighter">NIJACK PROPERTY SOLUTIONS</div>
-          <p className="text-[#D4AF37] text-[10px] font-bold tracking-[0.4em] mb-12 uppercase">Virtual Investment Solutions • Northeast Ohio</p>
-          <div className="bg-white/5 rounded-2xl p-8 text-left border border-white/10 mb-12 text-[10px] text-gray-400 leading-relaxed max-w-2xl mx-auto uppercase font-bold tracking-tighter opacity-70">
-            <p>At <span className="text-white">Nijack Property Solutions</span>, we value your privacy. Your data will <span className="text-[#D4AF37] underline">NEVER</span> be sold. Serving Northeast Ohio. 14-30 day typical closing.</p>
+          <p className="text-[#D4AF37] text-[10px] font-bold tracking-[0.4em] mb-12 uppercase">Northeast Ohio & Nationwide Investment Solutions</p>
+          <div className="bg-white/5 rounded-2xl p-8 text-left border border-white/10 mb-12 text-[10px] text-gray-400 leading-relaxed max-w-2xl mx-auto uppercase font-bold tracking-tighter opacity-80">
+            <p className="mb-4">At <span className="text-white">Nijack Property Solutions</span>, we value your privacy. Your data will <span className="text-[#D4AF37] underline">NEVER</span> be sold.</p>
+            <p className="italic">Nijack Property Solutions is a real estate investment firm. We are not licensed real estate agents. We purchase properties directly or through our extensive network of private investment partners to ensure a guaranteed closing for our clients.</p>
           </div>
           <p className="text-[11px] opacity-70 uppercase tracking-[0.2em] font-black">
             © {new Date().getFullYear()} NIJACK PROPERTY SOLUTIONS. ALL RIGHTS RESERVED.
