@@ -53,12 +53,12 @@ const NijackSite = () => {
             
             <div className="p-6 md:p-10 grid md:grid-cols-2 gap-10">
               
-              {/* CONTACT COLUMN */}
+              {/* CONTACT COLUMN (STEP 1) */}
               <div className="space-y-5">
                 <p className="text-[11px] font-black text-[#003366] uppercase tracking-[0.2em] border-b-2 border-[#D4AF37] inline-block pb-1 mb-2 italic">STEP 1: CONTACT INFO</p>
                 <div>
                   <label className="text-[10px] font-black text-[#003366] uppercase tracking-widest ml-1">Full Name</label>
-                  <input type="text" placeholder="Nicole..." className="w-full bg-gray-50 border-2 border-gray-100 rounded-xl p-3 text-sm font-bold outline-none focus:border-[#003366] transition-all" required />
+                  <input type="text" placeholder="Name..." className="w-full bg-gray-50 border-2 border-gray-100 rounded-xl p-3 text-sm font-bold outline-none focus:border-[#003366] transition-all" required />
                 </div>
                 <div>
                   <label className="text-[10px] font-black text-[#003366] uppercase tracking-widest ml-1">Phone Number</label>
@@ -70,11 +70,11 @@ const NijackSite = () => {
                 </div>
               </div>
 
-              {/* SITUATION & SELL TIME COLUMN */}
+              {/* SITUATION & SELL TIME COLUMN (STEP 2) */}
               <div className="space-y-5 bg-gray-50 p-6 rounded-[2rem] border border-gray-100 shadow-inner">
                 <p className="text-[11px] font-black text-[#003366] uppercase tracking-[0.2em] border-b-2 border-[#D4AF37] inline-block pb-1 mb-2 italic">STEP 2: SELL TIME & SITUATION</p>
                 
-                {/* SELL TIME DROPDOWN */}
+                {/* *** THE SELL TIME DROPDOWN YOU ARE LOOKING FOR *** */}
                 <div>
                   <label className="text-[11px] font-black text-[#003366] uppercase tracking-widest block mb-2 italic">SELL TIME:</label>
                   <select name="selling_timeline" required className="w-full bg-white border-2 border-[#D4AF37] rounded-xl p-3 font-black uppercase text-xs outline-none focus:ring-4 focus:ring-[#D4AF37]/20 shadow-sm text-[#003366]">
