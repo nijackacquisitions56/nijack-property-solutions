@@ -55,14 +55,14 @@ export default function NijackPropertySolutionsMaster() {
         </div>
       </section>
 
-      {/* VIDEO SECTION */}
+      {/* VIDEO SPOTLIGHT */}
       <section className="mx-auto max-w-4xl px-6 -mt-20 mb-20">
         <div className="bg-[#001122] rounded-3xl shadow-2xl border-4 border-white overflow-hidden aspect-video relative group">
            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 bg-gradient-to-br from-[#003366] to-[#001122]">
               <div className="w-16 h-16 bg-[#D4AF37] rounded-full flex items-center justify-center mb-4 shadow-lg transition-transform group-hover:scale-110">
                 <span className="text-white text-2xl ml-1">▶</span>
               </div>
-              <h3 className="text-white font-black text-2xl uppercase tracking-tighter">How We Help Sellers In Northeast Ohio</h3>
+              <h3 className="text-white font-black text-2xl uppercase tracking-tighter">Virtual Solutions for Northeast Ohio</h3>
               <p className="text-[#D4AF37] font-bold uppercase text-[10px] tracking-widest italic">Video Ready Tomorrow</p>
            </div>
         </div>
