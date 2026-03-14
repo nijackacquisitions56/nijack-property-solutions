@@ -4,6 +4,7 @@ export default function NijackPropertySolutionsElite() {
   const [submitted, setSubmitted] = useState(false);
   const [showOther, setShowOther] = useState(false);
   const [isShopping, setIsShopping] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,28 +33,48 @@ export default function NijackPropertySolutionsElite() {
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans selection:bg-[#D4AF37] selection:text-white text-[15px]">
       
-      {/* HEADER */}
+      {/* IMPROVED RESPONSIVE HEADER */}
       <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur-sm shadow-sm">
-        <div className="mx-auto max-w-7xl px-6 py-3 flex justify-between items-center">
-          <div className="flex items-center gap-3">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 py-3 flex justify-between items-center">
+          
+          {/* LOGO AREA - ALWAYS VISIBLE */}
+          <div className="flex items-center gap-2 md:gap-3">
             <div className="h-10 w-auto px-3 bg-[#003366] rounded-lg flex items-center justify-center border-b-2 border-r-2 border-[#D4AF37] shadow-md">
               <span className="text-white font-black text-lg tracking-tighter uppercase">N.P.S.</span>
             </div>
-            <div className="text-left leading-tight hidden sm:block">
-              <div className="font-black text-lg text-[#003366] uppercase tracking-tight">NIJACK <span className="text-[#D4AF37]">PROPERTY</span></div>
-              <div className="text-[9px] text-gray-400 uppercase tracking-[0.4em] font-bold">Solutions</div>
+            <div className="text-left leading-tight">
+              <div className="font-black text-sm md:text-lg text-[#003366] uppercase tracking-tight">
+                NIJACK <span className="text-[#D4AF37]">PROPERTY</span>
+              </div>
+              <div className="text-[8px] md:text-[9px] text-gray-400 uppercase tracking-[0.3em] font-bold">Solutions</div>
             </div>
           </div>
           
+          {/* DESKTOP NAV */}
           <nav className="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest text-[#003366]">
             <a href="#how-it-works" className="hover:text-[#D4AF37] transition-colors">How It Works</a>
             <a href="#faq" className="hover:text-[#D4AF37] transition-colors">FAQ</a>
           </nav>
 
-          <div className="text-right">
-             <a href="tel:3303319070" className="font-black text-[#003366] text-lg md:text-xl">330-331-9070</a>
+          {/* CONTACT & MOBILE MENU TOGGLE */}
+          <div className="flex items-center gap-4">
+             <a href="tel:3303319070" className="font-black text-[#003366] text-base md:text-xl">330-331-9070</a>
+             <button 
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="md:hidden text-[#003366] p-1"
+             >
+               {isMenuOpen ? "✕" : "☰"}
+             </button>
           </div>
         </div>
+
+        {/* MOBILE MENU DROPDOWN */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-white border-b border-gray-100 p-6 flex flex-col gap-4 text-[12px] font-black uppercase tracking-widest text-[#003366] animate-in slide-in-from-top duration-200">
+            <a href="#how-it-works" onClick={() => setIsMenuOpen(false)}>How It Works</a>
+            <a href="#faq" onClick={() => setIsMenuOpen(false)}>FAQ</a>
+          </div>
+        )}
       </header>
 
       {/* HERO SECTION */}
@@ -72,7 +93,7 @@ export default function NijackPropertySolutionsElite() {
         </div>
       </section>
 
-      {/* SMALLER VIDEO */}
+      {/* VIDEO */}
       <section className="mx-auto max-w-xl px-6 -mt-16 mb-12">
         <div className="bg-[#001122] rounded-2xl shadow-2xl border-4 border-white overflow-hidden aspect-video relative group ring-4 ring-black/5">
            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 bg-gradient-to-br from-[#003366] to-[#001122]">
@@ -85,10 +106,10 @@ export default function NijackPropertySolutionsElite() {
         </div>
       </section>
 
-      {/* CORRECTED FAQ SECTION */}
+      {/* FAQ */}
       <section id="faq" className="py-12 bg-white px-6">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-3xl font-black text-[#003366] text-center uppercase mb-10 tracking-tighter">Common Questions</h2>
+          <h2 className="text-2xl md:text-3xl font-black text-[#003366] text-center uppercase mb-10 tracking-tighter">Common Questions</h2>
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 text-left">
             {[
               { q: "Do I need to fix anything?", a: "No. We purchase properties in 100% as-is condition. You can even leave unwanted items or trash behind; we handle the cleanup." },
@@ -154,7 +175,7 @@ export default function NijackPropertySolutionsElite() {
             ) : isShopping ? (
               <div className="text-center py-16 px-4">
                 <h2 className="text-2xl font-black text-[#003366] uppercase mb-4">Market Insight</h2>
-                <p className="text-[15px] font-bold text-gray-500 uppercase leading-relaxed">We specialize in expedited closings within 60 days. Please download our strategy guide to the right for more information on the current market.</p>
+                <p className="text-[15px] font-bold text-gray-500 uppercase leading-relaxed">We specialize in expedited closings within 60 days. Please download our strategy guide to the right for more information.</p>
               </div>
             ) : (
               <div className="text-center py-16">
@@ -164,10 +185,9 @@ export default function NijackPropertySolutionsElite() {
             )}
           </div>
 
-          {/* ADVANTAGE BLOCK */}
           <div className="lg:col-span-5 space-y-8">
-            <div className="bg-white rounded-2xl p-8 shadow-md border border-gray-100">
-              <h3 className="text-2xl font-black text-[#003366] mb-8 uppercase border-b-4 border-[#D4AF37] pb-4 text-center tracking-tighter">The Advantage</h3>
+            <div className="bg-white rounded-2xl p-8 shadow-md border border-gray-100 text-center">
+              <h3 className="text-2xl font-black text-[#003366] mb-8 uppercase border-b-4 border-[#D4AF37] pb-4 tracking-tighter">The Advantage</h3>
               <div className="space-y-6">
                 {[
                   { bad: "Agent: 6% Fee", good: "N.P.S: $0 Fees" },
@@ -175,9 +195,9 @@ export default function NijackPropertySolutionsElite() {
                   { bad: "90+ Day Wait", good: "N.P.S: 14-30 Days" }
                 ].map((row, i) => (
                   <div key={i} className="flex items-center text-[13px] font-black uppercase tracking-tighter">
-                    <span className="text-red-600 font-black w-[42%] text-center">{row.bad}</span>
-                    <span className="text-[#D4AF37] text-2xl font-bold w-[16%] text-center">➔</span>
-                    <span className="text-[#003366] w-[42%] text-center">{row.good}</span>
+                    <span className="text-red-600 font-black w-[42%]">{row.bad}</span>
+                    <span className="text-[#D4AF37] text-2xl font-bold w-[16%]">➔</span>
+                    <span className="text-[#003366] w-[42%]">{row.good}</span>
                   </div>
                 ))}
               </div>
@@ -191,23 +211,23 @@ export default function NijackPropertySolutionsElite() {
         </div>
       </main>
 
-      {/* PROCESS SECTION */}
+      {/* PROCESS */}
       <section id="how-it-works" className="py-16 bg-white px-6">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="text-3xl font-black text-[#003366] uppercase mb-12 tracking-tighter">How Our Process Works</h2>
           <div className="grid md:grid-cols-3 gap-10">
-            {[{t:"Talk",d:"Complete the form. Our analysts review your property data immediately."}, {t:"Review",d:"Connect for a brief virtual walkthrough or provide photos for a fast assessment."}, {t:"Paid",d:"Sign digitally and get paid on your specific timeline."}].map((s,i) => (
+            {[{t:"Talk",d:"Complete the form. Our analysts review your property data immediately."}, {t:"Review",d:"Connect for a brief virtual walkthrough or provide photos for assessment."}, {t:"Paid",d:"Sign digitally and get paid on your specific timeline."}].map((s,i) => (
               <div key={i} className="space-y-3">
                 <div className="text-3xl font-black text-[#D4AF37]">0{i+1}</div>
                 <h4 className="font-black text-[#003366] uppercase text-sm tracking-widest">{s.t}</h4>
-                <p className="text-[13px] text-gray-500 font-bold uppercase tracking-tight leading-relaxed">{s.d}</p>
+                <p className="text-[13px] text-gray-600 font-bold uppercase tracking-tight leading-relaxed">{s.d}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FOOTER WITH RESTORED DISCLAIMER */}
+      {/* FOOTER */}
       <footer className="bg-[#001122] text-white py-16 border-t-4 border-[#D4AF37] text-center px-6">
         <div className="mx-auto max-w-4xl">
           <div className="font-black text-2xl uppercase mb-2 tracking-tighter">NIJACK PROPERTY SOLUTIONS</div>
