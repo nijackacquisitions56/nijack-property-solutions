@@ -533,7 +533,30 @@ const NijackSite = () => {
           </div>
         </div>
       </section>
-{/* 11. FOOTER */}
+{/* 10. CTA SECTION: SCROLLS TO FORM */}
+<section className="bg-[#003366] text-white py-16 md:py-24 px-6 text-center border-t-8 border-[#D4AF37]">
+  <div className="max-w-4xl mx-auto">
+    <p className="text-[#D4AF37] font-black uppercase tracking-[0.3em] text-[10px] md:text-[12px] mb-4 italic">
+      READY TO TALK?
+    </p>
+    
+    <h2 className="text-3xl md:text-6xl font-black uppercase tracking-tighter mb-6 leading-tight">
+      START WITH YOUR <br className="hidden md:block" /> PROPERTY DETAILS
+    </h2>
+    
+    <p className="text-sm md:text-lg font-medium opacity-80 max-w-2xl mx-auto leading-relaxed mb-10">
+      Tell us about the property and your situation. We'll review the details and discuss possible next steps.
+    </p>
+
+    {/* THE GOLD BUTTON FIX */}
+    <a
+      href="#property-form"
+      className="inline-block bg-[#D4AF37] text-[#003366] px-10 py-5 rounded-full font-black uppercase tracking-[0.12em] text-sm md:text-lg hover:bg-white transition-all shadow-xl"
+    >
+      Submit Property Details
+    </a>
+  </div>
+</section>      {/* 11. FOOTER */}
       <footer className="bg-white py-12 border-t border-gray-200">
         <div className="max-w-6xl mx-auto px-4 md:px-6 text-center">
           <div className="mb-4">
