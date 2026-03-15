@@ -83,8 +83,9 @@ const NijackSite = () => {
           </div>
         </div>
       </section>
-
-      {/* 3. MAIN FORM */}
+<p className="text-sm md:text-base text-white/85 font-semibold mt-4 max-w-2xl mx-auto leading-relaxed">
+  Depending on the property and situation, we may work with trusted investment partners to help create possible solutions for sellers. Our goal is always to find the path that best fits the seller’s needs and timeline.
+</p>      {/* 3. MAIN FORM */}
       <section className="relative -mt-10 md:-mt-12 pb-14 md:pb-16">
         <div className="max-w-3xl mx-auto px-4 md:px-6">
           <form className="bg-white rounded-[2rem] md:rounded-[3rem] shadow-2xl border border-gray-100 overflow-hidden">
