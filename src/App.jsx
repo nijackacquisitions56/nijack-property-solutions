@@ -5,151 +5,128 @@ const NijackSite = () => {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
       
-      {/* 1. HEADER - COMPACT & BRANDED */}
-      <nav className="bg-white py-3 border-b border-gray-100 sticky top-0 z-50">
+      {/* 1. HEADER - CLEAN & AUTHORITATIVE */}
+      <nav className="bg-white py-4 border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
           <div className="flex flex-col">
-            <span className="text-[#003366] font-black text-xl tracking-tighter leading-none">NIJACK PROPERTY</span>
-            <span className="text-[#D4AF37] font-bold text-[10px] tracking-[0.3em] uppercase leading-none mt-1">S O L U T I O N S</span>
+            <span className="text-[#003366] font-black text-2xl tracking-tighter leading-none uppercase">NIJACK PROPERTY</span>
+            <span className="text-[#D4AF37] font-bold text-[11px] tracking-[0.3em] uppercase leading-none mt-1 text-right">S O L U T I O N S</span>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="hidden md:flex flex-col items-end mr-4">
-              <span className="text-[10px] font-black text-[#003366] uppercase tracking-widest">Available 24/7</span>
-              <span className="text-[#D4AF37] font-bold text-xs uppercase italic">Rooted in Care</span>
-            </div>
-            <a href="tel:3303319070" className="bg-[#003366] text-white px-5 py-2.5 rounded-full font-black text-sm flex items-center gap-2 hover:scale-105 transition-all shadow-lg shadow-[#003366]/20">
-              <Phone size={16} /> 330-331-9070
-            </a>
-          </div>
+          <a href="tel:3303319070" className="bg-[#003366] text-white px-6 py-3 rounded-full font-black text-sm flex items-center gap-2 hover:bg-[#D4AF37] transition-all shadow-lg">
+            <Phone size={18} /> 330-331-9070
+          </a>
         </div>
       </nav>
 
-      {/* 2. HERO SECTION - TIGHT VERTICAL SPACE */}
-      <section className="bg-[#003366] text-white pt-10 pb-20 md:pt-12 md:pb-28 border-b-4 border-[#D4AF37]">
+      {/* 2. HERO SECTION - HIGH IMPACT */}
+      <section className="bg-[#003366] text-white pt-12 pb-24 border-b-8 border-[#D4AF37]">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-8xl font-black mb-6 uppercase tracking-tighter leading-[0.9]">
+          <h1 className="text-5xl md:text-8xl font-black mb-6 uppercase tracking-tighter leading-[0.9]">
             Sell Your House <span className="text-[#D4AF37]">FAST</span> <br/>
             For <span className="underline decoration-[#D4AF37]/40">CASH</span>
           </h1>
-          
-          <div className="inline-flex items-center gap-3 bg-white/10 border border-white/20 px-6 py-2 rounded-full mb-6">
-            <div className="flex text-[#D4AF37]"><Star size={14} fill="currentColor" /><Star size={14} fill="currentColor" /><Star size={14} fill="currentColor" /><Star size={14} fill="currentColor" /><Star size={14} fill="currentColor" /></div>
-            <p className="text-sm font-black uppercase tracking-widest">Successful Closings: 14 - 30 Days</p>
-          </div>
-
-          <p className="text-lg md:text-2xl font-bold italic opacity-90 uppercase tracking-[0.2em]">
+          <p className="text-xl md:text-3xl font-bold italic opacity-90 uppercase tracking-[0.2em] mb-8">
             "Rooted in Care, Driven by Results."
           </p>
+          <div className="inline-flex items-center gap-3 bg-white/10 border border-white/20 px-8 py-3 rounded-full">
+            <div className="flex text-[#D4AF37]"><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /></div>
+            <p className="text-sm md:text-lg font-black uppercase tracking-[0.1em]">Successful Closings: 14 - 30 Days</p>
+          </div>
         </div>
       </section>
 
-      {/* 3. MAIN FORM - FLOATING & MULTI-COLUMN TO SAVE SPACE */}
-      <section className="relative -mt-12 md:-mt-16 pb-12">
-        <div className="max-w-5xl mx-auto px-6">
-          <form className="bg-white rounded-[2.5rem] shadow-2xl border border-gray-100 overflow-hidden">
-            <div className="bg-[#D4AF37] py-4 text-center">
-              <h2 className="text-[#003366] font-black uppercase text-xs md:text-sm tracking-[0.2em]">Start Your Successful Closing Strategy</h2>
+      {/* 3. MAIN FORM - THE "10/10" ORIGINAL STRUCTURE */}
+      <section className="relative -mt-16 pb-20">
+        <div className="max-w-4xl mx-auto px-6">
+          <form className="bg-white rounded-[3rem] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] border border-gray-100 overflow-hidden">
+            <div className="bg-[#D4AF37] py-5 text-center">
+              <h2 className="text-[#003366] font-black uppercase text-sm md:text-lg tracking-[0.2em]">Start Your Successful Closing Strategy</h2>
             </div>
             
-            <div className="p-6 md:p-10 grid md:grid-cols-2 gap-10">
+            <div className="p-8 md:p-12 space-y-10">
               
-              {/* CONTACT COLUMN (STEP 1) */}
-              <div className="space-y-5">
-                <p className="text-[11px] font-black text-[#003366] uppercase tracking-[0.2em] border-b-2 border-[#D4AF37] inline-block pb-1 mb-2 italic">STEP 1: CONTACT INFO</p>
-                <div>
-                  <label className="text-[10px] font-black text-[#003366] uppercase tracking-widest ml-1">Full Name</label>
-                  <input type="text" placeholder="Name..." className="w-full bg-gray-50 border-2 border-gray-100 rounded-xl p-3 text-sm font-bold outline-none focus:border-[#003366] transition-all" required />
+              {/* STEP 1: CONTACT INFO */}
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <span className="bg-[#003366] text-white w-8 h-8 rounded-full flex items-center justify-center font-black text-sm">1</span>
+                  <h3 className="text-[#003366] font-black uppercase tracking-widest text-lg italic">Contact Information</h3>
                 </div>
-                <div>
-                  <label className="text-[10px] font-black text-[#003366] uppercase tracking-widest ml-1">Phone Number</label>
-                  <input type="tel" placeholder="330-..." className="w-full bg-gray-50 border-2 border-gray-100 rounded-xl p-3 text-sm font-bold outline-none focus:border-[#003366] transition-all" required />
+                <div className="grid md:grid-cols-2 gap-6">
+                  <input type="text" placeholder="FULL NAME" className="w-full bg-gray-50 border-b-4 border-gray-200 p-4 font-black uppercase text-sm focus:border-[#003366] outline-none transition-all" required />
+                  <input type="tel" placeholder="PHONE NUMBER" className="w-full bg-gray-50 border-b-4 border-gray-200 p-4 font-black uppercase text-sm focus:border-[#003366] outline-none transition-all" required />
                 </div>
-                <div>
-                  <label className="text-[10px] font-black text-[#003366] uppercase tracking-widest ml-1">Property Address</label>
-                  <input type="text" placeholder="Street, City, Zip..." className="w-full bg-gray-50 border-2 border-gray-100 rounded-xl p-3 text-sm font-bold outline-none focus:border-[#003366] transition-all" required />
-                </div>
+                <input type="text" placeholder="PROPERTY ADDRESS (STREET, CITY, ZIP)" className="w-full bg-gray-50 border-b-4 border-gray-200 p-4 font-black uppercase text-sm focus:border-[#003366] outline-none transition-all" required />
               </div>
 
-              {/* SITUATION & SELL TIME COLUMN (STEP 2) */}
-              <div className="space-y-5 bg-gray-50 p-6 rounded-[2rem] border border-gray-100 shadow-inner">
-                <p className="text-[11px] font-black text-[#003366] uppercase tracking-[0.2em] border-b-2 border-[#D4AF37] inline-block pb-1 mb-2 italic">STEP 2: SELL TIME & SITUATION</p>
-                
-                {/* *** THE SELL TIME DROPDOWN YOU ARE LOOKING FOR *** */}
-                <div>
-                  <label className="text-[11px] font-black text-[#003366] uppercase tracking-widest block mb-2 italic">SELL TIME:</label>
-                  <select name="selling_timeline" required className="w-full bg-white border-2 border-[#D4AF37] rounded-xl p-3 font-black uppercase text-xs outline-none focus:ring-4 focus:ring-[#D4AF37]/20 shadow-sm text-[#003366]">
+              {/* STEP 2: SITUATION BOX WITH SELL TIME DROPDOWN */}
+              <div className="space-y-6 p-8 bg-gray-50 rounded-[2rem] border-2 border-dashed border-gray-200 shadow-inner">
+                <div className="flex items-center gap-4">
+                  <span className="bg-[#003366] text-white w-8 h-8 rounded-full flex items-center justify-center font-black text-sm">2</span>
+                  <h3 className="text-[#003366] font-black uppercase tracking-widest text-lg italic underline decoration-[#D4AF37]">The Situation</h3>
+                </div>
+
+                {/* THE SELL TIME DROPDOWN - FRONT AND CENTER */}
+                <div className="space-y-3">
+                  <label className="block text-[12px] font-black text-[#003366] uppercase tracking-[0.2em] italic ml-1">
+                    SELL TIME: (REQUIRED)
+                  </label>
+                  <select name="selling_timeline" required className="w-full bg-white border-2 border-[#D4AF37] rounded-xl p-4 font-black uppercase text-sm text-[#003366] shadow-md focus:ring-4 focus:ring-[#D4AF37]/20 outline-none appearance-none cursor-pointer">
                     <option value="" disabled selected>Select Your Timeline</option>
-                    <option value="ASAP">ASAP (Immediate)</option>
-                    <option value="< 30 Days">&lt; 30 Days</option>
-                    <option value="< 90 Days">&lt; 90 Days</option>
-                    <option value="< 180 Days">&lt; 180 Days</option>
-                    <option value="180 Days+">180 Days+</option>
+                    <option value="ASAP">ASAP (RIGHT AWAY)</option>
+                    <option value="< 30 Days">&lt; 30 DAYS</option>
+                    <option value="< 90 Days">&lt; 90 DAYS</option>
+                    <option value="< 180 Days">&lt; 180 DAYS</option>
+                    <option value="180 Days+">180 DAYS+</option>
                   </select>
                 </div>
 
-                <div>
-                  <label className="text-[11px] font-black text-[#003366] uppercase tracking-widest block mb-3 italic">Current Situation:</label>
-                  <div className="grid grid-cols-2 gap-3">
-                    {["Probate", "Inherited", "Tired Landlord", "Needs Repairs", "Foreclosure", "Vacant"].map((label) => (
-                      <label key={label} className="flex items-center gap-2 cursor-pointer group">
+                {/* SITUATION CHECKBOXES */}
+                <div className="space-y-3">
+                  <label className="block text-[12px] font-black text-[#003366] uppercase tracking-[0.2em] italic ml-1">
+                    Select Your Current Situation:
+                  </label>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {["Probate", "Inherited", "Tired Landlord", "Needs Repairs", "Foreclosure", "Vacant", "Relocating", "Problem Tenant", "Other"].map((label) => (
+                      <label key={label} className="flex items-center gap-3 p-3 bg-white rounded-xl border border-gray-100 cursor-pointer hover:border-[#D4AF37] transition-all group">
                         <input type="checkbox" className="h-4 w-4 accent-[#003366]" />
-                        <span className="text-[10px] font-black uppercase tracking-tighter group-hover:text-[#D4AF37] transition-colors">{label}</span>
+                        <span className="font-black uppercase text-[10px] tracking-tighter text-[#003366] group-hover:text-[#D4AF37]">{label}</span>
                       </label>
                     ))}
                   </div>
                 </div>
               </div>
 
-            </div>
-
-            <div className="px-10 pb-10">
-              <button type="submit" className="w-full bg-[#003366] hover:bg-[#D4AF37] text-white font-black py-5 rounded-2xl shadow-xl shadow-[#003366]/20 transition-all uppercase tracking-[0.3em] flex items-center justify-center gap-4 group text-lg">
-                Get My Cash Offer <ArrowRight className="group-hover:translate-x-3 transition-transform" />
+              <button type="submit" className="w-full bg-[#003366] hover:bg-[#D4AF37] text-white font-black py-6 rounded-[2rem] shadow-2xl transition-all uppercase tracking-[0.4em] flex items-center justify-center gap-4 text-xl group">
+                Get My Cash Offer <ArrowRight className="group-hover:translate-x-4 transition-transform" />
               </button>
-              <p className="text-center text-[9px] font-bold text-gray-400 uppercase mt-4 tracking-widest">No obligation • No hidden fees • 100% Confidential</p>
             </div>
           </form>
         </div>
       </section>
 
-      {/* 4. THE NIJACK ADVANTAGE - COMPACT PILLARS */}
-      <section className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-3 gap-8">
+      {/* 4. COMMON QUESTIONS - BELOW FORM */}
+      <section className="max-w-4xl mx-auto px-6 py-12">
+        <h2 className="text-[#003366] font-black text-4xl uppercase tracking-tighter mb-12 text-center">Common Questions</h2>
+        <div className="space-y-4">
           {[
-            { id: "01", title: "As-Is Cash", body: "No repairs, no cleaning, no junk removal. We take it exactly as it sits.", icon: <ShieldCheck /> },
-            { id: "02", title: "Fast Funding", body: "Close in as little as 14-30 days with local title experts.", icon: <Clock /> },
-            { id: "03", title: "$0 Commissions", body: "We pay all closing costs. No hidden fees, ever.", icon: <CheckCircle2 /> }
-          ].map((pill, idx) => (
-            <div key={idx} className={`p-8 rounded-[2.5rem] transition-all hover:scale-105 ${idx === 1 ? 'bg-[#003366] text-white shadow-xl' : 'border-2 border-[#D4AF37]/20 text-[#003366]'}`}>
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-6 font-black ${idx === 1 ? 'bg-[#D4AF37] text-[#003366]' : 'bg-[#003366] text-[#D4AF37]'}`}>{pill.id}</div>
-              <h3 className="font-black uppercase text-xl mb-3 tracking-tighter italic">{pill.title}</h3>
-              <p className={`text-[13px] font-bold uppercase tracking-tight leading-relaxed ${idx === 1 ? 'opacity-80' : 'text-slate-500'}`}>{pill.body}</p>
+            { q: "How fast can closing happen?", a: "We typically close within 14 to 30 days. Because we pay cash, there are no bank appraisals or inspections to slow us down." },
+            { q: "Do I need to clean or fix anything?", a: "No. We buy houses 'As-Is.' You can leave unwanted furniture, trash, or repairs to us. We handle it all." },
+            { q: "Are there any fees or commissions?", a: "Zero. We pay all closing costs, and since we are the direct buyer, there is no 6% agent commission. The price we agree on is exactly what you get." }
+          ].map((item, idx) => (
+            <div key={idx} className="p-6 border-l-8 border-[#D4AF37] bg-gray-50 rounded-r-2xl">
+              <h4 className="font-black text-[#003366] uppercase text-lg mb-2">{item.q}</h4>
+              <p className="font-bold text-gray-600 text-sm uppercase leading-relaxed tracking-tight">{item.a}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* 5. FOOTER */}
-      <footer className="bg-[#003366] pt-16 pb-8 text-white border-t-4 border-[#D4AF37]">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <div className="flex flex-col mb-8">
-            <span className="font-black text-2xl tracking-tighter uppercase">NIJACK PROPERTY SOLUTIONS</span>
-            <span className="text-[#D4AF37] font-bold text-[10px] tracking-[0.5em] uppercase mt-2 italic">Cuyahoga Falls, Ohio</span>
+      {/* 5. THE ADVANTAGE PILLARS */}
+      <section className="bg-gray-50 py-20 border-t border-gray-100">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center">
+          <div className="bg-white p-10 rounded-[3rem] shadow-xl border-t-8 border-[#003366]">
+             <ShieldCheck className="text-[#D4AF37] mx-auto mb-6" size={48} />
+             <h3 className="font-black text-[#003366] uppercase text-2xl mb-4 tracking-tighter italic">No Repairs</h3>
+             <p className="font-bold text-gray-500 uppercase text-xs tracking-widest leading-loose italic italic">Skip the contractors and the cleaning. We buy exactly as-is.</p>
           </div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 mb-8 max-w-2xl mx-auto">
-            Nijack Property Solutions is a real estate investment firm. We purchase properties directly or through our private investment network to ensure a successful closing.
-          </p>
-          <div className="flex justify-center gap-8 mb-8">
-             <a href="tel:3303319070" className="text-[#D4AF37] hover:text-white transition-colors flex items-center gap-2 font-black uppercase text-xs tracking-widest"><Phone size={14} /> 330-331-9070</a>
-             <a href="mailto:nicole@nijackpropertysolutions.com" className="text-[#D4AF37] hover:text-white transition-colors flex items-center gap-2 font-black uppercase text-xs tracking-widest"><Mail size={14} /> Email Us</a>
-          </div>
-          <div className="pt-8 border-t border-white/10 text-[9px] font-bold opacity-30 tracking-[0.4em] uppercase">
-            © 2026 Nijack Property Solutions | Rooted in Care, Driven by Results.
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-};
-
-export default NijackSite;
+          <div
