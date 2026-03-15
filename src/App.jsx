@@ -106,7 +106,44 @@ const NijackSite = () => {
           </p>
         </div>
       </section>
+{/* SITUATIONS WE HELP */}
+<section className="py-16 text-center bg-white">
+  <div className="max-w-5xl mx-auto px-6">
 
+    <h2 className="text-[#003366] font-black text-3xl uppercase mb-12">
+      Situations We Help Homeowners With
+    </h2>
+
+    <div className="grid md:grid-cols-3 gap-6 text-sm font-bold">
+
+      <div className="bg-gray-50 p-6 rounded-xl border">
+        Probate / Inherited Property
+      </div>
+
+      <div className="bg-gray-50 p-6 rounded-xl border">
+        Vacant or Abandoned Homes
+      </div>
+
+      <div className="bg-gray-50 p-6 rounded-xl border">
+        Costly Repairs Needed
+      </div>
+
+      <div className="bg-gray-50 p-6 rounded-xl border">
+        Problem Tenants
+      </div>
+
+      <div className="bg-gray-50 p-6 rounded-xl border">
+        Behind on Property Taxes
+      </div>
+
+      <div className="bg-gray-50 p-6 rounded-xl border">
+        Relocating or Downsizing
+      </div>
+
+    </div>
+
+  </div>
+</section>
       {/* FORM */}
       <section className="py-20">
         <div className="max-w-3xl mx-auto px-6">
