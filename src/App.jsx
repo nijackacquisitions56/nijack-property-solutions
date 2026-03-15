@@ -30,60 +30,63 @@ const NijackSite = () => {
         </div>
       </nav>
 
-      {/* 2. HERO SECTION */}
-      <section className="bg-[#003366] text-white pt-9 pb-13 md:pt-13 md:pb-18 border-b-8 border-[#D4AF37]">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="text-[#D4AF37] font-black uppercase tracking-[0.28em] text-xs md:text-sm mb-4 italic">
-            North East Ohio & Nationwide Investment Solutions
-          </p>
+{/* 2. HERO SECTION */}
+<section className="bg-[#003366] text-white pt-9 pb-13 md:pt-13 md:pb-18 border-b-8 border-[#D4AF37]">
+  <div className="max-w-6xl mx-auto px-6 text-center">
+    <p className="text-[#D4AF37] font-black uppercase tracking-[0.28em] text-xs md:text-sm mb-4 italic">
+      NE Ohio & Nationwide Investment Solutions
+    </p>
 
-          <h1 className="text-4xl md:text-7xl font-black mb-6 uppercase tracking-tighter leading-tight">
-            Sell Your House <br className="md:hidden" />
-            <span className="relative inline-block px-1">
-              FAST
-              <svg
-                className="absolute -bottom-1 md:-bottom-2 left-0 w-full h-3 md:h-4 text-[#D4AF37]"
-                viewBox="0 0 100 10"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0 5 Q 50 12 100 5"
-                  stroke="currentColor"
-                  strokeWidth="8"
-                  fill="transparent"
-                />
-              </svg>
-            </span>{' '}
-            For <br className="md:hidden" />
-            <span className="relative inline-block text-[#D4AF37] px-1">
-              CASH
-              <svg
-                className="absolute -bottom-1 md:-bottom-2 left-0 w-full h-3 md:h-4 text-white opacity-40"
-                viewBox="0 0 100 10"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0 8 Q 50 2 100 8"
-                  stroke="currentColor"
-                  strokeWidth="6"
-                  fill="transparent"
-                />
-              </svg>
-            </span>
-          </h1>
+    <h1 className="text-4xl md:text-7xl font-black mb-6 uppercase tracking-tighter leading-tight">
+      Sell Your House <br className="md:hidden" />
+      <span className="relative inline-block px-1">
+        FAST
+        <svg
+          className="absolute -bottom-1 md:-bottom-2 left-0 w-full h-3 md:h-4 text-[#D4AF37]"
+          viewBox="0 0 100 10"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 5 Q 50 12 100 5"
+            stroke="currentColor"
+            strokeWidth="8"
+            fill="transparent"
+          />
+        </svg>
+      </span>{" "}
+      For <br className="md:hidden" />
+      <span className="relative inline-block text-[#D4AF37] px-1">
+        CASH
+        <svg
+          className="absolute -bottom-1 md:-bottom-2 left-0 w-full h-3 md:h-4 text-white opacity-40"
+          viewBox="0 0 100 10"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 8 Q 50 2 100 8"
+            stroke="currentColor"
+            strokeWidth="6"
+            fill="transparent"
+          />
+        </svg>
+      </span>
+    </h1>
 
-          <p className="text-xl md:text-2xl font-bold italic opacity-95 uppercase tracking-[0.15em] mb-6">
-            "Rooted in Care, Driven by Results."
-          </p>
+    <p className="text-xl md:text-2xl font-bold italic opacity-95 uppercase tracking-[0.15em] mb-6">
+      "Rooted in Care, Driven by Results."
+    </p>
 
-          <div className="inline-flex items-center bg-white/10 border border-white/20 px-7 py-3 rounded-full">
-            <p className="text-xs md:text-sm font-black uppercase tracking-[0.08em]">
-              Closing Timeline: 14 - 30 Days
-            </p>
-          </div>
-<p className="text-sm md:text-base text-white/85 font-semibold mt-4 max-w-2xl mx-auto leading-relaxed">
-  Depending on the property and situation, we may work with trusted investment partners to help create possible solutions for sellers. Our goal is always to find the path that best fits the seller’s needs and timeline.
-</div>
+    <div className="inline-flex items-center bg-white/10 border border-white/20 px-7 py-3 rounded-full">
+      <p className="text-xs md:text-sm font-black uppercase tracking-[0.08em]">
+        Closing Timeline: 14–30 Days
+      </p>
+    </div>
+
+    <p className="text-sm md:text-base text-white/85 font-semibold mt-4 max-w-2xl mx-auto leading-relaxed">
+      Depending on the property and situation, we may work with trusted investment partners to help create possible solutions for sellers. Our goal is always to find the path that best fits the seller’s needs and timeline.
+    </p>
+  </div>
+</section>
   
      {/* 3. MAIN FORM */}
       <section className="relative -mt-10 md:-mt-12 pb-14 md:pb-16">
