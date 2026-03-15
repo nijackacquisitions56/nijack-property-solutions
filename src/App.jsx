@@ -34,7 +34,7 @@ const NijackSite = () => {
 <section className="bg-[#003366] text-white pt-9 pb-13 md:pt-13 md:pb-18 border-b-8 border-[#D4AF37]">
   <div className="max-w-6xl mx-auto px-6 text-center">
     <p className="text-[#D4AF37] font-black uppercase tracking-[0.28em] text-xs md:text-sm mb-4 italic">
-      NE Ohio & Nationwide Investment Solutions
+      Northeast Ohio & Nationwide Investment Solutions
     </p>
 
     <h1 className="text-4xl md:text-7xl font-black mb-6 uppercase tracking-tighter leading-tight">
