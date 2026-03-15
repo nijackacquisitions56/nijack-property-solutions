@@ -14,15 +14,18 @@ const NijackSite = () => {
               <span className="text-[#D4AF37] font-bold text-[10px] tracking-[0.3em] uppercase mt-1">SOLUTIONS</span>
             </div>
           </div>
+
           <a href="tel:3303319070" className="bg-[#003366] text-white px-6 py-2 rounded-full font-black text-sm hover:bg-[#D4AF37] transition-all shadow-lg">
             330-331-9070
           </a>
         </div>
       </nav>
 
+
       {/* HERO */}
       <section className="bg-[#003366] text-white pt-10 pb-16 border-b-8 border-[#D4AF37]">
         <div className="max-w-6xl mx-auto px-6 text-center">
+
           <p className="text-[#D4AF37] font-black uppercase tracking-[0.3em] text-xs mb-4 italic">
             NE Ohio & Nationwide Investment Solutions
           </p>
@@ -38,20 +41,23 @@ const NijackSite = () => {
 
           <div className="inline-flex items-center bg-white/10 border border-white/20 px-6 py-2 rounded-full">
             <p className="text-sm font-black uppercase tracking-[0.1em]">
-              Typical Closing Timeline: 14 - 30 Days
+              Typical Closing Timeline: 14 – 30 Days
             </p>
           </div>
+
         </div>
       </section>
 
-      {/* VIDEO */}
+
+      {/* VIDEO PLACEHOLDER */}
       <section className="max-w-3xl mx-auto px-6 -mt-10 mb-16">
         <div className="bg-black rounded-2xl aspect-video shadow-2xl flex items-center justify-center">
           <p className="text-white font-black uppercase">Video Placeholder</p>
         </div>
       </section>
 
-      {/* 4 STEP PROCESS */}
+
+      {/* PROCESS */}
       <section className="bg-gray-50 py-16 text-center">
         <div className="max-w-6xl mx-auto px-6">
 
@@ -86,60 +92,6 @@ const NijackSite = () => {
         </div>
       </section>
 
-      {/* SITUATIONS */}
-      <section className="py-16 text-center bg-white">
-        <div className="max-w-5xl mx-auto px-6">
-
-          <h2 className="text-[#003366] font-black text-3xl uppercase mb-12">
-            Situations We Help Homeowners With
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-6 text-sm font-bold">
-
-            <div className="bg-gray-50 p-6 rounded-xl border">Probate / Inherited Property</div>
-            <div className="bg-gray-50 p-6 rounded-xl border">Vacant or Abandoned Homes</div>
-            <div className="bg-gray-50 p-6 rounded-xl border">Costly Repairs Needed</div>
-            <div className="bg-gray-50 p-6 rounded-xl border">Problem Tenants</div>
-            <div className="bg-gray-50 p-6 rounded-xl border">Behind on Property Taxes</div>
-            <div className="bg-gray-50 p-6 rounded-xl border">Relocating or Downsizing</div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* REALTOR VS CASH */}
-      <section className="max-w-6xl mx-auto px-6 py-16 text-center">
-        <h2 className="text-[#003366] text-3xl font-black uppercase mb-12">
-          Selling With A Realtor vs A Cash Offer
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-10">
-
-          <div className="bg-gray-50 p-8 rounded-2xl border">
-            <h3 className="font-black text-xl mb-6 text-[#003366]">Listing With A Realtor</h3>
-            <ul className="space-y-3 text-sm font-bold">
-              <li>Showings & open houses</li>
-              <li>Repairs often required</li>
-              <li>Buyer financing approval</li>
-              <li>30–120 day timeline</li>
-              <li>5–6% commission fees</li>
-            </ul>
-          </div>
-
-          <div className="bg-gray-50 p-8 rounded-2xl border">
-            <h3 className="font-black text-xl mb-6 text-[#003366]">Selling For Cash</h3>
-            <ul className="space-y-3 text-sm font-bold">
-              <li>Sell as-is</li>
-              <li>No repairs required</li>
-              <li>No commissions</li>
-              <li>Flexible closing</li>
-              <li>14–30 day closings</li>
-            </ul>
-          </div>
-
-        </div>
-      </section>
 
       {/* FORM */}
       <section className="py-20">
@@ -163,8 +115,10 @@ const NijackSite = () => {
 
               <input type="text" placeholder="WHAT PRICE ARE YOU HOPING TO GET?" className="w-full bg-gray-50 border-b-4 border-gray-200 p-4 font-black uppercase"/>
 
+
               {/* SELL TIMELINE */}
               <div>
+
                 <label className="font-black text-sm text-[#003366] uppercase mb-2 block">
                   SELL TIMELINE
                 </label>
@@ -176,11 +130,13 @@ const NijackSite = () => {
                   <option>30 Days</option>
                   <option>60 Days</option>
                   <option>90 Days</option>
-                  <option>3-6 Months</option>
+                  <option>3–6 Months</option>
                   <option>Just Exploring</option>
 
                 </select>
+
               </div>
+
 
               {/* MOTIVATION */}
               <div className="grid grid-cols-2 gap-4">
@@ -227,10 +183,12 @@ const NijackSite = () => {
         </div>
       </section>
 
+
       {/* FOOTER */}
       <footer className="bg-[#003366] py-16 text-white border-t-8 border-[#D4AF37] text-center">
 
         <div className="flex flex-col mb-10 items-center">
+
           <div className="bg-white text-[#003366] font-black px-4 py-2 rounded mb-4 text-2xl shadow-xl">
             N.P.S.
           </div>
@@ -242,18 +200,41 @@ const NijackSite = () => {
           <span className="text-[#D4AF37] font-bold text-sm tracking-[0.5em] uppercase mt-2">
             NE Ohio & Nationwide
           </span>
+
         </div>
 
-        <div className="flex flex-col gap-4 font-black uppercase tracking-widest px-6">
-          <span className="text-[#D4AF37]">330-331-9070</span>
-          <span className="text-[#D4AF37] break-all">
-            nicole@nijackpropertysolutions.com
-          </span>
 
-          <p className="text-sm opacity-40 mt-10 italic">
-            © 2026 NIJACK PROPERTY SOLUTIONS
+        {/* PRIVACY POLICY */}
+        <div className="max-w-3xl mx-auto bg-white/10 border border-white/20 rounded-2xl p-6 text-left">
+
+          <h4 className="text-[#D4AF37] font-black uppercase tracking-widest mb-4">
+            Privacy Policy
+          </h4>
+
+          <p className="text-sm leading-relaxed mb-3">
+            At <strong>Nijack Property Solutions</strong>, we respect your privacy. 
+            Information submitted through this website is used solely to evaluate your property 
+            and determine whether we or our investment partners may purchase the property.
           </p>
+
+          <p className="text-sm leading-relaxed mb-3">
+            Your information will never be sold to third-party telemarketers. 
+            Details may be shared with trusted real estate investment partners only when necessary 
+            to evaluate or complete a potential purchase.
+          </p>
+
+          <p className="text-sm leading-relaxed italic opacity-80">
+            Nijack Property Solutions is a real estate investment company based in Northeast Ohio. 
+            We are not licensed real estate agents and do not charge commissions. 
+            We may purchase properties directly or assign purchase contracts to qualified investment partners.
+          </p>
+
         </div>
+
+
+        <p className="text-sm opacity-40 mt-10 italic">
+          © 2026 NIJACK PROPERTY SOLUTIONS
+        </p>
 
       </footer>
 
