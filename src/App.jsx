@@ -520,17 +520,6 @@ const NijackSite = () => {
                 By submitting your information, you agree that we may contact you by phone, email, or text regarding your property inquiry.
               </p>
               <p>
-                If you have questions about how your information is used, please call us at{' '}
-                <a
-  href="#property-form"
-  className="inline-block bg-[#D4AF37] text-[#003366] px-8 py-4 rounded-full font-black uppercase tracking-[0.12em] text-sm md:text-base hover:bg-white transition-all shadow-xl"
->
-  Submit Property Details
-</a>
-                .
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 {/* 10. CTA SECTION: SCROLLS TO FORM */}
