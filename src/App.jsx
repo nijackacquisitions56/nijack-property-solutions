@@ -244,7 +244,32 @@ const NijackSite = () => {
 
         </div>
       </section>
+{/* WHY SELLERS CHOOSE US */}
+<section className="py-16 bg-white text-center">
+  <div className="max-w-5xl mx-auto px-6">
 
+    <h2 className="text-[#003366] font-black text-3xl uppercase mb-10">
+      Why Homeowners Choose Nijack Property Solutions
+    </h2>
+
+    <div className="grid md:grid-cols-3 gap-6 text-sm font-bold">
+
+      <div className="bg-gray-50 p-6 rounded-xl border">
+        No Repairs Required
+      </div>
+
+      <div className="bg-gray-50 p-6 rounded-xl border">
+        No Commissions or Fees
+      </div>
+
+      <div className="bg-gray-50 p-6 rounded-xl border">
+        Flexible Closing Timeline
+      </div>
+
+    </div>
+
+  </div>
+</section>
       {/* BUYER NETWORK */}
       <section className="bg-gray-50 py-16 text-center">
         <div className="max-w-4xl mx-auto px-6">
