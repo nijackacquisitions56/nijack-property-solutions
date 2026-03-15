@@ -499,23 +499,7 @@ const NijackSite = () => {
         </div>
       </section>
 
-      {/* 9. PRIVACY POLICY */}
-      <section id="privacy-policy" className="py-15 md:py-16 bg-[#f8fafc]">
-        <div className="max-w-5xl mx-auto px-4 md:px-6">
-          <div className="bg-white rounded-[2rem] p-8 md:p-10 shadow-lg border border-gray-100">
-            <p className="text-[#D4AF37] font-black uppercase tracking-[0.25em] text-xs md:text-sm mb-4 text-center">
-              Privacy Policy
-            </p>
-            <h2 className="text-3xl md:text-4xl font-black text-[#003366] uppercase tracking-tight text-center mb-6">
-              
-                Nijack Property Solutions respects your privacy. Information submitted through this website is used only to review your property, contact you about your request, and discuss possible next steps.
-              </p>
-              <p>
-                We do not sell your personal information to third parties. We may use trusted service providers to help us operate our business and communicate with you.
-              </p>
-            </p>
-            By submitting your information, you agree that we may contact you by phone, email, or text regarding your property inquiry.
-              </p>
+      
             </div> {/* Closes the space-y-4 div */}
       </div> {/* Closes the white rounded box div */}
       </div> {/* Closes the max-w-5xl div */}{/* 10. CTA SECTION: SCROLLS TO FORM */}
