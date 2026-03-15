@@ -520,34 +520,41 @@ const NijackSite = () => {
     <a
       href="#property-form"
       className="inline-block bg-[#D4AF37] text-[#003366] px-10 py-5 rounded-full font-black uppercase tracking-[0.12em] text-sm md:text-lg hover:bg-white transition-all shadow-xl"
+   {/* THE GOLD BUTTON FIX */}
+    <a
+      href="#property-form"
+      className="inline-block bg-[#D4AF37] text-[#003366] px-10 py-5 rounded-full font-black uppercase tracking-[0.12em] text-sm md:text-lg hover:bg-white transition-all shadow-xl"
     >
       Submit Property Details
     </a>
   </div>
-</section>      {/* 11. FOOTER */}
-      <footer className="bg-white py-12 border-t border-gray-200">
-        <div className="max-w-6xl mx-auto px-4 md:px-6 text-center">
-          <div className="mb-4">
-            <span className="text-[#003366] font-black text-xl md:text-2xl uppercase tracking-tight">
-              Nijack Property Solutions
-            </span>
-          </div>
-          <p className="text-gray-600 font-bold text-sm md:text-base mb-6">
-            Northeast Ohio & Nationwide Investment Solutions
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 text-xs md:text-sm font-black text-gray-400 mb-6 uppercase tracking-widest">
-            <span>No Repairs</span>
-            <span>•</span>
-            <span>No Commissions</span>
-            <span>•</span>
-            <span>Fast Closings</span>
-          </div>
-          <div className="text-[10px] md:text-xs text-gray-400 uppercase font-bold tracking-widest">
-            © {new Date().getFullYear()} Nijack Property Solutions. All rights reserved.
-          </div>
-        </div>
-      </footer>
+</section>
+
+{/* 11. FOOTER */}
+<footer className="bg-white py-12 border-t border-gray-200">
+  <div className="max-w-6xl mx-auto px-4 md:px-6 text-center">
+    <div className="mb-4">
+      <span className="text-[#003366] font-black text-xl md:text-2xl uppercase tracking-tight">
+        Nijack Property Solutions
+      </span>
     </div>
+    <p className="text-gray-600 font-bold text-sm md:text-base mb-6">
+      Northeast Ohio & Nationwide Investment Solutions
+    </p>
+    <div className="flex flex-wrap justify-center gap-4 text-xs md:text-sm font-black text-gray-400 mb-6 uppercase tracking-widest">
+      <span>No Repairs</span>
+      <span>•</span>
+      <span>No Commissions</span>
+      <span>•</span>
+      <span>Fast Closings</span>
+    </div>
+    <div className="text-[10px] md:text-xs text-gray-400 uppercase font-bold tracking-widest">
+      © {new Date().getFullYear()} Nijack Property Solutions. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+</div> // This closes the main min-h-screen div
   );
 };
 
