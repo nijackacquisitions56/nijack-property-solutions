@@ -80,6 +80,7 @@ const NijackSite = () => {
             <p className="text-xs md:text-sm font-black uppercase tracking-[0.08em]">
               Closing Timeline: 14 - 30 Days
             </p>
+          </div>
 <p className="text-sm md:text-base text-white/85 font-semibold mt-4 max-w-2xl mx-auto leading-relaxed">
   Depending on the property and situation, we may work with trusted investment partners to help create possible solutions for sellers. Our goal is always to find the path that best fits the seller’s needs and timeline.
 </div>
