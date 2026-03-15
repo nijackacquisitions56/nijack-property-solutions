@@ -86,8 +86,7 @@ const NijackSite = () => {
 </section>
   
      {/* 3. MAIN FORM */}
-      <section className="relative -mt-10 md:-mt-12 pb-14 md:pb-16">
-        <div className="max-w-3xl mx-auto px-4 md:px-6">
+      <section id="property-form" className="relative -mt-10 md:-mt-12 pb-14 md:pb-16">        <div className="max-w-3xl mx-auto px-4 md:px-6">
           <form className="bg-white rounded-[2rem] md:rounded-[3rem] shadow-2xl border border-gray-100 overflow-hidden">
             <div className="bg-[#D4AF37] py-5 md:py-6 text-center px-4">
               <h2 className="text-[#003366] font-black uppercase text-sm md:text-xl tracking-[0.16em]">
@@ -533,7 +532,7 @@ const NijackSite = () => {
         </div>
       </section>
 
-     {/* 10. CTA */}
+ {/* 10. CTA */}
 <section className="py-15 md:py-16 bg-[#003366] text-white border-t-8 border-[#D4AF37]">
   <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
     <p className="text-[#D4AF37] font-black uppercase tracking-[0.25em] text-xs md:text-sm mb-4">
@@ -552,6 +551,7 @@ const NijackSite = () => {
       Submit Property Details
     </a>
   </div>
+</section>
 </section>          </h2>
           <p className="text-white/90 text-base md:text-xl font-medium leading-relaxed mb-8">
             Tell us about the property and your situation. We’ll review the details and discuss possible next steps.
