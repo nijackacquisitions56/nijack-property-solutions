@@ -82,9 +82,6 @@ const NijackSite = () => {
       </p>
     </div>
 
-    <p className="text-sm md:text-base text-white/85 font-semibold mt-4 max-w-2xl mx-auto leading-relaxed">
-      Depending on the property and situation, we may work with trusted investment partners to help create possible solutions for sellers. Our goal is always to find the path that best fits the seller’s needs and timeline.
-    </p>
   </div>
 </section>
   
@@ -569,8 +566,9 @@ const NijackSite = () => {
           <p className="text-gray-600 font-medium text-base mb-4">
             Northeast Ohio & Nationwide Investment Solutions
           </p>
-
-          <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base font-semibold text-gray-500 mb-5">
+ <p className="text-sm md:text-base text-white/85 font-semibold mt-4 max-w-2xl mx-auto leading-relaxed">
+      Depending on the property and situation, we may work with trusted investment partners to help create possible solutions for sellers. Our goal is always to find the path that best fits the seller’s needs and timeline.
+    </p>          <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base font-semibold text-gray-500 mb-5">
             <span>No Repairs</span>
             <span>•</span>
             <span>No Commissions</span>
