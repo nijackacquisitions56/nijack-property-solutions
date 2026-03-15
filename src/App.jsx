@@ -516,8 +516,7 @@ const NijackSite = () => {
               <p>
                 We do not sell your personal information to third parties. We may use trusted service providers to help us operate our business and communicate with you.
               </p>
-              <p>
-                By submitting your information, you agree that we may contact you by phone, email, or text regarding your property inquiry.
+            By submitting your information, you agree that we may contact you by phone, email, or text regarding your property inquiry.
               </p>
               <p>
         </div>
