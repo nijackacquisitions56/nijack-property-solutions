@@ -217,14 +217,8 @@ const NijackSite = () => {
                       <option value="" disabled>
                         Select property type
                       </option>
-                      <option>Single Family Home</option>
-                      <option>Duplex</option>
-                      <option>Triplex</option>
-                      <option>Fourplex</option>
-                      <option>Condo</option>
-                      <option>Townhome</option>
-                      <option>Mobile Home</option>
-                      <option>Land</option>
+                      <option>Single Family House</option>
+                      <option>Not Sure</option>
                       <option>Other</option>
                     </select>
                   </div>
