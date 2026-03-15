@@ -12,7 +12,7 @@ const NijackSite = () => {
             <span className="text-[#D4AF37] font-bold text-[11px] tracking-[0.3em] uppercase leading-none mt-1 text-right">S O L U T I O N S</span>
           </div>
           <a href="tel:3303319070" className="bg-[#003366] text-white px-6 py-3 rounded-full font-black text-sm hover:bg-[#D4AF37] transition-all shadow-lg">
-            Call: 330-331-9070
+            CALL: 330-331-9070
           </a>
         </div>
       </nav>
@@ -33,8 +33,19 @@ const NijackSite = () => {
         </div>
       </section>
 
-      {/* 3. MAIN FORM */}
-      <section className="relative -mt-16 pb-20">
+      {/* 3. THE VIDEO SECTION (THE MISSING SPOT) */}
+      <section className="max-w-4xl mx-auto px-6 -mt-10 mb-16">
+        <div className="bg-black rounded-[2rem] aspect-video shadow-2xl overflow-hidden border-4 border-white flex items-center justify-center relative">
+          <div className="text-center">
+            <div className="text-[#D4AF37] text-6xl mb-4">▶</div>
+            <p className="text-white font-black uppercase tracking-widest text-sm">Watch: The Nijack Strategy</p>
+          </div>
+          {/* Once you have your video, replace the div above with an <iframe /> or <video /> tag */}
+        </div>
+      </section>
+
+      {/* 4. MAIN FORM */}
+      <section className="pb-20">
         <div className="max-w-4xl mx-auto px-6">
           <form className="bg-white rounded-[3rem] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] border border-gray-100 overflow-hidden">
             <div className="bg-[#D4AF37] py-5 text-center">
@@ -43,7 +54,7 @@ const NijackSite = () => {
             
             <div className="p-8 md:p-12 space-y-10">
               <div className="space-y-6">
-                <h3 className="text-[#003366] font-black uppercase tracking-widest text-lg italic underline decoration-[#D4AF37]">1. Contact Information</h3>
+                <h3 className="text-[#003366] font-black uppercase tracking-widest text-lg italic underline decoration-[#D4AF37]">Step 1: Contact Information</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <input type="text" placeholder="FULL NAME" className="w-full bg-gray-50 border-b-4 border-gray-200 p-4 font-black uppercase text-sm focus:border-[#003366] outline-none" required />
                   <input type="tel" placeholder="PHONE NUMBER" className="w-full bg-gray-50 border-b-4 border-gray-200 p-4 font-black uppercase text-sm focus:border-[#003366] outline-none" required />
@@ -52,13 +63,11 @@ const NijackSite = () => {
               </div>
 
               {/* STEP 2: SELL TIME & SITUATION */}
-              <div className="space-y-6 p-8 bg-gray-50 rounded-[2rem] border-2 border-dashed border-gray-200 shadow-inner">
-                <h3 className="text-[#003366] font-black uppercase tracking-widest text-lg italic underline decoration-[#D4AF37]">2. The Situation</h3>
+              <div className="space-y-6 p-8 bg-gray-50 rounded-[2rem] border-2 border-dashed border-gray-200">
+                <h3 className="text-[#003366] font-black uppercase tracking-widest text-lg italic underline decoration-[#D4AF37]">Step 2: The Situation</h3>
                 
                 <div className="space-y-3">
-                  <label className="block text-[12px] font-black text-[#003366] uppercase tracking-[0.2em] italic ml-1">
-                    SELL TIME: (REQUIRED)
-                  </label>
+                  <label className="block text-[12px] font-black text-[#003366] uppercase tracking-[0.2em] italic ml-1">SELL TIME: (REQUIRED)</label>
                   <select name="selling_timeline" required className="w-full bg-white border-2 border-[#D4AF37] rounded-xl p-4 font-black uppercase text-sm text-[#003366] outline-none cursor-pointer">
                     <option value="" disabled selected>Select Your Timeline</option>
                     <option value="ASAP">ASAP (RIGHT AWAY)</option>
@@ -71,7 +80,7 @@ const NijackSite = () => {
 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                   {["Probate", "Inherited", "Tired Landlord", "Needs Repairs", "Foreclosure", "Vacant"].map((label) => (
-                    <label key={label} className="flex items-center gap-3 p-3 bg-white rounded-xl border border-gray-100">
+                    <label key={label} className="flex items-center gap-3 p-3 bg-white rounded-xl border border-gray-100 cursor-pointer">
                       <input type="checkbox" className="h-4 w-4 accent-[#003366]" />
                       <span className="font-black uppercase text-[10px] tracking-tighter text-[#003366]">{label}</span>
                     </label>
@@ -87,10 +96,33 @@ const NijackSite = () => {
         </div>
       </section>
 
-      {/* 4. FOOTER */}
+      {/* 5. COMMON QUESTIONS (FAQ) */}
+      <section className="max-w-4xl mx-auto px-6 py-12">
+        <h2 className="text-[#003366] font-black text-4xl uppercase tracking-tighter mb-12 text-center">Common Questions</h2>
+        <div className="space-y-4">
+          {[
+            { q: "How fast can closing happen?", a: "We typically close within 14 to 30 days. No bank appraisals or inspections." },
+            { q: "Do I need to clean or fix anything?", a: "No. We buy houses 'As-Is.' Leave unwanted furniture or trash to us." },
+            { q: "Are there any fees or commissions?", a: "Zero. We pay all closing costs. No 6% agent commission." }
+          ].map((item, idx) => (
+            <div key={idx} className="p-6 border-l-8 border-[#D4AF37] bg-gray-50 rounded-r-2xl">
+              <h4 className="font-black text-[#003366] uppercase text-lg mb-2">{item.q}</h4>
+              <p className="font-bold text-gray-600 text-sm uppercase leading-relaxed tracking-tight">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 6. FOOTER */}
       <footer className="bg-[#003366] py-16 text-white border-t-8 border-[#D4AF37] text-center">
         <span className="font-black text-3xl tracking-tighter uppercase">NIJACK PROPERTY SOLUTIONS</span>
-        <p className="text-xs font-bold uppercase tracking-[0.2em] opacity-40 mt-4 italic">Cuyahoga Falls, Ohio | 330-331-9070</p>
+        <div className="flex justify-center gap-12 font-black uppercase text-sm tracking-widest mt-8">
+          <a href="tel:3303319070" className="text-[#D4AF37] hover:text-white transition-colors">330-331-9070</a>
+          <a href="mailto:nicole@nijackpropertysolutions.com" className="text-[#D4AF37] hover:text-white transition-colors">Email Us</a>
+        </div>
+        <p className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-40 mt-10 max-w-2xl mx-auto px-6">
+          Nijack Property Solutions is a real estate investment firm. We purchase properties directly or through our private investment network to ensure a successful closing.
+        </p>
       </footer>
     </div>
   );
