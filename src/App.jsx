@@ -521,7 +521,6 @@ const NijackSite = () => {
               </p>
               <p>
         </div>
-      </section>
 {/* 10. CTA SECTION: SCROLLS TO FORM */}
 <section className="bg-[#003366] text-white py-16 md:py-24 px-6 text-center border-t-8 border-[#D4AF37]">
   <div className="max-w-4xl mx-auto">
