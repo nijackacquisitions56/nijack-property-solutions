@@ -521,9 +521,12 @@ const NijackSite = () => {
               </p>
               <p>
                 If you have questions about how your information is used, please call us at{' '}
-                <a href="tel:3303319070" className="text-[#003366] font-black underline">
-                  330-331-9070
-                </a>
+                <a
+  href="#property-form"
+  className="inline-block bg-[#D4AF37] text-[#003366] px-8 py-4 rounded-full font-black uppercase tracking-[0.12em] text-sm md:text-base hover:bg-white transition-all shadow-xl"
+>
+  Submit Property Details
+</a>
                 .
               </p>
             </div>
