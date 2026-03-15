@@ -87,8 +87,7 @@ const NijackSite = () => {
   
      {/* 3. MAIN FORM */}
       <section id="property-form" className="relative -mt-10 md:-mt-12 pb-14 md:pb-16">        <div className="max-w-3xl mx-auto px-4 md:px-6">
-          <form className="bg-white rounded-[2rem] md:rounded-[3rem] shadow-2xl border border-gray-100 overflow-hidden">
-            <div className="bg-[#D4AF37] py-5 md:py-6 text-center px-4">
+          <form id="property-form" className="bg-white rounded-[2rem] md:rounded-[3rem] shadow-2xl border border-gray-100 overflow-hidden">            <div className="bg-[#D4AF37] py-5 md:py-6 text-center px-4">
               <h2 className="text-[#003366] font-black uppercase text-sm md:text-xl tracking-[0.16em]">
                 Start Your Successful Closing Today
               </h2>
