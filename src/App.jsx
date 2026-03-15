@@ -78,7 +78,7 @@ const NijackSite = () => {
 
           <div className="inline-flex items-center bg-white/10 border border-white/20 px-7 py-3 rounded-full">
             <p className="text-xs md:text-sm font-black uppercase tracking-[0.08em]">
-              Successful Closings: 14 - 30 Days
+              Closing Timeline: 14 - 30 Days
             </p>
           </div>
         </div>
