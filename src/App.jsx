@@ -533,15 +533,26 @@ const NijackSite = () => {
         </div>
       </section>
 
-      {/* 10. CTA */}
-      <section className="py-15 md:py-16 bg-[#003366] text-white border-t-8 border-[#D4AF37]">
-        <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
-          <p className="text-[#D4AF37] font-black uppercase tracking-[0.25em] text-xs md:text-sm mb-4">
-            Ready To Talk?
-          </p>
-          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight mb-6 leading-tight">
-            Start With Your Property Details
-          </h2>
+     {/* 10. CTA */}
+<section className="py-15 md:py-16 bg-[#003366] text-white border-t-8 border-[#D4AF37]">
+  <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
+    <p className="text-[#D4AF37] font-black uppercase tracking-[0.25em] text-xs md:text-sm mb-4">
+      Ready To Talk?
+    </p>
+    <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight mb-6 leading-tight">
+      Start With Your Property Details
+    </h2>
+    <p className="text-white/90 text-base md:text-xl font-medium leading-relaxed mb-8">
+      Tell us about the property and your situation. We’ll review the details and discuss possible next steps.
+    </p>
+    <a
+      href="#property-form"
+      className="inline-block bg-[#D4AF37] text-[#003366] px-8 py-4 rounded-full font-black uppercase tracking-[0.12em] text-sm md:text-base hover:bg-white transition-all shadow-xl"
+    >
+      Submit Property Details
+    </a>
+  </div>
+</section>          </h2>
           <p className="text-white/90 text-base md:text-xl font-medium leading-relaxed mb-8">
             Tell us about the property and your situation. We’ll review the details and discuss possible next steps.
           </p>
