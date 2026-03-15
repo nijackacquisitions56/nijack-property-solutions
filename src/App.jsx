@@ -516,14 +516,14 @@ const NijackSite = () => {
               <p>
                 We do not sell your personal information to third parties. We may use trusted service providers to help us operate our business and communicate with you.
               </p>
+            </p>
             By submitting your information, you agree that we may contact you by phone, email, or text regarding your property inquiry.
               </p>
-              <p>
-        </div>
-{/* 10. CTA SECTION: SCROLLS TO FORM */}
-<section className="bg-[#003366] text-white py-16 md:py-24 px-6 text-center border-t-8 border-[#D4AF37]">
-  <div className="max-w-4xl mx-auto">
-    <p className="text-[#D4AF37] font-black uppercase tracking-[0.3em] text-[10px] md:text-[12px] mb-4 italic">
+            </div> {/* Closes the space-y-4 div */}
+      </div> {/* Closes the white rounded box div */}
+      </div> {/* Closes the max-w-5xl div */}{/* 10. CTA SECTION: SCROLLS TO FORM */}
+  </section> {/* Closes Section 9 */}<section className="bg-[#003366] text-white py-16 md:py-24 px-6 text-center border-t-8 border-[#D4AF37]">
+  <p className="text-[#D4AF37] font-black uppercase tracking-[0.3em] text-[10px] md:text-[12px] mb-4 italic">
       READY TO TALK?
     </p>
     
