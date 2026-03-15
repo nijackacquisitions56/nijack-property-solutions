@@ -28,7 +28,7 @@ const NijackSite = () => {
           </p>
 
           <h1 className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tight">
-            Sell Your House <br />
+            Sell Your House <br/>
             <span className="text-[#D4AF37]">FAST</span> For <span className="text-[#D4AF37]">CASH</span>
           </h1>
 
@@ -50,40 +50,64 @@ const NijackSite = () => {
           <p className="text-white font-black uppercase">Video Placeholder</p>
         </div>
       </section>
-{/* 4 STEP PROCESS */}
-<section className="bg-gray-50 py-16 text-center">
-  <div className="max-w-6xl mx-auto px-6">
 
-    <h2 className="text-[#003366] font-black text-3xl uppercase mb-12">
-      Our Simple 4 Step Process
-    </h2>
+      {/* 4 STEP PROCESS */}
+      <section className="bg-gray-50 py-16 text-center">
+        <div className="max-w-6xl mx-auto px-6">
 
-    <div className="grid md:grid-cols-4 gap-6 font-bold text-sm">
+          <h2 className="text-[#003366] font-black text-3xl uppercase mb-12">
+            Our Simple 4 Step Process
+          </h2>
 
-      <div>
-        <div className="bg-[#003366] text-white w-10 h-10 flex items-center justify-center rounded-full mx-auto mb-3">1</div>
-        Submit your property information
-      </div>
+          <div className="grid md:grid-cols-4 gap-6 font-bold text-sm">
 
-      <div>
-        <div className="bg-[#003366] text-white w-10 h-10 flex items-center justify-center rounded-full mx-auto mb-3">2</div>
-        We review the property details
-      </div>
+            <div>
+              <div className="bg-[#003366] text-white w-10 h-10 flex items-center justify-center rounded-full mx-auto mb-3">1</div>
+              Submit your property information
+            </div>
 
-      <div>
-        <div className="bg-[#003366] text-white w-10 h-10 flex items-center justify-center rounded-full mx-auto mb-3">3</div>
-        We present a clear cash offer
-      </div>
+            <div>
+              <div className="bg-[#003366] text-white w-10 h-10 flex items-center justify-center rounded-full mx-auto mb-3">2</div>
+              We review the property
+            </div>
 
-      <div>
-        <div className="bg-[#003366] text-white w-10 h-10 flex items-center justify-center rounded-full mx-auto mb-3">4</div>
-        Close with a local title company
-      </div>
+            <div>
+              <div className="bg-[#003366] text-white w-10 h-10 flex items-center justify-center rounded-full mx-auto mb-3">3</div>
+              Receive a clear cash offer
+            </div>
 
-    </div>
+            <div>
+              <div className="bg-[#003366] text-white w-10 h-10 flex items-center justify-center rounded-full mx-auto mb-3">4</div>
+              Close with a local title company
+            </div>
 
-  </div>
-</section>
+          </div>
+
+        </div>
+      </section>
+
+      {/* SITUATIONS */}
+      <section className="py-16 text-center bg-white">
+        <div className="max-w-5xl mx-auto px-6">
+
+          <h2 className="text-[#003366] font-black text-3xl uppercase mb-12">
+            Situations We Help Homeowners With
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-6 text-sm font-bold">
+
+            <div className="bg-gray-50 p-6 rounded-xl border">Probate / Inherited Property</div>
+            <div className="bg-gray-50 p-6 rounded-xl border">Vacant or Abandoned Homes</div>
+            <div className="bg-gray-50 p-6 rounded-xl border">Costly Repairs Needed</div>
+            <div className="bg-gray-50 p-6 rounded-xl border">Problem Tenants</div>
+            <div className="bg-gray-50 p-6 rounded-xl border">Behind on Property Taxes</div>
+            <div className="bg-gray-50 p-6 rounded-xl border">Relocating or Downsizing</div>
+
+          </div>
+
+        </div>
+      </section>
+
       {/* REALTOR VS CASH */}
       <section className="max-w-6xl mx-auto px-6 py-16 text-center">
         <h2 className="text-[#003366] text-3xl font-black uppercase mb-12">
@@ -93,90 +117,30 @@ const NijackSite = () => {
         <div className="grid md:grid-cols-2 gap-10">
 
           <div className="bg-gray-50 p-8 rounded-2xl border">
-            <h3 className="font-black text-xl mb-6 text-[#003366]">
-              Listing With A Realtor
-            </h3>
-
+            <h3 className="font-black text-xl mb-6 text-[#003366]">Listing With A Realtor</h3>
             <ul className="space-y-3 text-sm font-bold">
-              <li>Home showings and open houses</li>
+              <li>Showings & open houses</li>
               <li>Repairs often required</li>
               <li>Buyer financing approval</li>
-              <li>30–120 day selling timeline</li>
-              <li>5–6% agent commissions</li>
+              <li>30–120 day timeline</li>
+              <li>5–6% commission fees</li>
             </ul>
           </div>
 
           <div className="bg-gray-50 p-8 rounded-2xl border">
-            <h3 className="font-black text-xl mb-6 text-[#003366]">
-              Selling To A Cash Buyer
-            </h3>
-
+            <h3 className="font-black text-xl mb-6 text-[#003366]">Selling For Cash</h3>
             <ul className="space-y-3 text-sm font-bold">
-              <li>Sell the property as-is</li>
+              <li>Sell as-is</li>
               <li>No repairs required</li>
-              <li>No commissions or listing fees</li>
-              <li>Flexible closing timeline</li>
-              <li>Close in as little as 14–30 days</li>
+              <li>No commissions</li>
+              <li>Flexible closing</li>
+              <li>14–30 day closings</li>
             </ul>
           </div>
 
         </div>
       </section>
 
-      {/* HOW OFFERS WORK */}
-      <section className="bg-gray-50 py-16 text-center">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-[#003366] font-black text-3xl uppercase mb-6">
-            How Cash Offers Are Determined
-          </h2>
-
-          <p className="font-bold text-sm leading-relaxed">
-            Cash offers are based on several factors including property condition,
-            repair costs, local market conditions, and investor holding costs.
-            Because investors purchase homes as-is and handle the repairs,
-            the offer is typically below retail market value but provides
-            homeowners with a faster and more convenient selling option.
-          </p>
-        </div>
-      </section>
-{/* SITUATIONS WE HELP */}
-<section className="py-16 text-center bg-white">
-  <div className="max-w-5xl mx-auto px-6">
-
-    <h2 className="text-[#003366] font-black text-3xl uppercase mb-12">
-      Situations We Help Homeowners With
-    </h2>
-
-    <div className="grid md:grid-cols-3 gap-6 text-sm font-bold">
-
-      <div className="bg-gray-50 p-6 rounded-xl border">
-        Probate / Inherited Property
-      </div>
-
-      <div className="bg-gray-50 p-6 rounded-xl border">
-        Vacant or Abandoned Homes
-      </div>
-
-      <div className="bg-gray-50 p-6 rounded-xl border">
-        Costly Repairs Needed
-      </div>
-
-      <div className="bg-gray-50 p-6 rounded-xl border">
-        Problem Tenants
-      </div>
-
-      <div className="bg-gray-50 p-6 rounded-xl border">
-        Behind on Property Taxes
-      </div>
-
-      <div className="bg-gray-50 p-6 rounded-xl border">
-        Relocating or Downsizing
-      </div>
-
-    </div>
-
-  </div>
-</section>
       {/* FORM */}
       <section className="py-20">
         <div className="max-w-3xl mx-auto px-6">
@@ -189,101 +153,77 @@ const NijackSite = () => {
               </h2>
             </div>
 
-            <div className="p-12 space-y-8">
+            <div className="p-10 space-y-8">
 
-              <input
-                type="text"
-                placeholder="FULL NAME"
-                className="w-full bg-gray-50 border-b-4 border-gray-200 p-4 font-black uppercase"
-                required
-              />
+              <input type="text" placeholder="FULL NAME" className="w-full bg-gray-50 border-b-4 border-gray-200 p-4 font-black uppercase" required/>
 
-              <input
-                type="tel"
-                placeholder="PHONE NUMBER"
-                className="w-full bg-gray-50 border-b-4 border-gray-200 p-4 font-black uppercase"
-                required
-              />
+              <input type="tel" placeholder="PHONE NUMBER" className="w-full bg-gray-50 border-b-4 border-gray-200 p-4 font-black uppercase" required/>
 
-              <input
-                type="text"
-                placeholder="PROPERTY ADDRESS"
-                className="w-full bg-gray-50 border-b-4 border-gray-200 p-4 font-black uppercase"
-                required
-              />
+              <input type="text" placeholder="PROPERTY ADDRESS" className="w-full bg-gray-50 border-b-4 border-gray-200 p-4 font-black uppercase" required/>
 
-              <input
-                type="text"
-                placeholder="WHAT PRICE ARE YOU HOPING TO GET?"
-                className="w-full bg-gray-50 border-b-4 border-gray-200 p-4 font-black uppercase"
-              />
+              <input type="text" placeholder="WHAT PRICE ARE YOU HOPING TO GET?" className="w-full bg-gray-50 border-b-4 border-gray-200 p-4 font-black uppercase"/>
 
-              <textarea
-                placeholder="ANY OTHER DETAILS ABOUT THE PROPERTY?"
-                className="w-full bg-gray-50 border rounded-xl p-4 font-black uppercase"
-              />
+              {/* SELL TIMELINE */}
+              <div>
+                <label className="font-black text-sm text-[#003366] uppercase mb-2 block">
+                  SELL TIMELINE
+                </label>
 
-              <button
-                type="submit"
-                className="w-full bg-[#003366] hover:bg-[#D4AF37] text-white font-black py-6 rounded-2xl uppercase tracking-widest text-lg"
-              >
+                <select className="w-full bg-white border-2 border-[#D4AF37] rounded-xl p-4 font-black uppercase text-[#003366]">
+
+                  <option value="">Select Timeline</option>
+                  <option>ASAP</option>
+                  <option>30 Days</option>
+                  <option>60 Days</option>
+                  <option>90 Days</option>
+                  <option>3-6 Months</option>
+                  <option>Just Exploring</option>
+
+                </select>
+              </div>
+
+              {/* MOTIVATION */}
+              <div className="grid grid-cols-2 gap-4">
+
+                {[
+                "Probate",
+                "Inherited",
+                "Tired Landlord",
+                "Needs Repairs",
+                "Foreclosure",
+                "Vacant",
+                "Relocating",
+                "Problem Tenant",
+                "Behind on Taxes",
+                "Shopping Around"
+                ].map((label) => (
+
+                  <label key={label} className="flex items-center gap-2 font-bold text-sm">
+
+                    <input type="checkbox"/>
+
+                    {label}
+
+                  </label>
+
+                ))}
+
+              </div>
+
+              <textarea placeholder="ANY OTHER DETAILS ABOUT THE PROPERTY?" className="w-full bg-gray-50 border rounded-xl p-4 font-black uppercase"/>
+
+              <button type="submit" className="w-full bg-[#003366] hover:bg-[#D4AF37] text-white font-black py-6 rounded-2xl uppercase tracking-widest text-lg">
                 Get My Cash Offer
               </button>
 
               <p className="text-center text-sm font-bold text-[#003366]">
-                ✓ No obligation &nbsp;&nbsp; ✓ No repairs required &nbsp;&nbsp; ✓ No commissions
-              </p>
-
-              <p className="text-center text-xs font-bold text-[#003366] uppercase tracking-widest italic">
-                Your information is confidential and only used to evaluate your property.
+                ✓ No obligation ✓ No repairs ✓ No commissions
               </p>
 
             </div>
 
           </form>
 
-        </div>
-      </section>
-{/* WHY SELLERS CHOOSE US */}
-<section className="py-16 bg-white text-center">
-  <div className="max-w-5xl mx-auto px-6">
-
-    <h2 className="text-[#003366] font-black text-3xl uppercase mb-10">
-      Why Homeowners Choose Nijack Property Solutions
-    </h2>
-
-    <div className="grid md:grid-cols-3 gap-6 text-sm font-bold">
-
-      <div className="bg-gray-50 p-6 rounded-xl border">
-        No Repairs Required
-      </div>
-
-      <div className="bg-gray-50 p-6 rounded-xl border">
-        No Commissions or Fees
-      </div>
-
-      <div className="bg-gray-50 p-6 rounded-xl border">
-        Flexible Closing Timeline
-      </div>
-
-    </div>
-
-  </div>
-</section>
-      {/* BUYER NETWORK */}
-      <section className="bg-gray-50 py-16 text-center">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-[#003366] font-black text-3xl uppercase mb-6">
-            Our Nationwide Buyer Network
-          </h2>
-
-          <p className="font-bold text-sm leading-relaxed">
-            Nijack Property Solutions works with a network of professional real estate
-            investors and investment partners across the United States.
-            Depending on the property and location, we may purchase the property
-            directly or connect it with one of our trusted investment partners
-            to help facilitate a successful closing.
-          </p>
         </div>
       </section>
 
@@ -311,11 +251,12 @@ const NijackSite = () => {
           </span>
 
           <p className="text-sm opacity-40 mt-10 italic">
-            © 2026 NIJACK PROPERTY SOLUTIONS | ALL RIGHTS RESERVED
+            © 2026 NIJACK PROPERTY SOLUTIONS
           </p>
         </div>
 
       </footer>
+
     </div>
   );
 };
