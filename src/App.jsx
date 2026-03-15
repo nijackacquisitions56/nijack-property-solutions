@@ -534,54 +534,28 @@ const NijackSite = () => {
         </div>
       </section>
 {/* 11. FOOTER */}
-      <footer className="bg-white py-10 border-t border-gray-200">
+      <footer className="bg-white py-12 border-t border-gray-200">
         <div className="max-w-6xl mx-auto px-4 md:px-6 text-center">
-          ... (your footer content)
+          <div className="mb-4">
+            <span className="text-[#003366] font-black text-xl md:text-2xl uppercase tracking-tight">
+              Nijack Property Solutions
+            </span>
+          </div>
+          <p className="text-gray-600 font-bold text-sm md:text-base mb-6">
+            Northeast Ohio & Nationwide Investment Solutions
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 text-xs md:text-sm font-black text-gray-400 mb-6 uppercase tracking-widest">
+            <span>No Repairs</span>
+            <span>•</span>
+            <span>No Commissions</span>
+            <span>•</span>
+            <span>Fast Closings</span>
+          </div>
+          <div className="text-[10px] md:text-xs text-gray-400 uppercase font-bold tracking-widest">
+            © {new Date().getFullYear()} Nijack Property Solutions. All rights reserved.
+          </div>
         </div>
       </footer>
-    </div>
-  );
-};
-
-export default NijackSite;      {/* 11. FOOTER */}
-      <footer className="bg-white py-10 border-t border-gray-200">
-  <div className="max-w-6xl mx-auto px-4 md:px-6 text-center">
-    <div className="mb-4">
-      <span className="text-[#003366] font-black text-xl uppercase tracking-tight">
-        Nijack Property Solutions
-      </span>
-    </div>
-
-    <p className="text-gray-600 font-medium text-base mb-4">
-      Northeast Ohio Investment Solutions
-    </p>
-
-    <p className="text-gray-500 font-medium text-sm md:text-base max-w-3xl mx-auto leading-relaxed mb-5">
-      Depending on the property and situation, we may work with trusted investment partners to help create possible solutions for sellers. Our goal is always to find the path that best fits the seller’s needs and timeline.
-    </p>
-
-    <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base font-semibold text-gray-500 mb-5">
-      <span>No Repairs</span>
-      <span>•</span>
-      <span>No Commissions</span>
-      <span>•</span>
-      <span>Flexible Closings</span>
-    </div>
-
-    <div className="mb-4">
-      <a
-        href="#privacy-policy"
-        className="text-[#003366] font-black underline text-sm md:text-base"
-      >
-        Privacy Policy
-      </a>
-    </div>
-
-    <div className="text-xs md:text-sm text-gray-400">
-      © {new Date().getFullYear()} Nijack Property Solutions. All rights reserved.
-    </div>
-  </div>
-</footer>    
     </div>
   );
 };
