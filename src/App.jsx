@@ -546,11 +546,12 @@ const NijackSite = () => {
             Tell us about the property and your situation. We’ll review the details and discuss possible next steps.
           </p>
           <a
-            href="tel:3303319070"
-            className="inline-block bg-[#D4AF37] text-[#003366] px-8 py-4 rounded-full font-black uppercase tracking-[0.12em] text-sm md:text-base hover:bg-white transition-all shadow-xl"
-          >
-            Call 330-331-9070
-          </a>
+           <a
+  href="#property-form"
+  className="inline-block bg-[#D4AF37] text-[#003366] px-8 py-4 rounded-full font-black uppercase tracking-[0.12em] text-sm md:text-base hover:bg-white transition-all shadow-xl"
+>
+  Submit Property Details
+</a>
         </div>
       </section>
 
