@@ -507,10 +507,7 @@ const NijackSite = () => {
               Privacy Policy
             </p>
             <h2 className="text-3xl md:text-4xl font-black text-[#003366] uppercase tracking-tight text-center mb-6">
-              Your Information Matters
-            </h2>
-            <div className="space-y-4 text-gray-700 text-base md:text-lg font-medium leading-relaxed">
-              <p>
+              
                 Nijack Property Solutions respects your privacy. Information submitted through this website is used only to review your property, contact you about your request, and discuss possible next steps.
               </p>
               <p>
