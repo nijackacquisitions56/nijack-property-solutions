@@ -50,7 +50,40 @@ const NijackSite = () => {
           <p className="text-white font-black uppercase">Video Placeholder</p>
         </div>
       </section>
+{/* 4 STEP PROCESS */}
+<section className="bg-gray-50 py-16 text-center">
+  <div className="max-w-6xl mx-auto px-6">
 
+    <h2 className="text-[#003366] font-black text-3xl uppercase mb-12">
+      Our Simple 4 Step Process
+    </h2>
+
+    <div className="grid md:grid-cols-4 gap-6 font-bold text-sm">
+
+      <div>
+        <div className="bg-[#003366] text-white w-10 h-10 flex items-center justify-center rounded-full mx-auto mb-3">1</div>
+        Submit your property information
+      </div>
+
+      <div>
+        <div className="bg-[#003366] text-white w-10 h-10 flex items-center justify-center rounded-full mx-auto mb-3">2</div>
+        We review the property details
+      </div>
+
+      <div>
+        <div className="bg-[#003366] text-white w-10 h-10 flex items-center justify-center rounded-full mx-auto mb-3">3</div>
+        We present a clear cash offer
+      </div>
+
+      <div>
+        <div className="bg-[#003366] text-white w-10 h-10 flex items-center justify-center rounded-full mx-auto mb-3">4</div>
+        Close with a local title company
+      </div>
+
+    </div>
+
+  </div>
+</section>
       {/* REALTOR VS CASH */}
       <section className="max-w-6xl mx-auto px-6 py-16 text-center">
         <h2 className="text-[#003366] text-3xl font-black uppercase mb-12">
