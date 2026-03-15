@@ -1,11 +1,11 @@
 import React from 'react';
-import { Phone, Mail, Globe, CheckCircle2, Clock, ShieldCheck, ArrowRight, Star } from 'lucide-react';
+import { Phone, Mail, Clock, ShieldCheck, CheckCircle2, ArrowRight, Star } from 'lucide-react';
 
 const NijackSite = () => {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
       
-      {/* 1. HEADER - CLEAN & AUTHORITATIVE */}
+      {/* 1. HEADER */}
       <nav className="bg-white py-4 border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
           <div className="flex flex-col">
@@ -18,7 +18,7 @@ const NijackSite = () => {
         </div>
       </nav>
 
-      {/* 2. HERO SECTION - HIGH IMPACT */}
+      {/* 2. HERO SECTION */}
       <section className="bg-[#003366] text-white pt-12 pb-24 border-b-8 border-[#D4AF37]">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-8xl font-black mb-6 uppercase tracking-tighter leading-[0.9]">
@@ -35,12 +35,12 @@ const NijackSite = () => {
         </div>
       </section>
 
-      {/* 3. MAIN FORM - THE "10/10" ORIGINAL STRUCTURE */}
+      {/* 3. MAIN FORM - THE "10/10" STRUCTURE */}
       <section className="relative -mt-16 pb-20">
         <div className="max-w-4xl mx-auto px-6">
           <form className="bg-white rounded-[3rem] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] border border-gray-100 overflow-hidden">
             <div className="bg-[#D4AF37] py-5 text-center">
-              <h2 className="text-[#003366] font-black uppercase text-sm md:text-lg tracking-[0.2em]">Start Your Successful Closing Strategy</h2>
+              <h2 className="text-[#003366] font-black uppercase text-sm md:text-lg tracking-[0.2em]">Start Your Successful Closing Today</h2>
             </div>
             
             <div className="p-8 md:p-12 space-y-10">
@@ -58,75 +58,21 @@ const NijackSite = () => {
                 <input type="text" placeholder="PROPERTY ADDRESS (STREET, CITY, ZIP)" className="w-full bg-gray-50 border-b-4 border-gray-200 p-4 font-black uppercase text-sm focus:border-[#003366] outline-none transition-all" required />
               </div>
 
-              {/* STEP 2: SITUATION BOX WITH SELL TIME DROPDOWN */}
+              {/* STEP 2: SELL TIME & SITUATION */}
               <div className="space-y-6 p-8 bg-gray-50 rounded-[2rem] border-2 border-dashed border-gray-200 shadow-inner">
                 <div className="flex items-center gap-4">
                   <span className="bg-[#003366] text-white w-8 h-8 rounded-full flex items-center justify-center font-black text-sm">2</span>
                   <h3 className="text-[#003366] font-black uppercase tracking-widest text-lg italic underline decoration-[#D4AF37]">The Situation</h3>
                 </div>
 
-                {/* THE SELL TIME DROPDOWN - FRONT AND CENTER */}
+                {/* THE SELL TIME DROPDOWN */}
                 <div className="space-y-3">
                   <label className="block text-[12px] font-black text-[#003366] uppercase tracking-[0.2em] italic ml-1">
                     SELL TIME: (REQUIRED)
                   </label>
-                  <select name="selling_timeline" required className="w-full bg-white border-2 border-[#D4AF37] rounded-xl p-4 font-black uppercase text-sm text-[#003366] shadow-md focus:ring-4 focus:ring-[#D4AF37]/20 outline-none appearance-none cursor-pointer">
+                  <select name="selling_timeline" required className="w-full bg-white border-2 border-[#D4AF37] rounded-xl p-4 font-black uppercase text-sm text-[#003366] shadow-md focus:ring-4 focus:ring-[#D4AF37]/20 outline-none cursor-pointer">
                     <option value="" disabled selected>Select Your Timeline</option>
                     <option value="ASAP">ASAP (RIGHT AWAY)</option>
                     <option value="< 30 Days">&lt; 30 DAYS</option>
                     <option value="< 90 Days">&lt; 90 DAYS</option>
-                    <option value="< 180 Days">&lt; 180 DAYS</option>
-                    <option value="180 Days+">180 DAYS+</option>
-                  </select>
-                </div>
-
-                {/* SITUATION CHECKBOXES */}
-                <div className="space-y-3">
-                  <label className="block text-[12px] font-black text-[#003366] uppercase tracking-[0.2em] italic ml-1">
-                    Select Your Current Situation:
-                  </label>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                    {["Probate", "Inherited", "Tired Landlord", "Needs Repairs", "Foreclosure", "Vacant", "Relocating", "Problem Tenant", "Other"].map((label) => (
-                      <label key={label} className="flex items-center gap-3 p-3 bg-white rounded-xl border border-gray-100 cursor-pointer hover:border-[#D4AF37] transition-all group">
-                        <input type="checkbox" className="h-4 w-4 accent-[#003366]" />
-                        <span className="font-black uppercase text-[10px] tracking-tighter text-[#003366] group-hover:text-[#D4AF37]">{label}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <button type="submit" className="w-full bg-[#003366] hover:bg-[#D4AF37] text-white font-black py-6 rounded-[2rem] shadow-2xl transition-all uppercase tracking-[0.4em] flex items-center justify-center gap-4 text-xl group">
-                Get My Cash Offer <ArrowRight className="group-hover:translate-x-4 transition-transform" />
-              </button>
-            </div>
-          </form>
-        </div>
-      </section>
-
-      {/* 4. COMMON QUESTIONS - BELOW FORM */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <h2 className="text-[#003366] font-black text-4xl uppercase tracking-tighter mb-12 text-center">Common Questions</h2>
-        <div className="space-y-4">
-          {[
-            { q: "How fast can closing happen?", a: "We typically close within 14 to 30 days. Because we pay cash, there are no bank appraisals or inspections to slow us down." },
-            { q: "Do I need to clean or fix anything?", a: "No. We buy houses 'As-Is.' You can leave unwanted furniture, trash, or repairs to us. We handle it all." },
-            { q: "Are there any fees or commissions?", a: "Zero. We pay all closing costs, and since we are the direct buyer, there is no 6% agent commission. The price we agree on is exactly what you get." }
-          ].map((item, idx) => (
-            <div key={idx} className="p-6 border-l-8 border-[#D4AF37] bg-gray-50 rounded-r-2xl">
-              <h4 className="font-black text-[#003366] uppercase text-lg mb-2">{item.q}</h4>
-              <p className="font-bold text-gray-600 text-sm uppercase leading-relaxed tracking-tight">{item.a}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 5. THE ADVANTAGE PILLARS */}
-      <section className="bg-gray-50 py-20 border-t border-gray-100">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center">
-          <div className="bg-white p-10 rounded-[3rem] shadow-xl border-t-8 border-[#003366]">
-             <ShieldCheck className="text-[#D4AF37] mx-auto mb-6" size={48} />
-             <h3 className="font-black text-[#003366] uppercase text-2xl mb-4 tracking-tighter italic">No Repairs</h3>
-             <p className="font-bold text-gray-500 uppercase text-xs tracking-widest leading-loose italic italic">Skip the contractors and the cleaning. We buy exactly as-is.</p>
-          </div>
-          <div
+                    <option value="< 180
