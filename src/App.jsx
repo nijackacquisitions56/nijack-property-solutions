@@ -51,8 +51,11 @@ const NijackSite = () => {
               </svg>
             </span>
           </h1>
-          <p className="text-xl md:text-4xl font-bold italic opacity-95 uppercase tracking-[0.15em] mb-10">
+          <p className="text-xl md:text-4xl font-bold italic opacity-95 uppercase tracking-[0.15em] mb-6">
             "Rooted in Care, Driven by Results."
+          </p>
+          <p className="text-sm md:text-xl text-white/90 font-semibold max-w-3xl mx-auto leading-relaxed mb-10">
+            Helping Northeast Ohio homeowners find solutions for difficult property situations.
           </p>
           <div className="inline-flex items-center bg-white/10 border-2 border-white/30 px-8 py-4 rounded-full">
             <p className="text-sm md:text-xl font-black uppercase tracking-[0.1em]">Closing Timeline: 14–30 Days</p>
