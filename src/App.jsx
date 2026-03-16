@@ -1,25 +1,28 @@
-import React from 'react';
+{/* 1. HEADER */}
+<nav className="bg-white py-3 md:py-4 border-b-4 border-[#D4AF37] sticky top-0 z-50 shadow-sm">
+  <div className="max-w-6xl mx-auto px-3 md:px-6 flex justify-between items-center gap-3">
+    <div className="flex items-center gap-2 md:gap-3 min-w-0">
+      <div className="bg-[#003366] text-white font-black px-3 py-2 md:px-4 md:py-2 rounded text-lg md:text-xl shadow-md shrink-0">
+        N.P.S.
+      </div>
+      <div className="flex flex-col text-left min-w-0">
+        <span className="text-[#003366] font-black text-sm md:text-2xl tracking-tighter leading-none uppercase">
+          NIJACK PROPERTY
+        </span>
+        <span className="text-[#D4AF37] font-bold text-[8px] md:text-[12px] tracking-[0.22em] md:tracking-[0.3em] uppercase leading-none mt-1">
+          S O L U T I O N S
+        </span>
+      </div>
+    </div>
 
-const NijackSite = () => {
-  return (
-    <div className="min-h-screen bg-white font-sans text-slate-900 text-base md:text-lg leading-relaxed scroll-smooth">
-      
-      {/* 1. HEADER */}
-      <nav className="bg-white py-4 border-b-4 border-[#D4AF37] sticky top-0 z-50 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 md:px-6 flex justify-between items-center">
-          <div className="flex items-center gap-2 md:gap-3">
-            <div className="bg-[#003366] text-white font-black px-4 py-2 rounded text-xl shadow-md">N.P.S.</div>
-            <div className="flex flex-col text-left">
-              <span className="text-[#003366] font-black text-lg md:text-2xl tracking-tighter leading-none uppercase">NIJACK PROPERTY</span>
-              <span className="text-[#D4AF37] font-bold text-[10px] md:text-[12px] tracking-[0.3em] uppercase leading-none mt-1">S O L U T I O N S</span>
-            </div>
-          </div>
-          <a href="tel:3303319070" className="bg-[#003366] text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-black text-base md:text-xl hover:bg-[#D4AF37] hover:text-[#003366] transition-all shadow-lg border-2 border-[#D4AF37]/20">
-            330-331-9070
-          </a>
-        </div>
-      </nav>
-
+    <a
+      href="tel:3303319070"
+      className="bg-[#003366] text-white px-4 py-3 md:px-8 md:py-4 rounded-full font-black text-sm md:text-xl hover:bg-[#D4AF37] hover:text-[#003366] transition-all shadow-lg border-2 border-[#D4AF37]/20 shrink-0 text-center leading-tight"
+    >
+      330-331-9070
+    </a>
+  </div>
+</nav>
       {/* 2. HERO SECTION */}
       <section className="bg-[#003366] text-white pt-12 pb-16 md:pt-16 md:pb-24 border-b-8 border-[#D4AF37]">
         <div className="max-w-6xl mx-auto px-6 text-center">
