@@ -123,6 +123,7 @@ const NijackSite = () => {
                       'Relocating',
                       'Problem Tenant',
                       'Shopping Around',
+                      'Other',
                     ].map((label) => (
                       <label
                         key={label}
@@ -134,6 +135,12 @@ const NijackSite = () => {
                     ))}
                   </div>
                 </div>
+
+                <textarea
+                  placeholder="ADDITIONAL NOTES (TELL US MORE ABOUT THE PROPERTY...)"
+                  rows="4"
+                  className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-lg md:text-2xl font-bold outline-none focus:border-[#003366] resize-none placeholder:text-gray-400"
+                ></textarea>
 
                 <div className="space-y-4">
                   <label className="block text-[#003366] font-black text-lg md:text-xl uppercase tracking-widest italic">
@@ -154,12 +161,6 @@ const NijackSite = () => {
                     <option>JUST EXPLORING OPTIONS</option>
                   </select>
                 </div>
-
-                <textarea
-                  placeholder="ADDITIONAL NOTES (TELL US MORE ABOUT THE PROPERTY...)"
-                  rows="4"
-                  className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-lg md:text-2xl font-bold outline-none focus:border-[#003366] resize-none placeholder:text-gray-400"
-                ></textarea>
               </div>
 
               <button
