@@ -36,6 +36,10 @@ const NijackSite = () => {
             </span> For <br className="md:hidden" />
             <span className="relative inline-block text-[#D4AF37] px-1">
               CASH
+              {/* RESTORED LINE UNDER CASH */}
+              <svg className="absolute -bottom-2 left-0 w-full h-4 text-white opacity-40" viewBox="0 0 100 10" preserveAspectRatio="none">
+                <path d="M0 8 Q 50 2 100 8" stroke="currentColor" strokeWidth="10" fill="transparent" />
+              </svg>
             </span>
           </h1>
           <p className="text-2xl md:text-4xl font-bold italic opacity-95 uppercase tracking-[0.15em] mb-10">"Rooted in Care, Driven by Results."</p>
@@ -105,10 +109,10 @@ const NijackSite = () => {
       </section>
 
       {/* 4. HOW IT WORKS */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-            <p className="text-[#D4AF37] font-black uppercase tracking-[0.25em] text-lg mb-4 italic">Our Simple Process</p>
-            <h2 className="text-4xl md:text-6xl font-black text-[#003366] uppercase mb-16">How It Works</h2>
+      <section className="py-20 bg-white text-center">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-[#D4AF37] font-black uppercase tracking-[0.25em] text-lg mb-4 italic">Our Simple Process</p>
+          <h2 className="text-4xl md:text-6xl font-black text-[#003366] uppercase mb-16">How It Works</h2>
           <div className="grid md:grid-cols-3 gap-10">
             {[
               { n: '1', t: 'SHARE INFO', d: 'Tell us about the property and your situation through the form above.' },
@@ -143,7 +147,7 @@ const NijackSite = () => {
         </div>
       </section>
 
-      {/* 6. PRIVACY & PARTNER DISCLOSURE SECTION */}
+      {/* 6. PRIVACY & PARTNER DISCLOSURE */}
       <section id="privacy-policy" className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <div className="bg-gray-100 rounded-[3rem] p-10 md:p-16 border-2 border-gray-200">
@@ -171,6 +175,7 @@ const NijackSite = () => {
       <footer className="bg-white py-16 border-t-8 border-[#003366] text-center">
         <div className="max-w-6xl mx-auto px-6">
           <span className="text-[#003366] font-black text-2xl md:text-4xl uppercase block mb-4 tracking-tighter">Nijack Property Solutions</span>
+          {/* UPDATED FOOTER WITH NORTHEAST OHIO */}
           <p className="text-gray-600 font-black text-lg md:text-2xl mb-6 uppercase tracking-[0.2em]">Northeast Ohio & Nationwide</p>
           
           <div className="mb-8">
