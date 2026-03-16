@@ -2,7 +2,7 @@ import React from 'react';
 
 const NijackSite = () => {
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900 text-lg leading-relaxed scroll-smooth">
+    <div className="min-h-screen bg-white font-sans text-slate-900 text-base md:text-lg leading-relaxed scroll-smooth">
       
       {/* 1. HEADER */}
       <nav className="bg-white py-4 border-b-4 border-[#D4AF37] sticky top-0 z-50 shadow-sm">
@@ -26,7 +26,7 @@ const NijackSite = () => {
           <p className="text-[#D4AF37] font-black uppercase tracking-[0.3em] text-sm md:text-lg mb-6 italic">
             Northeast Ohio & Nationwide Investment Solutions
           </p>
-          <h1 className="text-5xl md:text-8xl font-black mb-8 uppercase tracking-tighter leading-tight">
+          <h1 className="text-4xl md:text-8xl font-black mb-8 uppercase tracking-tighter leading-tight">
             Sell Your House <br className="md:hidden" />
             <span className="relative inline-block px-1">
               FAST
@@ -42,7 +42,7 @@ const NijackSite = () => {
               </svg>
             </span>
           </h1>
-          <p className="text-2xl md:text-4xl font-bold italic opacity-95 uppercase tracking-[0.15em] mb-10">
+          <p className="text-xl md:text-4xl font-bold italic opacity-95 uppercase tracking-[0.15em] mb-10">
             "Rooted in Care, Driven by Results."
           </p>
           <div className="inline-flex items-center bg-white/10 border-2 border-white/30 px-8 py-4 rounded-full">
@@ -63,39 +63,39 @@ const NijackSite = () => {
 
             <div className="p-8 md:p-16 space-y-12">
               <div className="space-y-8">
-                <h3 className="text-[#003366] font-black uppercase tracking-wider text-2xl md:text-4xl italic underline decoration-[#D4AF37] decoration-4">
+                <h3 className="text-[#003366] font-black uppercase tracking-wider text-xl md:text-4xl italic underline decoration-[#D4AF37] decoration-4">
                   Step 1: Contact Information
                 </h3>
                 <div className="grid md:grid-cols-2 gap-8">
                   <input
                     type="text"
                     placeholder="FULL NAME"
-                    className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-xl md:text-2xl font-bold outline-none focus:border-[#003366] placeholder:text-gray-400"
+                    className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-lg md:text-2xl font-bold outline-none focus:border-[#003366] placeholder:text-gray-400"
                     required
                   />
                   <input
                     type="tel"
                     placeholder="PHONE NUMBER"
-                    className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-xl md:text-2xl font-bold outline-none focus:border-[#003366] placeholder:text-gray-400"
+                    className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-lg md:text-2xl font-bold outline-none focus:border-[#003366] placeholder:text-gray-400"
                     required
                   />
                 </div>
                 <input
                   type="email"
                   placeholder="EMAIL ADDRESS"
-                  className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-xl md:text-2xl font-bold outline-none focus:border-[#003366] placeholder:text-gray-400"
+                  className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-lg md:text-2xl font-bold outline-none focus:border-[#003366] placeholder:text-gray-400"
                   required
                 />
                 <input
                   type="text"
                   placeholder="PROPERTY ADDRESS (STREET, CITY, STATE, ZIP)"
-                  className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-xl md:text-2xl font-bold outline-none focus:border-[#003366] placeholder:text-gray-400"
+                  className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-lg md:text-2xl font-bold outline-none focus:border-[#003366] placeholder:text-gray-400"
                   required
                 />
               </div>
 
               <div className="space-y-8">
-                <h3 className="text-[#003366] font-black uppercase tracking-wider text-2xl md:text-4xl italic underline decoration-[#D4AF37] decoration-4">
+                <h3 className="text-[#003366] font-black uppercase tracking-wider text-xl md:text-4xl italic underline decoration-[#D4AF37] decoration-4">
                   Step 2: Property Details
                 </h3>
 
@@ -131,7 +131,7 @@ const NijackSite = () => {
                     How fast do you need to sell? <span className="text-[#D4AF37]">— CLICK BELOW</span>
                   </label>
                   <select
-                    className="w-full bg-white border-4 border-[#003366] rounded-2xl p-6 text-xl md:text-2xl font-black text-[#003366] outline-none shadow-lg cursor-pointer"
+                    className="w-full bg-white border-4 border-[#003366] rounded-2xl p-6 text-lg md:text-2xl font-black text-[#003366] outline-none shadow-lg cursor-pointer"
                     defaultValue=""
                   >
                     <option value="" disabled>
@@ -149,13 +149,13 @@ const NijackSite = () => {
                 <textarea
                   placeholder="ADDITIONAL NOTES (TELL US MORE ABOUT THE PROPERTY...)"
                   rows="4"
-                  className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-xl md:text-2xl font-bold outline-none focus:border-[#003366] resize-none placeholder:text-gray-400"
+                  className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-lg md:text-2xl font-bold outline-none focus:border-[#003366] resize-none placeholder:text-gray-400"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#003366] text-white py-8 md:py-10 rounded-full font-black uppercase tracking-[0.2em] text-2xl md:text-4xl hover:bg-[#D4AF37] hover:text-[#003366] transition-all shadow-2xl"
+                className="w-full bg-[#003366] text-white py-7 md:py-10 rounded-full font-black uppercase tracking-[0.15em] text-xl md:text-4xl hover:bg-[#D4AF37] hover:text-[#003366] transition-all shadow-2xl"
               >
                 Submit My Property →
               </button>
@@ -239,12 +239,12 @@ const NijackSite = () => {
       <section className="bg-[#003366] text-white py-20 md:py-32 px-6 text-center border-t-8 border-[#D4AF37]">
         <div className="max-w-5xl mx-auto">
           <p className="text-[#D4AF37] font-black uppercase tracking-[0.3em] text-xl mb-6">READY TO MOVE FORWARD?</p>
-          <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-10 leading-tight">
+          <h2 className="text-3xl md:text-7xl font-black uppercase tracking-tighter mb-10 leading-tight">
             START WITH YOUR <br /> PROPERTY DETAILS
           </h2>
           <a
             href="#property-form"
-            className="inline-block bg-[#D4AF37] text-[#003366] px-12 py-6 md:px-16 md:py-8 rounded-full font-black uppercase tracking-[0.12em] text-xl md:text-3xl hover:bg-white transition-all shadow-2xl"
+            className="inline-block bg-[#D4AF37] text-[#003366] px-10 py-5 md:px-16 md:py-8 rounded-full font-black uppercase tracking-[0.08em] text-lg md:text-3xl hover:bg-white transition-all shadow-2xl"
           >
             Submit My Details Now
           </a>
