@@ -171,7 +171,7 @@ const NijackSite = () => {
       <footer className="bg-white py-16 border-t-8 border-[#003366] text-center">
         <div className="max-w-6xl mx-auto px-6">
           <span className="text-[#003366] font-black text-2xl md:text-4xl uppercase block mb-4 tracking-tighter">Nijack Property Solutions</span>
-          <p className="text-gray-600 font-black text-lg md:text-2xl mb-6 uppercase tracking-[0.2em]">NE Ohio & Nationwide</p>
+          <p className="text-gray-600 font-black text-lg md:text-2xl mb-6 uppercase tracking-[0.2em]">Northeast Ohio & Nationwide</p>
           
           <div className="mb-8">
              <a href="#privacy-policy" className="text-[#003366] font-black underline text-lg uppercase tracking-widest hover:text-[#D4AF37] transition-colors">
