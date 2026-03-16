@@ -216,6 +216,22 @@ const NijackSite = () => {
                 a: 'No. We buy houses in as-is condition. You pay zero for repairs or cleaning.',
               },
               {
+                q: 'HOW IS MY CASH OFFER DETERMINED?',
+                a: 'Our review is based on the property condition, location, timeline, market activity, and the overall situation. Every property is different.',
+              },
+              {
+                q: 'DO I NEED TO CLEAN OUT THE PROPERTY?',
+                a: 'In many situations, no. We understand some properties are overwhelming, and we work to keep the process as simple as possible.',
+              },
+              {
+                q: 'WHAT IF I STILL OWE MONEY ON THE PROPERTY?',
+                a: 'That does not automatically stop the process. We can review the situation and discuss possible next steps based on the property and payoff amount.',
+              },
+              {
+                q: 'HOW FAST CAN THE PROCESS MOVE?',
+                a: 'Some situations can move quickly depending on title, property details, and seller timeline. The sooner we receive your information, the sooner we can review it.',
+              },
+              {
                 q: 'ARE THERE COMMISSIONS?',
                 a: 'No. We are direct buyers, not agents. You pay zero agent fees.',
               },
