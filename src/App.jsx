@@ -2,86 +2,93 @@ import React from 'react';
 
 const NijackSite = () => {
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900 leading-relaxed scroll-smooth">
+    // 'text-lg' and 'leading-relaxed' ensures the base font is large and spaced out
+    <div className="min-h-screen bg-white font-sans text-slate-900 text-lg leading-relaxed scroll-smooth">
       
       {/* 1. HEADER */}
-      <nav className="bg-white py-3 border-b-2 border-[#D4AF37] sticky top-0 z-50 shadow-sm">
+      <nav className="bg-white py-4 border-b-4 border-[#D4AF37] sticky top-0 z-50 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 md:px-6 flex justify-between items-center">
           <div className="flex items-center gap-2 md:gap-3">
-            <div className="bg-[#003366] text-white font-black px-3 py-1.5 rounded text-lg shadow-md">N.P.S.</div>
+            <div className="bg-[#003366] text-white font-black px-4 py-2 rounded text-xl shadow-md">N.P.S.</div>
             <div className="flex flex-col text-left">
-              <span className="text-[#003366] font-black text-base md:text-xl tracking-tighter leading-none uppercase">NIJACK PROPERTY</span>
-              <span className="text-[#D4AF37] font-bold text-[9px] md:text-[10px] tracking-[0.3em] uppercase leading-none mt-1">S O L U T I O N S</span>
+              <span className="text-[#003366] font-black text-lg md:text-2xl tracking-tighter leading-none uppercase">NIJACK PROPERTY</span>
+              <span className="text-[#D4AF37] font-bold text-[10px] md:text-[12px] tracking-[0.3em] uppercase leading-none mt-1">S O L U T I O N S</span>
             </div>
           </div>
-          <a href="tel:3303319070" className="bg-[#003366] text-white px-5 py-3 md:px-6 md:py-3 rounded-full font-black text-sm md:text-base hover:bg-[#D4AF37] hover:text-[#003366] transition-all shadow-lg border-2 border-[#D4AF37]/20">
+          <a href="tel:3303319070" className="bg-[#003366] text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-black text-base md:text-xl hover:bg-[#D4AF37] hover:text-[#003366] transition-all shadow-lg border-2 border-[#D4AF37]/20">
             330-331-9070
           </a>
         </div>
       </nav>
 
       {/* 2. HERO SECTION */}
-      <section className="bg-[#003366] text-white pt-9 pb-13 md:pt-13 md:pb-18 border-b-8 border-[#D4AF37]">
+      <section className="bg-[#003366] text-white pt-12 pb-16 md:pt-16 md:pb-24 border-b-8 border-[#D4AF37]">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="text-[#D4AF37] font-black uppercase tracking-[0.28em] text-xs md:text-sm mb-4 italic">
+          <p className="text-[#D4AF37] font-black uppercase tracking-[0.3em] text-sm md:text-lg mb-6 italic">
             Northeast Ohio & Nationwide Investment Solutions
           </p>
-          <h1 className="text-4xl md:text-7xl font-black mb-6 uppercase tracking-tighter leading-tight">
-            Sell Your House <span className="relative inline-block px-1">FAST<svg className="absolute -bottom-1 md:-bottom-2 left-0 w-full h-3 md:h-4 text-[#D4AF37]" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 12 100 5" stroke="currentColor" strokeWidth="8" fill="transparent"/></svg></span> For <span className="relative inline-block text-[#D4AF37] px-1">CASH<svg className="absolute -bottom-1 md:-bottom-2 left-0 w-full h-3 md:h-4 text-white opacity-40" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 8 Q 50 2 100 8" stroke="currentColor" strokeWidth="6" fill="transparent"/></svg></span>
+          <h1 className="text-5xl md:text-8xl font-black mb-8 uppercase tracking-tighter leading-tight">
+            Sell Your House <br className="md:hidden" />
+            <span className="relative inline-block px-1">
+              FAST
+              <svg className="absolute -bottom-2 left-0 w-full h-4 text-[#D4AF37]" viewBox="0 0 100 10" preserveAspectRatio="none">
+                <path d="M0 5 Q 50 12 100 5" stroke="currentColor" strokeWidth="10" fill="transparent" />
+              </svg>
+            </span> For <br className="md:hidden" />
+            <span className="relative inline-block text-[#D4AF37] px-1">
+              CASH
+            </span>
           </h1>
-          <p className="text-xl md:text-2xl font-bold italic opacity-95 uppercase tracking-[0.15em] mb-6">"Rooted in Care, Driven by Results."</p>
-          <div className="inline-flex items-center bg-white/10 border border-white/20 px-7 py-3 rounded-full">
-            <p className="text-xs md:text-sm font-black uppercase tracking-[0.08em]">Closing Timeline: 14–30 Days</p>
+          <p className="text-2xl md:text-4xl font-bold italic opacity-95 uppercase tracking-[0.15em] mb-10">"Rooted in Care, Driven by Results."</p>
+          <div className="inline-flex items-center bg-white/10 border-2 border-white/30 px-8 py-4 rounded-full">
+            <p className="text-sm md:text-xl font-black uppercase tracking-[0.1em]">Closing Timeline: 14–30 Days</p>
           </div>
         </div>
       </section>
 
-      {/* 3. MAIN FORM */}
-      <section id="property-form" className="relative -mt-10 md:-mt-12 pb-14 md:pb-16 scroll-mt-24">
+      {/* 3. MAIN FORM - LARGE INPUTS */}
+      <section id="property-form" className="relative -mt-12 pb-20 scroll-mt-24">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
-          <form className="bg-white rounded-[2rem] md:rounded-[3rem] shadow-2xl border border-gray-100 overflow-hidden">
-            <div className="bg-[#D4AF37] py-5 md:py-6 text-center px-4">
-              <h2 className="text-[#003366] font-black uppercase text-sm md:text-xl tracking-[0.16em]">Start Your Successful Closing Today</h2>
+          <form className="bg-white rounded-[2rem] md:rounded-[4rem] shadow-2xl border-2 border-gray-100 overflow-hidden">
+            <div className="bg-[#D4AF37] py-6 md:py-8 text-center px-4">
+              <h2 className="text-[#003366] font-black uppercase text-xl md:text-3xl tracking-[0.1em]">Start Your Successful Closing Today</h2>
             </div>
 
-            <div className="p-6 md:p-12 space-y-10">
-              <div className="space-y-6">
-                <h3 className="text-[#003366] font-black uppercase tracking-wider text-lg md:text-2xl italic underline decoration-[#D4AF37]">Step 1: Contact Information</h3>
-                <div className="grid md:grid-cols-2 gap-5">
-                  <input type="text" placeholder="FULL NAME" className="w-full bg-gray-50 border-2 border-gray-200 rounded-2xl p-4 font-semibold outline-none focus:border-[#003366]" required />
-                  <input type="tel" placeholder="PHONE NUMBER" className="w-full bg-gray-50 border-2 border-gray-200 rounded-2xl p-4 font-semibold outline-none focus:border-[#003366]" required />
+            <div className="p-8 md:p-16 space-y-12">
+              <div className="space-y-8">
+                <h3 className="text-[#003366] font-black uppercase tracking-wider text-2xl md:text-4xl italic underline decoration-[#D4AF37] decoration-4">Step 1: Contact Info</h3>
+                <div className="grid md:grid-cols-2 gap-8">
+                  <input type="text" placeholder="FULL NAME" className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-xl md:text-2xl font-bold outline-none focus:border-[#003366] placeholder:text-gray-400" required />
+                  <input type="tel" placeholder="PHONE NUMBER" className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-xl md:text-2xl font-bold outline-none focus:border-[#003366] placeholder:text-gray-400" required />
                 </div>
-                <input type="email" placeholder="EMAIL ADDRESS" className="w-full bg-gray-50 border-2 border-gray-200 rounded-2xl p-4 font-semibold outline-none focus:border-[#003366]" required />
-                <input type="text" placeholder="PROPERTY ADDRESS (STREET, CITY, STATE, ZIP)" className="w-full bg-gray-50 border-2 border-gray-200 rounded-2xl p-4 font-semibold outline-none focus:border-[#003366]" required />
+                <input type="text" placeholder="PROPERTY ADDRESS" className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-xl md:text-2xl font-bold outline-none focus:border-[#003366] placeholder:text-gray-400" required />
               </div>
 
-              {/* ENLARGED SITUATION SECTION */}
-              <div className="space-y-6">
-                <h3 className="text-[#003366] font-black uppercase tracking-wider text-lg md:text-2xl italic underline decoration-[#D4AF37]">Step 2: Property Details</h3>
-                <div className="bg-gray-50 p-8 md:p-10 rounded-[2rem] border-2 border-[#D4AF37]/30 shadow-inner">
-                  <p className="text-[#003366] font-black text-sm uppercase mb-6 tracking-[0.2em] italic text-center">What is the situation? (Check all that apply)</p>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-                    {["Probate", "Inherited", "Tired Landlord", "Needs Repairs", "Foreclosure", "Vacant", "Relocating", "Problem Tenant", "Shopping Around"].map((label) => (
-                      <label key={label} className="flex items-center gap-3 p-3 bg-white rounded-xl border border-gray-100 hover:border-[#D4AF37] transition-colors cursor-pointer shadow-sm">
-                        <input type="checkbox" className="h-5 w-5 accent-[#003366]" />
-                        <span className="font-black uppercase text-[10px] md:text-[12px] tracking-tighter text-[#003366]">{label}</span>
+              {/* ENLARGED SITUATION SECTION FOR EASY TAPPING */}
+              <div className="space-y-8">
+                <h3 className="text-[#003366] font-black uppercase tracking-wider text-2xl md:text-4xl italic underline decoration-[#D4AF37] decoration-4">Step 2: Property Details</h3>
+                <div className="bg-gray-50 p-8 md:p-12 rounded-[2.5rem] border-4 border-[#D4AF37]/40 shadow-inner">
+                  <p className="text-[#003366] font-black text-lg md:text-xl uppercase mb-8 tracking-[0.1em] text-center italic">What is the situation? (Tap all that apply)</p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {["Probate", "Inherited Property", "Tired Landlord", "Needs Major Repairs", "Foreclosure", "Vacant House", "Relocating", "Problem Tenant", "Shopping Around"].map((label) => (
+                      <label key={label} className="flex items-center gap-4 p-5 bg-white rounded-2xl border-2 border-gray-200 hover:border-[#D4AF37] transition-all cursor-pointer shadow-sm">
+                        <input type="checkbox" className="h-7 w-7 accent-[#003366]" />
+                        <span className="font-black uppercase text-sm md:text-lg text-[#003366] tracking-tight">{label}</span>
                       </label>
                     ))}
                   </div>
                 </div>
-                <div className="grid md:grid-cols-2 gap-5 pt-4">
-                  <select className="w-full bg-gray-50 border-2 border-gray-200 rounded-2xl p-4 font-semibold outline-none focus:border-[#003366]" defaultValue="">
-                    <option value="" disabled>SELL TIME: (REQUIRED)</option>
+                <select className="w-full bg-white border-4 border-[#003366] rounded-2xl p-6 text-xl md:text-2xl font-black text-[#003366] outline-none shadow-lg appearance-none cursor-pointer" defaultValue="">
+                    <option value="" disabled>HOW FAST DO YOU NEED TO SELL? (REQUIRED)</option>
                     <option>ASAP (RIGHT AWAY)</option>
-                    <option>&lt; 30 DAYS</option>
-                    <option>&lt; 90 DAYS</option>
-                  </select>
-                  <input type="text" placeholder="ASKING PRICE (OPTIONAL)" className="w-full bg-gray-50 border-2 border-gray-200 rounded-2xl p-4 font-semibold outline-none focus:border-[#003366]" />
-                </div>
-                <textarea placeholder="ADDITIONAL NOTES (TELL US MORE...)" rows="4" className="w-full bg-gray-50 border-2 border-gray-200 rounded-2xl p-4 font-semibold outline-none focus:border-[#003366] resize-none"></textarea>
+                    <option>WITHIN 30 DAYS</option>
+                    <option>WITHIN 90 DAYS</option>
+                    <option>NO RUSH / EXPLORING</option>
+                </select>
+                <textarea placeholder="TELL US MORE ABOUT THE HOUSE..." rows="4" className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-xl md:text-2xl font-bold outline-none focus:border-[#003366] resize-none placeholder:text-gray-400"></textarea>
               </div>
 
-              <button type="submit" className="w-full bg-[#003366] text-white py-6 rounded-full font-black uppercase tracking-[0.2em] text-xl hover:bg-[#D4AF37] hover:text-[#003366] transition-all shadow-xl">
+              <button type="submit" className="w-full bg-[#003366] text-white py-8 md:py-10 rounded-full font-black uppercase tracking-[0.2em] text-2xl md:text-4xl hover:bg-[#D4AF37] hover:text-[#003366] transition-all shadow-2xl scale-100 hover:scale-[1.02]">
                 Get My Cash Offer →
               </button>
             </div>
@@ -89,80 +96,77 @@ const NijackSite = () => {
         </div>
       </section>
 
-      {/* 4. HOW IT WORKS */}
-      <section className="py-16 bg-white">
+      {/* 4. HOW IT WORKS - LARGE TEXT */}
+      <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <p className="text-[#D4AF37] font-black uppercase tracking-[0.25em] text-xs mb-4">Our Process</p>
-            <h2 className="text-3xl md:text-5xl font-black text-[#003366] uppercase tracking-tight">How It Works</h2>
+          <div className="text-center mb-16">
+            <p className="text-[#D4AF37] font-black uppercase tracking-[0.25em] text-lg mb-4 italic">Our Simple Process</p>
+            <h2 className="text-4xl md:text-6xl font-black text-[#003366] uppercase">How It Works</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-10">
             {[
-              { n: '1', t: 'Submit Property', d: 'Tell us about the property and your situation through the form above.' },
-              { n: '2', t: 'Review Options', d: 'We review the details and timeline to see if a solution makes sense.' },
-              { n: '3', t: 'Close Successfully', d: 'If the numbers work, we move forward with a smooth closing process.' }
+              { n: '1', t: 'SHARE INFO', d: 'Tell us about the house using the form above.' },
+              { n: '2', t: 'GET OFFER', d: 'We review the property and give you a fair cash offer.' },
+              { n: '3', t: 'COLLECT CASH', d: 'We close at a reputable title company on your timeline.' }
             ].map((step) => (
-              <div key={step.n} className="bg-[#003366] text-white rounded-[2rem] p-8 shadow-xl text-center border-b-4 border-[#D4AF37]">
-                <div className="w-16 h-16 mx-auto rounded-full bg-[#D4AF37] text-[#003366] flex items-center justify-center font-black text-2xl mb-5">{step.n}</div>
-                <h3 className="font-black uppercase text-xl mb-3">{step.t}</h3>
-                <p className="opacity-90 leading-relaxed">{step.d}</p>
+              <div key={step.n} className="bg-[#003366] text-white rounded-[3rem] p-10 shadow-2xl text-center border-b-8 border-[#D4AF37]">
+                <div className="w-20 h-20 mx-auto rounded-full bg-[#D4AF37] text-[#003366] flex items-center justify-center font-black text-4xl mb-6 shadow-lg">{step.n}</div>
+                <h3 className="font-black uppercase text-2xl mb-4 tracking-wider">{step.t}</h3>
+                <p className="text-xl opacity-95 font-medium leading-relaxed">{step.d}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 5. FAQ */}
-      <section className="py-16 bg-[#f8fafc]">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-black text-[#003366] uppercase text-center mb-12 italic">Common Seller Questions</h2>
-          <div className="space-y-4">
+      {/* 5. FAQ - ACCESSIBLE FONT */}
+      <section className="py-20 bg-[#f8fafc]">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-black text-[#003366] uppercase mb-12 italic underline decoration-[#D4AF37]">Frequently Asked Questions</h2>
+          <div className="space-y-8 text-left">
             {[
-              { q: 'Do I need to make repairs?', a: 'No. We work with sellers who want to sell as-is.' },
-              { q: 'Are there hidden fees?', a: 'No agent commissions. We focus on a direct solution.' }
+              { q: 'DO I NEED TO CLEAN OR FIX THE HOUSE?', a: 'No. We buy houses in "as-is" condition. You can leave whatever you don\'t want behind.' },
+              { q: 'ARE THERE ANY COMMISSIONS?', a: 'None. We are not realtors listing your house; we are buyers. You pay zero commissions.' }
             ].map((faq) => (
-              <div key={faq.q} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                <h3 className="text-[#003366] font-black uppercase text-lg mb-2">{faq.q}</h3>
-                <p className="text-gray-600 font-medium">{faq.a}</p>
+              <div key={faq.q} className="bg-white p-8 rounded-3xl border-2 border-gray-100 shadow-lg">
+                <h3 className="text-[#003366] font-black uppercase text-xl md:text-2xl mb-4 tracking-tight">{faq.q}</h3>
+                <p className="text-gray-700 text-lg md:text-xl font-bold leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 6. PRIVACY POLICY & PARTNER DISCLOSURE */}
-      <section id="privacy-policy" className="py-16 bg-white">
+      {/* 6. PRIVACY & PARTNER DISCLOSURE - CLEAN & CLEAR */}
+      <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="bg-gray-50 rounded-[2rem] p-8 md:p-10 border border-gray-100">
-            <p className="text-[#D4AF37] font-black uppercase tracking-[0.25em] text-xs text-center mb-4 text-[#D4AF37]">Your Privacy & Peace of Mind</p>
-            <h2 className="text-3xl font-black text-[#003366] uppercase text-center mb-8">Your Information Matters</h2>
-            <div className="space-y-4 text-gray-700 font-medium leading-relaxed">
-              <p>Nijack Property Solutions respects your privacy. Information submitted is used only to review your property and contact you regarding your request.</p>
-              <p>We do not sell your personal information. By submitting, you agree that we may contact you by phone, email, or text regarding your property inquiry.</p>
-              <p className="pt-4 border-t border-gray-200 text-sm italic">Depending on the property, we may work with trusted investment partners to help create possible solutions for sellers.</p>
+          <div className="bg-gray-100 rounded-[3rem] p-10 md:p-16 border-2 border-gray-200">
+            <h2 className="text-3xl md:text-5xl font-black text-[#003366] uppercase text-center mb-10">Your Trust is Our Priority</h2>
+            <div className="space-y-6 text-xl md:text-2xl text-gray-700 font-bold leading-relaxed">
+              <p>Nijack Property Solutions values your privacy. Your information is strictly used to provide your cash offer.</p>
+              <p>We do not sell your data. We work with trusted partners to ensure you get the best possible solution for your situation.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 7. CTA SECTION */}
-      <section className="bg-[#003366] text-white py-16 md:py-24 px-6 text-center border-t-8 border-[#D4AF37]">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-[#D4AF37] font-black uppercase tracking-[0.3em] text-xs mb-4 italic">READY TO TALK?</p>
-          <h2 className="text-3xl md:text-6xl font-black uppercase tracking-tighter mb-6 leading-tight">START WITH YOUR <br className="hidden md:block" /> PROPERTY DETAILS</h2>
-          <p className="text-white/90 text-base md:text-xl font-medium leading-relaxed mb-10">Tell us about the property and your situation. We’ll review the details and discuss possible next steps.</p>
-          <a href="#property-form" className="inline-block bg-[#D4AF37] text-[#003366] px-10 py-5 rounded-full font-black uppercase tracking-[0.12em] text-sm md:text-lg hover:bg-white transition-all shadow-xl">
-            Submit Property Details
+      {/* 7. CTA - BIGGEST TEXT */}
+      <section className="bg-[#003366] text-white py-20 md:py-32 px-6 text-center border-t-8 border-[#D4AF37]">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-[#D4AF37] font-black uppercase tracking-[0.3em] text-xl mb-6">READY TO MOVE FORWARD?</p>
+          <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-10 leading-tight">START WITH YOUR <br /> PROPERTY DETAILS</h2>
+          <a href="#property-form" className="inline-block bg-[#D4AF37] text-[#003366] px-12 py-6 md:px-16 md:py-8 rounded-full font-black uppercase tracking-[0.12em] text-xl md:text-3xl hover:bg-white transition-all shadow-2xl">
+            Submit My Details Now
           </a>
         </div>
       </section>
 
       {/* 8. FOOTER */}
-      <footer className="bg-white py-12 border-t border-gray-200">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <span className="text-[#003366] font-black text-xl md:text-2xl uppercase block mb-2">Nijack Property Solutions</span>
-          <p className="text-gray-600 font-bold text-sm mb-6 uppercase tracking-widest">Northeast Ohio & Nationwide Investment Solutions</p>
-          <div className="text-[10px] text-gray-400 font-bold uppercase tracking-widest italic">© {new Date().getFullYear()} Nijack Property Solutions. All rights reserved.</div>
+      <footer className="bg-white py-16 border-t-8 border-[#003366] text-center">
+        <div className="max-w-6xl mx-auto px-6">
+          <span className="text-[#003366] font-black text-2xl md:text-4xl uppercase block mb-4 tracking-tighter">Nijack Property Solutions</span>
+          <p className="text-gray-600 font-black text-lg md:text-2xl mb-8 uppercase tracking-[0.2em]">NE Ohio & Nationwide</p>
+          <div className="text-sm md:text-lg text-gray-400 font-bold uppercase tracking-widest italic">© {new Date().getFullYear()} Nijack Property Solutions. All rights reserved.</div>
         </div>
       </footer>
 
