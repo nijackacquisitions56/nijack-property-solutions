@@ -161,7 +161,7 @@ const NijackSite = () => {
       <footer className="bg-white py-12 border-t border-gray-200">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <span className="text-[#003366] font-black text-xl md:text-2xl uppercase block mb-2">Nijack Property Solutions</span>
-          <p className="text-gray-600 font-bold text-sm mb-6 uppercase tracking-widest">NE Ohio & Nationwide Investment Solutions</p>
+          <p className="text-gray-600 font-bold text-sm mb-6 uppercase tracking-widest">Northeast Ohio & Nationwide Investment Solutions</p>
           <div className="text-[10px] text-gray-400 font-bold uppercase tracking-widest italic">© {new Date().getFullYear()} Nijack Property Solutions. All rights reserved.</div>
         </div>
       </footer>
