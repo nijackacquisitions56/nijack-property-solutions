@@ -62,8 +62,31 @@ const NijackSite = () => {
           </div>
         </div>
       </section>
+{/* TRUST ELEMENTS */}
+<div className="max-w-4xl mx-auto px-4 md:px-6 mb-8">
+  <div className="grid md:grid-cols-3 gap-4 md:gap-6 text-center">
+    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 md:p-6">
+      <p className="text-[#003366] font-black text-base md:text-lg uppercase">No Repairs Needed</p>
+      <p className="text-gray-600 text-sm md:text-base font-semibold mt-2 leading-relaxed">
+        Sell your property as-is without cleaning, fixing, or updating it first.
+      </p>
+    </div>
 
-      {/* 3. MAIN FORM */}
+    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 md:p-6">
+      <p className="text-[#003366] font-black text-base md:text-lg uppercase">No Commissions</p>
+      <p className="text-gray-600 text-sm md:text-base font-semibold mt-2 leading-relaxed">
+        No agent fees or commissions. Just a direct review of your property.
+      </p>
+    </div>
+
+    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 md:p-6">
+      <p className="text-[#003366] font-black text-base md:text-lg uppercase">Flexible Closing</p>
+      <p className="text-gray-600 text-sm md:text-base font-semibold mt-2 leading-relaxed">
+        We work with different timelines and aim to find a solution that fits your situation.
+      </p>
+    </div>
+  </div>
+</div>      {/* 3. MAIN FORM */}
       <section id="property-form" className="relative -mt-12 pb-20 scroll-mt-24">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           <form className="bg-white rounded-[2rem] md:rounded-[4rem] shadow-2xl border-2 border-gray-100 overflow-hidden">
