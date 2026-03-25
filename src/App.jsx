@@ -3,7 +3,6 @@ import React from 'react';
 const NijackSite = () => {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 text-base md:text-lg leading-relaxed scroll-smooth">
-
       {/* 1. HEADER */}
       <nav className="bg-white py-3 border-b-4 border-[#D4AF37] sticky top-0 z-50 shadow-sm">
         <div className="max-w-6xl mx-auto px-3 md:px-5 flex justify-between items-center gap-3">
@@ -46,7 +45,12 @@ const NijackSite = () => {
                 viewBox="0 0 100 10"
                 preserveAspectRatio="none"
               >
-                <path d="M0 5 Q 50 12 100 5" stroke="currentColor" strokeWidth="10" fill="transparent" />
+                <path
+                  d="M0 5 Q 50 12 100 5"
+                  stroke="currentColor"
+                  strokeWidth="10"
+                  fill="transparent"
+                />
               </svg>
             </span>{' '}
             For <br className="md:hidden" />
@@ -57,7 +61,12 @@ const NijackSite = () => {
                 viewBox="0 0 100 10"
                 preserveAspectRatio="none"
               >
-                <path d="M0 8 Q 50 2 100 8" stroke="currentColor" strokeWidth="10" fill="transparent" />
+                <path
+                  d="M0 8 Q 50 2 100 8"
+                  stroke="currentColor"
+                  strokeWidth="10"
+                  fill="transparent"
+                />
               </svg>
             </span>
           </h1>
@@ -67,11 +76,13 @@ const NijackSite = () => {
           </p>
 
           <p className="text-base md:text-2xl text-white/95 font-black max-w-4xl mx-auto leading-relaxed mb-5 uppercase tracking-[0.06em]">
-            Sell Your House As-Is With No Repairs, No Commissions, And A Closing On Your Timeline.
+            Sell Your House As-Is With No Repairs, No Commissions, And A Closing On
+            Your Timeline.
           </p>
 
           <p className="text-sm md:text-xl text-white/85 font-semibold max-w-3xl mx-auto leading-relaxed mb-8">
-            Helping Northeast Ohio homeowners find solutions for difficult property situations with a simple, straightforward process.
+            Helping Northeast Ohio homeowners find solutions for difficult property
+            situations with a simple, straightforward process.
           </p>
 
           <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-8">
@@ -91,33 +102,42 @@ const NijackSite = () => {
 
           <div className="max-w-4xl mx-auto bg-white/10 border border-white/25 rounded-2xl px-5 py-4">
             <p className="text-sm md:text-lg font-bold leading-relaxed">
-              All transactions are handled through a licensed title company to help ensure a safe and secure closing process.
+              All transactions are handled through a licensed title company to help
+              ensure a safe and secure closing process.
             </p>
           </div>
         </div>
       </section>
 
-      {/* 3. QUICK BENEFITS - MOVED HIGHER */}
+      {/* 3. QUICK BENEFITS */}
       <section className="max-w-5xl mx-auto px-4 md:px-6 -mt-8 relative z-10 mb-4">
         <div className="grid md:grid-cols-3 gap-4 md:gap-6 text-center">
           <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-5 md:p-6">
-            <p className="text-[#003366] font-black text-base md:text-lg uppercase">No Repairs Needed</p>
+            <p className="text-[#003366] font-black text-base md:text-lg uppercase">
+              No Repairs Needed
+            </p>
             <p className="text-gray-600 text-sm md:text-base font-semibold mt-2 leading-relaxed">
-              Sell your property as-is without cleaning, fixing, or updating it first.
+              Sell your property as-is without cleaning, fixing, or updating it
+              first.
             </p>
           </div>
 
           <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-5 md:p-6">
-            <p className="text-[#003366] font-black text-base md:text-lg uppercase">No Commissions</p>
+            <p className="text-[#003366] font-black text-base md:text-lg uppercase">
+              No Commissions
+            </p>
             <p className="text-gray-600 text-sm md:text-base font-semibold mt-2 leading-relaxed">
               No agent fees or commissions. Just a direct review of your property.
             </p>
           </div>
 
           <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-5 md:p-6">
-            <p className="text-[#003366] font-black text-base md:text-lg uppercase">Flexible Closing</p>
+            <p className="text-[#003366] font-black text-base md:text-lg uppercase">
+              Flexible Closing
+            </p>
             <p className="text-gray-600 text-sm md:text-base font-semibold mt-2 leading-relaxed">
-              We work with different timelines and aim to find a solution that fits your situation.
+              We work with different timelines and aim to find a solution that fits
+              your situation.
             </p>
           </div>
         </div>
@@ -206,7 +226,9 @@ const NijackSite = () => {
                         className="flex items-center gap-4 p-4 bg-white rounded-2xl border-2 border-gray-100 hover:border-[#D4AF37] transition-all cursor-pointer shadow-sm"
                       >
                         <input type="checkbox" className="h-7 w-7 accent-[#003366]" />
-                        <span className="font-black uppercase text-sm md:text-lg text-[#003366]">{label}</span>
+                        <span className="font-black uppercase text-sm md:text-lg text-[#003366]">
+                          {label}
+                        </span>
                       </label>
                     ))}
                   </div>
@@ -220,7 +242,8 @@ const NijackSite = () => {
 
                 <div className="space-y-4">
                   <label className="block text-[#003366] font-black text-lg md:text-xl uppercase tracking-widest italic">
-                    How fast do you need to sell? <span className="text-[#D4AF37]">— CLICK BELOW</span>
+                    How fast do you need to sell?{' '}
+                    <span className="text-[#D4AF37]">— CLICK BELOW</span>
                   </label>
                   <select
                     className="w-full bg-white border-4 border-[#003366] rounded-2xl p-6 text-lg md:text-2xl font-black text-[#003366] outline-none shadow-lg cursor-pointer"
@@ -237,11 +260,23 @@ const NijackSite = () => {
                     <option>JUST EXPLORING OPTIONS</option>
                   </select>
                 </div>
+
+                <div className="space-y-4">
+                  <label className="block text-[#003366] font-black text-lg md:text-xl uppercase tracking-widest italic">
+                    What Price Would You Consider For A Cash Offer?
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="EXAMPLE: $150,000"
+                    className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-lg md:text-2xl font-bold outline-none focus:border-[#003366] placeholder:text-gray-400"
+                  />
+                </div>
               </div>
 
               <div className="bg-[#f8fafc] border border-gray-200 rounded-2xl p-5 text-center">
                 <p className="text-[#003366] font-bold text-sm md:text-lg leading-relaxed">
-                  Your information is only used to review your property and discuss possible options. There is no obligation to sell.
+                  Your information is only used to review your property and discuss
+                  possible options. There is no obligation to sell.
                 </p>
               </div>
 
@@ -291,8 +326,12 @@ const NijackSite = () => {
                 <div className="w-20 h-20 mx-auto rounded-full bg-[#D4AF37] text-[#003366] flex items-center justify-center font-black text-4xl mb-6 shadow-lg">
                   {step.n}
                 </div>
-                <h3 className="font-black uppercase text-2xl mb-4 tracking-wider">{step.t}</h3>
-                <p className="text-xl opacity-95 font-medium leading-relaxed">{step.d}</p>
+                <h3 className="font-black uppercase text-2xl mb-4 tracking-wider">
+                  {step.t}
+                </h3>
+                <p className="text-xl opacity-95 font-medium leading-relaxed">
+                  {step.d}
+                </p>
               </div>
             ))}
           </div>
@@ -337,7 +376,10 @@ const NijackSite = () => {
                 a: 'Yes. Transactions are handled through a licensed title company, which helps ensure paperwork, ownership verification, and closing funds are processed securely. You do not pay anything upfront.',
               },
             ].map((faq) => (
-              <div key={faq.q} className="bg-white p-8 rounded-3xl border-2 border-gray-100 shadow-lg">
+              <div
+                key={faq.q}
+                className="bg-white p-8 rounded-3xl border-2 border-gray-100 shadow-lg"
+              >
                 <h3 className="text-[#003366] font-black uppercase text-xl md:text-2xl mb-4 tracking-tight">
                   {faq.q}
                 </h3>
@@ -360,13 +402,18 @@ const NijackSite = () => {
 
             <div className="space-y-6 text-xl md:text-2xl text-gray-700 font-bold leading-relaxed text-center md:text-left">
               <p>
-                Nijack Property Solutions values your privacy. Your information is used only to review your property and discuss possible solutions.
+                Nijack Property Solutions values your privacy. Your information is
+                used only to review your property and discuss possible solutions.
               </p>
               <p>
-                By submitting, you agree that we may contact you regarding your inquiry. Depending on the situation, we may work with trusted investment partners to help create the best possible solution for you.
+                By submitting, you agree that we may contact you regarding your
+                inquiry. Depending on the situation, we may work with trusted
+                investment partners to help create the best possible solution for
+                you.
               </p>
               <p>
-                We aim to keep the process simple, transparent, and respectful so you can decide what works best for your situation.
+                We aim to keep the process simple, transparent, and respectful so
+                you can decide what works best for your situation.
               </p>
             </div>
           </div>
@@ -380,7 +427,9 @@ const NijackSite = () => {
             A Simple, Honest Path Forward
           </h2>
           <p className="text-gray-700 text-lg md:text-2xl font-bold leading-relaxed">
-            We understand every property situation is different. Our goal is to provide a clear, respectful process so you can explore your options without pressure.
+            We understand every property situation is different. Our goal is to
+            provide a clear, respectful process so you can explore your options
+            without pressure.
           </p>
         </div>
       </section>
@@ -434,7 +483,8 @@ const NijackSite = () => {
           </div>
 
           <div className="text-sm md:text-lg text-gray-400 font-bold uppercase tracking-widest italic">
-            © {new Date().getFullYear()} Nijack Property Solutions. All rights reserved.
+            © {new Date().getFullYear()} Nijack Property Solutions. All rights
+            reserved.
           </div>
         </div>
       </footer>
