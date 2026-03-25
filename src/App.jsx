@@ -146,7 +146,11 @@ const NijackSite = () => {
       {/* 4. MAIN FORM */}
       <section id="property-form" className="pb-20 scroll-mt-24">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
-          <form className="bg-white rounded-[2rem] md:rounded-[4rem] shadow-2xl border-2 border-gray-100 overflow-hidden">
+          <form
+            action="https://formspree.io/f/xaqpozbn"
+            method="POST"
+            className="bg-white rounded-[2rem] md:rounded-[4rem] shadow-2xl border-2 border-gray-100 overflow-hidden"
+          >
             <div className="bg-[#D4AF37] py-6 md:py-8 text-center px-4">
               <h2 className="text-[#003366] font-black uppercase text-xl md:text-3xl tracking-[0.1em]">
                 Start Your Successful Closing Today
@@ -171,12 +175,14 @@ const NijackSite = () => {
                 <div className="grid md:grid-cols-2 gap-8">
                   <input
                     type="text"
+                    name="fullName"
                     placeholder="FULL NAME"
                     className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-lg md:text-2xl font-bold outline-none focus:border-[#003366] placeholder:text-gray-400"
                     required
                   />
                   <input
                     type="tel"
+                    name="phone"
                     placeholder="PHONE NUMBER"
                     className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-lg md:text-2xl font-bold outline-none focus:border-[#003366] placeholder:text-gray-400"
                     required
@@ -185,6 +191,7 @@ const NijackSite = () => {
 
                 <input
                   type="email"
+                  name="email"
                   placeholder="EMAIL ADDRESS"
                   className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-lg md:text-2xl font-bold outline-none focus:border-[#003366] placeholder:text-gray-400"
                   required
@@ -192,6 +199,7 @@ const NijackSite = () => {
 
                 <input
                   type="text"
+                  name="propertyAddress"
                   placeholder="PROPERTY ADDRESS (STREET, CITY, STATE, ZIP)"
                   className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-lg md:text-2xl font-bold outline-none focus:border-[#003366] placeholder:text-gray-400"
                   required
@@ -225,7 +233,12 @@ const NijackSite = () => {
                         key={label}
                         className="flex items-center gap-4 p-4 bg-white rounded-2xl border-2 border-gray-100 hover:border-[#D4AF37] transition-all cursor-pointer shadow-sm"
                       >
-                        <input type="checkbox" className="h-7 w-7 accent-[#003366]" />
+                        <input
+                          type="checkbox"
+                          name="situation"
+                          value={label}
+                          className="h-7 w-7 accent-[#003366]"
+                        />
                         <span className="font-black uppercase text-sm md:text-lg text-[#003366]">
                           {label}
                         </span>
@@ -235,6 +248,7 @@ const NijackSite = () => {
                 </div>
 
                 <textarea
+                  name="additionalNotes"
                   placeholder="ADDITIONAL NOTES (TELL US MORE ABOUT THE PROPERTY...)"
                   rows="4"
                   className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-lg md:text-2xl font-bold outline-none focus:border-[#003366] resize-none placeholder:text-gray-400"
@@ -246,6 +260,7 @@ const NijackSite = () => {
                     <span className="text-[#D4AF37]">— CLICK BELOW</span>
                   </label>
                   <select
+                    name="timeline"
                     className="w-full bg-white border-4 border-[#003366] rounded-2xl p-6 text-lg md:text-2xl font-black text-[#003366] outline-none shadow-lg cursor-pointer"
                     defaultValue=""
                   >
@@ -267,6 +282,7 @@ const NijackSite = () => {
                   </label>
                   <input
                     type="text"
+                    name="priceExpectation"
                     placeholder="EXAMPLE: $150,000"
                     className="w-full bg-gray-50 border-b-4 border-gray-300 p-6 text-lg md:text-2xl font-bold outline-none focus:border-[#003366] placeholder:text-gray-400"
                   />
