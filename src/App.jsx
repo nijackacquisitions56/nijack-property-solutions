@@ -428,7 +428,17 @@ We are real estate investors and do not represent buyers or sellers as licensed 
 
 <p>
 We aim to keep the process simple, transparent, and respectful so you can decide what works best for your situation.
-</p>               {/* 8. HUMAN TOUCH SECTION */}
+</p>
+
+{/* ── SB 155 COMPLIANCE ADDITION ── */}
+<p>
+In compliance with Ohio Senate Bill 155 (ORC § 5301.95), we are a real estate wholesaler. A written Wholesaler Disclosure Statement will be provided and must be signed by you before any contract is binding. We act on our own behalf, not as your representative. Any offer may be below market value. We may assign your contract to a third-party buyer for a profit. You have the right to seek legal or professional advice before signing anything.
+</p>
+{/* ── END SB 155 COMPLIANCE ADDITION ── */}
+
+            </h2>
+
+                  {/* 8. HUMAN TOUCH SECTION */}
       <section className="py-16 bg-[#f8fafc]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-[#003366] uppercase mb-6">
