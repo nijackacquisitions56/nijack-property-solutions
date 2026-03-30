@@ -417,7 +417,8 @@ const NijackSite = () => {
             </h2>
             <p>
 We are real estate investors and not licensed real estate agents. We may market properties and assign our contractual interest to other buyers for a fee.
-</p>                  {/* 8. HUMAN TOUCH SECTION */}
+</p>
+          </p>                  {/* 8. HUMAN TOUCH SECTION */}
       <section className="py-16 bg-[#f8fafc]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-[#003366] uppercase mb-6">
