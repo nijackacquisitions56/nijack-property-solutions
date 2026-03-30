@@ -414,28 +414,31 @@ const NijackSite = () => {
           <div className="bg-gray-100 rounded-[3rem] p-10 md:p-16 border-2 border-gray-200">
             <h2 className="text-3xl md:text-5xl font-black text-[#003366] uppercase text-center mb-10">
               Your Trust is Our Priority
+            </h2>
+            
+            <div className="space-y-6 text-gray-700 text-lg md:text-xl font-bold leading-relaxed">
               <p>
-Nijack Property Solutions values your privacy. Your information is used only to review your property and discuss possible solutions.
-</p>
+                Nijack Property Solutions values your privacy. Your information is used strictly to review your property and discuss possible solutions. By submitting, you agree we may contact you regarding your inquiry.
+              </p>
 
-<p>
-By submitting, you agree that we may contact you regarding your inquiry. Depending on the situation, we may work with trusted investment partners to help create the best possible solution for you.
-</p>
+              <p>
+                We are real estate investors, not licensed agents. We may work with trusted partners to find the best solution for you, which may include entering into a purchase agreement and assigning that interest to another buyer for a profit.
+              </p>
 
-<p>
-We are real estate investors and do not represent buyers or sellers as licensed agents. We may enter into purchase agreements to buy properties and may assign those agreements to other buyers.
-</p>
+              <div className="bg-white p-8 rounded-2xl border-l-8 border-[#D4AF37] shadow-sm">
+                <p className="text-[#003366] uppercase font-black mb-2 italic">Ohio SB 155 Compliance Disclosure:</p>
+                <p className="text-sm md:text-lg">
+                  In compliance with Ohio SB 155 (ORC § 5301.95), we disclose that we are real estate wholesalers acting on our own behalf, not as your representative. A written Wholesaler Disclosure Statement will be provided and must be signed before any contract is binding. Any offer may be below market value, and you have the right to seek legal advice before signing.
+                </p>
+              </div>
 
-<p>
-We aim to keep the process simple, transparent, and respectful so you can decide what works best for your situation.
-</p>
-
-{/* ── SB 155 COMPLIANCE ADDITION ── */}
-<p>
-In compliance with Ohio Senate Bill 155 (ORC § 5301.95), we are a real estate wholesaler. A written Wholesaler Disclosure Statement will be provided and must be signed by you before any contract is binding. We act on our own behalf, not as your representative. Any offer may be below market value. We may assign your contract to a third-party buyer for a profit. You have the right to seek legal or professional advice before signing anything.
-</p>
-{/* ── END SB 155 COMPLIANCE ADDITION ── */}
-
+              <p className="text-center italic pt-4">
+                Our goal is a simple, transparent process so you can decide what works best for your situation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
             </h2>
 
                   {/* 8. HUMAN TOUCH SECTION */}
