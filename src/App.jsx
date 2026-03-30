@@ -425,9 +425,13 @@ const NijackSite = () => {
                 By submitting, you agree that we may contact you regarding your
                 inquiry. Depending on the situation, we may work with trusted
                 investment partners to help create the best possible solution for
-                you.  We are real estate investors and do not represent buyers or sellers as licensed agents. We may enter into purchase agreements and assign those agreements to other buyers.              </p>
+                you.
+                We are real estate investors and do not represent buyers or sellers as 
+                licensed agents. We may enter into purchase agreements and assign those 
+                agreements to other buyers. 
+              </p>
               <p>
-                We aim to keep the process simple, transparent, and respectful so
+              We aim to keep the process simple, transparent, and respectful so
                 you can decide what works best for your situation.
               </p>
             </div>
