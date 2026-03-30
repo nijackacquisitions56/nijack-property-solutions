@@ -414,9 +414,20 @@ const NijackSite = () => {
           <div className="bg-gray-100 rounded-[3rem] p-10 md:p-16 border-2 border-gray-200">
             <h2 className="text-3xl md:text-5xl font-black text-[#003366] uppercase text-center mb-10">
               Your Trust is Our Priority
-            </h2>
-            <p>
-We are real estate investors and not licensed real estate agents. We may market properties and assign our contractual interest to other buyers for a fee.
+           <p>
+Nijack Property Solutions values your privacy. Your information is used only to review your property and discuss possible solutions.
+</p>
+
+<p>
+By submitting, you agree that we may contact you regarding your inquiry. Depending on the situation, we may work with trusted investment partners to help create the best possible solution for you.
+</p>
+
+<p>
+We are real estate investors and do not represent buyers or sellers as licensed agents. We may enter into purchase agreements to buy properties and may assign those agreements to other buyers.
+</p>
+
+<p>
+We aim to keep the process simple, transparent, and respectful so you can decide what works best for your situation.
 </p>
           </p>                  {/* 8. HUMAN TOUCH SECTION */}
       <section className="py-16 bg-[#f8fafc]">
