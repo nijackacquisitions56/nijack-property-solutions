@@ -416,29 +416,15 @@ const NijackSite = () => {
               Your Trust is Our Priority
             </h2>
             
-            <div className="space-y-6 text-gray-700 text-lg md:text-xl font-bold leading-relaxed">
-              <p>
-                Nijack Property Solutions values your privacy. Your information is used strictly to review your property and discuss possible solutions. By submitting, you agree we may contact you regarding your inquiry.
-              </p>
+            <div className="space-y-4 text-gray-700 text-lg md:text-xl font-bold leading-relaxed text-left">
+    Nijack Property Solutions values your privacy. In compliance with <strong>Ohio SB 155</strong>, we disclose that we are real estate wholesalers—not licensed agents—acting on our own behalf.<p>
+    We may enter into purchase agreements at below market value and assign them to third-party buyers for a profit. 
+  </p>
 
-              <p>
-                We are real estate investors, not licensed agents. We may work with trusted partners to find the best solution for you, which may include entering into a purchase agreement and assigning that interest to another buyer for a profit.
-              </p>
-
-              <div className="bg-white p-8 rounded-2xl border-l-8 border-[#D4AF37] shadow-sm">
-                <p className="text-[#003366] uppercase font-black mb-2 italic">Ohio SB 155 Compliance Disclosure:</p>
-                <p className="text-sm md:text-lg">
-                  In compliance with Ohio SB 155 (ORC § 5301.95), we disclose that we are real estate wholesalers acting on our own behalf, not as your representative. A written Wholesaler Disclosure Statement will be provided and must be signed before any contract is binding. Any offer may be below market value, and you have the right to seek legal advice before signing.
-                </p>
-              </div>
-
-              <p className="text-center italic pt-4">
-                Our goal is a simple, transparent process so you can decide what works best for your situation.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div className="bg-white p-6 rounded-2xl border-l-8 border-[#D4AF37] shadow-sm text-sm md:text-lg italic">
+    A written Wholesaler Disclosure Statement will be provided and must be signed before any contract is binding. You have the right to seek legal or professional advice before signing.
+  </div>
+</div>      </section>
             </h2>
 
                   {/* 8. HUMAN TOUCH SECTION */}
