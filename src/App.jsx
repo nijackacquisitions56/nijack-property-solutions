@@ -32,7 +32,7 @@ const App = () => {
 
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
         <div style={{ maxWidth: 1300, margin: '0 auto', padding: '16px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
             <img src="/tekton-emblem.png" alt="PTS Emblem" style={{ width: 'clamp(90px, 10vw, 120px)', height: 'auto', display: 'block', flexShrink: 0 }} />
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
               <h1 style={{ color: '#8B0000', fontWeight: 900, fontSize: 'clamp(32px, 3.6vw, 46px)', textTransform: 'uppercase', margin: 0, lineHeight: '1.1' }}>TEKTON</h1>
