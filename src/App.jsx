@@ -30,12 +30,12 @@ const App = () => {
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
-      {/* 1. NAVIGATION HEADER — FIXES THE TEXT PROPORTIONS */}
+      {/* 1. NAVIGATION HEADER */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
         <div style={{ 
           maxWidth: 1200, 
           margin: '0 auto', 
-          padding: '14px 20px', 
+          padding: '16px 24px', 
           display: 'flex', 
           justifyContent: 'space-between', 
           alignItems: 'center',
@@ -43,29 +43,19 @@ const App = () => {
           gap: '16px'
         }}>
           
-          {/* Proportional Branding Flexbox Container */}
+          {/* Branding Typography Container */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-            
-            {/* Cropped Logo Mark: Use an image file that only contains the PTS shield and 'TEKTON' text */}
-            <img
-              src="/tekton-cropped-logo.png" 
-              alt="Tekton"
-              style={{ height: 'clamp(48px, 6vw, 62px)', width: 'auto', objectFit: 'contain' }}
-              onError={e => { e.target.style.display = 'none'; }}
-            />
-            
-            {/* Web Typography Block: Scales beautifully alongside the image mark */}
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <div style={{ 
                 color: '#8B0000', 
                 fontWeight: 900, 
-                fontSize: 'clamp(18px, 2.3vw, 25px)', 
+                fontSize: 'clamp(18px, 2.5vw, 26px)', 
                 textTransform: 'uppercase',
                 letterSpacing: '0.75px',
                 lineHeight: 1.1,
                 fontFamily: "'Georgia', serif"
               }}>
-                PROPERTY SOLUTIONS LLC
+                TEKTON PROPERTY SOLUTIONS LLC
               </div>
               <div style={{ 
                 color: '#C9A84C', 
@@ -73,7 +63,7 @@ const App = () => {
                 letterSpacing: '4px', 
                 textTransform: 'uppercase', 
                 fontWeight: 800,
-                marginTop: '4px',
+                marginTop: '6px',
                 fontStyle: 'italic',
                 lineHeight: 1
               }}>
@@ -82,7 +72,7 @@ const App = () => {
             </div>
           </div>
 
-          <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '14px 24px', borderRadius: 999, fontWeight: 900, fontSize: 'clamp(12px, 2vw, 15px)', textDecoration: 'none', border: '2px solid #C9A84C', letterSpacing: 1.5, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
+          <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '14px 26px', borderRadius: 999, fontWeight: 900, fontSize: 'clamp(12px, 2vw, 15px)', textDecoration: 'none', border: '2px solid #C9A84C', letterSpacing: 1.5, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
             Get Your Offer
           </a>
         </div>
@@ -127,34 +117,34 @@ const App = () => {
         </div>
       </section>
 
-      {/* 3. TRUST SIGNALS ROW */}
-      <section style={{ background: '#8B0000', padding: '32px 20px' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '30px' }}>
+      {/* 3. TRUST SIGNALS ROW — NOW FULLY VISIBLE WITH CLEAR SPACING */}
+      <section style={{ background: '#8B0000', padding: '40px 20px' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '40px 30px' }}>
           {[
             { icon: '🏛', label: 'Licensed Title Company' },
-            { icon: '✦', label: '$0 Fees or Commissions' },
-            { icon: '📅', label: '14–30 Day Closing' },
-            { icon: '🏠', label: 'As-Is — No Repairs' },
+            { icon: '✦', label: '$0 Fees Or Commissions' },
+            { icon: '📅', label: '14-30 Day Closing' },
+            { icon: '🏠', label: 'As Is - No Repairs' },
           ].map((t, i) => (
-            <div key={i} style={{ padding: '10px 16px', textAlign: 'center', flex: '1 1 220px', minWidth: '180px' }}>
-              <div style={{ color: '#C9A84C', fontSize: 30, marginBottom: 12 }}>{t.icon}</div>
-              <div style={{ color: '#fff', fontSize: 15, fontWeight: 700, letterSpacing: 1.5, textTransform: 'uppercase', lineHeight: 1.4 }}>{t.label}</div>
+            <div key={i} style={{ textAlign: 'center', flex: '1 1 220px', minWidth: '180px' }}>
+              <div style={{ color: '#C9A84C', fontSize: 32, marginBottom: 12 }}>{t.icon}</div>
+              <div style={{ color: '#fff', fontSize: 14, fontWeight: 900, letterSpacing: 2, textTransform: 'uppercase', lineHeight: 1.4 }}>{t.label}</div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* 4. QUICK BENEFITS CARD ROW */}
-      <section style={{ maxWidth: 1000, margin: '40px auto 0', padding: '0 20px 20px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 24 }}>
+      {/* 4. BENEFIT CARD ROW — PLACED BELOW THE TRUST BAR TO ELIMINATE OVERLAPS */}
+      <section style={{ maxWidth: 1100, margin: '50px auto 20px', padding: '0 20px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 30 }}>
           {[
             { title: 'No Repairs Needed', desc: 'Sell your property as-is without cleaning, fixing, or updating it first.' },
             { title: 'No Commissions', desc: 'No agent fees or commissions. Just a direct review of your property.' },
             { title: 'Flexible Closing', desc: 'We work with different timelines and aim to find a solution that fits your situation.' },
           ].map((b) => (
-            <div key={b.title} style={{ background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px rgba(10,22,40,0.12)', padding: '28px 24px', borderTop: '4px solid #8B0000' }}>
-              <p style={{ color: '#0d0d0d', fontWeight: 900, fontSize: 16, textTransform: 'uppercase', marginBottom: 12, letterSpacing: 1 }}>{b.title}</p>
-              <p style={{ color: '#555', fontSize: 15, lineHeight: 1.6, margin: 0 }}>{b.desc}</p>
+            <div key={b.title} style={{ background: '#fff', borderRadius: 16, boxShadow: '0 8px 32px rgba(10,22,40,0.08)', padding: '36px 28px', borderTop: '5px solid #8B0000' }}>
+              <h3 style={{ color: '#0d0d0d', fontWeight: 900, fontSize: 18, textTransform: 'uppercase', marginBottom: 14, letterSpacing: 1, marginTop: 0 }}>{b.title}</h3>
+              <p style={{ color: '#555', fontSize: 15, lineHeight: 1.6, margin: 0, fontWeight: 500 }}>{b.desc}</p>
             </div>
           ))}
         </div>
@@ -340,8 +330,7 @@ const App = () => {
       <footer style={{ background: '#fff', padding: '48px 20px', borderTop: '6px solid #0d0d0d', textAlign: 'center' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '24px', gap: '6px' }}>
-            <img src="/tekton-cropped-logo.png" alt="Tekton Logo" style={{ height: 50, width: 'auto', objectFit: 'contain' }} onError={e => e.target.style.display = 'none'} />
-            <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 18, textTransform: 'uppercase', letterSpacing: '0.5px' }}>PROPERTY SOLUTIONS LLC</div>
+            <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 20, textTransform: 'uppercase', letterSpacing: '0.5px' }}>TEKTON PROPERTY SOLUTIONS LLC</div>
             <div style={{ color: '#C9A84C', fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 800, fontStyle: 'italic' }}>RELIEF THAT DELIVERS.</div>
           </div>
           <p style={{ color: '#666', fontWeight: 700, fontSize: 14, textTransform: 'uppercase', letterSpacing: 3, marginBottom: 6 }}>Ohio &amp; Nationwide</p>
