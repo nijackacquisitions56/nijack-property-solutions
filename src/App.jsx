@@ -22,11 +22,11 @@ const App = () => {
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
         <div style={{ maxWidth: 1300, margin: '0 auto', padding: '12px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           
-          <div style={{ display: 'flex', alignItems: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
             <img 
               src="/tekton-emblem.jpg" 
               alt="Tekton Property Solutions"
-              style={{ width: '85px', height: '85px', marginRight: '15px', display: 'block' }} 
+              style={{ width: '85px', height: '85px', display: 'block' }} 
             />
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <h1 style={{ color: '#8B0000', fontWeight: 900, fontSize: '32px', margin: 0, lineHeight: '1' }}>TEKTON</h1>
