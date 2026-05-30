@@ -1,11 +1,22 @@
 import React, { useState } from 'react';
 
 const App = () => {
+  const [openFaq, setOpenFaq] = useState(null);
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     fullName: '', phone: '', email: '', propertyAddress: '', propertyState: '',
     situation: [], additionalNotes: '', timeline: '', priceExpectation: ''
   });
+
+  const faqs = [
+    { q: 'DO I NEED TO MAKE REPAIRS?', a: 'No. We review houses in as-is condition, so there is no need to clean, fix, or update the property before reaching out.' },
+    { q: 'HOW IS MY CASH OFFER DETERMINED?', a: 'Our review is based on the property condition, location, timeline, market activity, and the overall situation. Every property is different.' },
+    { q: 'DO I NEED TO CLEAN OUT THE PROPERTY?', a: 'In many situations, no. We understand some properties are overwhelming, and we work to keep the process as simple as possible.' },
+    { q: 'WHAT IF I STILL OWE MONEY ON THE PROPERTY?', a: 'That does not automatically stop the process. We can review the situation and discuss possible next steps based on the property and payoff amount.' },
+    { q: 'HOW FAST CAN THE PROCESS MOVE?', a: 'Some situations can move quickly depending on title, property details, and seller timeline. The sooner we receive your information, the sooner we can review it.' },
+    { q: 'ARE THERE COMMISSIONS?', a: 'No. We are direct buyers, not agents. You pay zero agent fees or commissions.' },
+    { q: 'IS THIS A LEGITIMATE PROCESS?', a: 'Yes. Transactions are handled through a licensed title company, which helps ensure paperwork, ownership verification, and closing funds are processed securely. You do not pay anything upfront.' },
+  ];
 
   const situations = ['Probate','Inherited','Tired Landlord','Needs Repairs','Foreclosure','Vacant','Relocating','Problem Tenant','Shopping Around','Other'];
 
@@ -19,25 +30,21 @@ const App = () => {
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
+      {/* Navigation */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
         <div style={{ maxWidth: 1300, margin: '0 auto', padding: '12px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img 
-              src="/tekton-emblem.png" 
-              alt="Tekton Property Solutions"
-              style={{ width: '85px', height: '85px', marginRight: '15px', display: 'block' }} 
-            />
+            <img src="/tekton-emblem.png" alt="Tekton Property Solutions" style={{ width: '85px', height: '85px', marginRight: '15px', display: 'block' }} />
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <h1 style={{ color: '#8B0000', fontWeight: 900, fontSize: '32px', margin: 0, lineHeight: '1' }}>TEKTON</h1>
               <div style={{ color: '#0A2240', fontWeight: 800, fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase' }}>PROPERTY SOLUTIONS LLC</div>
             </div>
           </div>
-
           <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '10px 20px', borderRadius: '999px', fontWeight: 900, textDecoration: 'none', border: '2px solid #C9A84C', fontSize: '14px', textTransform: 'uppercase' }}>GET YOUR OFFER</a>
         </div>
       </nav>
 
+      {/* Hero Section */}
       <section style={{ position: 'relative', color: '#fff', padding: '100px 20px', borderBottom: '8px solid #C9A84C', textAlign: 'center', backgroundImage: 'url(https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.88), rgba(80,10,10,0.78))' }} />
         <div style={{ maxWidth: 950, margin: '0 auto', position: 'relative', zIndex: 2 }}>
@@ -47,6 +54,7 @@ const App = () => {
         </div>
       </section>
 
+      {/* Form Section */}
       <section id="property-form" style={{ padding: '60px 20px' }}>
         <div style={{ maxWidth: 860, margin: '0 auto', background: '#fff', borderRadius: 32, boxShadow: '0 8px 48px rgba(0,0,0,0.1)', overflow: 'hidden' }}>
           <div style={{ background: '#C9A84C', padding: '32px', textAlign: 'center' }}>
@@ -87,6 +95,20 @@ const App = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section style={{ padding: '60px 20px', maxWidth: 860, margin: '0 auto' }}>
+        <h2 style={{ textAlign: 'center', marginBottom: 40, fontWeight: 900 }}>FREQUENTLY ASKED QUESTIONS</h2>
+        {faqs.map((faq, i) => (
+          <div key={i} style={{ marginBottom: 16, border: '1px solid #ddd', borderRadius: 8, overflow: 'hidden' }}>
+            <button onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{ width: '100%', padding: '20px', textAlign: 'left', background: '#fff', border: 'none', fontWeight: 800, cursor: 'pointer' }}>
+              {faq.q}
+            </button>
+            {openFaq === i && <div style={{ padding: '20px', background: '#fdfdfd', borderTop: '1px solid #ddd' }}>{faq.a}</div>}
+          </div>
+        ))}
+      </section>
+
+      {/* Footer */}
       <footer style={{ background: '#fff', padding: '48px 20px', textAlign: 'center', borderTop: '6px solid #0d0d0d' }}>
         <img src="/tekton-emblem.png" alt="Tekton Property Solutions" style={{ height: '55px', margin: '0 auto 20px' }} />
         <p style={{ fontWeight: 800, fontSize: 13, color: '#888' }}>TEKTON PROPERTY SOLUTIONS LLC</p>
