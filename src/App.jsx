@@ -33,19 +33,19 @@ const App = () => {
       {/* 1. NAV */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
         <div style={{ 
-          maxWidth: 1100, 
+          maxWidth: 1200, 
           margin: '0 auto', 
-          padding: '6px 12px', 
+          padding: '10px 20px', 
           display: 'flex', 
           justifyContent: 'space-between', 
           alignItems: 'center',
           flexWrap: 'wrap',
-          gap: '8px'
+          gap: '12px'
         }}>
           <img
             src="/tekton-logo.png"
             alt="Tekton Property Solutions LLC"
-            style={{ height: 'clamp(58px, 8vw, 110px)', width: 'auto', objectFit: 'contain' }}
+            style={{ height: 'clamp(58px, 9vw, 140px)', width: 'auto', objectFit: 'contain' }}
             onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
           />
           <div style={{ display: 'none', alignItems: 'center', gap: 12 }}>
@@ -57,7 +57,7 @@ const App = () => {
               <div style={{ color: '#C9A84C', fontSize: 9, letterSpacing: 4, textTransform: 'uppercase', fontWeight: 700 }}>SOLUTIONS LLC</div>
             </div>
           </div>
-          <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '12px 20px', borderRadius: 999, fontWeight: 900, fontSize: 'clamp(12px, 3vw, 14px)', textDecoration: 'none', border: '2px solid #C9A84C', letterSpacing: 1, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
+          <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '16px 28px', borderRadius: 999, fontWeight: 900, fontSize: 'clamp(12px, 2.5vw, 17px)', textDecoration: 'none', border: '2px solid #C9A84C', letterSpacing: 1.5, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
             Get Your Offer
           </a>
         </div>
