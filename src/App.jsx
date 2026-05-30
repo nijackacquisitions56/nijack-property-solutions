@@ -31,19 +31,28 @@ const App = () => {
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
-        <div style={{ maxWidth: 1300, margin: '0 auto', padding: '12px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <img src="/tekton-emblem.jpg" alt="Tekton Property Solutions" style={{ width: 'clamp(80px, 8vw, 100px)', height: 'auto', display: 'block' }} />
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <h1 style={{ color: '#8B0000', fontWeight: 900, fontSize: 'clamp(24px, 2.5vw, 32px)', margin: 0, lineHeight: '1' }}>TEKTON</h1>
-              <div style={{ color: '#0A2240', fontWeight: 800, fontSize: 'clamp(11px, 1vw, 14px)', letterSpacing: '2px', textTransform: 'uppercase' }}>PROPERTY SOLUTIONS LLC</div>
-            </div>
-          </div>
+  <div style={{ maxWidth: 1300, margin: '0 auto', padding: '12px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <img 
+        src="/tekton-emblem.jpg" 
+        alt="Tekton Property Solutions"
+        style={{
+          width: '85px', 
+          height: '85px',
+          marginRight: '15px', // Fixed gap control
+          display: 'block'
+        }}
+      />
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <h1 style={{ color: '#8B0000', fontWeight: 900, fontSize: '32px', margin: 0, lineHeight: '1' }}>TEKTON</h1>
+        <div style={{ color: '#0A2240', fontWeight: 800, fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase' }}>PROPERTY SOLUTIONS LLC</div>
+      </div>
+    </div>
 
-          <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '10px 20px', borderRadius: '999px', fontWeight: 900, textDecoration: 'none', border: '2px solid #C9A84C', fontSize: '14px', textTransform: 'uppercase' }}>GET YOUR OFFER</a>
-        </div>
-      </nav>
+    <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '10px 20px', borderRadius: '999px', fontWeight: 900, textDecoration: 'none', border: '2px solid #C9A84C', fontSize: '14px', textTransform: 'uppercase' }}>GET YOUR OFFER</a>
+  </div>
+</nav>
 
       <section style={{ position: 'relative', color: '#fff', padding: '100px 20px', borderBottom: '8px solid #C9A84C', textAlign: 'center', backgroundImage: 'url(https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.88), rgba(80,10,10,0.78))' }} />
