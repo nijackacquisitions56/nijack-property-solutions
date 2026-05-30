@@ -31,16 +31,17 @@ const App = () => {
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
-        <div style={{ maxWidth: 1300, margin: '0 auto', padding: '16px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-            <img src="/tekton-emblem.png" alt="PTS Emblem" style={{ width: 'clamp(90px, 10vw, 120px)', height: 'auto', display: 'block', flexShrink: 0 }} />
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-              <h1 style={{ color: '#8B0000', fontWeight: 900, fontSize: 'clamp(32px, 3.6vw, 46px)', textTransform: 'uppercase', margin: 0, lineHeight: '1.1' }}>TEKTON</h1>
-              <div style={{ color: '#0A2240', fontSize: 'clamp(14px, 1.5vw, 20px)', letterSpacing: '2.5px', textTransform: 'uppercase', fontWeight: 800, lineHeight: '1.2' }}>PROPERTY SOLUTIONS LLC</div>
-              <div style={{ color: '#C9A84C', fontSize: 'clamp(12px, 1.3vw, 16px)', letterSpacing: '3.5px', textTransform: 'uppercase', fontWeight: 800, fontStyle: 'italic', lineHeight: '1.2' }}>RELIEF THAT DELIVERS</div>
+        <div style={{ maxWidth: 1300, margin: '0 auto', padding: '12px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <img src="/tekton-emblem.jpg" alt="Tekton Property Solutions" style={{ width: 'clamp(80px, 8vw, 100px)', height: 'auto', display: 'block' }} />
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <h1 style={{ color: '#8B0000', fontWeight: 900, fontSize: 'clamp(24px, 2.5vw, 32px)', margin: 0, lineHeight: '1' }}>TEKTON</h1>
+              <div style={{ color: '#0A2240', fontWeight: 800, fontSize: 'clamp(11px, 1vw, 14px)', letterSpacing: '2px', textTransform: 'uppercase' }}>PROPERTY SOLUTIONS LLC</div>
             </div>
           </div>
-          <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '12px 24px', borderRadius: 999, fontWeight: 900, textDecoration: 'none', border: '2px solid #C9A84C', textTransform: 'uppercase' }}>GET YOUR OFFER</a>
+
+          <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '10px 20px', borderRadius: '999px', fontWeight: 900, textDecoration: 'none', border: '2px solid #C9A84C', fontSize: '14px', textTransform: 'uppercase' }}>GET YOUR OFFER</a>
         </div>
       </nav>
 
@@ -94,7 +95,7 @@ const App = () => {
       </section>
 
       <footer style={{ background: '#fff', padding: '48px 20px', textAlign: 'center', borderTop: '6px solid #0d0d0d' }}>
-        <img src="/tekton-emblem.png" alt="PTS Emblem" style={{ height: '55px', margin: '0 auto 20px' }} />
+        <img src="/tekton-emblem.jpg" alt="Tekton Property Solutions" style={{ height: '55px', margin: '0 auto 20px' }} />
         <p style={{ fontWeight: 800, fontSize: 13, color: '#888' }}>TEKTON PROPERTY SOLUTIONS LLC</p>
       </footer>
     </div>
