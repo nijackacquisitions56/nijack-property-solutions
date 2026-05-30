@@ -72,9 +72,9 @@ const App = () => {
       }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, rgba(80,10,10,0.78) 100%)' }} />
         <div style={{ maxWidth: 900, margin: '0 auto', position: 'relative', zIndex: 2 }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginBottom: 20 }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14, marginBottom: 20 }}>
             <div style={{ height: 1, width: 60, background: '#C9A84C', opacity: 0.7 }} />
-            <p style={{ color: '#C9A84C', fontWeight: 700, letterSpacing: 4, fontSize: 13, textTransform: 'uppercase', margin: 0, fontStyle: 'italic' }}>Ohio &amp; Nationwide Investment Solutions</p>
+            <p style={{ color: '#C9A84C', fontWeight: 700, letterSpacing: 4, fontSize: 'clamp(11px, 2vw, 16px)', textTransform: 'uppercase', margin: 0, fontStyle: 'italic' }}>Ohio &amp; Nationwide Investment Solutions</p>
             <div style={{ height: 1, width: 60, background: '#C9A84C', opacity: 0.7 }} />
           </div>
           <h1 style={{ fontSize: 'clamp(48px, 8vw, 96px)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1.05, marginBottom: 20, letterSpacing: -1 }}>
@@ -103,32 +103,32 @@ const App = () => {
       </section>
 
       {/* 3. TRUST SIGNALS */}
-      <section style={{ background: '#8B0000', padding: '10px 20px 40px' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px' }}>
+      <section style={{ background: '#8B0000', padding: '20px 20px 30px' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '16px' }}>
           {[
             { icon: '🏛', label: 'Licensed Title Company' },
             { icon: '✦', label: '$0 Fees or Commissions' },
             { icon: '📅', label: '14–30 Day Closing' },
             { icon: '🏠', label: 'As-Is — No Repairs' },
           ].map((t, i) => (
-            <div key={i} style={{ padding: '15px 24px', textAlign: 'center', flex: '1 1 200px', minWidth: '160px' }}>
-              <div style={{ color: '#C9A84C', fontSize: 24, marginBottom: 8 }}>{t.icon}</div>
-              <div style={{ color: '#fff', fontSize: 12, fontWeight: 700, letterSpacing: 1.5, textTransform: 'uppercase', lineHeight: 1.4 }}>{t.label}</div>
+            <div key={i} style={{ padding: '10px 16px', textAlign: 'center', flex: '1 1 200px', minWidth: '160px' }}>
+              <div style={{ color: '#C9A84C', fontSize: 26, marginBottom: 8 }}>{t.icon}</div>
+              <div style={{ color: '#fff', fontSize: 13, fontWeight: 700, letterSpacing: 1.5, textTransform: 'uppercase', lineHeight: 1.4 }}>{t.label}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* 4. QUICK BENEFITS */}
-      <section style={{ maxWidth: 1000, margin: '-24px auto 0', padding: '0 20px 20px', position: 'relative', zIndex: 10 }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20 }}>
+      <section style={{ maxWidth: 1000, margin: '40px auto 0', padding: '0 20px 20px', position: 'relative', zIndex: 10 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 24 }}>
           {[
             { title: 'No Repairs Needed', desc: 'Sell your property as-is without cleaning, fixing, or updating it first.' },
             { title: 'No Commissions', desc: 'No agent fees or commissions. Just a direct review of your property.' },
             { title: 'Flexible Closing', desc: 'We work with different timelines and aim to find a solution that fits your situation.' },
           ].map((b) => (
-            <div key={b.title} style={{ background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px rgba(10,22,40,0.12)', padding: '24px 20px', borderTop: '4px solid #8B0000' }}>
-              <p style={{ color: '#0d0d0d', fontWeight: 900, fontSize: 16, textTransform: 'uppercase', marginBottom: 8, letterSpacing: 1 }}>{b.title}</p>
+            <div key={b.title} style={{ background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px rgba(10,22,40,0.12)', padding: '28px 24px', borderTop: '4px solid #8B0000' }}>
+              <p style={{ color: '#0d0d0d', fontWeight: 900, fontSize: 16, textTransform: 'uppercase', marginBottom: 12, letterSpacing: 1 }}>{b.title}</p>
               <p style={{ color: '#555', fontSize: 15, lineHeight: 1.6, margin: 0 }}>{b.desc}</p>
             </div>
           ))}
