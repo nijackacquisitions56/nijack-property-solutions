@@ -30,7 +30,7 @@ const App = () => {
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
-      {/* Navigation Bar */}
+      {/* Navigation */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
         <div style={{ maxWidth: 1300, margin: '0 auto', padding: '12px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -45,7 +45,7 @@ const App = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section style={{ position: 'relative', color: '#fff', padding: '100px 20px', borderBottom: '8px solid #C9A84C', textAlign: 'center', backgroundImage: 'url(https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.88), rgba(80,10,10,0.78))' }} />
         <div style={{ maxWidth: 950, margin: '0 auto', position: 'relative', zIndex: 2 }}>
@@ -55,7 +55,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* Form Section */}
+      {/* Form */}
       <section id="property-form" style={{ padding: '60px 20px' }}>
         <div style={{ maxWidth: 860, margin: '0 auto', background: '#fff', borderRadius: 32, boxShadow: '0 8px 48px rgba(0,0,0,0.1)', overflow: 'hidden' }}>
           <div style={{ background: '#C9A84C', padding: '32px', textAlign: 'center' }}>
@@ -91,7 +91,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* FAQ */}
       <section style={{ padding: '60px 20px', maxWidth: 860, margin: '0 auto' }}>
         <h2 style={{ textAlign: 'center', marginBottom: 40, fontWeight: 900 }}>FREQUENTLY ASKED QUESTIONS</h2>
         {faqs.map((faq, i) => (
