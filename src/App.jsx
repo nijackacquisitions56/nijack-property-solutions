@@ -31,20 +31,20 @@ const App = () => {
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
       {/* 1. NAV */}
-      <nav style={{ background: '#0d0d0d', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '8px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '4px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <img
             src="/tekton-logo.png"
             alt="Tekton Property Solutions LLC"
-            style={{ height: 80, width: 'auto', objectFit: 'contain' }}
+            style={{ height: 64, width: 'auto', objectFit: 'contain' }}
             onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
           />
           <div style={{ display: 'none', alignItems: 'center', gap: 12 }}>
             <div style={{ background: '#8B0000', border: '2px solid #C9A84C', borderRadius: 8, padding: '6px 12px' }}>
-              <span style={{ color: '#C9A84C', fontWeight: 900, fontSize: 16, letterSpacing: 2 }}>PTS</span>
+              <span style={{ color: '#C9A84C', fontWeight: 900, fontSize: 16, letterSpacing: 2 }}>TEKTON</span>
             </div>
             <div>
-              <div style={{ color: '#fff', fontWeight: 900, fontSize: 16, textTransform: 'uppercase' }}>TEKTON PROPERTY</div>
+              <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 16, textTransform: 'uppercase' }}>TEKTON PROPERTY</div>
               <div style={{ color: '#C9A84C', fontSize: 9, letterSpacing: 4, textTransform: 'uppercase', fontWeight: 700 }}>SOLUTIONS LLC</div>
             </div>
           </div>
@@ -58,7 +58,7 @@ const App = () => {
       <section style={{
         position: 'relative', color: '#fff', padding: '100px 20px 110px',
         borderBottom: '8px solid #C9A84C', textAlign: 'center',
-        backgroundImage: 'url(https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80)',
+        backgroundImage: 'url(https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&q=80)',
         backgroundSize: 'cover', backgroundPosition: 'center',
       }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, rgba(80,10,10,0.78) 100%)' }} />
@@ -68,7 +68,7 @@ const App = () => {
             <p style={{ color: '#C9A84C', fontWeight: 700, letterSpacing: 4, fontSize: 13, textTransform: 'uppercase', margin: 0, fontStyle: 'italic' }}>Ohio &amp; Nationwide Investment Solutions</p>
             <div style={{ height: 1, width: 60, background: '#C9A84C', opacity: 0.7 }} />
           </div>
-          <h1 style={{ fontSize: 'clamp(42px, 8vw, 90px)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1.05, marginBottom: 20, letterSpacing: -1 }}>
+          <h1 style={{ fontSize: 'clamp(48px, 8vw, 96px)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1.05, marginBottom: 20, letterSpacing: -1 }}>
             Sell Your House <span style={{ color: '#C9A84C' }}>FAST</span><br />For <span style={{ color: '#C9A84C' }}>CASH</span>
           </h1>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginBottom: 20 }}>
@@ -76,11 +76,8 @@ const App = () => {
             <p style={{ fontSize: 20, fontWeight: 700, fontStyle: 'italic', textTransform: 'uppercase', letterSpacing: 3, color: '#C9A84C', margin: 0 }}>"Relief That Delivers."</p>
             <div style={{ height: 1, width: 40, background: '#C9A84C', opacity: 0.7 }} />
           </div>
-          <p style={{ fontSize: 16, fontWeight: 600, maxWidth: 680, margin: '0 auto 12px', lineHeight: 1.6, textTransform: 'uppercase', letterSpacing: 1 }}>
-            Sell Your House As-Is — No Repairs, No Commissions, Close On Your Timeline.
-          </p>
-          <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.85)', maxWidth: 580, margin: '0 auto 36px', lineHeight: 1.7 }}>
-            Helping Ohio homeowners find solutions for difficult property situations with a simple, straightforward process.
+          <p style={{ fontSize: 17, fontWeight: 600, maxWidth: 680, margin: '0 auto 36px', lineHeight: 1.6, textTransform: 'uppercase', letterSpacing: 1 }}>
+            No Repairs. No Commissions. Close On Your Timeline.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 16, marginBottom: 36 }}>
             <div style={{ background: 'rgba(255,255,255,0.1)', border: '2px solid rgba(201,168,76,0.5)', padding: '14px 28px', borderRadius: 999 }}>
@@ -122,8 +119,8 @@ const App = () => {
             { title: 'Flexible Closing', desc: 'We work with different timelines and aim to find a solution that fits your situation.' },
           ].map((b) => (
             <div key={b.title} style={{ background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px rgba(10,22,40,0.12)', padding: '24px 20px', borderTop: '4px solid #8B0000' }}>
-              <p style={{ color: '#0d0d0d', fontWeight: 900, fontSize: 15, textTransform: 'uppercase', marginBottom: 8, letterSpacing: 1 }}>{b.title}</p>
-              <p style={{ color: '#555', fontSize: 14, lineHeight: 1.6, margin: 0 }}>{b.desc}</p>
+              <p style={{ color: '#0d0d0d', fontWeight: 900, fontSize: 16, textTransform: 'uppercase', marginBottom: 8, letterSpacing: 1 }}>{b.title}</p>
+              <p style={{ color: '#555', fontSize: 15, lineHeight: 1.6, margin: 0 }}>{b.desc}</p>
             </div>
           ))}
         </div>
@@ -165,11 +162,11 @@ const App = () => {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                     <p style={{ color: '#555', fontSize: 14, textAlign: 'center', margin: '0 0 8px', fontWeight: 600 }}>No obligation. No pressure. Just explore your options.</p>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px,1fr))', gap: 16 }}>
-                      <input type="text" placeholder="FULL NAME" value={formData.fullName} onChange={e => setFormData(f => ({...f, fullName: e.target.value}))} style={{ background: '#f8f6f2', border: 'none', borderBottom: '3px solid #ccc', padding: '16px 12px', fontSize: 16, fontWeight: 700, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box' }} />
-                      <input type="tel" placeholder="PHONE NUMBER" value={formData.phone} onChange={e => setFormData(f => ({...f, phone: e.target.value}))} style={{ background: '#f8f6f2', border: 'none', borderBottom: '3px solid #ccc', padding: '16px 12px', fontSize: 16, fontWeight: 700, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box' }} />
+                      <input type="text" placeholder="FULL NAME" value={formData.fullName} onChange={e => setFormData(f => ({...f, fullName: e.target.value}))} style={{ background: '#f0ede8', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
+                      <input type="tel" placeholder="PHONE NUMBER" value={formData.phone} onChange={e => setFormData(f => ({...f, phone: e.target.value}))} style={{ background: '#f0ede8', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
                     </div>
-                    <input type="email" placeholder="EMAIL ADDRESS" value={formData.email} onChange={e => setFormData(f => ({...f, email: e.target.value}))} style={{ background: '#f8f6f2', border: 'none', borderBottom: '3px solid #ccc', padding: '16px 12px', fontSize: 16, fontWeight: 700, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box' }} />
-                    <input type="text" placeholder="PROPERTY ADDRESS (STREET, CITY, STATE, ZIP)" value={formData.propertyAddress} onChange={e => setFormData(f => ({...f, propertyAddress: e.target.value}))} style={{ background: '#f8f6f2', border: 'none', borderBottom: '3px solid #ccc', padding: '16px 12px', fontSize: 16, fontWeight: 700, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box' }} />
+                    <input type="email" placeholder="EMAIL ADDRESS" value={formData.email} onChange={e => setFormData(f => ({...f, email: e.target.value}))} style={{ background: '#f0ede8', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
+                    <input type="text" placeholder="PROPERTY ADDRESS (STREET, CITY, STATE, ZIP)" value={formData.propertyAddress} onChange={e => setFormData(f => ({...f, propertyAddress: e.target.value}))} style={{ background: '#f0ede8', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
                     <button type="button" onClick={() => {
                       if (!formData.fullName || !formData.phone || !formData.propertyAddress) {
                         alert('Please fill in your name, phone, and property address to continue.');
@@ -185,19 +182,19 @@ const App = () => {
 
                 {step === 2 && (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-                    <div style={{ background: '#f8f6f2', padding: '24px', borderRadius: 20, border: '2px solid rgba(201,168,76,0.4)' }}>
-                      <p style={{ color: '#0d0d0d', fontWeight: 900, fontSize: 13, textTransform: 'uppercase', letterSpacing: 2, textAlign: 'center', margin: '0 0 16px' }}>What is the situation? (Check all that apply)</p>
+                    <div style={{ background: '#1a1a1a', padding: '24px', borderRadius: 20, border: '2px solid rgba(201,168,76,0.4)' }}>
+                      <p style={{ color: '#C9A84C', fontWeight: 900, fontSize: 13, textTransform: 'uppercase', letterSpacing: 2, textAlign: 'center', margin: '0 0 16px' }}>What is the situation? (Check all that apply)</p>
                       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px,1fr))', gap: 10 }}>
                         {situations.map(label => (
-                          <label key={label} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', background: formData.situation.includes(label) ? '#0d0d0d' : '#fff', borderRadius: 12, border: formData.situation.includes(label) ? '2px solid #C9A84C' : '2px solid #e8e0d0', cursor: 'pointer' }}>
+                          <label key={label} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', background: formData.situation.includes(label) ? '#8B0000' : '#2a2a2a', borderRadius: 12, border: formData.situation.includes(label) ? '2px solid #C9A84C' : '2px solid #444', cursor: 'pointer' }}>
                             <input type="checkbox" checked={formData.situation.includes(label)} onChange={() => handleCheck(label)} style={{ width: 18, height: 18, accentColor: '#C9A84C' }} />
-                            <span style={{ fontWeight: 900, textTransform: 'uppercase', fontSize: 11, color: formData.situation.includes(label) ? '#C9A84C' : '#0d0d0d', letterSpacing: 1 }}>{label}</span>
+                            <span style={{ fontWeight: 900, textTransform: 'uppercase', fontSize: 11, color: '#C9A84C', letterSpacing: 1 }}>{label}</span>
                           </label>
                         ))}
                       </div>
                     </div>
 
-                    <textarea placeholder="ADDITIONAL NOTES (TELL US MORE ABOUT THE PROPERTY...)" rows="3" value={formData.additionalNotes} onChange={e => setFormData(f => ({...f, additionalNotes: e.target.value}))} style={{ background: '#f8f6f2', border: 'none', borderBottom: '3px solid #ccc', padding: '16px 12px', fontSize: 15, fontWeight: 700, outline: 'none', resize: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box' }}></textarea>
+                    <textarea placeholder="ADDITIONAL NOTES (TELL US MORE ABOUT THE PROPERTY...)" rows="3" value={formData.additionalNotes} onChange={e => setFormData(f => ({...f, additionalNotes: e.target.value}))} style={{ background: '#f0ede8', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 15, fontWeight: 800, outline: 'none', resize: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }}></textarea>
 
                     <div>
                       <label style={{ display: 'block', color: '#0d0d0d', fontWeight: 900, fontSize: 13, textTransform: 'uppercase', letterSpacing: 2, marginBottom: 10, fontStyle: 'italic' }}>How fast do you need to sell? <span style={{ color: '#C9A84C' }}>— CLICK BELOW</span></label>
@@ -214,7 +211,7 @@ const App = () => {
 
                     <div>
                       <label style={{ display: 'block', color: '#0d0d0d', fontWeight: 900, fontSize: 13, textTransform: 'uppercase', letterSpacing: 2, marginBottom: 10, fontStyle: 'italic' }}>What Price Would You Consider For A Cash Offer?</label>
-                      <input type="text" placeholder="EXAMPLE: $150,000" value={formData.priceExpectation} onChange={e => setFormData(f => ({...f, priceExpectation: e.target.value}))} style={{ background: '#f8f6f2', border: 'none', borderBottom: '3px solid #ccc', padding: '16px 12px', fontSize: 16, fontWeight: 700, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box' }} />
+                      <input type="text" placeholder="EXAMPLE: $150,000" value={formData.priceExpectation} onChange={e => setFormData(f => ({...f, priceExpectation: e.target.value}))} style={{ background: '#f0ede8', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
                     </div>
 
                     <div style={{ background: '#f8f6f2', border: '2px solid #C9A84C', borderRadius: 12, padding: '14px 18px' }}>
