@@ -40,13 +40,12 @@ const App = () => {
           justifyContent: 'space-between', 
           alignItems: 'center',
           flexWrap: 'wrap',
-          // Subtle adjustment below to center elements more evenly on tight mobile frames
           gap: '8px'
         }}>
           <img
             src="/tekton-logo.png"
             alt="Tekton Property Solutions LLC"
-            style={{ height: 'clamp(58px, 8vw, 85px)', width: 'auto', objectFit: 'contain' }}
+            style={{ height: 'clamp(58px, 8vw, 110px)', width: 'auto', objectFit: 'contain' }}
             onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
           />
           <div style={{ display: 'none', alignItems: 'center', gap: 12 }}>
@@ -172,11 +171,11 @@ const App = () => {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                     <p style={{ color: '#555', fontSize: 14, textAlign: 'center', margin: '0 0 8px', fontWeight: 600 }}>No obligation. No pressure. Just explore your options.</p>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px,1fr))', gap: 16 }}>
-                      <input type="text" placeholder="FULL NAME" value={formData.fullName} onChange={e => setFormData(f => ({...f, fullName: e.target.value}))} style={{ background: '#f0ede8', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
-                      <input type="tel" placeholder="PHONE NUMBER" value={formData.phone} onChange={e => setFormData(f => ({...f, phone: e.target.value}))} style={{ background: '#f0ede8', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
+                      <input type="text" placeholder="FULL NAME" value={formData.fullName} onChange={e => setFormData(f => ({...f, fullName: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
+                      <input type="tel" placeholder="PHONE NUMBER" value={formData.phone} onChange={e => setFormData(f => ({...f, phone: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
                     </div>
-                    <input type="email" placeholder="EMAIL ADDRESS" value={formData.email} onChange={e => setFormData(f => ({...f, email: e.target.value}))} style={{ background: '#f0ede8', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
-                    <input type="text" placeholder="PROPERTY ADDRESS (STREET, CITY, STATE, ZIP)" value={formData.propertyAddress} onChange={e => setFormData(f => ({...f, propertyAddress: e.target.value}))} style={{ background: '#f0ede8', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
+                    <input type="email" placeholder="EMAIL ADDRESS" value={formData.email} onChange={e => setFormData(f => ({...f, email: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
+                    <input type="text" placeholder="PROPERTY ADDRESS (STREET, CITY, STATE, ZIP)" value={formData.propertyAddress} onChange={e => setFormData(f => ({...f, propertyAddress: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
                     <button type="button" onClick={() => {
                       if (!formData.fullName || !formData.phone || !formData.propertyAddress) {
                         alert('Please fill in your name, phone, and property address to continue.');
@@ -204,7 +203,7 @@ const App = () => {
                       </div>
                     </div>
 
-                    <textarea placeholder="ADDITIONAL NOTES (TELL US MORE ABOUT THE PROPERTY...)" rows="3" value={formData.additionalNotes} onChange={e => setFormData(f => ({...f, additionalNotes: e.target.value}))} style={{ background: '#f0ede8', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 15, fontWeight: 800, outline: 'none', resize: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }}></textarea>
+                    <textarea placeholder="ADDITIONAL NOTES (TELL US MORE ABOUT THE PROPERTY...)" rows="3" value={formData.additionalNotes} onChange={e => setFormData(f => ({...f, additionalNotes: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 15, fontWeight: 800, outline: 'none', resize: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }}></textarea>
 
                     <div>
                       <label style={{ display: 'block', color: '#0d0d0d', fontWeight: 900, fontSize: 13, textTransform: 'uppercase', letterSpacing: 2, marginBottom: 10, fontStyle: 'italic' }}>How fast do you need to sell? <span style={{ color: '#C9A84C' }}>— CLICK BELOW</span></label>
@@ -221,7 +220,7 @@ const App = () => {
 
                     <div>
                       <label style={{ display: 'block', color: '#0d0d0d', fontWeight: 900, fontSize: 13, textTransform: 'uppercase', letterSpacing: 2, marginBottom: 10, fontStyle: 'italic' }}>What Price Would You Consider For A Cash Offer?</label>
-                      <input type="text" placeholder="EXAMPLE: $150,000" value={formData.priceExpectation} onChange={e => setFormData(f => ({...f, priceExpectation: e.target.value}))} style={{ background: '#f0ede8', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
+                      <input type="text" placeholder="EXAMPLE: $150,000" value={formData.priceExpectation} onChange={e => setFormData(f => ({...f, priceExpectation: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
                     </div>
 
                     <div style={{ background: '#f8f6f2', border: '2px solid #C9A84C', borderRadius: 12, padding: '14px 18px' }}>
