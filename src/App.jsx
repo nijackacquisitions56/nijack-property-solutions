@@ -30,7 +30,7 @@ const App = () => {
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
-      {/* 1. NAVIGATION HEADER: EMBLEM LEFT, READABLE TEXT RIGHT */}
+      {/* 1. NAVIGATION HEADER: FIXED EMBLEM LEFT, PERFECTLY SPACED READABLE TEXT RIGHT */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
         <div style={{ 
           maxWidth: 1300, 
@@ -44,64 +44,64 @@ const App = () => {
         }}>
           
           {/* BRANDING CONTAINER */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
             
             {/* Round Original PTS Emblem on the Left */}
             <img 
               src="YOUR_PTS_EMBLEM_IMAGE_PATH" 
               alt="PTS Emblem"
               style={{
-                width: 'clamp(65px, 8vw, 85px)', // Bold presence on the left
+                width: 'clamp(70px, 7.5vw, 90px)',
                 height: 'auto',
                 display: 'block',
                 flexShrink: 0
               }}
             />
 
-            {/* Structured Text Identity Block — Adjusted for Perfect Line Readability */}
+            {/* Structured Text Identity Block — Fixed Line Heights and Margins for Pure Legibility */}
             <div style={{ 
               display: 'flex', 
               flexDirection: 'column', 
-              alignItems: 'flex-start', // Clean left-aligned stack next to emblem
+              alignItems: 'flex-start',
               justifyContent: 'center'
             }}>
               
-              {/* Line 1: TEKTON (Crisp, High Impact) */}
+              {/* Line 1: TEKTON */}
               <h1 style={{ 
                 color: '#8B0000', 
                 fontWeight: 900, 
-                fontSize: 'clamp(28px, 3.8vw, 44px)',
+                fontSize: 'clamp(32px, 3.6vw, 46px)',
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
-                margin: 0,
-                lineHeight: 1
+                margin: '0 0 4px 0',
+                lineHeight: '1.1'
               }}>
                 TEKTON
               </h1>
               
-              {/* Line 2: PROPERTY SOLUTIONS LLC (Spaced for Ultimate Legibility) */}
+              {/* Line 2: PROPERTY SOLUTIONS LLC */}
               <div style={{ 
                 color: '#0A2240', 
-                fontSize: 'clamp(13px, 1.6vw, 22px)',
-                letterSpacing: '3px',
+                fontSize: 'clamp(14px, 1.5vw, 20px)',
+                letterSpacing: '2.5px',
                 textTransform: 'uppercase', 
                 fontWeight: 800,
-                marginTop: '6px',
-                lineHeight: 1.2
+                margin: '0 0 6px 0',
+                lineHeight: '1.2'
               }}>
                 PROPERTY SOLUTIONS LLC
               </div>
 
-              {/* Line 3: RELIEF THAT DELIVERS (No Trailing Period) */}
+              {/* Line 3: RELIEF THAT DELIVERS */}
               <div style={{ 
                 color: '#C9A84C', 
-                fontSize: 'clamp(11px, 1.4vw, 18px)',
-                letterSpacing: '4px',
+                fontSize: 'clamp(12px, 1.3vw, 16px)',
+                letterSpacing: '3.5px',
                 textTransform: 'uppercase', 
                 fontWeight: 800,
                 fontStyle: 'italic',
-                marginTop: '6px',
-                lineHeight: 1
+                margin: 0,
+                lineHeight: '1.2'
               }}>
                 RELIEF THAT DELIVERS
               </div>
@@ -371,17 +371,17 @@ const App = () => {
       <footer style={{ background: '#fff', padding: '48px 20px', borderTop: '6px solid #0d0d0d', textAlign: 'center' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           
-          {/* Footer Alignment mirroring Header layout for consistency */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', marginBottom: '24px', flexWrap: 'wrap' }}>
+          {/* Footer Alignment mirroring Header layout for structural consistency */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', marginBottom: '24px', flexWrap: 'wrap' }}>
             <img 
               src="YOUR_PTS_EMBLEM_IMAGE_PATH" 
               alt="PTS Emblem"
-              style={{ height: '45px', width: 'auto', display: 'block' }}
+              style={{ height: '55px', width: 'auto', display: 'block', flexShrink: 0 }}
             />
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-              <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 22, textTransform: 'uppercase', letterSpacing: '1px', lineHeight: 1 }}>TEKTON</div>
-              <div style={{ color: '#0A2240', fontSize: 13, letterSpacing: '2px', textTransform: 'uppercase', fontWeight: 800, marginTop: '3px' }}>PROPERTY SOLUTIONS LLC</div>
-              <div style={{ color: '#C9A84C', fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 800, fontStyle: 'italic', marginTop: '3px' }}>RELIEF THAT DELIVERS</div>
+              <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 24, textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 2px 0', lineHeight: '1.1' }}>TEKTON</div>
+              <div style={{ color: '#0A2240', fontSize: 14, letterSpacing: '2px', textTransform: 'uppercase', fontWeight: 800, margin: '0 0 4px 0', lineHeight: '1.2' }}>PROPERTY SOLUTIONS LLC</div>
+              <div style={{ color: '#C9A84C', fontSize: 12, letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 800, fontStyle: 'italic', margin: 0, lineHeight: '1.2' }}>RELIEF THAT DELIVERS</div>
             </div>
           </div>
           
