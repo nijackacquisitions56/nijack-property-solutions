@@ -30,34 +30,56 @@ const App = () => {
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
-      {/* 1. NAV */}
+      {/* 1. NAVIGATION HEADER WITH BALANCED LOGO LAYOUT */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
         <div style={{ 
           maxWidth: 1200, 
           margin: '0 auto', 
-          padding: '10px 20px', 
+          padding: '12px 20px', 
           display: 'flex', 
           justifyContent: 'space-between', 
           alignItems: 'center',
           flexWrap: 'wrap',
-          gap: '12px'
+          gap: '16px'
         }}>
-          <img
-            src="/tekton-logo.png"
-            alt="Tekton Property Solutions LLC"
-            style={{ height: 'clamp(58px, 9vw, 140px)', width: 'auto', objectFit: 'contain' }}
-            onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
-          />
-          <div style={{ display: 'none', alignItems: 'center', gap: 12 }}>
-            <div style={{ background: '#8B0000', border: '2px solid #C9A84C', borderRadius: 8, padding: '6px 12px' }}>
-              <span style={{ color: '#C9A84C', fontWeight: 900, fontSize: 16, letterSpacing: 2 }}>TEKTON</span>
-            </div>
-            <div>
-              <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 16, textTransform: 'uppercase' }}>TEKTON PROPERTY</div>
-              <div style={{ color: '#C9A84C', fontSize: 9, letterSpacing: 4, textTransform: 'uppercase', fontWeight: 700 }}>SOLUTIONS LLC</div>
+          
+          {/* Logo Branding Container */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
+            {/* Main Icon/Tekton Graphic */}
+            <img
+              src="/tekton-logo.png"
+              alt="Tekton Logo"
+              style={{ height: 'clamp(55px, 7vw, 75px)', width: 'auto', objectFit: 'contain' }}
+              onError={e => { e.target.style.display = 'none'; }}
+            />
+            
+            {/* Separated & Proportional Sub-branding Lines */}
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <div style={{ 
+                color: '#8B0000', 
+                fontWeight: 900, 
+                fontSize: 'clamp(18px, 2.5vw, 24px)', 
+                textTransform: 'uppercase',
+                letterSpacing: '0.5px',
+                lineHeight: 1.1
+              }}>
+                TEKTON PROPERTY SOLUTIONS LLC
+              </div>
+              <div style={{ 
+                color: '#C9A84C', 
+                fontSize: 'clamp(11px, 1.5vw, 14px)', 
+                letterSpacing: '3.5px', 
+                textTransform: 'uppercase', 
+                fontWeight: 800,
+                marginTop: '4px',
+                fontStyle: 'italic'
+              }}>
+                RELIEF THAT DELIVERS.
+              </div>
             </div>
           </div>
-          <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '16px 28px', borderRadius: 999, fontWeight: 900, fontSize: 'clamp(12px, 2.5vw, 17px)', textDecoration: 'none', border: '2px solid #C9A84C', letterSpacing: 1.5, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
+
+          <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '14px 24px', borderRadius: 999, fontWeight: 900, fontSize: 'clamp(12px, 2vw, 15px)', textDecoration: 'none', border: '2px solid #C9A84C', letterSpacing: 1.5, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
             Get Your Offer
           </a>
         </div>
@@ -102,9 +124,9 @@ const App = () => {
         </div>
       </section>
 
-      {/* 3. TRUST SIGNALS */}
-      <section style={{ background: '#8B0000', padding: '24px 20px 32px' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px' }}>
+      {/* 3. OPTIMIZED TRUST SIGNALS ROW */}
+      <section style={{ background: '#8B0000', padding: '32px 20px' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '30px' }}>
           {[
             { icon: '🏛', label: 'Licensed Title Company' },
             { icon: '✦', label: '$0 Fees or Commissions' },
@@ -112,7 +134,7 @@ const App = () => {
             { icon: '🏠', label: 'As-Is — No Repairs' },
           ].map((t, i) => (
             <div key={i} style={{ padding: '10px 16px', textAlign: 'center', flex: '1 1 220px', minWidth: '180px' }}>
-              <div style={{ color: '#C9A84C', fontSize: 30, marginBottom: 10 }}>{t.icon}</div>
+              <div style={{ color: '#C9A84C', fontSize: 30, marginBottom: 12 }}>{t.icon}</div>
               <div style={{ color: '#fff', fontSize: 15, fontWeight: 700, letterSpacing: 1.5, textTransform: 'uppercase', lineHeight: 1.4 }}>{t.label}</div>
             </div>
           ))}
@@ -120,7 +142,7 @@ const App = () => {
       </section>
 
       {/* 4. QUICK BENEFITS */}
-      <section style={{ maxWidth: 1000, margin: '40px auto 0', padding: '0 20px 20px', position: 'relative', zIndex: 10 }}>
+      <section style={{ maxWidth: 1000, margin: '40px auto 0', padding: '0 20px 20px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 24 }}>
           {[
             { title: 'No Repairs Needed', desc: 'Sell your property as-is without cleaning, fixing, or updating it first.' },
@@ -145,7 +167,6 @@ const App = () => {
               <p style={{ color: '#0d0d0d', fontWeight: 700, fontSize: 14, margin: 0 }}>Takes less than 60 seconds to get started.</p>
             </div>
 
-            {/* Step tabs */}
             <div style={{ display: 'flex', borderBottom: '2px solid #e8e0d0' }}>
               {[1, 2].map(s => (
                 <div key={s} onClick={() => s < step && setStep(s)} style={{ flex: 1, padding: '16px', textAlign: 'center', background: step === s ? '#0d0d0d' : '#f8f6f2', cursor: s < step ? 'pointer' : 'default', borderBottom: step === s ? '4px solid #C9A84C' : '4px solid transparent' }}>
@@ -312,10 +333,14 @@ const App = () => {
         </div>
       </section>
 
-      {/* 10. FOOTER */}
+      {/* 10. FOOTER WITH ADAPTIVE BRANDING LAYOUT */}
       <footer style={{ background: '#fff', padding: '48px 20px', borderTop: '6px solid #0d0d0d', textAlign: 'center' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          <img src="/tekton-logo.png" alt="Tekton Property Solutions LLC" style={{ height: 100, width: 'auto', objectFit: 'contain', marginBottom: 16 }} onError={e => e.target.style.display = 'none'} />
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '24px', gap: '8px' }}>
+            <img src="/tekton-logo.png" alt="Tekton Property Solutions LLC" style={{ height: 65, width: 'auto', objectFit: 'contain' }} onError={e => e.target.style.display = 'none'} />
+            <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 20, textTransform: 'uppercase', letterSpacing: '0.5px' }}>TEKTON PROPERTY SOLUTIONS LLC</div>
+            <div style={{ color: '#C9A84C', fontSize: 12, letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 800, fontStyle: 'italic' }}>RELIEF THAT DELIVERS.</div>
+          </div>
           <p style={{ color: '#666', fontWeight: 700, fontSize: 14, textTransform: 'uppercase', letterSpacing: 3, marginBottom: 6 }}>Ohio &amp; Nationwide</p>
           <p style={{ color: '#888', fontSize: 13, marginBottom: 6 }}>6545 Market Ave N, Ste 100, Canton, OH 44721</p>
           <p style={{ color: '#888', fontSize: 13, marginBottom: 20 }}>330-331-9070</p>
