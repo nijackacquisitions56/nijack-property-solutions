@@ -30,7 +30,7 @@ const App = () => {
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
-      {/* Navigation */}
+      {/* Navigation Bar */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
         <div style={{ maxWidth: 1300, margin: '0 auto', padding: '12px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -38,6 +38,7 @@ const App = () => {
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <h1 style={{ color: '#8B0000', fontWeight: 900, fontSize: '32px', margin: 0, lineHeight: '1' }}>TEKTON</h1>
               <div style={{ color: '#0A2240', fontWeight: 800, fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase' }}>PROPERTY SOLUTIONS LLC</div>
+              <div style={{ color: '#C9A84C', fontWeight: 700, fontSize: '12px', letterSpacing: '1px', textTransform: 'uppercase', marginTop: '2px' }}>RELIEF THAT DELIVERS</div>
             </div>
           </div>
           <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '10px 20px', borderRadius: '999px', fontWeight: 900, textDecoration: 'none', border: '2px solid #C9A84C', fontSize: '14px', textTransform: 'uppercase' }}>GET YOUR OFFER</a>
@@ -61,34 +62,29 @@ const App = () => {
             <h2 style={{ color: '#0d0d0d', fontWeight: 900, textTransform: 'uppercase', margin: 0 }}>Start Your Successful Closing</h2>
           </div>
           <form action="https://formspree.io/f/xaqpozbn" method="POST" style={{ padding: '40px' }}>
-            <input type="hidden" name="fullName" value={formData.fullName} />
-            <input type="hidden" name="phone" value={formData.phone} />
-            <input type="hidden" name="email" value={formData.email} />
-            <input type="hidden" name="propertyAddress" value={formData.propertyAddress} />
-            <input type="hidden" name="propertyState" value={formData.propertyState} />
-            <input type="hidden" name="situation" value={formData.situation.join(', ')} />
-            
             {step === 1 ? (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-                <input type="text" placeholder="FULL NAME" value={formData.fullName} onChange={e => setFormData({...formData, fullName: e.target.value})} style={{ background: '#e2ded7', border: 'none', padding: '16px', fontWeight: 800, width: '100%' }} />
-                <input type="tel" placeholder="PHONE" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} style={{ background: '#e2ded7', border: 'none', padding: '16px', fontWeight: 800, width: '100%' }} />
+                <input type="text" name="fullName" placeholder="FULL NAME" value={formData.fullName} onChange={e => setFormData({...formData, fullName: e.target.value})} style={{ background: '#e2ded7', border: 'none', padding: '16px', fontWeight: 800, width: '100%' }} />
+                <input type="tel" name="phone" placeholder="PHONE" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} style={{ background: '#e2ded7', border: 'none', padding: '16px', fontWeight: 800, width: '100%' }} />
                 <div style={{ display: 'grid', gridTemplateColumns: '3fr 1fr', gap: 16 }}>
-                  <input type="text" placeholder="ADDRESS" value={formData.propertyAddress} onChange={e => setFormData({...formData, propertyAddress: e.target.value})} style={{ background: '#e2ded7', border: 'none', padding: '16px', fontWeight: 800 }} />
-                  <select value={formData.propertyState} onChange={e => setFormData({...formData, propertyState: e.target.value})} style={{ background: '#e2ded7', border: 'none', padding: '16px', fontWeight: 800 }}>
+                  <input type="text" name="propertyAddress" placeholder="ADDRESS" value={formData.propertyAddress} onChange={e => setFormData({...formData, propertyAddress: e.target.value})} style={{ background: '#e2ded7', border: 'none', padding: '16px', fontWeight: 800 }} />
+                  <select name="propertyState" value={formData.propertyState} onChange={e => setFormData({...formData, propertyState: e.target.value})} style={{ background: '#e2ded7', border: 'none', padding: '16px', fontWeight: 800 }}>
                     <option value="">ST</option>
                     {['OH','AL','AZ','CA','FL','GA','IL','IN','KY','MI','NC','NY','PA','TX'].map(s => <option key={s} value={s}>{s}</option>)}
                   </select>
                 </div>
-                <button type="button" onClick={() => setStep(2)} style={{ background: '#0d0d0d', color: '#C9A84C', padding: '20px', border: '2px solid #C9A84C', cursor: 'pointer' }}>CONTINUE →</button>
+                <button type="button" onClick={() => setStep(2)} style={{ background: '#0d0d0d', color: '#C9A84C', padding: '20px', border: '2px solid #C9A84C', cursor: 'pointer', fontWeight: 900 }}>CONTINUE →</button>
               </div>
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                 <p style={{ fontWeight: 900 }}>What is the situation?</p>
-                {situations.map(s => (
-                  <button key={s} type="button" onClick={() => handleCheck(s)} style={{ background: formData.situation.includes(s) ? '#8B0000' : '#e2ded7', color: formData.situation.includes(s) ? '#fff' : '#000', border: 'none', padding: '10px', cursor: 'pointer' }}>{s}</button>
-                ))}
-                <button type="submit" style={{ background: '#8B0000', color: '#fff', padding: '20px', cursor: 'pointer' }}>SUBMIT PROPERTY</button>
-                <button type="button" onClick={() => setStep(1)} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>← BACK</button>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+                  {situations.map(s => (
+                    <button key={s} type="button" onClick={() => handleCheck(s)} style={{ background: formData.situation.includes(s) ? '#8B0000' : '#e2ded7', color: formData.situation.includes(s) ? '#fff' : '#000', border: 'none', padding: '12px', cursor: 'pointer', fontWeight: 700 }}>{s}</button>
+                  ))}
+                </div>
+                <button type="submit" style={{ background: '#8B0000', color: '#fff', padding: '20px', cursor: 'pointer', fontWeight: 900, fontSize: '16px' }}>SUBMIT PROPERTY</button>
+                <button type="button" onClick={() => setStep(1)} style={{ background: 'none', border: 'none', cursor: 'pointer', fontWeight: 700 }}>← BACK</button>
               </div>
             )}
           </form>
