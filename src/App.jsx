@@ -30,12 +30,12 @@ const App = () => {
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
-      {/* 1. NAVIGATION HEADER */}
+      {/* 1. NAVIGATION HEADER WITH INTEGRATED DETACHED LOGO SYSTEM */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
         <div style={{ 
           maxWidth: 1200, 
           margin: '0 auto', 
-          padding: '16px 24px', 
+          padding: '12px 24px', 
           display: 'flex', 
           justifyContent: 'space-between', 
           alignItems: 'center',
@@ -43,36 +43,88 @@ const App = () => {
           gap: '16px'
         }}>
           
-          {/* Branding Typography Container */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+          {/* BRANDING CONTAINER: Variation with Emblem on the Left, Text Rows Separate */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
+            
+            {/* Circular PST Emblem Component (Pure CSS Golden/Burgundy Shield) */}
+            <div style={{
+              width: '65px',
+              height: '65px',
+              borderRadius: '50%',
+              border: '3px solid #8B0000',
+              boxShadow: '0 0 0 2px #C9A84C, inset 0 0 8px rgba(139,0,0,0.2)',
+              background: '#fcfaf7',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              position: 'relative',
+              flexShrink: 0
+            }}>
+              <div style={{ fontSize: '11px', fontWeight: 900, color: '#8B0000', lineHeight: 1, letterSpacing: '0.5px', marginTop: '2px' }}>▲</div>
+              <div style={{ 
+                fontSize: '22px', 
+                fontWeight: 900, 
+                color: '#C9A84C', 
+                textShadow: '1px 1px 1px #8B0000',
+                lineHeight: 1,
+                fontFamily: "'Times New Roman', serif",
+                letterSpacing: '-0.5px',
+                marginTop: '-2px'
+              }}>
+                PTS
+              </div>
+              <div style={{ fontSize: '9px', fontWeight: 900, color: '#C9A84C', lineHeight: 1, marginTop: '-1px' }}>🏢</div>
+            </div>
+
+            {/* Separate Text Stack — Scales dynamically without breaking aspect ratios */}
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              {/* Row 1: Main Brand Identity */}
               <div style={{ 
                 color: '#8B0000', 
                 fontWeight: 900, 
-                fontSize: 'clamp(18px, 2.5vw, 26px)', 
+                fontSize: 'clamp(20px, 2.8vw, 28px)', 
                 textTransform: 'uppercase',
-                letterSpacing: '0.75px',
-                lineHeight: 1.1,
-                fontFamily: "'Georgia', serif"
+                letterSpacing: '1px',
+                lineHeight: 1.05
               }}>
-                TEKTON PROPERTY SOLUTIONS LLC
+                TEKTON
               </div>
+              
+              {/* Row 2: Separate, Controlled Entity Definition */}
               <div style={{ 
-                color: '#C9A84C', 
-                fontSize: 'clamp(11px, 1.4vw, 14px)', 
-                letterSpacing: '4px', 
+                color: '#1a1a1a', 
+                fontSize: 'clamp(11px, 1.3vw, 13px)', 
+                letterSpacing: '1.5px', 
                 textTransform: 'uppercase', 
                 fontWeight: 800,
-                marginTop: '6px',
+                marginTop: '2px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '4px'
+              }}>
+                <span style={{ color: '#C9A84C', fontWeight: 900 }}>—</span> PROPERTY SOLUTIONS LLC <span style={{ color: '#C9A84C', fontWeight: 900 }}>—</span>
+              </div>
+
+              {/* Row 3: Tagline Component — No Period at the end */}
+              <div style={{ 
+                color: '#C9A84C', 
+                fontSize: 'clamp(10px, 1.2vw, 11px)', 
+                letterSpacing: '3px', 
+                textTransform: 'uppercase', 
+                fontWeight: 800,
+                marginTop: '3px',
                 fontStyle: 'italic',
                 lineHeight: 1
               }}>
-                RELIEF THAT DELIVERS.
+                RELIEF THAT DELIVERS
               </div>
             </div>
+
           </div>
 
-          <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '14px 26px', borderRadius: 999, fontWeight: 900, fontSize: 'clamp(12px, 2vw, 15px)', textDecoration: 'none', border: '2px solid #C9A84C', letterSpacing: 1.5, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
+          {/* Action Call Button */}
+          <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '12px 24px', borderRadius: 999, fontWeight: 900, fontSize: 'clamp(11px, 1.8vw, 14px)', textDecoration: 'none', border: '2px solid #C9A84C', letterSpacing: 1.5, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
             Get Your Offer
           </a>
         </div>
@@ -97,7 +149,7 @@ const App = () => {
           </h1>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginBottom: 20 }}>
             <div style={{ height: 1, width: 40, background: '#C9A84C', opacity: 0.7 }} />
-            <p style={{ fontSize: 22, fontWeight: 700, fontStyle: 'italic', textTransform: 'uppercase', letterSpacing: 3, color: '#C9A84C', margin: 0 }}>"Relief That Delivers."</p>
+            <p style={{ fontSize: 22, fontWeight: 700, fontStyle: 'italic', textTransform: 'uppercase', letterSpacing: 3, color: '#C9A84C', margin: 0 }}>"Relief That Delivers"</p>
             <div style={{ height: 1, width: 40, background: '#C9A84C', opacity: 0.7 }} />
           </div>
           <p style={{ fontSize: 'clamp(16px, 2.5vw, 20px)', fontWeight: 600, maxWidth: 800, margin: '0 auto 36px', lineHeight: 1.6, textTransform: 'uppercase', letterSpacing: 1 }}>
@@ -117,7 +169,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* 3. TRUST SIGNALS ROW — NOW FULLY VISIBLE WITH CLEAR SPACING */}
+      {/* 3. TRUST SIGNALS ROW */}
       <section style={{ background: '#8B0000', padding: '40px 20px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '40px 30px' }}>
           {[
@@ -134,7 +186,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* 4. BENEFIT CARD ROW — PLACED BELOW THE TRUST BAR TO ELIMINATE OVERLAPS */}
+      {/* 4. BENEFIT CARD ROW */}
       <section style={{ maxWidth: 1100, margin: '50px auto 20px', padding: '0 20px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 30 }}>
           {[
@@ -161,13 +213,16 @@ const App = () => {
             </div>
 
             <div style={{ display: 'flex', borderBottom: '2px solid #e8e0d0' }}>
-              {[1, 2].map(s => (
-                <div key={s} onClick={() => s < step && setStep(s)} style={{ flex: 1, padding: '16px', textAlign: 'center', background: step === s ? '#0d0d0d' : '#f8f6f2', cursor: s < step ? 'pointer' : 'default', borderBottom: step === s ? '4px solid #C9A84C' : '4px solid transparent' }}>
-                  <span style={{ color: step === s ? '#C9A84C' : step > s ? '#8B0000' : '#aaa', fontWeight: 900, fontSize: 13, textTransform: 'uppercase', letterSpacing: 2 }}>
-                    {step > s ? '✓ ' : ''}{s === 1 ? 'Step 1: Contact Info' : 'Step 2: Property Details'}
-                  </span>
-                </div>
-              ))}
+              <div onClick={() => step === 2 && setStep(1)} style={{ flex: 1, padding: '16px', textAlign: 'center', background: step === 1 ? '#0d0d0d' : '#f8f6f2', cursor: step === 2 ? 'pointer' : 'default', borderBottom: step === 1 ? '4px solid #C9A84C' : '4px solid transparent' }}>
+                <span style={{ color: step === 1 ? '#C9A84C' : '#8B0000', fontWeight: 900, fontSize: 13, textTransform: 'uppercase', letterSpacing: 2 }}>
+                  {step > 1 ? '✓ ' : ''}Step 1: Contact Info
+                </span>
+              </div>
+              <div style={{ flex: 1, padding: '16px', textAlign: 'center', background: step === 2 ? '#0d0d0d' : '#f8f6f2', borderBottom: step === 2 ? '4px solid #C9A84C' : '4px solid transparent' }}>
+                <span style={{ color: step === 2 ? '#C9A84C' : '#333333', fontWeight: 900, fontSize: 13, textTransform: 'uppercase', letterSpacing: 2 }}>
+                  Step 2: Property Details
+                </span>
+              </div>
             </div>
 
             <form action="https://formspree.io/f/xaqpozbn" method="POST">
@@ -183,7 +238,7 @@ const App = () => {
               <div style={{ padding: '40px' }}>
                 {step === 1 && (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-                    <p style={{ color: '#555', fontSize: 14, textAlign: 'center', margin: '0 0 8px', fontWeight: 600 }}>No obligation. No pressure. Just explore your options.</p>
+                    <p style={{ color: '#0d0d0d', fontSize: 20, textAlign: 'center', margin: '0 0 12px', fontWeight: 800 }}>No obligation. No pressure. Just explore your options.</p>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px,1fr))', gap: 16 }}>
                       <input type="text" placeholder="FULL NAME" value={formData.fullName} onChange={e => setFormData(f => ({...f, fullName: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
                       <input type="tel" placeholder="PHONE NUMBER" value={formData.phone} onChange={e => setFormData(f => ({...f, phone: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
@@ -329,9 +384,11 @@ const App = () => {
       {/* 10. CLEAN FOOTER */}
       <footer style={{ background: '#fff', padding: '48px 20px', borderTop: '6px solid #0d0d0d', textAlign: 'center' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '24px', gap: '6px' }}>
-            <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 20, textTransform: 'uppercase', letterSpacing: '0.5px' }}>TEKTON PROPERTY SOLUTIONS LLC</div>
-            <div style={{ color: '#C9A84C', fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 800, fontStyle: 'italic' }}>RELIEF THAT DELIVERS.</div>
+          {/* Formatted footer branding block to reflect the header layout changes */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '24px' }}>
+            <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 24, textTransform: 'uppercase', letterSpacing: '1px' }}>TEKTON</div>
+            <div style={{ color: '#1a1a1a', fontSize: 12, letterSpacing: '1.5px', textTransform: 'uppercase', fontWeight: 800, marginTop: '2px' }}>— PROPERTY SOLUTIONS LLC —</div>
+            <div style={{ color: '#C9A84C', fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 800, fontStyle: 'italic', marginTop: '3px' }}>RELIEF THAT DELIVERS</div>
           </div>
           <p style={{ color: '#666', fontWeight: 700, fontSize: 14, textTransform: 'uppercase', letterSpacing: 3, marginBottom: 6 }}>Ohio &amp; Nationwide</p>
           <p style={{ color: '#888', fontSize: 13, marginBottom: 6 }}>6545 Market Ave N, Ste 100, Canton, OH 44721</p>
