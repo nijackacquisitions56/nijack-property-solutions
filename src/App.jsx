@@ -26,7 +26,7 @@ const App = () => {
             <img 
               src="/tekton-emblem.jpg" 
               alt="Tekton Property Solutions"
-              style={{ width: '85px', height: '85px', marginRight: '15px', display: 'block' }} 
+              style={{ width: '85px', height: '85px', marginRight: '4px', display: 'block' }} 
             />
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <h1 style={{ color: '#8B0000', fontWeight: 900, fontSize: '32px', margin: 0, lineHeight: '1' }}>TEKTON</h1>
