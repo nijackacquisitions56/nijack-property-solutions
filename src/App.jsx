@@ -30,12 +30,12 @@ const App = () => {
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
-      {/* 1. NAVIGATION HEADER WITH BALANCED LOGO LAYOUT */}
+      {/* 1. NAVIGATION HEADER — FIXES THE TEXT PROPORTIONS */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
         <div style={{ 
           maxWidth: 1200, 
           margin: '0 auto', 
-          padding: '12px 20px', 
+          padding: '14px 20px', 
           display: 'flex', 
           justifyContent: 'space-between', 
           alignItems: 'center',
@@ -43,36 +43,39 @@ const App = () => {
           gap: '16px'
         }}>
           
-          {/* Logo Branding Container */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
-            {/* Main Icon/Tekton Graphic */}
+          {/* Proportional Branding Flexbox Container */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+            
+            {/* Cropped Logo Mark: Use an image file that only contains the PTS shield and 'TEKTON' text */}
             <img
-              src="/tekton-logo.png"
-              alt="Tekton Logo"
-              style={{ height: 'clamp(55px, 7vw, 75px)', width: 'auto', objectFit: 'contain' }}
+              src="/tekton-cropped-logo.png" 
+              alt="Tekton"
+              style={{ height: 'clamp(48px, 6vw, 62px)', width: 'auto', objectFit: 'contain' }}
               onError={e => { e.target.style.display = 'none'; }}
             />
             
-            {/* Separated & Proportional Sub-branding Lines */}
+            {/* Web Typography Block: Scales beautifully alongside the image mark */}
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <div style={{ 
                 color: '#8B0000', 
                 fontWeight: 900, 
-                fontSize: 'clamp(18px, 2.5vw, 24px)', 
+                fontSize: 'clamp(18px, 2.3vw, 25px)', 
                 textTransform: 'uppercase',
-                letterSpacing: '0.5px',
-                lineHeight: 1.1
+                letterSpacing: '0.75px',
+                lineHeight: 1.1,
+                fontFamily: "'Georgia', serif"
               }}>
-                TEKTON PROPERTY SOLUTIONS LLC
+                PROPERTY SOLUTIONS LLC
               </div>
               <div style={{ 
                 color: '#C9A84C', 
-                fontSize: 'clamp(11px, 1.5vw, 14px)', 
-                letterSpacing: '3.5px', 
+                fontSize: 'clamp(11px, 1.4vw, 14px)', 
+                letterSpacing: '4px', 
                 textTransform: 'uppercase', 
                 fontWeight: 800,
                 marginTop: '4px',
-                fontStyle: 'italic'
+                fontStyle: 'italic',
+                lineHeight: 1
               }}>
                 RELIEF THAT DELIVERS.
               </div>
@@ -85,7 +88,7 @@ const App = () => {
         </div>
       </nav>
 
-      {/* 2. HERO */}
+      {/* 2. HERO SECTION */}
       <section style={{
         position: 'relative', color: '#fff', padding: '100px 20px 110px',
         borderBottom: '8px solid #C9A84C', textAlign: 'center',
@@ -124,7 +127,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* 3. OPTIMIZED TRUST SIGNALS ROW */}
+      {/* 3. TRUST SIGNALS ROW */}
       <section style={{ background: '#8B0000', padding: '32px 20px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '30px' }}>
           {[
@@ -141,7 +144,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* 4. QUICK BENEFITS */}
+      {/* 4. QUICK BENEFITS CARD ROW */}
       <section style={{ maxWidth: 1000, margin: '40px auto 0', padding: '0 20px 20px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 24 }}>
           {[
@@ -157,7 +160,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* 5. 2-STEP FORM */}
+      {/* 5. TWO-STEP APPLICATION FORM */}
       <section id="property-form" style={{ padding: '60px 20px', scrollMarginTop: 80 }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ background: '#fff', borderRadius: 32, boxShadow: '0 8px 48px rgba(10,22,40,0.14)', border: '1px solid #e8e0d0', overflow: 'hidden' }}>
@@ -262,7 +265,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* 6. HOW IT WORKS */}
+      {/* 6. PROCESS EXPLANATION SYSTEM */}
       <section style={{ padding: '60px 20px', background: '#0d0d0d', textAlign: 'center' }}>
         <div style={{ maxWidth: 1000, margin: '0 auto' }}>
           <p style={{ color: '#C9A84C', fontWeight: 700, letterSpacing: 4, fontSize: 12, textTransform: 'uppercase', marginBottom: 12, fontStyle: 'italic' }}>Our Simple Process</p>
@@ -283,7 +286,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* 7. FAQ */}
+      {/* 7. ACCORDION FAQ SYSTEM */}
       <section style={{ padding: '60px 20px', background: '#f9f7f4' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <h2 style={{ color: '#0d0d0d', fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(24px,4vw,40px)', textAlign: 'center', marginBottom: 40, borderBottom: '4px solid #C9A84C', paddingBottom: 16 }}>Frequently Asked Questions</h2>
@@ -303,7 +306,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* 8. PRIVACY & DISCLOSURE */}
+      {/* 8. LEGAL COMPLIANCE & PRIVACY DISCLOSURE */}
       <section id="privacy-policy" style={{ padding: '60px 20px', background: '#fff' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <div style={{ background: '#f8f6f2', borderRadius: 32, padding: '48px 40px', border: '2px solid #e8e0d0' }}>
@@ -321,7 +324,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* 9. CTA */}
+      {/* 9. BOTTOM CLOSING CTA */}
       <section style={{ background: '#0d0d0d', color: '#fff', padding: '80px 20px', textAlign: 'center', borderTop: '8px solid #C9A84C' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <p style={{ color: '#C9A84C', fontWeight: 700, letterSpacing: 4, textTransform: 'uppercase', fontSize: 13, marginBottom: 16 }}>READY TO MOVE FORWARD?</p>
@@ -333,13 +336,13 @@ const App = () => {
         </div>
       </section>
 
-      {/* 10. FOOTER WITH ADAPTIVE BRANDING LAYOUT */}
+      {/* 10. CLEAN FOOTER */}
       <footer style={{ background: '#fff', padding: '48px 20px', borderTop: '6px solid #0d0d0d', textAlign: 'center' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '24px', gap: '8px' }}>
-            <img src="/tekton-logo.png" alt="Tekton Property Solutions LLC" style={{ height: 65, width: 'auto', objectFit: 'contain' }} onError={e => e.target.style.display = 'none'} />
-            <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 20, textTransform: 'uppercase', letterSpacing: '0.5px' }}>TEKTON PROPERTY SOLUTIONS LLC</div>
-            <div style={{ color: '#C9A84C', fontSize: 12, letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 800, fontStyle: 'italic' }}>RELIEF THAT DELIVERS.</div>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '24px', gap: '6px' }}>
+            <img src="/tekton-cropped-logo.png" alt="Tekton Logo" style={{ height: 50, width: 'auto', objectFit: 'contain' }} onError={e => e.target.style.display = 'none'} />
+            <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 18, textTransform: 'uppercase', letterSpacing: '0.5px' }}>PROPERTY SOLUTIONS LLC</div>
+            <div style={{ color: '#C9A84C', fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 800, fontStyle: 'italic' }}>RELIEF THAT DELIVERS.</div>
           </div>
           <p style={{ color: '#666', fontWeight: 700, fontSize: 14, textTransform: 'uppercase', letterSpacing: 3, marginBottom: 6 }}>Ohio &amp; Nationwide</p>
           <p style={{ color: '#888', fontSize: 13, marginBottom: 6 }}>6545 Market Ave N, Ste 100, Canton, OH 44721</p>
