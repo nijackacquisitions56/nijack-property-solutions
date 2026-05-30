@@ -30,338 +30,73 @@ const App = () => {
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
-      {/* 1. NAVIGATION HEADER */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
-        <div style={{ 
-          maxWidth: 1300, 
-          margin: '0 auto', 
-          padding: '16px 24px', 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '24px'
-        }}>
-          
+        <div style={{ maxWidth: 1300, margin: '0 auto', padding: '16px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '24px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
-            <img 
-              src="/pts-emblem.png" 
-              alt="PTS Emblem"
-              style={{
-                width: 'clamp(70px, 7.5vw, 90px)',
-                height: 'auto',
-                display: 'block',
-                flexShrink: 0
-              }}
-            />
-
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center' }}>
-              <h1 style={{ color: '#8B0000', fontWeight: 900, fontSize: 'clamp(32px, 3.6vw, 46px)', textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 4px 0', lineHeight: '1.1' }}>
-                TEKTON
-              </h1>
-              <div style={{ color: '#0A2240', fontSize: 'clamp(14px, 1.5vw, 20px)', letterSpacing: '2.5px', textTransform: 'uppercase', fontWeight: 800, margin: '0 0 6px 0', lineHeight: '1.2' }}>
-                PROPERTY SOLUTIONS LLC
-              </div>
-              <div style={{ color: '#C9A84C', fontSize: 'clamp(12px, 1.3vw, 16px)', letterSpacing: '3.5px', textTransform: 'uppercase', fontWeight: 800, fontStyle: 'italic', margin: 0, lineHeight: '1.2' }}>
-                RELIEF THAT DELIVERS
-              </div>
+            <img src="/tekton-emblem.png" alt="PTS Emblem" style={{ width: 'clamp(70px, 7.5vw, 90px)', height: 'auto', display: 'block', flexShrink: 0 }} />
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+              <h1 style={{ color: '#8B0000', fontWeight: 900, fontSize: 'clamp(32px, 3.6vw, 46px)', textTransform: 'uppercase', margin: 0, lineHeight: '1.1' }}>TEKTON</h1>
+              <div style={{ color: '#0A2240', fontSize: 'clamp(14px, 1.5vw, 20px)', letterSpacing: '2.5px', textTransform: 'uppercase', fontWeight: 800, lineHeight: '1.2' }}>PROPERTY SOLUTIONS LLC</div>
+              <div style={{ color: '#C9A84C', fontSize: 'clamp(12px, 1.3vw, 16px)', letterSpacing: '3.5px', textTransform: 'uppercase', fontWeight: 800, fontStyle: 'italic', lineHeight: '1.2' }}>RELIEF THAT DELIVERS</div>
             </div>
           </div>
-
-          <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '12px 24px', borderRadius: 999, fontWeight: 900, fontSize: 'clamp(11px, 1.8vw, 14px)', textDecoration: 'none', border: '2px solid #C9A84C', letterSpacing: 1.5, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
-            Get Your Offer
-          </a>
+          <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '12px 24px', borderRadius: 999, fontWeight: 900, textDecoration: 'none', border: '2px solid #C9A84C', textTransform: 'uppercase' }}>GET YOUR OFFER</a>
         </div>
       </nav>
 
-      {/* 2. HERO SECTION */}
-      <section style={{
-        position: 'relative', color: '#fff', padding: '100px 20px 110px',
-        borderBottom: '8px solid #C9A84C', textAlign: 'center',
-        backgroundImage: 'url(https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&q=80)',
-        backgroundSize: 'cover', backgroundPosition: 'center',
-      }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, rgba(80,10,10,0.78) 100%)' }} />
+      <section style={{ position: 'relative', color: '#fff', padding: '100px 20px', borderBottom: '8px solid #C9A84C', textAlign: 'center', backgroundImage: 'url(https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.88), rgba(80,10,10,0.78))' }} />
         <div style={{ maxWidth: 950, margin: '0 auto', position: 'relative', zIndex: 2 }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14, marginBottom: 20 }}>
-            <div style={{ height: 1, width: 60, background: '#C9A84C', opacity: 0.7 }} />
-            <p style={{ color: '#C9A84C', fontWeight: 700, letterSpacing: 4, fontSize: 'clamp(14px, 2.2vw, 20px)', textTransform: 'uppercase', margin: '0', fontStyle: 'italic' }}>Ohio &amp; Nationwide Investment Solutions</p>
-            <div style={{ height: 1, width: 60, background: '#C9A84C', opacity: 0.7 }} />
-          </div>
-          <h1 style={{ fontSize: 'clamp(38px, 6.5vw, 68px)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1.15, marginBottom: 24, letterSpacing: -1 }}>
-            Sell Your House <span style={{ color: '#C9A84C' }}>FAST</span><br />For <span style={{ color: '#C9A84C' }}>CASH</span>
-          </h1>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginBottom: 20 }}>
-            <div style={{ height: 1, width: 40, background: '#C9A84C', opacity: 0.7 }} />
-            <p style={{ fontSize: 22, fontWeight: 700, fontStyle: 'italic', textTransform: 'uppercase', letterSpacing: 3, color: '#C9A84C', margin: 0 }}>"Relief That Delivers"</p>
-            <div style={{ height: 1, width: 40, background: '#C9A84C', opacity: 0.7 }} />
-          </div>
-          <p style={{ fontSize: 'clamp(16px, 2.5vw, 20px)', fontWeight: 600, maxWidth: 800, margin: '0 auto 36px', lineHeight: 1.6, textTransform: 'uppercase', letterSpacing: 1 }}>
-            No Repairs. No Commissions. Close On Your Timeline.
-          </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 16, marginBottom: 40 }}>
-            <div style={{ background: 'rgba(255,255,255,0.1)', border: '2px solid rgba(201,168,76,0.5)', padding: '14px 28px', borderRadius: 999 }}>
-              <span style={{ fontWeight: 900, fontSize: 15, letterSpacing: 2, textTransform: 'uppercase' }}>Closing Timeline: 14–30 Days</span>
-            </div>
-            <a href="#property-form" style={{ background: '#C9A84C', color: '#0d0d0d', padding: '14px 32px', borderRadius: 999, fontWeight: 900, fontSize: 16, textDecoration: 'none', textTransform: 'uppercase', letterSpacing: 2 }}>
-              Get My Property Reviewed
-            </a>
-          </div>
-          <div style={{ background: 'rgba(0,0,0,0.5)', border: '2px solid rgba(201,168,76,0.4)', borderRadius: 16, padding: '22px 32px', maxWidth: 800, margin: '0 auto' }}>
-            <p style={{ fontSize: 'clamp(15px, 2.5vw, 20px)', fontWeight: 600, margin: 0, lineHeight: 1.5, letterSpacing: 0.5 }}>All transactions are handled through a licensed title company to help ensure a safe and secure closing process.</p>
-          </div>
+          <h1 style={{ fontSize: 'clamp(38px, 6.5vw, 68px)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1.15, marginBottom: 24 }}>SELL YOUR HOUSE <span style={{ color: '#C9A84C' }}>FAST</span> FOR <span style={{ color: '#C9A84C' }}>CASH</span></h1>
+          <p style={{ fontSize: 'clamp(16px, 2.5vw, 20px)', fontWeight: 600, marginBottom: 36, textTransform: 'uppercase' }}>No Repairs. No Commissions. Close On Your Timeline.</p>
+          <a href="#property-form" style={{ background: '#C9A84C', color: '#0d0d0d', padding: '14px 32px', borderRadius: 999, fontWeight: 900, textDecoration: 'none', textTransform: 'uppercase' }}>GET MY PROPERTY REVIEWED</a>
         </div>
       </section>
 
-      {/* 3. TRUST SIGNALS ROW */}
-      <section style={{ background: '#8B0000', padding: '40px 20px' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '40px 30px' }}>
-          {[
-            { icon: '🏛', label: 'Licensed Title Company' },
-            { icon: '✦', label: '$0 Fees Or Commissions' },
-            { icon: '📅', label: '14-30 Day Closing' },
-            { icon: '🏠', label: 'As Is - No Repairs' },
-          ].map((t, i) => (
-            <div key={i} style={{ textAlign: 'center', flex: '1 1 220px', minWidth: '180px' }}>
-              <div style={{ color: '#C9A84C', fontSize: 32, marginBottom: 12 }}>{t.icon}</div>
-              <div style={{ color: '#fff', fontSize: 14, fontWeight: 900, letterSpacing: 2, textTransform: 'uppercase', lineHeight: 1.4 }}>{t.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 4. BENEFIT CARD ROW */}
-      <section style={{ maxWidth: 1100, margin: '50px auto 20px', padding: '0 20px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 30 }}>
-          {[
-            { title: 'No Repairs Needed', desc: 'Sell your property as-is without cleaning, fixing, or updating it first.' },
-            { title: 'No Commissions', desc: 'No agent fees or commissions. Just a direct review of your property.' },
-            { title: 'Flexible Closing', desc: 'We work with different timelines and aim to find a solution that fits your situation.' },
-          ].map((b) => (
-            <div key={b.title} style={{ background: '#fff', borderRadius: 16, boxShadow: '0 8px 32px rgba(10,22,40,0.08)', padding: '36px 28px', borderTop: '5px solid #8B0000' }}>
-              <h3 style={{ color: '#0d0d0d', fontWeight: 900, fontSize: 18, textTransform: 'uppercase', marginBottom: 14, letterSpacing: 1, marginTop: 0 }}>{b.title}</h3>
-              <p style={{ color: '#555', fontSize: 15, lineHeight: 1.6, margin: 0, fontWeight: 500 }}>{b.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 5. TWO-STEP APPLICATION FORM WITH INTEGRATED STATE VARIABLE TRACKING */}
-      <section id="property-form" style={{ padding: '60px 20px', scrollMarginTop: 80 }}>
-        <div style={{ maxWidth: 860, margin: '0 auto' }}>
-          <div style={{ background: '#fff', borderRadius: 32, boxShadow: '0 8px 48px rgba(10,22,40,0.14)', border: '1px solid #e8e0d0', overflow: 'hidden' }}>
-
-            <div style={{ background: '#C9A84C', padding: '32px 24px', textAlign: 'center' }}>
-              <h2 style={{ color: '#0d0d0d', fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(18px,4vw,26px)', letterSpacing: 2, margin: '0 0 8px' }}>Start Your Successful Closing Today</h2>
-              <p style={{ color: '#0d0d0d', fontWeight: 700, fontSize: 14, margin: 0 }}>Takes less than 60 seconds to get started.</p>
-            </div>
-
-            <div style={{ display: 'flex', borderBottom: '2px solid #e8e0d0' }}>
-              <div onClick={() => step === 2 && setStep(1)} style={{ flex: 1, padding: '16px', textAlign: 'center', background: step === 1 ? '#0d0d0d' : '#f8f6f2', cursor: step === 2 ? 'pointer' : 'default', borderBottom: step === 1 ? '4px solid #C9A84C' : '4px solid transparent' }}>
-                <span style={{ color: step === 1 ? '#C9A84C' : '#8B0000', fontWeight: 900, fontSize: 13, textTransform: 'uppercase', letterSpacing: 2 }}>
-                  {step > 1 ? '✓ ' : ''}Step 1: Contact Info
-                </span>
+      <section id="property-form" style={{ padding: '60px 20px' }}>
+        <div style={{ maxWidth: 860, margin: '0 auto', background: '#fff', borderRadius: 32, boxShadow: '0 8px 48px rgba(0,0,0,0.1)', overflow: 'hidden' }}>
+          <div style={{ background: '#C9A84C', padding: '32px', textAlign: 'center' }}>
+            <h2 style={{ color: '#0d0d0d', fontWeight: 900, textTransform: 'uppercase', margin: 0 }}>Start Your Successful Closing</h2>
+          </div>
+          <form action="https://formspree.io/f/xaqpozbn" method="POST" style={{ padding: '40px' }}>
+            <input type="hidden" name="fullName" value={formData.fullName} />
+            <input type="hidden" name="phone" value={formData.phone} />
+            <input type="hidden" name="email" value={formData.email} />
+            <input type="hidden" name="propertyAddress" value={formData.propertyAddress} />
+            <input type="hidden" name="propertyState" value={formData.propertyState} />
+            <input type="hidden" name="situation" value={formData.situation.join(', ')} />
+            
+            {step === 1 ? (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+                <input type="text" placeholder="FULL NAME" value={formData.fullName} onChange={e => setFormData({...formData, fullName: e.target.value})} style={{ background: '#e2ded7', border: 'none', padding: '16px', fontWeight: 800, width: '100%' }} />
+                <input type="tel" placeholder="PHONE" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} style={{ background: '#e2ded7', border: 'none', padding: '16px', fontWeight: 800, width: '100%' }} />
+                <div style={{ display: 'grid', gridTemplateColumns: '3fr 1fr', gap: 16 }}>
+                  <input type="text" placeholder="ADDRESS" value={formData.propertyAddress} onChange={e => setFormData({...formData, propertyAddress: e.target.value})} style={{ background: '#e2ded7', border: 'none', padding: '16px', fontWeight: 800 }} />
+                  <select value={formData.propertyState} onChange={e => setFormData({...formData, propertyState: e.target.value})} style={{ background: '#e2ded7', border: 'none', padding: '16px', fontWeight: 800 }}>
+                    <option value="">ST</option>
+                    {['OH','AL','AZ','CA','FL','GA','IL','IN','KY','MI','NC','NY','PA','TX'].map(s => <option key={s} value={s}>{s}</option>)}
+                  </select>
+                </div>
+                <button type="button" onClick={() => setStep(2)} style={{ background: '#0d0d0d', color: '#C9A84C', padding: '20px', border: '2px solid #C9A84C', cursor: 'pointer' }}>CONTINUE →</button>
               </div>
-              <div style={{ flex: 1, padding: '16px', textAlign: 'center', background: step === 2 ? '#0d0d0d' : '#f8f6f2', borderBottom: step === 2 ? '4px solid #C9A84C' : '4px solid transparent' }}>
-                <span style={{ color: step === 2 ? '#C9A84C' : '#333333', fontWeight: 900, fontSize: 13, textTransform: 'uppercase', letterSpacing: 2 }}>
-                  Step 2: Property Details
-                </span>
+            ) : (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+                <p style={{ fontWeight: 900 }}>What is the situation?</p>
+                {situations.map(s => (
+                  <button key={s} type="button" onClick={() => handleCheck(s)} style={{ background: formData.situation.includes(s) ? '#8B0000' : '#e2ded7', color: formData.situation.includes(s) ? '#fff' : '#000', border: 'none', padding: '10px', cursor: 'pointer' }}>{s}</button>
+                ))}
+                <button type="submit" style={{ background: '#8B0000', color: '#fff', padding: '20px', cursor: 'pointer' }}>SUBMIT PROPERTY</button>
+                <button type="button" onClick={() => setStep(1)} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>← BACK</button>
               </div>
-            </div>
-
-            <form action="https://formspree.io/f/xaqpozbn" method="POST">
-              {/* Formspree Core Hidden Values */}
-              <input type="hidden" name="fullName" value={formData.fullName} />
-              <input type="hidden" name="phone" value={formData.phone} />
-              <input type="hidden" name="email" value={formData.email} />
-              <input type="hidden" name="propertyAddress" value={formData.propertyAddress} />
-              <input type="hidden" name="propertyState" value={formData.propertyState} />
-              <input type="hidden" name="situation" value={formData.situation.join(', ')} />
-              <input type="hidden" name="additionalNotes" value={formData.additionalNotes} />
-              <input type="hidden" name="timeline" value={formData.timeline} />
-              <input type="hidden" name="priceExpectation" value={formData.priceExpectation} />
-
-              <div style={{ padding: '40px' }}>
-                {step === 1 && (
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-                    <p style={{ color: '#0d0d0d', fontSize: 20, textAlign: 'center', margin: '0 0 12px', fontWeight: 800 }}>No obligation. No pressure. Just explore your options.</p>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px,1fr))', gap: 16 }}>
-                      <input type="text" placeholder="FULL NAME" value={formData.fullName} onChange={e => setFormData(f => ({...f, fullName: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
-                      <input type="tel" placeholder="PHONE NUMBER" value={formData.phone} onChange={e => setFormData(f => ({...f, phone: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
-                    </div>
-                    <input type="email" placeholder="EMAIL ADDRESS" value={formData.email} onChange={e => setFormData(f => ({...f, email: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
-                    
-                    {/* Address with Associated State Selector */}
-                    <div style={{ display: 'grid', gridTemplateColumns: '3fr 1fr', gap: 16, alignItems: 'end', flexWrap: 'wrap' }}>
-                      <input type="text" placeholder="PROPERTY ADDRESS (STREET, CITY)" value={formData.propertyAddress} onChange={e => setFormData(f => ({...f, propertyAddress: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
-                      <select value={formData.propertyState} onChange={e => setFormData(f => ({...f, propertyState: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '15px 10px', fontSize: 14, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', color: '#1a1a1a', width: '100%', cursor: 'pointer' }}>
-                        <option value="" disabled>STATE</option>
-                        <option value="OH">OH</option>
-                        <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option><option value="FL">FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option>
-                      </select>
-                    </div>
-
-                    <button type="button" onClick={() => {
-                      if (!formData.fullName || !formData.phone || !formData.propertyAddress || !formData.propertyState) {
-                        alert('Please fill out all contact info and select a state to proceed.');
-                        return;
-                      }
-                      setStep(2);
-                      setTimeout(() => document.getElementById('property-form').scrollIntoView({ behavior: 'smooth' }), 100);
-                    }} style={{ background: '#0d0d0d', color: '#C9A84C', padding: '20px', borderRadius: 999, fontWeight: 900, textTransform: 'uppercase', letterSpacing: 3, fontSize: 16, border: '3px solid #C9A84C', cursor: 'pointer', width: '100%', marginTop: 8 }}>
-                      Continue to Step 2 →
-                    </button>
-                  </div>
-                )}
-
-                {step === 2 && (
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-                    <div style={{ background: '#1a1a1a', padding: '24px', borderRadius: 20, border: '2px solid rgba(201,168,76,0.4)' }}>
-                      <p style={{ color: '#C9A84C', fontWeight: 900, fontSize: 13, textTransform: 'uppercase', letterSpacing: 2, textAlign: 'center', margin: '0 0 16px' }}>What is the situation? (Check all that apply)</p>
-                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px,1fr))', gap: 10 }}>
-                        {situations.map(label => (
-                          <label key={label} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 12px', background: formData.situation.includes(label) ? '#8B0000' : '#2a2a2a', borderRadius: 12, border: formData.situation.includes(label) ? '2px solid #C9A84C' : '2px solid #444', cursor: 'pointer' }}>
-                            <input type="checkbox" checked={formData.situation.includes(label)} onChange={() => handleCheck(label)} style={{ width: 18, height: 18, accentColor: '#C9A84C' }} />
-                            <span style={{ fontWeight: 900, textTransform: 'uppercase', fontSize: 11, color: '#C9A84C', letterSpacing: 1 }}>{label}</span>
-                          </label>
-                        ))}
-                      </div>
-                    </div>
-
-                    <textarea placeholder="ADDITIONAL NOTES (TELL US MORE ABOUT THE PROPERTY...)" rows="3" value={formData.additionalNotes} onChange={e => setFormData(f => ({...f, additionalNotes: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 15, fontWeight: 800, outline: 'none', resize: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }}></textarea>
-
-                    <div>
-                      <label style={{ display: 'block', color: '#0d0d0d', fontWeight: 900, fontSize: 13, textTransform: 'uppercase', letterSpacing: 2, marginBottom: 10, fontStyle: 'italic' }}>How fast do you need to sell? <span style={{ color: '#C9A84C' }}>— CLICK BELOW</span></label>
-                      <select value={formData.timeline} onChange={e => setFormData(f => ({...f, timeline: e.target.value}))} style={{ background: '#fff', border: '3px solid #0d0d0d', borderRadius: 12, padding: '14px', fontSize: 15, fontWeight: 900, color: '#0d0d0d', fontFamily: 'Georgia, serif', width: '100%' }}>
-                        <option value="" disabled>CLICK HERE TO SELECT TIMELINE</option>
-                        <option>ASAP (RIGHT AWAY)</option>
-                        <option>&lt; 30 DAYS</option>
-                        <option>&lt; 90 DAYS</option>
-                        <option>&lt; 180 DAYS</option>
-                        <option>180 DAYS+</option>
-                        <option>JUST EXPLORING OPTIONS</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label style={{ display: 'block', color: '#0d0d0d', fontWeight: 900, fontSize: 13, textTransform: 'uppercase', letterSpacing: 2, marginBottom: 10, fontStyle: 'italic' }}>What Price Would You Consider For A Cash Offer?</label>
-                      <input type="text" placeholder="EXAMPLE: $150,000" value={formData.priceExpectation} onChange={e => setFormData(f => ({...f, priceExpectation: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
-                    </div>
-
-                    <div style={{ background: '#f8f6f2', border: '2px solid #C9A84C', borderRadius: 12, padding: '14px 18px' }}>
-                      <p style={{ fontSize: 12, color: '#333', fontWeight: 700, margin: 0, lineHeight: 1.6 }}>
-                        <strong>Disclosure:</strong> Tekton Property Solutions LLC is a real estate wholesaler, not a licensed agent. We may purchase properties below market value and assign contracts to third-party buyers for a profit. A written Wholesaler Disclosure Statement will be provided before any contract is binding. No obligation to sell.
-                      </p>
-                    </div>
-
-                    <button type="submit" style={{ background: '#8B0000', color: '#fff', padding: '22px', borderRadius: 999, fontWeight: 900, textTransform: 'uppercase', letterSpacing: 3, fontSize: 'clamp(15px,3vw,20px)', border: '3px solid #C9A84C', cursor: 'pointer', width: '100%' }}>
-                      Submit My Property →
-                    </button>
-                    <button type="button" onClick={() => setStep(1)} style={{ background: 'none', border: 'none', color: '#888', fontSize: 13, cursor: 'pointer', textDecoration: 'underline', fontWeight: 700 }}>← Back to Step 1</button>
-                  </div>
-                )}
-              </div>
-            </form>
-          </div>
+            )}
+          </form>
         </div>
       </section>
 
-      {/* 6. PROCESS EXPLANATION SYSTEM */}
-      <section style={{ padding: '60px 20px', background: '#0d0d0d', textAlign: 'center' }}>
-        <div style={{ maxWidth: 1000, margin: '0 auto' }}>
-          <p style={{ color: '#C9A84C', fontWeight: 700, letterSpacing: 4, fontSize: 12, textTransform: 'uppercase', marginBottom: 12, fontStyle: 'italic' }}>Our Simple Process</p>
-          <h2 style={{ color: '#fff', fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(28px,5vw,52px)', marginBottom: 48, letterSpacing: -1 }}>How It Works</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px,1fr))', gap: 24 }}>
-            {[
-              { n: '1', t: 'SHARE INFO', d: 'Tell us about the property and your situation through the form above.' },
-              { n: '2', t: 'REVIEW OPTIONS', d: 'We review the details, property condition, and your timeline to see if a solution makes sense.' },
-              { n: '3', t: 'CLOSE SAFELY', d: 'If the numbers work, we move forward through a licensed title company for a smooth closing process.' },
-            ].map(s => (
-              <div key={s.n} style={{ background: '#1a1a1a', borderRadius: 24, padding: '36px 24px', border: '1px solid rgba(201,168,76,0.3)', borderBottom: '6px solid #C9A84C' }}>
-                <div style={{ width: 64, height: 64, borderRadius: '50%', background: '#C9A84C', color: '#0d0d0d', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 28, margin: '0 auto 20px' }}>{s.n}</div>
-                <h3 style={{ color: '#fff', fontWeight: 900, textTransform: 'uppercase', fontSize: 18, letterSpacing: 2, marginBottom: 12 }}>{s.t}</h3>
-                <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: 15, lineHeight: 1.7, margin: 0 }}>{s.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. ACCORDION FAQ SYSTEM */}
-      <section style={{ padding: '60px 20px', background: '#f9f7f4' }}>
-        <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <h2 style={{ color: '#0d0d0d', fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(24px,4vw,40px)', textAlign: 'center', marginBottom: 40, borderBottom: '4px solid #C9A84C', paddingBottom: 16 }}>Frequently Asked Questions</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            {faqs.map((faq, i) => (
-              <div key={i} style={{ background: '#fff', borderRadius: 16, border: '1px solid #e8e0d0', overflow: 'hidden' }}>
-                <button onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{ width: '100%', background: 'none', border: 'none', padding: '20px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', textAlign: 'left' }}>
-                  <span style={{ color: '#0d0d0d', fontWeight: 900, fontSize: 13, textTransform: 'uppercase', letterSpacing: 1 }}>{faq.q}</span>
-                  <span style={{ color: '#8B0000', fontSize: 22, fontWeight: 900, marginLeft: 12, flexShrink: 0 }}>{openFaq === i ? '−' : '+'}</span>
-                </button>
-                {openFaq === i && (
-                  <div style={{ padding: '0 24px 20px', color: '#555', fontSize: 15, lineHeight: 1.7, fontWeight: 600 }}>{faq.a}</div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 8. LEGAL COMPLIANCE & PRIVACY DISCLOSURE */}
-      <section id="privacy-policy" style={{ padding: '60px 20px', background: '#fff' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          <div style={{ background: '#f8f6f2', borderRadius: 32, padding: '48px 40px', border: '2px solid #e8e0d0' }}>
-            <h2 style={{ color: '#0d0d0d', fontWeight: 900, textTransform: 'uppercase', textAlign: 'center', fontSize: 'clamp(22px,4vw,36px)', marginBottom: 32 }}>Your Trust Is Our Priority</h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 16, fontSize: 15, lineHeight: 1.8, color: '#444', fontWeight: 600 }}>
-              <p style={{ margin: 0 }}>Tekton Property Solutions LLC values your privacy. In compliance with <strong>Ohio SB 155</strong>, we disclose that we are real estate wholesalers — not licensed real estate agents — acting on our own behalf.</p>
-              <p style={{ margin: 0 }}>We may enter into purchase agreements at below-market value and assign them to third-party buyers for a profit.</p>
-              <div style={{ background: '#fff', padding: '20px 24px', borderRadius: 12, borderLeft: '6px solid #C9A84C', fontSize: 14, fontStyle: 'italic' }}>
-                A written Wholesaler Disclosure Statement will be provided and must be signed before any contract is binding. You have the right to seek legal or professional advice before signing.
-              </div>
-              <p style={{ margin: 0 }}>Your information is collected solely to review your property and discuss possible options. We do not sell your personal information to third parties.</p>
-              <p style={{ margin: 0 }}><strong>Business Address:</strong> 6545 Market Ave N, Ste 100, Canton, OH 44721 &nbsp;|&nbsp; <strong>Phone:</strong> 330-331-9070</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 9. BOTTOM CLOSING CTA */}
-      <section style={{ background: '#0d0d0d', color: '#fff', padding: '80px 20px', textAlign: 'center', borderTop: '8px solid #C9A84C' }}>
-        <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <p style={{ color: '#C9A84C', fontWeight: 700, letterSpacing: 4, textTransform: 'uppercase', fontSize: 13, marginBottom: 16 }}>READY TO MOVE FORWARD?</p>
-          <h2 style={{ fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(28px,6vw,64px)', lineHeight: 1.1, marginBottom: 24, letterSpacing: -1 }}>Start With Your<br />Property Details</h2>
-          <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.85)', marginBottom: 32, fontWeight: 600 }}>No obligation. No pressure. Just see what your options look like.</p>
-          <a href="#property-form" style={{ background: '#C9A84C', color: '#0d0d0d', padding: '20px 48px', borderRadius: 999, fontWeight: 900, textTransform: 'uppercase', letterSpacing: 3, fontSize: 18, textDecoration: 'none', display: 'inline-block' }}>
-            Submit My Details Now
-          </a>
-        </div>
-      </section>
-
-      {/* 10. CLEAN FOOTER */}
-      <footer style={{ background: '#fff', padding: '48px 20px', borderTop: '6px solid #0d0d0d', textAlign: 'center' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', marginBottom: '24px', flexWrap: 'wrap' }}>
-            <img 
-              src="/pts-emblem.png" 
-              alt="PTS Emblem"
-              style={{ height: '55px', width: 'auto', display: 'block', flexShrink: 0 }}
-            />
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-              <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 24, textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 2px 0', lineHeight: '1.1' }}>TEKTON</div>
-              <div style={{ color: '#0A2240', fontSize: 14, letterSpacing: '2px', textTransform: 'uppercase', fontWeight: 800, margin: '0 0 4px 0', lineHeight: '1.2' }}>PROPERTY SOLUTIONS LLC</div>
-              <div style={{ color: '#C9A84C', fontSize: 12, letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 800, fontStyle: 'italic', margin: 0, lineHeight: '1.2' }}>RELIEF THAT DELIVERS</div>
-            </div>
-          </div>
-          
-          <p style={{ color: '#666', fontWeight: 700, fontSize: 14, textTransform: 'uppercase', letterSpacing: 3, marginBottom: 6 }}>Ohio &amp; Nationwide</p>
-          <p style={{ color: '#888', fontSize: 13, marginBottom: 6 }}>6545 Market Ave N, Ste 100, Canton, OH 44721</p>
-          <p style={{ color: '#888', fontSize: 13, marginBottom: 20 }}>330-331-9070</p>
-          <a href="#privacy-policy" style={{ color: '#8B0000', fontWeight: 900, textDecoration: 'underline', textTransform: 'uppercase', letterSpacing: 2, fontSize: 13 }}>Privacy Policy &amp; Disclosure</a>
-          <p style={{ color: '#aaa', fontSize: 12, marginTop: 20, fontStyle: 'italic' }}>© {new Date().getFullYear()} Tekton Property Solutions LLC. All rights reserved.</p>
-        </div>
+      <footer style={{ background: '#fff', padding: '48px 20px', textAlign: 'center', borderTop: '6px solid #0d0d0d' }}>
+        <img src="/tekton-emblem.png" alt="PTS Emblem" style={{ height: '55px', margin: '0 auto 20px' }} />
+        <p style={{ fontWeight: 800, fontSize: 13, color: '#888' }}>TEKTON PROPERTY SOLUTIONS LLC</p>
       </footer>
-
     </div>
   );
 };
