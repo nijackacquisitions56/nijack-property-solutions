@@ -30,66 +30,47 @@ const App = () => {
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
-      {/* 1. NAVIGATION HEADER WITH PERFECTLY PROPORTIONED LOGO SYSTEM */}
+      {/* 1. NAVIGATION HEADER: EMBLEM LEFT, READABLE TEXT RIGHT */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
         <div style={{ 
           maxWidth: 1300, 
           margin: '0 auto', 
-          padding: '14px 24px', 
+          padding: '16px 24px', 
           display: 'flex', 
           justifyContent: 'space-between', 
           alignItems: 'center',
           flexWrap: 'wrap',
-          gap: '20px'
+          gap: '24px'
         }}>
           
-          {/* LEFT BRANDING BLOCK: Big Original PTS Circle Badge + Centered Text Lines */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+          {/* BRANDING CONTAINER */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
             
-            {/* Bigger Original PTS Logo Element */}
-            <div style={{
-              width: '85px',
-              height: '85px',
-              borderRadius: '50%',
-              border: '4px solid #8B0000',
-              boxShadow: '0 0 0 2px #C9A84C, inset 0 0 10px rgba(139,0,0,0.15)',
-              background: '#fcfaf7',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-              flexShrink: 0
-            }}>
-              <div style={{ fontSize: '13px', fontWeight: 900, color: '#8B0000', lineHeight: 1, letterSpacing: '0.5px', marginTop: '2px' }}>▲</div>
-              <div style={{ 
-                fontSize: '28px', 
-                fontWeight: 900, 
-                color: '#C9A84C', 
-                textShadow: '1.5px 1.5px 1px #8B0000',
-                lineHeight: 1,
-                fontFamily: "'Times New Roman', serif",
-                letterSpacing: '-0.5px',
-                marginTop: '-1px'
-              }}>
-                PTS
-              </div>
-              <div style={{ fontSize: '11px', fontWeight: 900, color: '#C9A84C', lineHeight: 1, marginTop: '1px' }}>🏢</div>
-            </div>
+            {/* Round Original PTS Emblem on the Left */}
+            <img 
+              src="YOUR_PTS_EMBLEM_IMAGE_PATH" 
+              alt="PTS Emblem"
+              style={{
+                width: 'clamp(65px, 8vw, 85px)', // Bold presence on the left
+                height: 'auto',
+                display: 'block',
+                flexShrink: 0
+              }}
+            />
 
-            {/* Text Identity Block: Centered Alignment with Upgraded Proportions */}
+            {/* Structured Text Identity Block — Adjusted for Perfect Line Readability */}
             <div style={{ 
               display: 'flex', 
               flexDirection: 'column', 
-              alignItems: 'center',
-              justifyContent: 'center' 
+              alignItems: 'flex-start', // Clean left-aligned stack next to emblem
+              justifyContent: 'center'
             }}>
               
-              {/* Line 1: TEKTON (Dominant Brand Centerpiece) */}
+              {/* Line 1: TEKTON (Crisp, High Impact) */}
               <h1 style={{ 
                 color: '#8B0000', 
                 fontWeight: 900, 
-                fontSize: 'clamp(32px, 4vw, 50px)',
+                fontSize: 'clamp(28px, 3.8vw, 44px)',
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
                 margin: 0,
@@ -98,33 +79,29 @@ const App = () => {
                 TEKTON
               </h1>
               
-              {/* Line 2: PROPERTY SOLUTIONS LLC (Clearly Readable at 26px) */}
+              {/* Line 2: PROPERTY SOLUTIONS LLC (Spaced for Ultimate Legibility) */}
               <div style={{ 
                 color: '#0A2240', 
-                fontSize: 'clamp(14px, 1.8vw, 26px)',
+                fontSize: 'clamp(13px, 1.6vw, 22px)',
+                letterSpacing: '3px',
+                textTransform: 'uppercase', 
+                fontWeight: 800,
+                marginTop: '6px',
+                lineHeight: 1.2
+              }}>
+                PROPERTY SOLUTIONS LLC
+              </div>
+
+              {/* Line 3: RELIEF THAT DELIVERS (No Trailing Period) */}
+              <div style={{ 
+                color: '#C9A84C', 
+                fontSize: 'clamp(11px, 1.4vw, 18px)',
                 letterSpacing: '4px',
                 textTransform: 'uppercase', 
                 fontWeight: 800,
-                marginTop: '4px',
-                lineHeight: 1.1,
-                textAlign: 'center',
-                whiteSpace: 'nowrap'
-              }}>
-                — PROPERTY SOLUTIONS LLC —
-              </div>
-
-              {/* Line 3: RELIEF THAT DELIVERS (Clearly Readable at 22px, No Period) */}
-              <div style={{ 
-                color: '#C9A84C', 
-                fontSize: 'clamp(12px, 1.5vw, 22px)',
-                letterSpacing: '5px',
-                textTransform: 'uppercase', 
-                fontWeight: 800,
                 fontStyle: 'italic',
-                marginTop: '5px',
-                lineHeight: 1,
-                textAlign: 'center',
-                whiteSpace: 'nowrap'
+                marginTop: '6px',
+                lineHeight: 1
               }}>
                 RELIEF THAT DELIVERS
               </div>
@@ -132,7 +109,7 @@ const App = () => {
 
           </div>
 
-          {/* Action Call Button */}
+          {/* Action Call Header Button */}
           <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '12px 24px', borderRadius: 999, fontWeight: 900, fontSize: 'clamp(11px, 1.8vw, 14px)', textDecoration: 'none', border: '2px solid #C9A84C', letterSpacing: 1.5, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
             Get Your Offer
           </a>
@@ -394,11 +371,18 @@ const App = () => {
       <footer style={{ background: '#fff', padding: '48px 20px', borderTop: '6px solid #0d0d0d', textAlign: 'center' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           
-          {/* Formatted footer branding block to reflect the beautiful new header style proportions */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '24px' }}>
-            <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 28, textTransform: 'uppercase', letterSpacing: '1px' }}>TEKTON</div>
-            <div style={{ color: '#0A2240', fontSize: 15, letterSpacing: '2px', textTransform: 'uppercase', fontWeight: 800, marginTop: '2px' }}>— PROPERTY SOLUTIONS LLC —</div>
-            <div style={{ color: '#C9A84C', fontSize: 13, letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 800, fontStyle: 'italic', marginTop: '3px' }}>RELIEF THAT DELIVERS</div>
+          {/* Footer Alignment mirroring Header layout for consistency */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', marginBottom: '24px', flexWrap: 'wrap' }}>
+            <img 
+              src="YOUR_PTS_EMBLEM_IMAGE_PATH" 
+              alt="PTS Emblem"
+              style={{ height: '45px', width: 'auto', display: 'block' }}
+            />
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+              <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 22, textTransform: 'uppercase', letterSpacing: '1px', lineHeight: 1 }}>TEKTON</div>
+              <div style={{ color: '#0A2240', fontSize: 13, letterSpacing: '2px', textTransform: 'uppercase', fontWeight: 800, marginTop: '3px' }}>PROPERTY SOLUTIONS LLC</div>
+              <div style={{ color: '#C9A84C', fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 800, fontStyle: 'italic', marginTop: '3px' }}>RELIEF THAT DELIVERS</div>
+            </div>
           </div>
           
           <p style={{ color: '#666', fontWeight: 700, fontSize: 14, textTransform: 'uppercase', letterSpacing: 3, marginBottom: 6 }}>Ohio &amp; Nationwide</p>
