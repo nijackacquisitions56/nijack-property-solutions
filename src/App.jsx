@@ -24,7 +24,7 @@ const App = () => {
           
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <img 
-              src="/tekton-emblem.jpg" 
+              src="/tekton-emblem.png" 
               alt="Tekton Property Solutions"
               style={{ width: '85px', height: '85px', marginRight: '4px', display: 'block' }} 
             />
