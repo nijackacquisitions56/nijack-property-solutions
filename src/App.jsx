@@ -26,7 +26,7 @@ const App = () => {
             <img 
               src="/tekton-emblem.png" 
               alt="Tekton Property Solutions"
-              style={{ width: '85px', height: '85px', marginRight: '4px', display: 'block' }} 
+              style={{ width: '85px', height: '85px', marginRight: '15px', display: 'block' }} 
             />
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <h1 style={{ color: '#8B0000', fontWeight: 900, fontSize: '32px', margin: 0, lineHeight: '1' }}>TEKTON</h1>
@@ -88,7 +88,7 @@ const App = () => {
       </section>
 
       <footer style={{ background: '#fff', padding: '48px 20px', textAlign: 'center', borderTop: '6px solid #0d0d0d' }}>
-        <img src="/tekton-emblem.jpg" alt="Tekton Property Solutions" style={{ height: '55px', margin: '0 auto 20px' }} />
+        <img src="/tekton-emblem.png" alt="Tekton Property Solutions" style={{ height: '55px', margin: '0 auto 20px' }} />
         <p style={{ fontWeight: 800, fontSize: 13, color: '#888' }}>TEKTON PROPERTY SOLUTIONS LLC</p>
       </footer>
     </div>
