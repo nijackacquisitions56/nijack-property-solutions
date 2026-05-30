@@ -74,10 +74,10 @@ const App = () => {
         <div style={{ maxWidth: 950, margin: '0 auto', position: 'relative', zIndex: 2 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14, marginBottom: 20 }}>
             <div style={{ height: 1, width: 60, background: '#C9A84C', opacity: 0.7 }} />
-            <p style={{ color: '#C9A84C', fontWeight: 700, letterSpacing: 4, fontSize: 'clamp(13px, 2.2vw, 20px)', textTransform: 'uppercase', margin: 0, fontStyle: 'italic' }}>Ohio &amp; Nationwide Investment Solutions</p>
+            <p style={{ color: '#C9A84C', fontWeight: 700, letterSpacing: 4, fontSize: 'clamp(14px, 2.2vw, 20px)', textTransform: 'uppercase', margin: '0', fontStyle: 'italic' }}>Ohio &amp; Nationwide Investment Solutions</p>
             <div style={{ height: 1, width: 60, background: '#C9A84C', opacity: 0.7 }} />
           </div>
-          <h1 style={{ fontSize: 'clamp(44px, 7.5vw, 82px)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1.1, marginBottom: 24, letterSpacing: -1 }}>
+          <h1 style={{ fontSize: 'clamp(38px, 6.5vw, 68px)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1.15, marginBottom: 24, letterSpacing: -1 }}>
             Sell Your House <span style={{ color: '#C9A84C' }}>FAST</span><br />For <span style={{ color: '#C9A84C' }}>CASH</span>
           </h1>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginBottom: 20 }}>
@@ -85,7 +85,7 @@ const App = () => {
             <p style={{ fontSize: 22, fontWeight: 700, fontStyle: 'italic', textTransform: 'uppercase', letterSpacing: 3, color: '#C9A84C', margin: 0 }}>"Relief That Delivers."</p>
             <div style={{ height: 1, width: 40, background: '#C9A84C', opacity: 0.7 }} />
           </div>
-          <p style={{ fontSize: 'clamp(15px, 2.2vw, 20px)', fontWeight: 600, maxWidth: 800, margin: '0 auto 36px', lineHeight: 1.6, textTransform: 'uppercase', letterSpacing: 1 }}>
+          <p style={{ fontSize: 'clamp(16px, 2.5vw, 20px)', fontWeight: 600, maxWidth: 800, margin: '0 auto 36px', lineHeight: 1.6, textTransform: 'uppercase', letterSpacing: 1 }}>
             No Repairs. No Commissions. Close On Your Timeline.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 16, marginBottom: 40 }}>
@@ -96,8 +96,8 @@ const App = () => {
               Get My Property Reviewed
             </a>
           </div>
-          <div style={{ background: 'rgba(0,0,0,0.5)', border: '2px solid rgba(201,168,76,0.4)', borderRadius: 16, padding: '20px 30px', maxWidth: 800, margin: '0 auto' }}>
-            <p style={{ fontSize: 'clamp(14px, 2.2vw, 20px)', fontWeight: 600, margin: 0, lineHeight: 1.5, letterSpacing: 0.5 }}>All transactions are handled through a licensed title company to help ensure a safe and secure closing process.</p>
+          <div style={{ background: 'rgba(0,0,0,0.5)', border: '2px solid rgba(201,168,76,0.4)', borderRadius: 16, padding: '22px 32px', maxWidth: 800, margin: '0 auto' }}>
+            <p style={{ fontSize: 'clamp(15px, 2.5vw, 20px)', fontWeight: 600, margin: 0, lineHeight: 1.5, letterSpacing: 0.5 }}>All transactions are handled through a licensed title company to help ensure a safe and secure closing process.</p>
           </div>
         </div>
       </section>
