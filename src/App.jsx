@@ -4,7 +4,7 @@ const App = () => {
   const [openFaq, setOpenFaq] = useState(null);
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
-    fullName: '', phone: '', email: '', propertyAddress: '',
+    fullName: '', phone: '', email: '', propertyAddress: '', propertyState: '',
     situation: [], additionalNotes: '', timeline: '', priceExpectation: ''
   });
 
@@ -30,7 +30,7 @@ const App = () => {
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
-      {/* 1. NAVIGATION HEADER: FIXED EMBLEM LEFT, PERFECTLY SPACED READABLE TEXT RIGHT */}
+      {/* 1. NAVIGATION HEADER */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
         <div style={{ 
           maxWidth: 1300, 
@@ -43,12 +43,9 @@ const App = () => {
           gap: '24px'
         }}>
           
-          {/* BRANDING CONTAINER */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
-            
-            {/* Round Original PTS Emblem on the Left */}
             <img 
-              src="YOUR_PTS_EMBLEM_IMAGE_PATH" 
+              src="/pts-emblem.png" 
               alt="PTS Emblem"
               style={{
                 width: 'clamp(70px, 7.5vw, 90px)',
@@ -58,58 +55,19 @@ const App = () => {
               }}
             />
 
-            {/* Structured Text Identity Block — Fixed Line Heights and Margins for Pure Legibility */}
-            <div style={{ 
-              display: 'flex', 
-              flexDirection: 'column', 
-              alignItems: 'flex-start',
-              justifyContent: 'center'
-            }}>
-              
-              {/* Line 1: TEKTON */}
-              <h1 style={{ 
-                color: '#8B0000', 
-                fontWeight: 900, 
-                fontSize: 'clamp(32px, 3.6vw, 46px)',
-                textTransform: 'uppercase',
-                letterSpacing: '1px',
-                margin: '0 0 4px 0',
-                lineHeight: '1.1'
-              }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center' }}>
+              <h1 style={{ color: '#8B0000', fontWeight: 900, fontSize: 'clamp(32px, 3.6vw, 46px)', textTransform: 'uppercase', letterSpacing: '1px', margin: '0 0 4px 0', lineHeight: '1.1' }}>
                 TEKTON
               </h1>
-              
-              {/* Line 2: PROPERTY SOLUTIONS LLC */}
-              <div style={{ 
-                color: '#0A2240', 
-                fontSize: 'clamp(14px, 1.5vw, 20px)',
-                letterSpacing: '2.5px',
-                textTransform: 'uppercase', 
-                fontWeight: 800,
-                margin: '0 0 6px 0',
-                lineHeight: '1.2'
-              }}>
+              <div style={{ color: '#0A2240', fontSize: 'clamp(14px, 1.5vw, 20px)', letterSpacing: '2.5px', textTransform: 'uppercase', fontWeight: 800, margin: '0 0 6px 0', lineHeight: '1.2' }}>
                 PROPERTY SOLUTIONS LLC
               </div>
-
-              {/* Line 3: RELIEF THAT DELIVERS */}
-              <div style={{ 
-                color: '#C9A84C', 
-                fontSize: 'clamp(12px, 1.3vw, 16px)',
-                letterSpacing: '3.5px',
-                textTransform: 'uppercase', 
-                fontWeight: 800,
-                fontStyle: 'italic',
-                margin: 0,
-                lineHeight: '1.2'
-              }}>
+              <div style={{ color: '#C9A84C', fontSize: 'clamp(12px, 1.3vw, 16px)', letterSpacing: '3.5px', textTransform: 'uppercase', fontWeight: 800, fontStyle: 'italic', margin: 0, lineHeight: '1.2' }}>
                 RELIEF THAT DELIVERS
               </div>
             </div>
-
           </div>
 
-          {/* Action Call Header Button */}
           <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '12px 24px', borderRadius: 999, fontWeight: 900, fontSize: 'clamp(11px, 1.8vw, 14px)', textDecoration: 'none', border: '2px solid #C9A84C', letterSpacing: 1.5, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
             Get Your Offer
           </a>
@@ -188,7 +146,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* 5. TWO-STEP APPLICATION FORM */}
+      {/* 5. TWO-STEP APPLICATION FORM WITH INTEGRATED STATE VARIABLE TRACKING */}
       <section id="property-form" style={{ padding: '60px 20px', scrollMarginTop: 80 }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ background: '#fff', borderRadius: 32, boxShadow: '0 8px 48px rgba(10,22,40,0.14)', border: '1px solid #e8e0d0', overflow: 'hidden' }}>
@@ -212,10 +170,12 @@ const App = () => {
             </div>
 
             <form action="https://formspree.io/f/xaqpozbn" method="POST">
+              {/* Formspree Core Hidden Values */}
               <input type="hidden" name="fullName" value={formData.fullName} />
               <input type="hidden" name="phone" value={formData.phone} />
               <input type="hidden" name="email" value={formData.email} />
               <input type="hidden" name="propertyAddress" value={formData.propertyAddress} />
+              <input type="hidden" name="propertyState" value={formData.propertyState} />
               <input type="hidden" name="situation" value={formData.situation.join(', ')} />
               <input type="hidden" name="additionalNotes" value={formData.additionalNotes} />
               <input type="hidden" name="timeline" value={formData.timeline} />
@@ -230,10 +190,20 @@ const App = () => {
                       <input type="tel" placeholder="PHONE NUMBER" value={formData.phone} onChange={e => setFormData(f => ({...f, phone: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
                     </div>
                     <input type="email" placeholder="EMAIL ADDRESS" value={formData.email} onChange={e => setFormData(f => ({...f, email: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
-                    <input type="text" placeholder="PROPERTY ADDRESS (STREET, CITY, STATE, ZIP)" value={formData.propertyAddress} onChange={e => setFormData(f => ({...f, propertyAddress: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
+                    
+                    {/* Address with Associated State Selector */}
+                    <div style={{ display: 'grid', gridTemplateColumns: '3fr 1fr', gap: 16, alignItems: 'end', flexWrap: 'wrap' }}>
+                      <input type="text" placeholder="PROPERTY ADDRESS (STREET, CITY)" value={formData.propertyAddress} onChange={e => setFormData(f => ({...f, propertyAddress: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '16px 12px', fontSize: 16, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', width: '100%', boxSizing: 'border-box', color: '#1a1a1a' }} />
+                      <select value={formData.propertyState} onChange={e => setFormData(f => ({...f, propertyState: e.target.value}))} style={{ background: '#e2ded7', border: 'none', borderBottom: '3px solid #8B0000', padding: '15px 10px', fontSize: 14, fontWeight: 800, outline: 'none', fontFamily: 'Georgia, serif', color: '#1a1a1a', width: '100%', cursor: 'pointer' }}>
+                        <option value="" disabled>STATE</option>
+                        <option value="OH">OH</option>
+                        <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option><option value="FL">FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option>
+                      </select>
+                    </div>
+
                     <button type="button" onClick={() => {
-                      if (!formData.fullName || !formData.phone || !formData.propertyAddress) {
-                        alert('Please fill in your name, phone, and property address to continue.');
+                      if (!formData.fullName || !formData.phone || !formData.propertyAddress || !formData.propertyState) {
+                        alert('Please fill out all contact info and select a state to proceed.');
                         return;
                       }
                       setStep(2);
@@ -371,10 +341,9 @@ const App = () => {
       <footer style={{ background: '#fff', padding: '48px 20px', borderTop: '6px solid #0d0d0d', textAlign: 'center' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           
-          {/* Footer Alignment mirroring Header layout for structural consistency */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', marginBottom: '24px', flexWrap: 'wrap' }}>
             <img 
-              src="YOUR_PTS_EMBLEM_IMAGE_PATH" 
+              src="/pts-emblem.png" 
               alt="PTS Emblem"
               style={{ height: '55px', width: 'auto', display: 'block', flexShrink: 0 }}
             />
