@@ -94,24 +94,24 @@ const App = () => {
       </section>
 
       {/* 3. TRUST SIGNALS */}
-      <section style={{ background: '#8B0000', padding: '0 20px' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+      <section style={{ background: '#8B0000', padding: '10px 20px 40px' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px' }}>
           {[
             { icon: '🏛', label: 'Licensed Title Company' },
             { icon: '✦', label: '$0 Fees or Commissions' },
             { icon: '📅', label: '14–30 Day Closing' },
             { icon: '🏠', label: 'As-Is — No Repairs' },
           ].map((t, i) => (
-            <div key={i} style={{ padding: '22px 32px', textAlign: 'center', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.2)' : 'none' }}>
-              <div style={{ color: '#C9A84C', fontSize: 22, marginBottom: 6 }}>{t.icon}</div>
-              <div style={{ color: '#fff', fontSize: 12, fontWeight: 700, letterSpacing: 1.5, textTransform: 'uppercase' }}>{t.label}</div>
+            <div key={i} style={{ padding: '15px 24px', textAlign: 'center', flex: '1 1 200px', minWidth: '160px' }}>
+              <div style={{ color: '#C9A84C', fontSize: 24, marginBottom: 8 }}>{t.icon}</div>
+              <div style={{ color: '#fff', fontSize: 12, fontWeight: 700, letterSpacing: 1.5, textTransform: 'uppercase', lineHeight: 1.4 }}>{t.label}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* 4. QUICK BENEFITS */}
-      <section style={{ maxWidth: 1000, margin: '-36px auto 0', padding: '0 20px 20px', position: 'relative', zIndex: 10 }}>
+      <section style={{ maxWidth: 1000, margin: '-24px auto 0', padding: '0 20px 20px', position: 'relative', zIndex: 10 }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20 }}>
           {[
             { title: 'No Repairs Needed', desc: 'Sell your property as-is without cleaning, fixing, or updating it first.' },
