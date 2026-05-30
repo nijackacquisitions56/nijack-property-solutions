@@ -30,29 +30,29 @@ const App = () => {
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
-      {/* 1. NAVIGATION HEADER WITH INTEGRATED DETACHED LOGO SYSTEM */}
+      {/* 1. NAVIGATION HEADER WITH PERFECTLY PROPORTIONED LOGO SYSTEM */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
         <div style={{ 
-          maxWidth: 1200, 
+          maxWidth: 1300, 
           margin: '0 auto', 
-          padding: '12px 24px', 
+          padding: '14px 24px', 
           display: 'flex', 
           justifyContent: 'space-between', 
           alignItems: 'center',
           flexWrap: 'wrap',
-          gap: '16px'
+          gap: '20px'
         }}>
           
-          {/* BRANDING CONTAINER: Variation with Emblem on the Left, Text Rows Separate */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
+          {/* LEFT BRANDING BLOCK: Big Original PTS Circle Badge + Centered Text Lines */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
             
-            {/* Circular PST Emblem Component (Pure CSS Golden/Burgundy Shield) */}
+            {/* Bigger Original PTS Logo Element */}
             <div style={{
-              width: '65px',
-              height: '65px',
+              width: '85px',
+              height: '85px',
               borderRadius: '50%',
-              border: '3px solid #8B0000',
-              boxShadow: '0 0 0 2px #C9A84C, inset 0 0 8px rgba(139,0,0,0.2)',
+              border: '4px solid #8B0000',
+              boxShadow: '0 0 0 2px #C9A84C, inset 0 0 10px rgba(139,0,0,0.15)',
               background: '#fcfaf7',
               display: 'flex',
               flexDirection: 'column',
@@ -61,61 +61,70 @@ const App = () => {
               position: 'relative',
               flexShrink: 0
             }}>
-              <div style={{ fontSize: '11px', fontWeight: 900, color: '#8B0000', lineHeight: 1, letterSpacing: '0.5px', marginTop: '2px' }}>▲</div>
+              <div style={{ fontSize: '13px', fontWeight: 900, color: '#8B0000', lineHeight: 1, letterSpacing: '0.5px', marginTop: '2px' }}>▲</div>
               <div style={{ 
-                fontSize: '22px', 
+                fontSize: '28px', 
                 fontWeight: 900, 
                 color: '#C9A84C', 
-                textShadow: '1px 1px 1px #8B0000',
+                textShadow: '1.5px 1.5px 1px #8B0000',
                 lineHeight: 1,
                 fontFamily: "'Times New Roman', serif",
                 letterSpacing: '-0.5px',
-                marginTop: '-2px'
+                marginTop: '-1px'
               }}>
                 PTS
               </div>
-              <div style={{ fontSize: '9px', fontWeight: 900, color: '#C9A84C', lineHeight: 1, marginTop: '-1px' }}>🏢</div>
+              <div style={{ fontSize: '11px', fontWeight: 900, color: '#C9A84C', lineHeight: 1, marginTop: '1px' }}>🏢</div>
             </div>
 
-            {/* Separate Text Stack — Scales dynamically without breaking aspect ratios */}
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              {/* Row 1: Main Brand Identity */}
-              <div style={{ 
+            {/* Text Identity Block: Centered Alignment with Upgraded Proportions */}
+            <div style={{ 
+              display: 'flex', 
+              flexDirection: 'column', 
+              alignItems: 'center',
+              justifyContent: 'center' 
+            }}>
+              
+              {/* Line 1: TEKTON (Dominant Brand Centerpiece) */}
+              <h1 style={{ 
                 color: '#8B0000', 
                 fontWeight: 900, 
-                fontSize: 'clamp(20px, 2.8vw, 28px)', 
+                fontSize: 'clamp(32px, 4vw, 50px)',
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
-                lineHeight: 1.05
+                margin: 0,
+                lineHeight: 1
               }}>
                 TEKTON
-              </div>
+              </h1>
               
-              {/* Row 2: Separate, Controlled Entity Definition */}
+              {/* Line 2: PROPERTY SOLUTIONS LLC (Clearly Readable at 26px) */}
               <div style={{ 
-                color: '#1a1a1a', 
-                fontSize: 'clamp(11px, 1.3vw, 13px)', 
-                letterSpacing: '1.5px', 
+                color: '#0A2240', 
+                fontSize: 'clamp(14px, 1.8vw, 26px)',
+                letterSpacing: '4px',
                 textTransform: 'uppercase', 
                 fontWeight: 800,
-                marginTop: '2px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '4px'
+                marginTop: '4px',
+                lineHeight: 1.1,
+                textAlign: 'center',
+                whiteSpace: 'nowrap'
               }}>
-                <span style={{ color: '#C9A84C', fontWeight: 900 }}>—</span> PROPERTY SOLUTIONS LLC <span style={{ color: '#C9A84C', fontWeight: 900 }}>—</span>
+                — PROPERTY SOLUTIONS LLC —
               </div>
 
-              {/* Row 3: Tagline Component — No Period at the end */}
+              {/* Line 3: RELIEF THAT DELIVERS (Clearly Readable at 22px, No Period) */}
               <div style={{ 
                 color: '#C9A84C', 
-                fontSize: 'clamp(10px, 1.2vw, 11px)', 
-                letterSpacing: '3px', 
+                fontSize: 'clamp(12px, 1.5vw, 22px)',
+                letterSpacing: '5px',
                 textTransform: 'uppercase', 
                 fontWeight: 800,
-                marginTop: '3px',
                 fontStyle: 'italic',
-                lineHeight: 1
+                marginTop: '5px',
+                lineHeight: 1,
+                textAlign: 'center',
+                whiteSpace: 'nowrap'
               }}>
                 RELIEF THAT DELIVERS
               </div>
@@ -384,12 +393,14 @@ const App = () => {
       {/* 10. CLEAN FOOTER */}
       <footer style={{ background: '#fff', padding: '48px 20px', borderTop: '6px solid #0d0d0d', textAlign: 'center' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          {/* Formatted footer branding block to reflect the header layout changes */}
+          
+          {/* Formatted footer branding block to reflect the beautiful new header style proportions */}
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '24px' }}>
-            <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 24, textTransform: 'uppercase', letterSpacing: '1px' }}>TEKTON</div>
-            <div style={{ color: '#1a1a1a', fontSize: 12, letterSpacing: '1.5px', textTransform: 'uppercase', fontWeight: 800, marginTop: '2px' }}>— PROPERTY SOLUTIONS LLC —</div>
-            <div style={{ color: '#C9A84C', fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 800, fontStyle: 'italic', marginTop: '3px' }}>RELIEF THAT DELIVERS</div>
+            <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 28, textTransform: 'uppercase', letterSpacing: '1px' }}>TEKTON</div>
+            <div style={{ color: '#0A2240', fontSize: 15, letterSpacing: '2px', textTransform: 'uppercase', fontWeight: 800, marginTop: '2px' }}>— PROPERTY SOLUTIONS LLC —</div>
+            <div style={{ color: '#C9A84C', fontSize: 13, letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 800, fontStyle: 'italic', marginTop: '3px' }}>RELIEF THAT DELIVERS</div>
           </div>
+          
           <p style={{ color: '#666', fontWeight: 700, fontSize: 14, textTransform: 'uppercase', letterSpacing: 3, marginBottom: 6 }}>Ohio &amp; Nationwide</p>
           <p style={{ color: '#888', fontSize: 13, marginBottom: 6 }}>6545 Market Ave N, Ste 100, Canton, OH 44721</p>
           <p style={{ color: '#888', fontSize: 13, marginBottom: 20 }}>330-331-9070</p>
