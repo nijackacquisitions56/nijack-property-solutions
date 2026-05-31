@@ -30,22 +30,36 @@ const App = () => {
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
-      {/* 1. NAV (Updated to White with Custom Emblem) */}
+      {/* 1. NAV (Exact Match to image_051ed8.png Layout — Scaled Bigger) */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '8px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 10 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '10px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
+          
+          {/* Brand Group */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
             <img
               src="/tekton-emblem.png"
-              alt="Tekton Emblem"
-              style={{ height: 50, width: 'auto', objectFit: 'contain' }}
+              alt="Tekton Logo"
+              style={{ height: 85, width: 'auto', objectFit: 'contain' }}
               onError={e => { e.target.style.display = 'none'; }}
             />
-            <div>
-              <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 'clamp(14px, 4vw, 18px)', textTransform: 'uppercase', lineHeight: 1.2 }}>TEKTON PROPERTY</div>
-              <div style={{ color: '#C9A84C', fontSize: 'clamp(8px, 2vw, 10px)', letterSpacing: 3, textTransform: 'uppercase', fontWeight: 700, lineHeight: 1.2 }}>SOLUTIONS LLC</div>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              {/* Line 1: TEKTON PROPERTY */}
+              <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 'clamp(20px, 5vw, 26px)', textTransform: 'uppercase', lineHeight: 1.0, letterSpacing: '0.5px' }}>
+                TEKTON PROPERTY
+              </div>
+              {/* Line 2: SOLUTIONS LLC */}
+              <div style={{ color: '#C9A84C', fontSize: 'clamp(10px, 2.2vw, 13px)', letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 800, lineHeight: 1.1, margin: '2px 0 1px' }}>
+                SOLUTIONS LLC
+              </div>
+              {/* Line 3: RELIEF THAT DELIVERS. */}
+              <div style={{ color: '#C9A84C', fontSize: 'clamp(8px, 1.8vw, 10.5px)', letterSpacing: '3.5px', textTransform: 'uppercase', fontWeight: 700, lineHeight: 1.0, fontStyle: 'italic' }}>
+                RELIEF THAT DELIVERS.
+              </div>
             </div>
           </div>
-          <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '10px 20px', borderRadius: 999, fontWeight: 900, fontSize: 'clamp(11px, 3vw, 14px)', textDecoration: 'none', border: '2px solid #C9A84C', letterSpacing: 1, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
+
+          {/* CTA Button */}
+          <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '12px 24px', borderRadius: 999, fontWeight: 900, fontSize: 'clamp(11px, 3vw, 14px)', textDecoration: 'none', border: '2px solid #C9A84C', letterSpacing: 1, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
             Get Your Offer
           </a>
         </div>
