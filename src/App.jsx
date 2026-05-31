@@ -269,67 +269,73 @@ const App = () => {
               <input type="hidden" name="priceExpectation" value={formData.priceExpectation} />
 
               <div style={{ padding: '40px' }}>
-                {/* Line 271: Dynamic Multi-Step Form Inputs */}
-          {step === 1 ? (
-            /* STEP 1: CONTACT INFO */
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <p style={{ color: '#666', fontStyle: 'italic', textAlign: 'center', margin: '0 0 10px' }}>
+                {step === 1 ? (
+            /* STEP 1: CONTACT INFO (Restored to your exact layout) */
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+              <p style={{ color: '#555', fontSize: 14, textAlign: 'center', margin: '0 0 8px', fontWeight: 600 }}>
                 No obligation. No pressure. Just explore your options.
               </p>
-              
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '16px' }}>
-                <input 
-                  type="text" 
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
+                <input
+                  type="text"
                   required
-                  placeholder="FULL NAME" 
-                  value={formData.fullName} 
-                  onChange={(e) => setFormData({ ...formData, fullName: e.target.value })} 
-                  style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: '15px', fontWeight: '700' }} 
+                  placeholder="FULL NAME"
+                  value={formData.fullName}
+                  onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                  style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }}
                 />
-                <input 
-                  type="tel" 
+                <input
+                  type="tel"
                   required
-                  placeholder="PHONE NUMBER" 
-                  value={formData.phone} 
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })} 
-                  style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: '15px', fontWeight: '700' }} 
-                />
-                <input 
-                  type="email" 
-                  required
-                  placeholder="EMAIL ADDRESS" 
-                  value={formData.email} 
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })} 
-                  style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: '15px', fontWeight: '700' }} 
-                />
-                <input 
-                  type="text" 
-                  required
-                  placeholder="PROPERTY ADDRESS (STREET, CITY, STATE)" 
-                  value={formData.propertyAddress} 
-                  onChange={(e) => setFormData({ ...formData, propertyAddress: e.target.value })} 
-                  style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: '15px', fontWeight: '700' }} 
+                  placeholder="PHONE NUMBER"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }}
                 />
               </div>
-
-              <button 
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
+                <input
+                  type="email"
+                  required
+                  placeholder="EMAIL ADDRESS"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }}
+                />
+                <input
+                  type="text"
+                  required
+                  placeholder="PROPERTY ADDRESS (STREET, CITY, STATE)"
+                  value={formData.propertyAddress}
+                  onChange={(e) => setFormData({ ...formData, propertyAddress: e.target.value })}
+                  style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }}
+                />
+              </div>
+              
+              <button
                 type="button"
-                onClick={() => setStep(2)}
-                style={{ width: '100%', background: '#000', color: '#C9A84C', padding: '16px', borderRadius: 999, fontWeight: 900, fontSize: '18px', border: '2px solid #C9A84C', cursor: 'pointer', marginTop: '10px', textTransform: 'uppercase' }}
+                onClick={() => {
+                  if (formData.fullName && formData.phone && formData.email && formData.propertyAddress) {
+                    setStep(2);
+                  } else {
+                    alert('Please fill out all contact details before moving to Step 2.');
+                  }
+                }}
+                style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '16px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: '2px solid #C9A84C', cursor: 'pointer', marginTop: 20, textTransform: 'uppercase', letterSpacing: 1 }}
               >
                 Continue to Step 2 →
               </button>
             </div>
           ) : (
-            /* STEP 2: PROPERTY DETAILS QUESTIONNAIRE */
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            /* STEP 2: PROPERTY DETAILS (Restored to match image_c32d7a.png perfectly) */
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
               
-              {/* Situation Buttons */}
-              <div>
-                <label style={{ display: 'block', fontWeight: 800, color: '#333', marginBottom: '10px', textTransform: 'uppercase', fontSize: '13px', letterSpacing: '0.5px' }}>
-                  What is the property's current situation? (Select all that apply)
+              {/* Situation Grid Box */}
+              <div style={{ background: '#222222', padding: '24px', borderRadius: 16, border: '1px solid #444' }}>
+                <label style={{ display: 'block', fontWeight: 900, color: '#C9A84C', marginBottom: 16, textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, textAlign: 'center' }}>
+                  What is the situation? (Check all that apply)
                 </label>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
                   {situations.map((sit) => {
                     const isSelected = formData.situation.includes(sit);
                     return (
@@ -338,17 +344,27 @@ const App = () => {
                         type="button"
                         onClick={() => handleCheck(sit)}
                         style={{
-                          padding: '10px 16px',
-                          borderRadius: '8px',
-                          border: isSelected ? '2px solid #8B0000' : '1px solid #ccc',
-                          background: isSelected ? '#8B0000' : '#f9f9f9',
-                          color: isSelected ? '#fff' : '#333',
-                          fontWeight: isSelected ? 800 : 500,
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '10px',
+                          padding: '12px',
+                          borderRadius: 8,
+                          border: isSelected ? '2px solid #C9A84C' : '1px solid #444',
+                          background: isSelected ? '#333333' : '#2a2a2a',
+                          color: isSelected ? '#C9A84C' : '#a0a0a0',
+                          fontWeight: 800,
                           cursor: 'pointer',
-                          fontSize: '13px',
-                          transition: 'all 0.2s'
+                          fontSize: 11,
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.5px',
+                          textAlign: 'left',
+                          transition: 'all 0.15s'
                         }}
                       >
+                        {/* Custom Square Visual State Checkbox Indicator */}
+                        <div style={{ width: 14, height: 14, border: '1px solid #C9A84C', background: isSelected ? '#C9A84C' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 2, flexShrink: 0 }}>
+                          {isSelected && <span style={{ color: '#000', fontSize: 10, fontWeight: 900 }}>✓</span>}
+                        </div>
                         {sit}
                       </button>
                     );
@@ -356,66 +372,79 @@ const App = () => {
                 </div>
               </div>
 
-              {/* Timeline Dropdown */}
+              {/* Additional Notes Text Area */}
               <div>
-                <label style={{ display: 'block', fontWeight: 800, color: '#333', marginBottom: '6px', textTransform: 'uppercase', fontSize: '13px' }}>
-                  How fast do you need to sell?
+                <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>
+                  Additional Notes (Tell us more about the property...)
                 </label>
-                <select
-                  value={formData.timeline}
-                  onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                  style={{ width: '100%', padding: '14px', borderRadius: '6px', border: '1px solid #ccc', background: '#f9f9f9', fontSize: '15px', fontWeight: 600 }}
-                >
-                  <option value="">Select a timeline...</option>
-                  <option value="Immediately">Immediately (ASAP)</option>
-                  <option value="1-2 Weeks">Within 1-2 Weeks</option>
-                  <option value="1 Month">Within a Month</option>
-                  <option value="Just curious">Just testing the market / Curious</option>
-                </select>
+                <textarea
+                  rows={3}
+                  placeholder="Tell us about the roof, plumbing, overall updates, or any structural needs..."
+                  value={formData.additionalNotes}
+                  onChange={(e) => setFormData({ ...formData, additionalNotes: e.target.value })}
+                  style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontFamily: 'inherit' }}
+                />
               </div>
 
-              {/* Target Price */}
+              {/* Timeline Selection Box */}
               <div>
-                <label style={{ display: 'block', fontWeight: 800, color: '#333', marginBottom: '6px', textTransform: 'uppercase', fontSize: '13px' }}>
-                  What is your target price or payoff expectation?
+                <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>
+                  How fast do you need to sell? <span style={{ color: '#C9A84C' }}>— Click Below</span>
+                </label>
+                <div style={{ position: 'relative' }}>
+                  <select
+                    value={formData.timeline}
+                    onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
+                    style={{ width: '100%', background: '#ffffff', border: '3px solid #000000', padding: '14px 40px 14px 14px', fontSize: 13, fontWeight: 900, borderRadius: 8, appearance: 'none', WebkitAppearance: 'none', letterSpacing: 1, textTransform: 'uppercase' }}
+                  >
+                    <option value="">Click here to select timeline...</option>
+                    <option value="Immediately">Immediately (ASAP)</option>
+                    <option value="1-2 Weeks">Within 1-2 Weeks</option>
+                    <option value="1 Month">Within a Month</option>
+                    <option value="Just curious">Just testing the market / Curious</option>
+                  </select>
+                  {/* Custom Styled Heavy Dropdown Chevron */}
+                  <div style={{ position: 'absolute', right: 15, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', fontSize: 20, fontWeight: 900 }}>
+                    ▼
+                  </div>
+                </div>
+              </div>
+
+              {/* Price Expectation Input */}
+              <div>
+                <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>
+                  What price would you consider for a cash offer?
                 </label>
                 <input
                   type="text"
-                  placeholder="e.g., $150,000 or Open to Fair Cash Offer"
+                  placeholder="EXAMPLE: $150,000"
                   value={formData.priceExpectation}
                   onChange={(e) => setFormData({ ...formData, priceExpectation: e.target.value })}
-                  style={{ width: '100%', padding: '14px', borderRadius: '6px', border: '1px solid #ccc', background: '#f9f9f9', fontSize: '15px' }}
+                  style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700 }}
                 />
               </div>
 
-              {/* Condition Notes */}
-              <div>
-                <label style={{ display: 'block', fontWeight: 800, color: '#333', marginBottom: '6px', textTransform: 'uppercase', fontSize: '13px' }}>
-                  Any details on property condition or repairs needed?
-                </label>
-                <textarea
-                  rows={4}
-                  placeholder="Tell us about the roof, plumbing, electric, overall updates, or any structural needs..."
-                  value={formData.additionalNotes}
-                  onChange={(e) => setFormData({ ...formData, additionalNotes: e.target.value })}
-                  style={{ width: '100%', padding: '14px', borderRadius: '6px', border: '1px solid #ccc', background: '#f9f9f9', fontSize: '15px', fontFamily: 'inherit', resize: 'vertical' }}
-                />
+              {/* Legal Wholesaler Disclosure Box */}
+              <div style={{ border: '2px solid #C9A84C', padding: '14px', borderRadius: 8, background: '#fffcf7' }}>
+                <p style={{ fontSize: 11, color: '#444', lineHeight: 1.5, margin: 0, fontWeight: 600 }}>
+                  <strong>Disclosure:</strong> Tekton Property Solutions LLC is a real estate wholesaler, not a licensed agent. We may purchase properties below market value and assign contracts to third-party buyers for a profit. A written Wholesaler Disclosure Statement will be provided before any contract is binding. No obligation to sell.
+                </p>
               </div>
 
-              {/* Step Navigation Controls */}
-              <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
-                <button 
+              {/* Submit Buttons Layout */}
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
+                <button
+                  type="submit"
+                  style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '18px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: 'none', cursor: 'pointer', textTransform: 'uppercase', letterSpacing: 1 }}
+                >
+                  Submit My Property →
+                </button>
+                <button
                   type="button"
                   onClick={() => setStep(1)}
-                  style={{ flex: 1, background: '#fff', color: '#555', padding: '16px', borderRadius: 999, fontWeight: 700, fontSize: '16px', border: '2px solid #ccc', cursor: 'pointer' }}
+                  style={{ background: 'transparent', border: 'none', color: '#666', fontSize: 12, fontWeight: 700, textDecoration: 'underline', cursor: 'pointer' }}
                 >
-                  ← Back
-                </button>
-                <button 
-                  type="submit"
-                  style={{ flex: 2, background: '#8B0000', color: '#fff', padding: '16px', borderRadius: 999, fontWeight: 900, fontSize: '18px', border: '2px solid #C9A84C', cursor: 'pointer', textTransform: 'uppercase', letterSpacing: '1px' }}
-                >
-                  Submit For Cash Offer
+                  ← Back to Step 1
                 </button>
               </div>
 
