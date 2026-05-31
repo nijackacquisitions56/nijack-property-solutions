@@ -458,6 +458,6 @@ const App = () => {
                   ← Back to Step 1
                 </button>
               </div>
-
+              </div>
             </div>
           )}
