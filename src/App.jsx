@@ -434,11 +434,22 @@ const App = () => {
               {/* Submit Buttons Layout */}
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
                 <button
-                  type="submit"
-                  style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '18px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: 'none', cursor: 'pointer', textTransform: 'uppercase', letterSpacing: 1 }}
-                >
-                  Submit My Property →
-                </button>
+  type="button"
+  onClick={() => {
+    if (formData.situation.length === 0) {
+      alert('Please select at least one situation before submitting.');
+      return;
+    }
+    if (!formData.timeline) {
+      alert('Please select how fast you need to sell before submitting.');
+      return;
+    }
+    document.querySelector('form').submit();
+  }}
+  style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '18px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: 'none', cursor: 'pointer', textTransform: 'uppercase', letterSpacing: 1 }}
+>
+  Submit My Property →
+</button>
                 <button
                   type="button"
                   onClick={() => setStep(1)}
