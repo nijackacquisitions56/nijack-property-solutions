@@ -32,7 +32,7 @@ const App = () => {
 
       {/* 1. NAV (Fully Responsive Mobile + Desktop Layout) */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
-        {/* Style block to handle responsive design clean and native */}
+        {/* Style block handling mobile-only text scaling */}
         <style>{`
           .nav-container {
             max-width: 1200px;
@@ -72,21 +72,33 @@ const App = () => {
             white-space: nowrap;
           }
 
-          /* Mobile Tweaks to stop the crushing seen in image_4.png */
+          /* --- MOBILE ONLY STYLES (Under 768px) --- */
           @media (max-width: 768px) {
             .nav-container {
-              padding: 8px 12px;
-              gap: 8px;
+              padding: 8px 10px;
+              gap: 4px;
             }
             .logo-img {
-              height: 55px; /* Scale down smoothly so it fits mobile screens */
-            }
-            .logo-text-wrapper {
-              display: none; /* Hides the 3 long text lines on mobile so they don't smash into the button */
+              height: 52px;
             }
             .cta-btn {
-              padding: 8px 16px;
-              font-size: 12px;
+              padding: 6px 12px;
+              font-size: 11px;
+            }
+            
+            /* Responsive text scaling to fit all 3 lines on mobile */
+            .line-tekton {
+              font-size: 18px !important;
+              line-height: 0.9 !important;
+            }
+            .line-solutions {
+              font-size: 8px !important;
+              letter-spacing: 0.5px !important;
+              margin: 1px 0 !important;
+            }
+            .line-relief {
+              font-size: 6.5px !important;
+              letter-spacing: 0.5px !important;
             }
           }
         `}</style>
@@ -102,15 +114,15 @@ const App = () => {
             />
             <div className="logo-text-wrapper">
               {/* Line 1: TEKTON */}
-              <div style={{ color: '#8B0000', fontWeight: 900, fontSize: '36px', textTransform: 'uppercase', lineHeight: 0.95, letterSpacing: '0.5px' }}>
+              <div className="line-tekton" style={{ color: '#8B0000', fontWeight: 900, fontSize: '36px', textTransform: 'uppercase', lineHeight: 0.95, letterSpacing: '0.5px' }}>
                 TEKTON
               </div>
               {/* Line 2: PROPERTY SOLUTIONS LLC */}
-              <div style={{ color: '#555555', fontSize: '15px', letterSpacing: '2.5px', textTransform: 'uppercase', fontWeight: 800, lineHeight: 1.1, margin: '4px 0 2px' }}>
+              <div className="line-solutions" style={{ color: '#555555', fontSize: '15px', letterSpacing: '2.5px', textTransform: 'uppercase', fontWeight: 800, lineHeight: 1.1, margin: '4px 0 2px' }}>
                 PROPERTY SOLUTIONS LLC
               </div>
               {/* Line 3: RELIEF THAT DELIVERS */}
-              <div style={{ color: '#A38430', fontSize: '12px', letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 700, lineHeight: 1.0, fontStyle: 'italic' }}>
+              <div className="line-relief" style={{ color: '#A38430', fontSize: '12px', letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 700, lineHeight: 1.0, fontStyle: 'italic' }}>
                 RELIEF THAT DELIVERS
               </div>
             </div>
