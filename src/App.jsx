@@ -30,12 +30,12 @@ const App = () => {
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
-      {/* 1. NAV (Scaled Up Layout with Metallic Grey Line 2) */}
+      {/* 1. NAV (Tightened Text-to-Emblem Gap) */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '12px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 14 }}>
           
-          {/* Brand Group */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+          {/* Brand Group (Gap reduced to 4 to move text left) */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
             <img
               src="/tekton-emblem.png"
               alt="Tekton Logo"
@@ -43,15 +43,15 @@ const App = () => {
               onError={e => { e.target.style.display = 'none'; }}
             />
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              {/* Line 1: TEKTON (Sized Up) */}
+              {/* Line 1: TEKTON */}
               <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 'clamp(26px, 6vw, 36px)', textTransform: 'uppercase', lineHeight: 0.95, letterSpacing: '0.5px' }}>
                 TEKTON
               </div>
-              {/* Line 2: PROPERTY SOLUTIONS LLC (Dark Metallic Grey) */}
+              {/* Line 2: PROPERTY SOLUTIONS LLC */}
               <div style={{ color: '#555555', fontSize: 'clamp(12px, 2.5vw, 15px)', letterSpacing: '2.5px', textTransform: 'uppercase', fontWeight: 800, lineHeight: 1.1, margin: '4px 0 2px' }}>
                 PROPERTY SOLUTIONS LLC
               </div>
-              {/* Line 3: RELIEF THAT DELIVERS (Sized Up Gold) */}
+              {/* Line 3: RELIEF THAT DELIVERS */}
               <div style={{ color: '#A38430', fontSize: 'clamp(9px, 2vw, 12px)', letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 700, lineHeight: 1.0, fontStyle: 'italic' }}>
                 RELIEF THAT DELIVERS
               </div>
