@@ -30,36 +30,94 @@ const App = () => {
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
-      {/* 1. NAV (Tightened Text-to-Emblem Gap) */}
+      {/* 1. NAV (Fully Responsive Mobile + Desktop Layout) */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '12px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 14 }}>
-          
-          {/* Brand Group (Gap reduced to 4 to move text left) */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+        {/* Style block to handle responsive design clean and native */}
+        <style>{`
+          .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 14px;
+          }
+          .brand-group {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+          }
+          .logo-img {
+            height: 105px;
+            width: auto;
+            object-fit: contain;
+          }
+          .logo-text-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+          .cta-btn {
+            background: #8B0000;
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 999px;
+            font-weight: 900;
+            font-size: 15px;
+            text-decoration: none;
+            border: 2px solid #C9A84C;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            white-space: nowrap;
+          }
+
+          /* Mobile Tweaks to stop the crushing seen in image_4.png */
+          @media (max-width: 768px) {
+            .nav-container {
+              padding: 8px 12px;
+              gap: 8px;
+            }
+            .logo-img {
+              height: 55px; /* Scale down smoothly so it fits mobile screens */
+            }
+            .logo-text-wrapper {
+              display: none; /* Hides the 3 long text lines on mobile so they don't smash into the button */
+            }
+            .cta-btn {
+              padding: 8px 16px;
+              font-size: 12px;
+            }
+          }
+        `}</style>
+
+        <div className="nav-container">
+          {/* Brand Group */}
+          <div className="brand-group">
             <img
               src="/tekton-emblem.png"
               alt="Tekton Logo"
-              style={{ height: 105, width: 'auto', objectFit: 'contain' }}
+              className="logo-img"
               onError={e => { e.target.style.display = 'none'; }}
             />
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div className="logo-text-wrapper">
               {/* Line 1: TEKTON */}
-              <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 'clamp(26px, 6vw, 36px)', textTransform: 'uppercase', lineHeight: 0.95, letterSpacing: '0.5px' }}>
+              <div style={{ color: '#8B0000', fontWeight: 900, fontSize: '36px', textTransform: 'uppercase', lineHeight: 0.95, letterSpacing: '0.5px' }}>
                 TEKTON
               </div>
               {/* Line 2: PROPERTY SOLUTIONS LLC */}
-              <div style={{ color: '#555555', fontSize: 'clamp(12px, 2.5vw, 15px)', letterSpacing: '2.5px', textTransform: 'uppercase', fontWeight: 800, lineHeight: 1.1, margin: '4px 0 2px' }}>
+              <div style={{ color: '#555555', fontSize: '15px', letterSpacing: '2.5px', textTransform: 'uppercase', fontWeight: 800, lineHeight: 1.1, margin: '4px 0 2px' }}>
                 PROPERTY SOLUTIONS LLC
               </div>
               {/* Line 3: RELIEF THAT DELIVERS */}
-              <div style={{ color: '#A38430', fontSize: 'clamp(9px, 2vw, 12px)', letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 700, lineHeight: 1.0, fontStyle: 'italic' }}>
+              <div style={{ color: '#A38430', fontSize: '12px', letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 700, lineHeight: 1.0, fontStyle: 'italic' }}>
                 RELIEF THAT DELIVERS
               </div>
             </div>
           </div>
 
           {/* CTA Button */}
-          <a href="#property-form" style={{ background: '#8B0000', color: '#fff', padding: '14px 28px', borderRadius: 999, fontWeight: 900, fontSize: 'clamp(12px, 3vw, 15px)', textDecoration: 'none', border: '2px solid #C9A84C', letterSpacing: 1, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
+          <a href="#property-form" className="cta-btn">
             Get Your Offer
           </a>
         </div>
