@@ -30,9 +30,8 @@ const App = () => {
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
-      {/* 1. NAV (Fully Responsive Mobile + Desktop Layout) */}
+      {/* 1. NAV (Updated Tagline with Period + Responsive Layout) */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
-        {/* Style block handling mobile-only text scaling */}
         <style>{`
           .nav-container {
             max-width: 1200px;
@@ -58,6 +57,35 @@ const App = () => {
             flex-direction: column;
             justify-content: center;
           }
+          
+          /* Desktop Typography Settings */
+          .line-tekton {
+            color: #8B0000;
+            font-weight: 900;
+            font-size: 36px;
+            text-transform: uppercase;
+            line-height: 0.95;
+            letter-spacing: 0.5px;
+          }
+          .line-solutions {
+            color: #555555;
+            font-size: 15px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 800;
+            line-height: 1.1;
+            margin: 4px 0 2px;
+          }
+          .line-relief {
+            color: #A38430;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+            line-height: 1.0;
+            font-style: italic;
+          }
+          
           .cta-btn {
             background: #8B0000;
             color: #fff;
@@ -72,33 +100,36 @@ const App = () => {
             white-space: nowrap;
           }
 
-          /* --- MOBILE ONLY STYLES (Under 768px) --- */
+          /* Mobile Optimization */
           @media (max-width: 768px) {
             .nav-container {
-              padding: 8px 10px;
+              padding: 6px 10px;
               gap: 4px;
             }
+            .brand-group {
+              gap: 3px;
+            }
             .logo-img {
-              height: 52px;
+              height: 55px;
             }
-            .cta-btn {
-              padding: 6px 12px;
-              font-size: 11px;
-            }
-            
-            /* Responsive text scaling to fit all 3 lines on mobile */
             .line-tekton {
-              font-size: 18px !important;
-              line-height: 0.9 !important;
+              font-size: 18px;
+              line-height: 0.95;
             }
             .line-solutions {
-              font-size: 8px !important;
-              letter-spacing: 0.5px !important;
-              margin: 1px 0 !important;
+              font-size: 7.5px;
+              letter-spacing: 1px;
+              margin: 1px 0;
+              line-height: 1.0;
             }
             .line-relief {
-              font-size: 6.5px !important;
-              letter-spacing: 0.5px !important;
+              font-size: 6.5px;
+              letter-spacing: 1.2px;
+              line-height: 1.0;
+            }
+            .cta-btn {
+              padding: 8px 14px;
+              font-size: 11px;
             }
           }
         `}</style>
@@ -114,17 +145,11 @@ const App = () => {
             />
             <div className="logo-text-wrapper">
               {/* Line 1: TEKTON */}
-              <div className="line-tekton" style={{ color: '#8B0000', fontWeight: 900, fontSize: '36px', textTransform: 'uppercase', lineHeight: 0.95, letterSpacing: '0.5px' }}>
-                TEKTON
-              </div>
+              <div className="line-tekton">TEKTON</div>
               {/* Line 2: PROPERTY SOLUTIONS LLC */}
-              <div className="line-solutions" style={{ color: '#555555', fontSize: '15px', letterSpacing: '2.5px', textTransform: 'uppercase', fontWeight: 800, lineHeight: 1.1, margin: '4px 0 2px' }}>
-                PROPERTY SOLUTIONS LLC
-              </div>
-              {/* Line 3: RELIEF THAT DELIVERS */}
-              <div className="line-relief" style={{ color: '#A38430', fontSize: '12px', letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 700, lineHeight: 1.0, fontStyle: 'italic' }}>
-                RELIEF THAT DELIVERS
-              </div>
+              <div className="line-solutions">PROPERTY SOLUTIONS LLC</div>
+              {/* Line 3: RELIEF THAT DELIVERS. */}
+              <div className="line-relief">RELIEF THAT DELIVERS.</div>
             </div>
           </div>
 
