@@ -30,7 +30,7 @@ const App = () => {
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
-      {/* 1. NAV (Exact Match to image_051ed8.png Layout — Scaled Bigger) */}
+      {/* 1. NAV (Updated Layout with 3 Custom Lines) */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', padding: '10px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
           
@@ -43,17 +43,17 @@ const App = () => {
               onError={e => { e.target.style.display = 'none'; }}
             />
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              {/* Line 1: TEKTON PROPERTY */}
-              <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 'clamp(20px, 5vw, 26px)', textTransform: 'uppercase', lineHeight: 1.0, letterSpacing: '0.5px' }}>
-                TEKTON PROPERTY
+              {/* Line 1: TEKTON (By itself) */}
+              <div style={{ color: '#8B0000', fontWeight: 900, fontSize: 'clamp(22px, 5.5vw, 28px)', textTransform: 'uppercase', lineHeight: 1.0, letterSpacing: '0.5px' }}>
+                TEKTON
               </div>
-              {/* Line 2: SOLUTIONS LLC */}
-              <div style={{ color: '#C9A84C', fontSize: 'clamp(10px, 2.2vw, 13px)', letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 800, lineHeight: 1.1, margin: '2px 0 1px' }}>
-                SOLUTIONS LLC
+              {/* Line 2: PROPERTY SOLUTIONS LLC (Rich Dark Gold) */}
+              <div style={{ color: '#A38430', fontSize: 'clamp(10px, 2.2vw, 12px)', letterSpacing: '2px', textTransform: 'uppercase', fontWeight: 800, lineHeight: 1.1, margin: '2px 0 1px' }}>
+                PROPERTY SOLUTIONS LLC
               </div>
-              {/* Line 3: RELIEF THAT DELIVERS. */}
-              <div style={{ color: '#C9A84C', fontSize: 'clamp(8px, 1.8vw, 10.5px)', letterSpacing: '3.5px', textTransform: 'uppercase', fontWeight: 700, lineHeight: 1.0, fontStyle: 'italic' }}>
-                RELIEF THAT DELIVERS.
+              {/* Line 3: RELIEF THAT DELIVERS (No Period) */}
+              <div style={{ color: '#A38430', fontSize: 'clamp(8px, 1.8vw, 10px)', letterSpacing: '2.5px', textTransform: 'uppercase', fontWeight: 700, lineHeight: 1.0, fontStyle: 'italic' }}>
+                RELIEF THAT DELIVERS
               </div>
             </div>
           </div>
