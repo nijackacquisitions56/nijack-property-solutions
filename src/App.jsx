@@ -335,7 +335,7 @@ const App = () => {
                 <label style={{ display: 'block', fontWeight: 900, color: '#C9A84C', marginBottom: 16, textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, textAlign: 'center' }}>
                   What is the situation? (Check all that apply)
                 </label>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
+               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
                   {situations.map((sit) => {
                     const isSelected = formData.situation.includes(sit);
                     return (
@@ -346,31 +346,42 @@ const App = () => {
                         style={{
                           display: 'flex',
                           alignItems: 'center',
-                          gap: '10px',
-                          padding: '12px',
+                          gap: '12px',
+                          padding: '14px',
                           borderRadius: 8,
                           border: isSelected ? '2px solid #C9A84C' : '1px solid #444',
                           background: isSelected ? '#333333' : '#2a2a2a',
-                          color: isSelected ? '#C9A84C' : '#a0a0a0',
-                          fontWeight: 800,
+                          color: '#C9A84C',
+                          fontFamily: 'inherit',
+                          fontWeight: 900,
                           cursor: 'pointer',
-                          fontSize: 11,
+                          fontSize: '11px',
                           textTransform: 'uppercase',
-                          letterSpacing: '0.5px',
+                          letterSpacing: '1px',
                           textAlign: 'left',
                           transition: 'all 0.15s'
                         }}
                       >
-                        {/* Custom Square Visual State Checkbox Indicator */}
-                        <div style={{ width: 14, height: 14, border: '1px solid #C9A84C', background: isSelected ? '#C9A84C' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 2, flexShrink: 0 }}>
-                          {isSelected && <span style={{ color: '#000', fontSize: 10, fontWeight: 900 }}>✓</span>}
+                        {/* Custom Square Checkbox embedded safely INSIDE the button label structure */}
+                        <div style={{ 
+                          width: 14, 
+                          height: 14, 
+                          border: '2px solid #C9A84C', 
+                          background: isSelected ? '#C9A84C' : 'transparent', 
+                          display: 'flex', 
+                          alignItems: 'center', 
+                          justifyContent: 'center', 
+                          borderRadius: 2, 
+                          flexShrink: 0 
+                        }}>
+                          {isSelected && <span style={{ color: '#000000', fontSize: 10, fontWeight: 900 }}>✓</span>}
                         </div>
-                        {sit}
+                        
+                        <span>{sit}</span>
                       </button>
                     );
                   })}
                 </div>
-              </div>
 
               {/* Additional Notes Text Area */}
               <div>
