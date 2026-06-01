@@ -371,7 +371,15 @@ const App = () => {
                   })}
                 </div>
               </div>
-
+{formData.situation.includes('Other') && (
+  <input
+    type="text"
+    placeholder="PLEASE DESCRIBE YOUR SITUATION..."
+    value={formData.otherDescription || ''}
+    onChange={e => setFormData({...formData, otherDescription: e.target.value})}
+    style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700, boxSizing: 'border-box', marginTop: 8 }}
+  />
+)}
               {/* Additional Notes Text Area */}
               <div>
                 <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>
