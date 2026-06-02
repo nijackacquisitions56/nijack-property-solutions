@@ -425,6 +425,7 @@ const App = () => {
                 </label>
                 <input
                   type="text"
+                  required
                   placeholder="EXAMPLE: $150,000"
                   value={formData.priceExpectation}
                   onChange={(e) => setFormData({ ...formData, priceExpectation: e.target.value })}
