@@ -374,6 +374,7 @@ const App = () => {
 {formData.situation.includes('Other') && (
   <input
     type="text"
+    required
     placeholder="PLEASE DESCRIBE YOUR SITUATION..."
     value={formData.otherDescription || ''}
     onChange={e => setFormData({...formData, otherDescription: e.target.value})}
