@@ -458,6 +458,10 @@ const App = () => {
   alert('Please enter a price you would consider for a cash offer.');
   return;
 }
+  if (!formData.additionalNotes || formData.additionalNotes.trim() === '') {
+  alert('Please tell us more about the property before submitting.');
+  return;
+}
     document.querySelector('form').submit();
   }}
   style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '18px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: 'none', cursor: 'pointer', textTransform: 'uppercase', letterSpacing: 1 }}
