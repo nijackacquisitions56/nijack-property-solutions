@@ -333,7 +333,7 @@ const App = () => {
               {/* Situation Grid Box */}
               <div style={{ background: '#222222', padding: '24px', borderRadius: 16, border: '1px solid #444' }}>
                 <label style={{ display: 'block', fontWeight: 900, color: '#C9A84C', marginBottom: 16, textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, textAlign: 'center' }}>
-                  What is the situation? (Check all that apply)
+                  * What is the situation? (Check all that apply)
                 </label>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
                   {situations.map((sit) => {
@@ -383,7 +383,7 @@ const App = () => {
               {/* Additional Notes Text Area */}
               <div>
                 <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>
-                  Additional Notes (Tell us more about the property...)
+                  * Additional Notes (Tell us more about the property...)
                 </label>
                 <textarea
                   rows={3}
@@ -397,7 +397,7 @@ const App = () => {
               {/* Timeline Selection Box */}
               <div>
                 <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>
-                  How fast do you need to sell? <span style={{ color: '#C9A84C' }}>— Click Below</span>
+                  * How fast do you need to sell? <span style={{ color: '#C9A84C' }}>— Click Below</span>
                 </label>
                 <div style={{ position: 'relative' }}>
                   <select
@@ -421,7 +421,7 @@ const App = () => {
               {/* Price Expectation Input */}
               <div>
                 <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>
-                  What price would you consider for a cash offer?
+                  * What price would you consider for a cash offer?
                 </label>
                 <input
                   type="text"
