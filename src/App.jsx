@@ -454,6 +454,10 @@ const App = () => {
       alert('Please select how fast you need to sell before submitting.');
       return;
     }
+   if (!formData.priceExpectation || formData.priceExpectation.trim() === '') {
+  alert('Please enter a price you would consider for a cash offer.');
+  return;
+}
     document.querySelector('form').submit();
   }}
   style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '18px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: 'none', cursor: 'pointer', textTransform: 'uppercase', letterSpacing: 1 }}
