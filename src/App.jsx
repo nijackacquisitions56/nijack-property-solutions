@@ -258,7 +258,7 @@ const App = () => {
               ))}
             </div>
 
-            <form action="https://formspree.io/f/xaqpozbn" method="POST">
+            <form action="https://formspree.io/f/maqzwpnb" method="POST">
               <input type="hidden" name="fullName" value={formData.fullName} />
               <input type="hidden" name="phone" value={formData.phone} />
               <input type="hidden" name="email" value={formData.email} />
