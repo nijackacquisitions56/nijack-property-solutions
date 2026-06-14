@@ -149,7 +149,8 @@ smsConsentMarketing: false
               <input type="hidden" name="additionalNotes" value={formData.additionalNotes} />
               <input type="hidden" name="timeline" value={formData.timeline} />
               <input type="hidden" name="priceExpectation" value={formData.priceExpectation} />
-              <input type="hidden" name="smsConsent" value={formData.smsConsent ? 'Yes - consented to SMS' : 'No - did not consent'} />
+              <input type="hidden" name="smsConsentTransactional" value={formData.smsConsentTransactional ? 'Yes - consented to transactional SMS' : 'No'} />
+<input type="hidden" name="smsConsentMarketing" value={formData.smsConsentMarketing ? 'Yes - consented to marketing SMS' : 'No'} />
 
               <div style={{ padding: '40px' }}>
                 {step === 1 ? (
