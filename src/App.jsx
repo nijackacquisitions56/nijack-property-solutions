@@ -45,7 +45,8 @@ const App = () => {
           .line-solutions { color: #555555; font-size: 15px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 800; line-height: 1.1; margin: 4px 0 2px; }
           .line-relief { color: #A38430; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; line-height: 1.0; font-style: italic; }
           .cta-btn { background: #8B0000; color: #fff; padding: 14px 28px; border-radius: 999px; font-weight: 900; font-size: 15px; text-decoration: none; border: 2px solid #C9A84C; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
-          @media (max-width: 768px) {
+          @media (max-width: 768px) {.hero-section { padding: 70px 16px 80px !important; }
+}
             .nav-container { padding: 6px 10px; gap: 4px; }
             .brand-group { gap: 3px; }
             .logo-img { height: 55px; }
