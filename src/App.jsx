@@ -9,7 +9,7 @@ const App = () => {
     fullName: '', phone: '', email: '', propertyAddress: '',
     situation: [], additionalNotes: '', timeline: '', priceExpectation: '',
     smsConsentTransactional: false,
-smsConsentMarketing: false
+    smsConsentMarketing: false
   });
 
   const faqs = [
@@ -151,7 +151,7 @@ smsConsentMarketing: false
               <input type="hidden" name="timeline" value={formData.timeline} />
               <input type="hidden" name="priceExpectation" value={formData.priceExpectation} />
               <input type="hidden" name="smsConsentTransactional" value={formData.smsConsentTransactional ? 'Yes - consented to transactional SMS' : 'No'} />
-<input type="hidden" name="smsConsentMarketing" value={formData.smsConsentMarketing ? 'Yes - consented to marketing SMS' : 'No'} />
+              <input type="hidden" name="smsConsentMarketing" value={formData.smsConsentMarketing ? 'Yes - consented to marketing SMS' : 'No'} />
 
               <div style={{ padding: '40px' }}>
                 {step === 1 ? (
@@ -159,7 +159,7 @@ smsConsentMarketing: false
                     <p style={{ color: '#555', fontSize: 14, textAlign: 'center', margin: '0 0 8px', fontWeight: 600 }}>No obligation. No pressure. Just explore your options.</p>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
                       <input type="text" required placeholder="FULL NAME" value={formData.fullName} onChange={(e) => setFormData({ ...formData, fullName: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
-                      <input type="tel" required placeholder="PHONE NUMBER" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
+                      <input type="tel" placeholder="PHONE NUMBER (OPTIONAL)" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
                     </div>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
                       <input type="email" required placeholder="EMAIL ADDRESS" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
@@ -167,42 +167,44 @@ smsConsentMarketing: false
                     </div>
 
                     {/* SMS CONSENT - TWO CHECKBOXES */}
-<div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 12, padding: '16px 20px', marginTop: 4 }}>
-  <p style={{ fontSize: 12, fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', letterSpacing: 1, margin: '0 0 12px' }}>Consent Forms</p>
+                    <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 12, padding: '16px 20px', marginTop: 4 }}>
+                      <p style={{ fontSize: 12, fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', letterSpacing: 1, margin: '0 0 12px' }}>Consent Forms</p>
 
-  {/* Checkbox 1 - Transactional */}
-  <label style={{ display: 'flex', alignItems: 'flex-start', gap: 12, cursor: 'pointer', marginBottom: 12 }}>
-    <input
-      type="checkbox"
-      checked={formData.smsConsentTransactional}
-      onChange={(e) => setFormData({ ...formData, smsConsentTransactional: e.target.checked })}
-      style={{ marginTop: 3, width: 18, height: 18, accentColor: '#8B0000', flexShrink: 0 }}
-    />
-    <span style={{ fontSize: 12, color: '#555', lineHeight: 1.6, fontWeight: 600 }}>
-     I consent to receive non-marketing text messages from Tekton Property Solutions LLC at the phone number provided about my property inquiry, appointment reminders, offer discussions, and transaction updates. Message frequency may vary. Message &amp; data rates may apply. Reply <strong>STOP</strong> to opt out at any time. Reply <strong>HELP</strong> for assistance.
-  </label>
+                      {/* Checkbox 1 - Transactional */}
+                      <label style={{ display: 'flex', alignItems: 'flex-start', gap: 12, cursor: 'pointer', marginBottom: 12 }}>
+                        <input
+                          type="checkbox"
+                          checked={formData.smsConsentTransactional}
+                          onChange={(e) => setFormData({ ...formData, smsConsentTransactional: e.target.checked })}
+                          style={{ marginTop: 3, width: 18, height: 18, accentColor: '#8B0000', flexShrink: 0 }}
+                        />
+                        <span style={{ fontSize: 12, color: '#555', lineHeight: 1.6, fontWeight: 600 }}>
+                          I consent to receive non-marketing text messages from Tekton Property Solutions LLC at the phone number provided about my property inquiry, appointment reminders, offer discussions, and transaction updates. Message frequency may vary. Message &amp; data rates may apply. Text <strong>HELP</strong> for help. Text <strong>STOP</strong> to unsubscribe at any time.
+                        </span>
+                      </label>
 
-  {/* Checkbox 2 - Marketing */}
-  <label style={{ display: 'flex', alignItems: 'flex-start', gap: 12, cursor: 'pointer', marginBottom: 12 }}>
-    <input
-      type="checkbox"
-      checked={formData.smsConsentMarketing}
-      onChange={(e) => setFormData({ ...formData, smsConsentMarketing: e.target.checked })}
-      style={{ marginTop: 3, width: 18, height: 18, accentColor: '#8B0000', flexShrink: 0 }}
-    />
-    <span style={{ fontSize: 12, color: '#555', lineHeight: 1.6, fontWeight: 600 }}>
-      I consent to receive marketing text messages from Tekton Property Solutions LLC at the phone number provided. Frequency may vary. Message &amp; data rates may apply. Reply <strong>STOP</strong> to opt out at any time. Reply <strong>HELP</strong> for assistance. Consent is not a condition of any purchase or service.
-    </span>
-  </label>
+                      {/* Checkbox 2 - Marketing */}
+                      <label style={{ display: 'flex', alignItems: 'flex-start', gap: 12, cursor: 'pointer', marginBottom: 12 }}>
+                        <input
+                          type="checkbox"
+                          checked={formData.smsConsentMarketing}
+                          onChange={(e) => setFormData({ ...formData, smsConsentMarketing: e.target.checked })}
+                          style={{ marginTop: 3, width: 18, height: 18, accentColor: '#8B0000', flexShrink: 0 }}
+                        />
+                        <span style={{ fontSize: 12, color: '#555', lineHeight: 1.6, fontWeight: 600 }}>
+                          I consent to receive marketing text messages from Tekton Property Solutions LLC at the phone number provided. Message frequency may vary. Message &amp; data rates may apply. Text <strong>HELP</strong> for help. Text <strong>STOP</strong> to unsubscribe at any time. Consent is not a condition of any purchase or service.
+                        </span>
+                      </label>
 
-  {/* Policy Links */}
-  <p style={{ fontSize: 11, color: '#888', margin: '8px 0 0', textAlign: 'center' }}>
-    <Link to="/privacy-policy" style={{ color: '#8B0000', textDecoration: 'underline', fontWeight: 700 }}>Privacy Policy</Link>
-    {' | '}
-    <Link to="/sms-terms" style={{ color: '#8B0000', textDecoration: 'underline', fontWeight: 700 }}>SMS Terms &amp; Conditions</Link>
-  </p>
-</div>
-                    <button type="button" onClick={() => { if (formData.fullName && formData.phone && formData.email && formData.propertyAddress) { setStep(2); } else { alert('Please fill out all contact details before moving to Step 2.'); } }} style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '16px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: '2px solid #C9A84C', cursor: 'pointer', marginTop: 20, textTransform: 'uppercase', letterSpacing: 1 }}>
+                      {/* Policy Links */}
+                      <p style={{ fontSize: 11, color: '#888', margin: '8px 0 0', textAlign: 'center' }}>
+                        <Link to="/privacy-policy" style={{ color: '#8B0000', textDecoration: 'underline', fontWeight: 700 }}>Privacy Policy</Link>
+                        {' | '}
+                        <Link to="/sms-terms" style={{ color: '#8B0000', textDecoration: 'underline', fontWeight: 700 }}>SMS Terms &amp; Conditions</Link>
+                      </p>
+                    </div>
+
+                    <button type="button" onClick={() => { if (formData.fullName && formData.email && formData.propertyAddress) { setStep(2); } else { alert('Please fill out your name, email, and property address before moving to Step 2.'); } }} style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '16px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: '2px solid #C9A84C', cursor: 'pointer', marginTop: 20, textTransform: 'uppercase', letterSpacing: 1 }}>
                       Continue to Step 2 →
                     </button>
                   </div>
@@ -326,12 +328,12 @@ smsConsentMarketing: false
               <p style={{ margin: 0 }}>Your information is collected solely to review your property and discuss possible options. We do not sell your personal information to third parties.</p>
               <div style={{ background: '#fff', border: '1px solid #e0d8c8', borderRadius: 12, padding: '20px 24px', marginTop: 8 }}>
                 <p style={{ margin: '0 0 10px', fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1 }}>SMS &amp; Text Message Policy</p>
-                <p style={{ margin: '0 0 10px' }}>By providing your phone number and checking one or more SMS consent boxes on our contact form, you agree to receive text messages from Tekton Property Solutions LLC regarding your property inquiry. This may include follow-up messages, appointment reminders, and transaction updates.</p>
-                <p style={{ margin: '0 0 10px' }}><strong>Message frequency may vary.</strong> Message and data rates may apply depending on your mobile carrier and plan.</p>
-                <p style={{ margin: '0 0 10px' }}>To opt out at any time, reply <strong>STOP</strong> to any text message you receive from us. To request assistance, reply <strong>HELP</strong>.</p>
-                <p style={{ margin: 0 }}>SMS consent is never required as a condition of any purchase, sale, or service. We do not share your phone number or SMS consent status with third parties for their own marketing purposes.</p>
+                <p style={{ margin: '0 0 10px' }}>By providing your phone number and checking one or more SMS consent boxes on our contact form, you agree to receive text messages from Tekton Property Solutions LLC regarding your property inquiry.</p>
+                <p style={{ margin: '0 0 10px' }}><strong>Message frequency may vary.</strong> Message and data rates may apply.</p>
+                <p style={{ margin: '0 0 10px' }}>Text <strong>STOP</strong> to unsubscribe at any time. Text <strong>HELP</strong> for help.</p>
+                <p style={{ margin: 0 }}>SMS consent is never required as a condition of any purchase, sale, or service. Mobile phone numbers and SMS consent information will not be sold, rented, shared, or transferred to third parties or affiliates for marketing or promotional purposes.</p>
               </div>
-              <p style={{ margin: 0 }}><strong>Business Address:</strong> 6545 Market Ave N, Ste 100, Canton, OH 44721 &nbsp;|&nbsp; <strong>Phone:</strong> 330-889-8983</p>
+              <p style={{ margin: 0 }}><strong>Business Address:</strong> 6545 Market Ave N, Ste 100, Canton, OH 44721 &nbsp;|&nbsp; <strong>Contact:</strong> nicole@tektonpropertysolutions.com</p>
             </div>
           </div>
         </div>
@@ -353,7 +355,7 @@ smsConsentMarketing: false
           <img src="/tekton-emblem.png" alt="Tekton Emblem" style={{ height: 60, width: 'auto', objectFit: 'contain', marginBottom: 16 }} onError={e => e.target.style.display = 'none'} />
           <p style={{ color: '#666', fontWeight: 700, fontSize: 14, textTransform: 'uppercase', letterSpacing: 3, marginBottom: 6 }}>Ohio &amp; Nationwide</p>
           <p style={{ color: '#888', fontSize: 13, marginBottom: 6 }}>6545 Market Ave N, Ste 100, Canton, OH 44721</p>
-          <p style={{ color: '#888', fontSize: 13, marginBottom: 20 }}>330-889-8983</p>
+          <p style={{ color: '#888', fontSize: 13, marginBottom: 20 }}>nicole@tektonpropertysolutions.com</p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: 20, flexWrap: 'wrap', marginBottom: 20 }}>
             <Link to="/privacy-policy" style={{ color: '#8B0000', fontWeight: 900, textDecoration: 'underline', textTransform: 'uppercase', letterSpacing: 2, fontSize: 13 }}>Privacy Policy</Link>
             <span style={{ color: '#ccc', fontSize: 13 }}>|</span>
