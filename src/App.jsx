@@ -199,7 +199,7 @@ smsConsentMarketing: false
   <p style={{ fontSize: 11, color: '#888', margin: '8px 0 0', textAlign: 'center' }}>
     <Link to="/privacy-policy" style={{ color: '#8B0000', textDecoration: 'underline', fontWeight: 700 }}>Privacy Policy</Link>
     {' | '}
-    <Link to="/sms-terms" style={{ color: '#8B0000', textDecoration: 'underline', fontWeight: 700 }}>Terms of Service</Link>
+    <Link to="/sms-terms" style={{ color: '#8B0000', textDecoration: 'underline', fontWeight: 700 }}>SMS Terms &amp; Conditions</Link>
   </p>
 </div>
                     <button type="button" onClick={() => { if (formData.fullName && formData.phone && formData.email && formData.propertyAddress) { setStep(2); } else { alert('Please fill out all contact details before moving to Step 2.'); } }} style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '16px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: '2px solid #C9A84C', cursor: 'pointer', marginTop: 20, textTransform: 'uppercase', letterSpacing: 1 }}>
