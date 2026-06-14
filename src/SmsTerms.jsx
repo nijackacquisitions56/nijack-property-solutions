@@ -91,7 +91,7 @@ const SmsTerms = () => {
 
             <section>
               <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>7. Privacy &amp; Data Sharing</h2>
-              <p style={{ margin: 0 }}>Your phone number and SMS consent status are collected solely for the purpose of communicating with you about your property inquiry. We do not sell, share, or transfer your phone number to third parties for their own marketing or messaging purposes.</p>
+              <p style={{ margin: 0 }}>Your phone number and SMS consent status are collected solely for the purpose of communicating with you about your property inquiry. SMS consent and phone numbers are not sold, rented, or shared with third parties or affiliates for marketing or promotional purposes..</p>
               <p style={{ margin: '10px 0 0' }}>For full details on how we handle your personal information, see our <Link to="/privacy-policy" style={{ color: '#8B0000', textDecoration: 'underline' }}>Privacy Policy</Link>.</p>
             </section>
 
