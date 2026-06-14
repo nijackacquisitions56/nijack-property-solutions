@@ -50,7 +50,7 @@ const App = () => {
             .brand-group { gap: 3px; }
             .logo-img { height: 55px; }
             .line-tekton { font-size: 18px; line-height: 0.95; }
-            .line-solutions { font-size: 7.5px; letter-spacing: 1px; margin: 1px 0; line-height: 1.0; }
+            .line-solutions { font-size: 8.5px; letter-spacing: 0.9px; margin: 1px 0; line-height: 1.0; }
             .line-relief { font-size: 6.5px; letter-spacing: 1.2px; line-height: 1.0; }
             .cta-btn { padding: 8px 14px; font-size: 11px; }
           }
