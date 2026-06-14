@@ -27,6 +27,11 @@ const PrivacyPolicy = () => {
           <h1 style={{ color: '#0d0d0d', fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(24px,4vw,38px)', marginBottom: 8, textAlign: 'center' }}>Privacy Policy</h1>
           <p style={{ color: '#888', fontSize: 13, textAlign: 'center', marginBottom: 40, fontStyle: 'italic' }}>Tekton Property Solutions LLC &nbsp;|&nbsp; Last Updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
 
+          <div style={{ background: '#f8f6f2', border: '2px solid #C9A84C', borderRadius: 14, padding: '20px 24px', marginBottom: 36, fontSize: 14, lineHeight: 1.8, color: '#444', fontWeight: 600 }}>
+            <p style={{ margin: '0 0 6px', fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1 }}>Overview</p>
+            <p style={{ margin: 0 }}>This Privacy Policy describes how Tekton Property Solutions LLC collects, uses, and protects the personal information you provide when you submit an inquiry through our website at tektonpropertysolutions.com. Please read this policy carefully to understand our practices.</p>
+          </div>
+
           <div style={{ display: 'flex', flexDirection: 'column', gap: 28, fontSize: 15, lineHeight: 1.9, color: '#444', fontWeight: 600 }}>
 
             <section>
@@ -55,14 +60,13 @@ const PrivacyPolicy = () => {
 
             <section>
               <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>3. How We Use Your Information</h2>
-              <p style={{ margin: 0 }}>Your information is collected solely to review your property and discuss possible options. We do not sell, rent, or share your personal information with third parties for their own marketing purposes. Mobile phone numbers and SMS consent information will not be sold, rented, shared, or transferred to third parties or affiliates for marketing or promotional purposes. to:</p>
+              <p style={{ margin: 0 }}>Your information is used solely to:</p>
               <ul style={{ margin: '10px 0 0', paddingLeft: 24, display: 'flex', flexDirection: 'column', gap: 6 }}>
                 <li>Review your property and respond to your inquiry</li>
                 <li>Contact you about your property situation</li>
                 <li>Send follow-up communications if you have consented</li>
                 <li>Facilitate a potential property transaction through a licensed title company</li>
               </ul>
-              <p style={{ margin: '12px 0 0' }}>We do not sell, rent, or share your personal information with third parties for their own marketing purposes.</p>
             </section>
 
             <div style={{ borderTop: '1px solid #e8e0d0' }} />
@@ -83,28 +87,48 @@ const PrivacyPolicy = () => {
               <p style={{ margin: 0 }}>If you provide your phone number and check the SMS consent box on our inquiry form, you agree to receive text messages from Tekton Property Solutions LLC. These messages may include property inquiry follow-up, appointment reminders, offer discussions, and transaction updates.</p>
               <p style={{ margin: '10px 0 0' }}><strong>Message frequency may vary.</strong> Message and data rates may apply.</p>
               <p style={{ margin: '10px 0 0' }}>To opt out at any time, reply <strong>STOP</strong>. For assistance, reply <strong>HELP</strong>.</p>
-              <p style={{ margin: '10px 0 0' }}>SMS consent is never required as a condition of any purchase, sale, or service. We do not share your phone number or consent status with third parties for their own marketing.</p>
+              <p style={{ margin: '10px 0 0' }}>SMS consent is never required as a condition of any purchase, sale, or service.</p>
+              <p style={{ margin: '10px 0 0' }}><strong>Mobile phone numbers and SMS consent information will not be sold, rented, shared, or transferred to third parties or affiliates for marketing or promotional purposes.</strong></p>
               <p style={{ margin: '10px 0 0' }}>For full SMS terms, see our <Link to="/sms-terms" style={{ color: '#8B0000', textDecoration: 'underline' }}>SMS Terms &amp; Conditions</Link>.</p>
             </section>
 
             <div style={{ borderTop: '1px solid #e8e0d0' }} />
 
             <section>
-              <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>6. Data Security</h2>
-              <p style={{ margin: 0 }}>We take reasonable steps to protect your information. Form submissions are processed through Formspree, a secure third-party service. We do not store payment or financial information.</p>
+              <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>6. Information Sharing</h2>
+              <p style={{ margin: 0 }}>We do not sell, rent, or share your personal information with third parties for their own marketing purposes. Your information may be shared only in the following limited circumstances:</p>
+              <ul style={{ margin: '10px 0 0', paddingLeft: 24, display: 'flex', flexDirection: 'column', gap: 6 }}>
+                <li>With a licensed title company to facilitate a property closing</li>
+                <li>With trusted transaction partners as needed to complete a deal you have agreed to</li>
+                <li>As required by law or in connection with a legal obligation</li>
+              </ul>
             </section>
 
             <div style={{ borderTop: '1px solid #e8e0d0' }} />
 
             <section>
-              <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>7. Your Rights</h2>
+              <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>7. Data Security</h2>
+              <p style={{ margin: 0 }}>We take reasonable steps to protect your information. Form submissions are processed through Formspree, a secure third-party service. We do not store payment or financial information. While we implement reasonable security measures, no method of electronic transmission or storage is 100% secure.</p>
+            </section>
+
+            <div style={{ borderTop: '1px solid #e8e0d0' }} />
+
+            <section>
+              <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>8. Cookies &amp; Tracking Technologies</h2>
+              <p style={{ margin: 0 }}>Our website may use cookies and similar tracking technologies to improve functionality and user experience. Cookies are small data files stored on your device. You may disable cookies through your browser settings, though some features of the site may not function properly as a result.</p>
+            </section>
+
+            <div style={{ borderTop: '1px solid #e8e0d0' }} />
+
+            <section>
+              <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>9. Your Rights</h2>
               <p style={{ margin: 0 }}>You may request that we delete your information or stop contacting you at any time by emailing nicole@tektonpropertysolutions.com or calling 330-889-8983.</p>
             </section>
 
             <div style={{ borderTop: '1px solid #e8e0d0' }} />
 
             <section>
-              <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>8. Changes to This Policy</h2>
+              <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>10. Changes to This Policy</h2>
               <p style={{ margin: 0 }}>We may update this Privacy Policy from time to time. Changes will be reflected on this page with an updated date. Continued use of our website constitutes acceptance of any updates.</p>
             </section>
 
