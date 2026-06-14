@@ -21,8 +21,8 @@ const SmsTerms = () => {
       </nav>
 
       {/* CONTENT */}
-      <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 24px' }}>
-        <div style={{ background: '#fff', borderRadius: 24, padding: '48px 40px', border: '2px solid #e8e0d0', boxShadow: '0 4px 24px rgba(0,0,0,0.06)' }}>
+      <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 24px', overflowWrap: 'break-word', wordBreak: 'break-word' }}>
+        <div style={{ background: '#fff', borderRadius: 24, padding: '48px 40px', border: '2px solid #e8e0d0', boxShadow: '0 4px 24px rgba(0,0,0,0.06)', overflowX: 'hidden' }}>
 
           <h1 style={{ color: '#0d0d0d', fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(22px,4vw,36px)', marginBottom: 8, textAlign: 'center' }}>SMS Terms &amp; Conditions</h1>
           <p style={{ color: '#888', fontSize: 13, textAlign: 'center', marginBottom: 40, fontStyle: 'italic' }}>Tekton Property Solutions LLC &nbsp;|&nbsp; Last Updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
@@ -57,4 +57,85 @@ const SmsTerms = () => {
             <div style={{ borderTop: '1px solid #e8e0d0' }} />
 
             <section>
-              <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>3. Message
+              <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>3. Message Frequency</h2>
+              <p style={{ margin: 0 }}>Message frequency varies based on your inquiry status and the nature of your property situation. You may receive messages when we are actively reviewing your property, scheduling a follow-up, or processing a transaction. We will not send unsolicited bulk promotional messages.</p>
+            </section>
+
+            <div style={{ borderTop: '1px solid #e8e0d0' }} />
+
+            <section>
+              <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>4. Message &amp; Data Rates</h2>
+              <p style={{ margin: 0 }}>Message and data rates may apply to text messages sent to and received from Tekton Property Solutions LLC. Rates are determined by your mobile carrier and plan. Tekton Property Solutions LLC is not responsible for any charges incurred from your carrier.</p>
+            </section>
+
+            <div style={{ borderTop: '1px solid #e8e0d0' }} />
+
+            <section>
+              <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>5. How to Opt Out</h2>
+              <p style={{ margin: 0 }}>You may opt out of receiving SMS messages from Tekton Property Solutions LLC at any time by texting <strong>STOP</strong> to any message you receive from us. After opting out, you will receive one final confirmation message and no further SMS messages will be sent.</p>
+              <p style={{ margin: '10px 0 0' }}>You may also opt out by contacting us directly:</p>
+              <p style={{ margin: '8px 0 0', overflowWrap: 'break-word', wordBreak: 'break-word' }}>
+                Email: nicole@tektonpropertysolutions.com
+              </p>
+            </section>
+
+            <div style={{ borderTop: '1px solid #e8e0d0' }} />
+
+            <section>
+              <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>6. How to Get Help</h2>
+              <p style={{ margin: 0 }}>For assistance with our SMS program, text <strong>HELP</strong> to any message you receive from us, or contact us at:</p>
+              <p style={{ margin: '8px 0 0', overflowWrap: 'break-word', wordBreak: 'break-word' }}>
+                Email: nicole@tektonpropertysolutions.com
+              </p>
+            </section>
+
+            <div style={{ borderTop: '1px solid #e8e0d0' }} />
+
+            <section>
+              <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>7. Privacy &amp; Data Sharing</h2>
+              <p style={{ margin: 0 }}>Your phone number and SMS consent status are collected solely for the purpose of communicating with you about your property inquiry.</p>
+              <p style={{ margin: '10px 0 0' }}><strong>SMS consent and phone numbers are not sold, rented, or shared with third parties or affiliates for marketing or promotional purposes. Your phone number and any information related to your SMS subscription will not be shared with any external entities, unless required by law or in connection with a legal obligation.</strong></p>
+              <p style={{ margin: '10px 0 0' }}>For full details on how we handle your personal information, see our <Link to="/privacy-policy" style={{ color: '#8B0000', textDecoration: 'underline' }}>Privacy Policy</Link>.</p>
+            </section>
+
+            <div style={{ borderTop: '1px solid #e8e0d0' }} />
+
+            <section>
+              <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>8. Supported Carriers</h2>
+              <p style={{ margin: 0 }}>Our SMS program is supported by major US carriers including AT&amp;T, T-Mobile, Verizon, Sprint, and others. Carrier support may vary. We are not responsible for delays or failures in SMS delivery caused by carrier issues.</p>
+            </section>
+
+            <div style={{ borderTop: '1px solid #e8e0d0' }} />
+
+            <section>
+              <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>9. Contact Information</h2>
+              <p style={{ margin: 0, overflowWrap: 'break-word', wordBreak: 'break-word' }}>
+                <strong>Tekton Property Solutions LLC</strong><br />
+                6545 Market Ave N, Ste 100<br />
+                Canton, OH 44721<br />
+                Email: nicole@tektonpropertysolutions.com<br />
+                Website: tektonpropertysolutions.com
+              </p>
+            </section>
+
+            <div style={{ borderTop: '1px solid #e8e0d0' }} />
+
+            <section>
+              <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>10. Changes to These Terms</h2>
+              <p style={{ margin: 0 }}>We may update these SMS Terms &amp; Conditions from time to time. Any changes will be reflected on this page with an updated date. Continued use of our SMS program after updates constitutes your acceptance of the revised terms.</p>
+            </section>
+
+          </div>
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: 32, display: 'flex', justifyContent: 'center', gap: 24, flexWrap: 'wrap' }}>
+          <Link to="/privacy-policy" style={{ color: '#8B0000', fontWeight: 900, textDecoration: 'underline', fontSize: 13, textTransform: 'uppercase', letterSpacing: 1 }}>Privacy Policy</Link>
+          <Link to="/" style={{ color: '#8B0000', fontWeight: 900, textDecoration: 'underline', fontSize: 13, textTransform: 'uppercase', letterSpacing: 1 }}>Back to Home</Link>
+        </div>
+        <p style={{ color: '#aaa', fontSize: 12, textAlign: 'center', marginTop: 20, fontStyle: 'italic' }}>© {new Date().getFullYear()} Tekton Property Solutions LLC. All rights reserved.</p>
+      </div>
+    </div>
+  );
+};
+
+export default SmsTerms;
