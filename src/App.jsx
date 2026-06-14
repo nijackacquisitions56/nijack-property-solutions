@@ -5,11 +5,14 @@ const App = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const [openFaq, setOpenFaq] = useState(null);
   const [step, setStep] = useState(1);
+  const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
     fullName: '', phone: '', email: '', propertyAddress: '',
     situation: [], additionalNotes: '', timeline: '', priceExpectation: '',
     smsConsentTransactional: false,
-    smsConsentMarketing: false
+    smsConsentMarketing: false,
+    roofCondition: '', hvacCondition: '', electricalCondition: '',
+    plumbingCondition: '', foundationCondition: '', overallCondition: ''
   });
 
   const faqs = [
@@ -31,6 +34,29 @@ const App = () => {
     }));
   };
 
+  const selectStyle = {
+    width: '100%',
+    background: '#ffffff',
+    border: '3px solid #000000',
+    padding: '14px 40px 14px 14px',
+    fontSize: 13,
+    fontWeight: 900,
+    borderRadius: 8,
+    appearance: 'none',
+    WebkitAppearance: 'none',
+    letterSpacing: 1,
+    textTransform: 'uppercase'
+  };
+
+  const repairOptions = [
+    { key: 'roofCondition', label: 'Roof Condition', options: ['Not sure','No known issues','Older but no leaks','Has leaks','Needs repair','Needs full replacement'] },
+    { key: 'hvacCondition', label: 'Heating / Cooling System', options: ['Not sure','Working properly','Older but working','Needs repair','Not working','No central HVAC'] },
+    { key: 'electricalCondition', label: 'Electrical System', options: ['Not sure','Updated / no known issues','Older but working','Fuse box or outdated panel','Known electrical issues','Needs major electrical work'] },
+    { key: 'plumbingCondition', label: 'Plumbing Condition', options: ['Not sure','No known issues','Older but working','Leaks or slow drains','Known plumbing issues','Needs major plumbing work'] },
+    { key: 'foundationCondition', label: 'Foundation / Structural Concerns', options: ['Not sure','No known issues','Minor cracks / settling','Water in basement or crawlspace','Major cracks or movement','Needs foundation repair'] },
+    { key: 'overallCondition', label: 'Overall Property Condition', options: ['Not sure','Move-in ready','Light repairs needed','Moderate repairs needed','Heavy repairs needed','Fire / water damage','Vacant or boarded'] },
+  ];
+
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
 
@@ -46,15 +72,15 @@ const App = () => {
           .line-relief { color: #A38430; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; line-height: 1.0; font-style: italic; }
           .cta-btn { background: #8B0000; color: #fff; padding: 14px 28px; border-radius: 999px; font-weight: 900; font-size: 15px; text-decoration: none; border: 2px solid #C9A84C; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
           @media (max-width: 768px) {
-  .hero-section { padding: 70px 16px 80px !important; }
-  .nav-container { padding: 6px 10px; gap: 4px; }
-  .brand-group { gap: 3px; }
-  .logo-img { height: 55px; }
-  .line-tekton { font-size: 18px; line-height: 0.95; }
-  .line-solutions { font-size: 8.5px; letter-spacing: 0.9px; margin: 1px 0; line-height: 1.0; }
-  .line-relief { font-size: 7.5px; letter-spacing: 1px; line-height: 1.0; }
-  .cta-btn { padding: 8px 14px; font-size: 11px; }
-}
+            .hero-section { padding: 70px 16px 80px !important; }
+            .nav-container { padding: 6px 10px; gap: 4px; }
+            .brand-group { gap: 3px; }
+            .logo-img { height: 55px; }
+            .line-tekton { font-size: 18px; line-height: 0.95; }
+            .line-solutions { font-size: 8.5px; letter-spacing: 0.9px; margin: 1px 0; line-height: 1.0; }
+            .line-relief { font-size: 7.5px; letter-spacing: 1px; line-height: 1.0; }
+            .cta-btn { padding: 8px 14px; font-size: 11px; }
+          }
         `}</style>
         <div className="nav-container">
           <div className="brand-group">
@@ -153,6 +179,12 @@ const App = () => {
               <input type="hidden" name="priceExpectation" value={formData.priceExpectation} />
               <input type="hidden" name="smsConsentTransactional" value={formData.smsConsentTransactional ? 'Yes - consented to transactional SMS' : 'No'} />
               <input type="hidden" name="smsConsentMarketing" value={formData.smsConsentMarketing ? 'Yes - consented to marketing SMS' : 'No'} />
+              <input type="hidden" name="roofCondition" value={formData.roofCondition} />
+              <input type="hidden" name="hvacCondition" value={formData.hvacCondition} />
+              <input type="hidden" name="electricalCondition" value={formData.electricalCondition} />
+              <input type="hidden" name="plumbingCondition" value={formData.plumbingCondition} />
+              <input type="hidden" name="foundationCondition" value={formData.foundationCondition} />
+              <input type="hidden" name="overallCondition" value={formData.overallCondition} />
 
               <div style={{ padding: '40px' }}>
                 {step === 1 ? (
@@ -164,40 +196,27 @@ const App = () => {
                     </div>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
                       <input type="email" required placeholder="EMAIL ADDRESS" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
-                      <input type="text" required placeholder="PROPERTY ADDRESS (STREET, CITY, STATE)" value={formData.propertyAddress} onChange={(e) => setFormData({ ...formData, propertyAddress: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
+                      <input type="text" required placeholder="PROPERTY ADDRESS" value={formData.propertyAddress} onChange={(e) => setFormData({ ...formData, propertyAddress: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
                     </div>
 
                     {/* SMS CONSENT - TWO CHECKBOXES */}
                     <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 12, padding: '16px 20px', marginTop: 4 }}>
                       <p style={{ fontSize: 12, fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', letterSpacing: 1, margin: '0 0 12px' }}>Consent Forms</p>
 
-                      {/* Checkbox 1 - Transactional */}
                       <label style={{ display: 'flex', alignItems: 'flex-start', gap: 12, cursor: 'pointer', marginBottom: 12 }}>
-                        <input
-                          type="checkbox"
-                          checked={formData.smsConsentTransactional}
-                          onChange={(e) => setFormData({ ...formData, smsConsentTransactional: e.target.checked })}
-                          style={{ marginTop: 3, width: 18, height: 18, accentColor: '#8B0000', flexShrink: 0 }}
-                        />
+                        <input type="checkbox" checked={formData.smsConsentTransactional} onChange={(e) => setFormData({ ...formData, smsConsentTransactional: e.target.checked })} style={{ marginTop: 3, width: 18, height: 18, accentColor: '#8B0000', flexShrink: 0 }} />
                         <span style={{ fontSize: 13, color: '#555', lineHeight: 1.6, fontWeight: 600 }}>
                           I consent to receive non-marketing text messages from Tekton Property Solutions LLC at the phone number provided about my property inquiry, appointment reminders, offer discussions, and transaction updates. Message frequency may vary. Message &amp; data rates may apply. Text <strong>HELP</strong> for help. Text <strong>STOP</strong> to unsubscribe at any time.
                         </span>
                       </label>
 
-                      {/* Checkbox 2 - Marketing */}
                       <label style={{ display: 'flex', alignItems: 'flex-start', gap: 12, cursor: 'pointer', marginBottom: 12 }}>
-                        <input
-                          type="checkbox"
-                          checked={formData.smsConsentMarketing}
-                          onChange={(e) => setFormData({ ...formData, smsConsentMarketing: e.target.checked })}
-                          style={{ marginTop: 3, width: 18, height: 18, accentColor: '#8B0000', flexShrink: 0 }}
-                        />
+                        <input type="checkbox" checked={formData.smsConsentMarketing} onChange={(e) => setFormData({ ...formData, smsConsentMarketing: e.target.checked })} style={{ marginTop: 3, width: 18, height: 18, accentColor: '#8B0000', flexShrink: 0 }} />
                         <span style={{ fontSize: 13, color: '#555', lineHeight: 1.6, fontWeight: 600 }}>
                           I consent to receive marketing text messages from Tekton Property Solutions LLC at the phone number provided. Message frequency may vary. Message &amp; data rates may apply. Text <strong>HELP</strong> for help. Text <strong>STOP</strong> to unsubscribe at any time. Consent is not a condition of any purchase or service.
                         </span>
                       </label>
 
-                      {/* Policy Links */}
                       <p style={{ fontSize: 11, color: '#888', margin: '8px 0 0', textAlign: 'center' }}>
                         <Link to="/privacy-policy" style={{ color: '#8B0000', textDecoration: 'underline', fontWeight: 700 }}>Privacy Policy</Link>
                         {' | '}
@@ -205,12 +224,28 @@ const App = () => {
                       </p>
                     </div>
 
-                    <button type="button" onClick={() => { if (formData.fullName && formData.email && formData.propertyAddress) { setStep(2); } else { alert('Please fill out your name, email, and property address before moving to Step 2.'); } }} style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '16px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: '2px solid #C9A84C', cursor: 'pointer', marginTop: 20, textTransform: 'uppercase', letterSpacing: 1 }}>
+                    {/* Inline validation error */}
+                    {errors.step1 && (
+                      <div style={{ background: '#fff0f0', border: '2px solid #8B0000', borderRadius: 10, padding: '12px 16px', textAlign: 'center' }}>
+                        <p style={{ color: '#8B0000', fontWeight: 900, fontSize: 14, margin: 0 }}>{errors.step1}</p>
+                      </div>
+                    )}
+
+                    <button type="button" onClick={() => {
+                      if (!formData.fullName || !formData.email || !formData.propertyAddress) {
+                        setErrors({ step1: 'Please fill out your name, email, and property address before continuing.' });
+                        return;
+                      }
+                      setErrors({});
+                      setStep(2);
+                    }} style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '16px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: '2px solid #C9A84C', cursor: 'pointer', marginTop: 4, textTransform: 'uppercase', letterSpacing: 1 }}>
                       Continue to Step 2 →
                     </button>
                   </div>
                 ) : (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+
+                    {/* Situation */}
                     <div style={{ background: '#222222', padding: '24px', borderRadius: 16, border: '1px solid #444' }}>
                       <label style={{ display: 'block', fontWeight: 900, color: '#C9A84C', marginBottom: 16, textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, textAlign: 'center' }}>* What is the situation? (Check all that apply)</label>
                       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
@@ -229,19 +264,21 @@ const App = () => {
                     </div>
 
                     {formData.situation.includes('Other') && (
-                      <input type="text" required placeholder="PLEASE DESCRIBE YOUR SITUATION..." value={formData.otherDescription || ''} onChange={e => setFormData({...formData, otherDescription: e.target.value})} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700, boxSizing: 'border-box', marginTop: 8 }} />
+                      <input type="text" placeholder="PLEASE DESCRIBE YOUR SITUATION..." value={formData.otherDescription || ''} onChange={e => setFormData({...formData, otherDescription: e.target.value})} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700, boxSizing: 'border-box' }} />
                     )}
 
+                    {/* Additional Notes */}
                     <div>
-                      <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* Additional Notes (Tell us more about the property...)</label>
-                      <textarea rows={3} placeholder="Tell us about the roof, plumbing, overall updates, or any structural needs..." value={formData.additionalNotes} onChange={(e) => setFormData({ ...formData, additionalNotes: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontFamily: 'inherit' }} />
+                      <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* Additional Notes</label>
+                      <textarea rows={4} placeholder="Tell us anything else about the property — repairs needed, current occupancy, access issues, unique features, or anything that may affect the value or timeline. The more you share, the better we can help you." value={formData.additionalNotes} onChange={(e) => setFormData({ ...formData, additionalNotes: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontFamily: 'inherit', lineHeight: 1.6 }} />
                     </div>
 
+                    {/* Timeline */}
                     <div>
-                      <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* How fast do you need to sell? <span style={{ color: '#C9A84C' }}>— Click Below</span></label>
+                      <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* How fast do you need to sell? <span style={{ color: '#C9A84C' }}>— Click black down arrow on right below</span></label>
                       <div style={{ position: 'relative' }}>
-                        <select value={formData.timeline} onChange={(e) => setFormData({ ...formData, timeline: e.target.value })} style={{ width: '100%', background: '#ffffff', border: '3px solid #000000', padding: '14px 40px 14px 14px', fontSize: 13, fontWeight: 900, borderRadius: 8, appearance: 'none', WebkitAppearance: 'none', letterSpacing: 1, textTransform: 'uppercase' }}>
-                          <option value="">Click here to select timeline...</option>
+                        <select value={formData.timeline} onChange={(e) => setFormData({ ...formData, timeline: e.target.value })} style={selectStyle}>
+                          <option value="">Select timeline here...</option>
                           <option value="Immediately">Immediately (ASAP)</option>
                           <option value="1-2 Weeks">Within 1-2 Weeks</option>
                           <option value="1 Month">Within a Month</option>
@@ -251,23 +288,53 @@ const App = () => {
                       </div>
                     </div>
 
+                    {/* Price */}
                     <div>
                       <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* What price would you consider for a cash offer?</label>
                       <input type="text" required placeholder="EXAMPLE: $150,000" value={formData.priceExpectation} onChange={(e) => setFormData({ ...formData, priceExpectation: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700 }} />
                     </div>
 
+                    {/* Major Repair Questions */}
+                    <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
+                      <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Major Repair Questions</p>
+                      <p style={{ fontSize: 12, color: '#888', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px' }}>Optional but helpful — answers help us review your property faster</p>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                        {repairOptions.map((r) => (
+                          <div key={r.key}>
+                            <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>{r.label}</label>
+                            <div style={{ position: 'relative' }}>
+                              <select value={formData[r.key]} onChange={(e) => setFormData({ ...formData, [r.key]: e.target.value })} style={selectStyle}>
+                                <option value="">Select here...</option>
+                                {r.options.map(o => <option key={o} value={o}>{o}</option>)}
+                              </select>
+                              <div style={{ position: 'absolute', right: 15, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', fontSize: 20, fontWeight: 900 }}>▼</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Disclosure */}
                     <div style={{ border: '2px solid #C9A84C', padding: '14px', borderRadius: 8, background: '#fffcf7' }}>
                       <p style={{ fontSize: 11, color: '#444', lineHeight: 1.5, margin: 0, fontWeight: 600 }}>
                         <strong>Disclosure:</strong> Tekton Property Solutions LLC is a real estate wholesaler, not a licensed agent. We may purchase properties below market value and assign contracts to third-party buyers for a profit. A written Wholesaler Disclosure Statement will be provided before any contract is binding. No obligation to sell.
                       </p>
                     </div>
 
+                    {/* Inline validation error */}
+                    {errors.step2 && (
+                      <div style={{ background: '#fff0f0', border: '2px solid #8B0000', borderRadius: 10, padding: '12px 16px', textAlign: 'center' }}>
+                        <p style={{ color: '#8B0000', fontWeight: 900, fontSize: 14, margin: 0 }}>{errors.step2}</p>
+                      </div>
+                    )}
+
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
                       <button type="button" onClick={() => {
-                        if (formData.situation.length === 0) { alert('Please select at least one situation before submitting.'); return; }
-                        if (!formData.timeline) { alert('Please select how fast you need to sell before submitting.'); return; }
-                        if (!formData.priceExpectation || formData.priceExpectation.trim() === '') { alert('Please enter a price you would consider for a cash offer.'); return; }
-                        if (!formData.additionalNotes || formData.additionalNotes.trim() === '') { alert('Please tell us more about the property before submitting.'); return; }
+                        if (formData.situation.length === 0) { setErrors({ step2: 'Please select at least one situation before submitting.' }); return; }
+                        if (!formData.timeline) { setErrors({ step2: 'Please select how fast you need to sell before submitting.' }); return; }
+                        if (!formData.priceExpectation || formData.priceExpectation.trim() === '') { setErrors({ step2: 'Please enter a price you would consider for a cash offer.' }); return; }
+                        if (!formData.additionalNotes || formData.additionalNotes.trim() === '') { setErrors({ step2: 'Please tell us more about the property before submitting.' }); return; }
+                        setErrors({});
                         document.querySelector('form').submit();
                       }} style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '18px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: 'none', cursor: 'pointer', textTransform: 'uppercase', letterSpacing: 1 }}>
                         Submit My Property →
@@ -335,9 +402,9 @@ const App = () => {
                 <p style={{ margin: 0 }}>SMS consent is never required as a condition of any purchase, sale, or service. Mobile phone numbers and SMS consent information will not be sold, rented, shared, or transferred to third parties or affiliates for marketing or promotional purposes.</p>
               </div>
               <p style={{ margin: 0, overflowWrap: 'break-word', wordBreak: 'break-word' }}>
-  <strong>Business Address:</strong> 6545 Market Ave N, Ste 100, Canton, OH 44721<br />
-  <strong>Contact:</strong> nicole@tektonpropertysolutions.com
-</p>
+                <strong>Business Address:</strong> 6545 Market Ave N, Ste 100, Canton, OH 44721<br />
+                <strong>Contact:</strong> nicole@tektonpropertysolutions.com
+              </p>
             </div>
           </div>
         </div>
@@ -359,7 +426,7 @@ const App = () => {
           <img src="/tekton-emblem.png" alt="Tekton Emblem" style={{ height: 60, width: 'auto', objectFit: 'contain', marginBottom: 16 }} onError={e => e.target.style.display = 'none'} />
           <p style={{ color: '#666', fontWeight: 700, fontSize: 14, textTransform: 'uppercase', letterSpacing: 3, marginBottom: 6 }}>Ohio &amp; Nationwide</p>
           <p style={{ color: '#888', fontSize: 13, marginBottom: 6 }}>6545 Market Ave N, Ste 100, Canton, OH 44721</p>
-          <p style={{ color: '#888', fontSize: 13, marginBottom: 20 }}>nicole@tektonpropertysolutions.com</p>
+          <p style={{ color: '#888', fontSize: 13, marginBottom: 20, overflowWrap: 'break-word', wordBreak: 'break-word' }}>nicole@tektonpropertysolutions.com</p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: 20, flexWrap: 'wrap', marginBottom: 20 }}>
             <Link to="/privacy-policy" style={{ color: '#8B0000', fontWeight: 900, textDecoration: 'underline', textTransform: 'uppercase', letterSpacing: 2, fontSize: 13 }}>Privacy Policy</Link>
             <span style={{ color: '#ccc', fontSize: 13 }}>|</span>
