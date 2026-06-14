@@ -55,7 +55,7 @@ const PrivacyPolicy = () => {
 
             <section>
               <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>3. How We Use Your Information</h2>
-              <p style={{ margin: 0 }}>Your information is used solely to:</p>
+              <p style={{ margin: 0 }}>Your information is collected solely to review your property and discuss possible options. We do not sell, rent, or share your personal information with third parties for their own marketing purposes. Mobile phone numbers and SMS consent information will not be sold, rented, shared, or transferred to third parties or affiliates for marketing or promotional purposes. to:</p>
               <ul style={{ margin: '10px 0 0', paddingLeft: 24, display: 'flex', flexDirection: 'column', gap: 6 }}>
                 <li>Review your property and respond to your inquiry</li>
                 <li>Contact you about your property situation</li>
