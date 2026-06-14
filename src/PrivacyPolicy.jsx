@@ -37,7 +37,10 @@ const PrivacyPolicy = () => {
             <section>
               <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>1. Who We Are</h2>
               <p style={{ margin: 0 }}>Tekton Property Solutions LLC is a real estate solutions company based in Ohio. We help property owners explore options for selling residential and other real estate directly, often in as-is condition. We are not licensed real estate agents. We operate in Ohio and nationwide.</p>
-              <p style={{ margin: '10px 0 0' }}><strong>Business Address:</strong> 6545 Market Ave N, Ste 100, Canton, OH 44721<br /><strong>Phone:</strong> 330-889-8983<br /><strong>Email:</strong> nicole@tektonpropertysolutions.com</p>
+              <p style={{ margin: '10px 0 0', wordBreak: 'break-word' }}>
+                <strong>Business Address:</strong> 6545 Market Ave N, Ste 100, Canton, OH 44721<br />
+                <strong>Email:</strong> nicole@tektonpropertysolutions.com
+              </p>
             </section>
 
             <div style={{ borderTop: '1px solid #e8e0d0' }} />
@@ -47,7 +50,7 @@ const PrivacyPolicy = () => {
               <p style={{ margin: 0 }}>When you submit our property inquiry form, we collect:</p>
               <ul style={{ margin: '10px 0 0', paddingLeft: 24, display: 'flex', flexDirection: 'column', gap: 6 }}>
                 <li>Full name</li>
-                <li>Phone number</li>
+                <li>Phone number (optional)</li>
                 <li>Email address</li>
                 <li>Property address</li>
                 <li>Property situation and condition details</li>
@@ -84,9 +87,9 @@ const PrivacyPolicy = () => {
 
             <section>
               <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>5. SMS &amp; Text Message Communications</h2>
-              <p style={{ margin: 0 }}>If you provide your phone number and check the SMS consent box on our inquiry form, you agree to receive text messages from Tekton Property Solutions LLC. These messages may include property inquiry follow-up, appointment reminders, offer discussions, and transaction updates.</p>
+              <p style={{ margin: 0 }}>If you provide your phone number and check one or more SMS consent boxes on our inquiry form, you agree to receive text messages from Tekton Property Solutions LLC. These messages may include property inquiry follow-up, appointment reminders, offer discussions, and transaction updates.</p>
               <p style={{ margin: '10px 0 0' }}><strong>Message frequency may vary.</strong> Message and data rates may apply.</p>
-              <p style={{ margin: '10px 0 0' }}>To opt out at any time, reply <strong>STOP</strong>. For assistance, reply <strong>HELP</strong>.</p>
+              <p style={{ margin: '10px 0 0' }}>Text <strong>STOP</strong> to unsubscribe at any time. Text <strong>HELP</strong> for help.</p>
               <p style={{ margin: '10px 0 0' }}>SMS consent is never required as a condition of any purchase, sale, or service.</p>
               <p style={{ margin: '10px 0 0' }}><strong>Mobile phone numbers and SMS consent information will not be sold, rented, shared, or transferred to third parties or affiliates for marketing or promotional purposes.</strong></p>
               <p style={{ margin: '10px 0 0' }}>For full SMS terms, see our <Link to="/sms-terms" style={{ color: '#8B0000', textDecoration: 'underline' }}>SMS Terms &amp; Conditions</Link>.</p>
@@ -122,7 +125,7 @@ const PrivacyPolicy = () => {
 
             <section>
               <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>9. Your Rights</h2>
-              <p style={{ margin: 0 }}>You may request that we delete your information or stop contacting you at any time by emailing nicole@tektonpropertysolutions.com or calling 330-889-8983.</p>
+              <p style={{ margin: 0, wordBreak: 'break-word' }}>You may request that we delete your information or stop contacting you at any time by emailing nicole@tektonpropertysolutions.com.</p>
             </section>
 
             <div style={{ borderTop: '1px solid #e8e0d0' }} />
