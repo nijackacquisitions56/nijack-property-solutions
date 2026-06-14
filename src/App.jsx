@@ -7,7 +7,8 @@ const App = () => {
   const [formData, setFormData] = useState({
     fullName: '', phone: '', email: '', propertyAddress: '',
     situation: [], additionalNotes: '', timeline: '', priceExpectation: '',
-    smsConsent: false
+    smsConsentTransactional: false,
+smsConsentMarketing: false
   });
 
   const faqs = [
