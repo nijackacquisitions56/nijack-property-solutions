@@ -294,9 +294,9 @@ const App = () => {
                       <input type="text" required placeholder="EXAMPLE: $150,000" value={formData.priceExpectation} onChange={(e) => setFormData({ ...formData, priceExpectation: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700 }} />
                     </div>
 
-                    {/* Major Repair Questions */}
+                    {/* Property Condition Questions */}
                     <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
-                      <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Major Repair Questions</p>
+                      <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Property Condition Questions</p>
                       <p style={{ fontSize: 12, color: '#888', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px' }}>Optional but helpful — answers help us review your property faster</p>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                         {repairOptions.map((r) => (
