@@ -75,7 +75,7 @@ const SmsTerms = () => {
               <p style={{ margin: 0 }}>You may opt out of receiving SMS messages from Tekton Property Solutions LLC at any time by texting <strong>STOP</strong> to any message you receive from us. After opting out, you will receive one final confirmation message and no further SMS messages will be sent.</p>
               <p style={{ margin: '10px 0 0' }}>You may also opt out by contacting us directly:</p>
               <p style={{ margin: '8px 0 0', overflowWrap: 'break-word', wordBreak: 'break-word' }}>
-                Email: nicole@tektonpropertysolutions.com
+                Email: <a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', textDecoration: 'underline' }}>nicole@tektonpropertysolutions.com</a>
               </p>
             </section>
 
