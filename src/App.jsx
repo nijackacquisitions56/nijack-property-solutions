@@ -216,8 +216,8 @@ const App = () => {
                           I consent to receive marketing text messages from Tekton Property Solutions LLC at the phone number provided. Message frequency may vary. Message &amp; data rates may apply. Text <strong>HELP</strong> for help. Text <strong>STOP</strong> to unsubscribe at any time. Consent is not a condition of any purchase or service.
                         </span>
                       </label>
-
-                      <p style={{ fontSize: 11, color: '#888', margin: '8px 0 0', textAlign: 'center' }}>
+<p style={{ fontSize: 11, color: '#666', margin: '8px 0 4px', fontStyle: 'italic', fontWeight: 600 }}>Checking either SMS consent box is optional. If you do not consent to text messages, we may contact you by email.</p>
+                      <p style={{ fontSize: 11, color: '#888', margin: '4px 0 0', textAlign: 'center' }}>
                         <Link to="/privacy-policy" style={{ color: '#8B0000', textDecoration: 'underline', fontWeight: 700 }}>Privacy Policy</Link>
                         {' | '}
                         <Link to="/sms-terms" style={{ color: '#8B0000', textDecoration: 'underline', fontWeight: 700 }}>SMS Terms &amp; Conditions</Link>
