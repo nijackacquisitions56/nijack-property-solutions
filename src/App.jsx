@@ -304,7 +304,7 @@ const App = () => {
                             <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>{r.label}</label>
                             <div style={{ position: 'relative' }}>
                               <select value={formData[r.key]} onChange={(e) => setFormData({ ...formData, [r.key]: e.target.value })} style={selectStyle}>
-                                <option value="">Select here...</option>
+                                <option value="">Not Sure...</option>
                                 {r.options.map(o => <option key={o} value={o}>{o}</option>)}
                               </select>
                               <div style={{ position: 'absolute', right: 15, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', fontSize: 20, fontWeight: 900 }}>▼</div>
