@@ -125,7 +125,7 @@ const PrivacyPolicy = () => {
 
             <section>
               <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>9. Your Rights</h2>
-              <p style={{ margin: 0, wordBreak: 'break-word' }}>You may request that we delete your information or stop contacting you at any time by emailing <a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', textDecoration: 'underline' }}>nicole@tektonpropertysolutions.com</a>
+             <p style={{ margin: 0, wordBreak: 'break-word' }}>You may request that we delete your information or stop contacting you at any time by emailing{' '}<a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', textDecoration: 'underline', fontWeight: 700 }}>nicole@tektonpropertysolutions.com</a>.</p>icole@tektonpropertysolutions.com</a>
             </section>
 
             <div style={{ borderTop: '1px solid #e8e0d0' }} />
