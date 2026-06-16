@@ -213,8 +213,8 @@ const App = () => {
                       <label style={{ display: 'flex', alignItems: 'flex-start', gap: 12, cursor: 'pointer', marginBottom: 12 }}>
                         <input type="checkbox" checked={formData.smsConsentMarketing} onChange={(e) => setFormData({ ...formData, smsConsentMarketing: e.target.checked })} style={{ marginTop: 3, width: 18, height: 18, accentColor: '#8B0000', flexShrink: 0 }} />
                         <span style={{ fontSize: 13, color: '#555', lineHeight: 1.6, fontWeight: 600 }}>
-                          I consent to receive marketing text messages from Tekton Property Solutions LLC at the phone number provided. Message frequency may vary. Message &amp; data rates may apply. Text <strong>HELP</strong> for help. Text <strong>STOP</strong> to unsubscribe at any time. Consent is not a condition of any purchase or service.
-                        </span>
+  I consent to receive promotional or marketing text messages from Tekton Property Solutions LLC at the phone number provided, including property-related follow-up messages, updates, and other promotional communications. Message frequency may vary. Message &amp; data rates may apply. Text <strong>HELP</strong> for help. Text <strong>STOP</strong> to unsubscribe at any time. Consent is not a condition of any purchase or service.
+</span>
                       </label>
 <p style={{ fontSize: 11, color: '#666', margin: '8px 0 4px', fontStyle: 'italic', fontWeight: 600 }}>Checking either SMS consent box is optional. If you do not consent to text messages, we may contact you by email.</p>
                       <p style={{ fontSize: 11, color: '#888', margin: '4px 0 0', textAlign: 'center' }}>
