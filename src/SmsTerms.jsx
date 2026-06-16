@@ -114,7 +114,7 @@ const SmsTerms = () => {
                 6545 Market Ave N, Ste 100<br />
                 Canton, OH 44721<br />
                 Email: <a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', textDecoration: 'underline' }}>nicole@tektonpropertysolutions.com</a>
-                Website: tektonpropertysolutions.com
+          
               </p>
             </section>
 
