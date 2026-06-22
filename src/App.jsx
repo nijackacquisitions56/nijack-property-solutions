@@ -347,12 +347,12 @@ const App = () => {
                     <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
                       <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Contact Preferences</p>
                       <p style={{ fontSize: 12, color: '#555', fontStyle: 'italic', textAlign: 'center', margin: '0 0 4px', fontWeight: 700 }}>This helps us follow up the right way after reviewing your property information.</p>
-                      <p style={{ fontSize: 12, color: '#888', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px' }}>If you prefer a call or text, please include your phone number and the best time to reach you.</p>
+                      <p style={{ fontSize: 12, color: '#888', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px' }}>If you prefer a call or text, please include your phone number so we can follow up the way you requested.</p>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
 
                         {/* Best Time to Call */}
                         <div>
-                          <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Best Time to Call You Back</label>
+                          <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Best Time to Reach You</label>
                           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
                             {['Morning', 'Afternoon', 'Evening', 'Anytime', 'Text Me First'].map((opt) => {
                               const isSelected = formData.bestTimeToCall === opt;
@@ -381,6 +381,22 @@ const App = () => {
                         </div>
 
                       </div>
+
+                        {(formData.preferredContact === 'Call' || formData.preferredContact === 'Text') && (
+                          <div style={{ marginTop: 16 }}>
+                            <label style={{ display: 'block', fontWeight: 800, color: '#ffffff', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>
+                              Phone Number <span style={{ color: '#C9A84C', fontSize: 11 }}>(Required for {formData.preferredContact})</span>
+                            </label>
+                            <input
+                              type="tel"
+                              placeholder="YOUR PHONE NUMBER"
+                              value={formData.phone}
+                              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                              style={{ width: '100%', background: '#ffffff', border: '2px solid #C9A84C', borderRadius: 8, padding: '14px', fontSize: 15, fontWeight: 700, boxSizing: 'border-box' }}
+                            />
+                          </div>
+                        )}
+
                     </div>
                     {/* ── END NEW SECTION ── */}
 
@@ -404,6 +420,7 @@ const App = () => {
                         if (!formData.timeline) { setErrors({ step2: 'Please select how fast you need to sell before submitting.' }); return; }
                         if (!formData.priceExpectation || formData.priceExpectation.trim() === '') { setErrors({ step2: 'Please enter a price you would consider for a cash offer.' }); return; }
                         if (!formData.additionalNotes || formData.additionalNotes.trim() === '') { setErrors({ step2: 'Please tell us more about the property before submitting.' }); return; }
+                        if ((formData.preferredContact === 'Call' || formData.preferredContact === 'Text') && !formData.phone.trim()) { setErrors({ step2: 'Please enter your phone number since you selected ' + formData.preferredContact + ' as your preferred contact method.' }); return; }
                         if (!formData.roofCondition) { setErrors({ step2: 'Please select the Roof Condition before submitting.' }); return; }
                         if (!formData.hvacCondition) { setErrors({ step2: 'Please select the Heating / Cooling System condition before submitting.' }); return; }
                         if (!formData.electricalCondition) { setErrors({ step2: 'Please select the Electrical System condition before submitting.' }); return; }
