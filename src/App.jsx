@@ -92,7 +92,7 @@ const App = () => {
               <div className="line-relief">RELIEF THAT DELIVERS.</div>
             </div>
           </div>
-          <a href="#property-form" className="cta-btn">Get Your Offer</a>
+          <a href="#property-form" className="cta-btn">Get My Property Review</a>
         </div>
       </nav>
 
@@ -320,12 +320,13 @@ const App = () => {
                     {/* ── NEW: Best Time to Call + Preferred Contact ── */}
                     <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
                       <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Contact Preferences</p>
-                      <p style={{ fontSize: 12, color: '#888', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px' }}>Optional — helps us reach you at the right time, the right way</p>
+                      <p style={{ fontSize: 12, color: '#555', fontStyle: 'italic', textAlign: 'center', margin: '0 0 4px', fontWeight: 700 }}>This helps us follow up the right way after reviewing your property information.</p>
+                      <p style={{ fontSize: 12, color: '#888', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px' }}>Best time to call is required — all other fields are optional</p>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
 
                         {/* Best Time to Call */}
                         <div>
-                          <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Best Time to Call You Back</label>
+                          <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>* Best Time to Call You Back <span style={{ color: '#8B0000', fontSize: 11 }}>(Required)</span></label>
                           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
                             {['Morning', 'Afternoon', 'Evening', 'Anytime', 'Text Me First'].map((opt) => {
                               const isSelected = formData.bestTimeToCall === opt;
@@ -341,8 +342,8 @@ const App = () => {
                         {/* Preferred Contact Method */}
                         <div>
                           <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Preferred Contact Method</label>
-                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
-                            {['Call', 'Text', 'Email'].map((opt) => {
+                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
+                            {['Call', 'Text', 'Email', 'No Call — Text Only'].map((opt) => {
                               const isSelected = formData.preferredContact === opt;
                               return (
                                 <button key={opt} type="button" onClick={() => setFormData({ ...formData, preferredContact: isSelected ? '' : opt })} style={{ padding: '12px 10px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '2px solid #d0c8b8', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5, textAlign: 'center', transition: 'all 0.15s' }}>
@@ -377,6 +378,7 @@ const App = () => {
                         if (!formData.timeline) { setErrors({ step2: 'Please select how fast you need to sell before submitting.' }); return; }
                         if (!formData.priceExpectation || formData.priceExpectation.trim() === '') { setErrors({ step2: 'Please enter a price you would consider for a cash offer.' }); return; }
                         if (!formData.additionalNotes || formData.additionalNotes.trim() === '') { setErrors({ step2: 'Please tell us more about the property before submitting.' }); return; }
+                        if (!formData.bestTimeToCall) { setErrors({ step2: 'Please select the best time to call you back before submitting.' }); return; }
                         setErrors({});
                         document.querySelector('form').submit();
                       }} style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '18px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: 'none', cursor: 'pointer', textTransform: 'uppercase', letterSpacing: 1 }}>
