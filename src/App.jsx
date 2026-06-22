@@ -102,6 +102,8 @@ const App = () => {
             .cta-btn { padding: 10px 16px; font-size: 12px; letter-spacing: 0.5px; }
             .cta-btn-full { display: none; }
             .cta-btn-short { display: inline; }
+            .form-input { font-size: 13px !important; padding: 10px !important; }
+            .pref-btn { padding: 8px 6px !important; font-size: 10px !important; }
           }
         `}</style>
         <div className="nav-container">
@@ -216,12 +218,12 @@ const App = () => {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                     <p style={{ color: '#555', fontSize: 14, textAlign: 'center', margin: '0 0 8px', fontWeight: 600 }}>No obligation. No pressure. Just explore your options.</p>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
-                      <input type="text" required placeholder="FULL NAME" value={formData.fullName} onChange={(e) => setFormData({ ...formData, fullName: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
-                      <input type="tel" placeholder="PHONE NUMBER (OPTIONAL)" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
+                      <input type="text" required placeholder="FULL NAME" className="form-input" value={formData.fullName} onChange={(e) => setFormData({ ...formData, fullName: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
+                      <input type="tel" placeholder="PHONE NUMBER (OPTIONAL)" className="form-input" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
                     </div>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
-                      <input type="email" required placeholder="EMAIL ADDRESS" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
-                      <input type="text" required placeholder="1234 Main St, Columbus OH 43215" value={formData.propertyAddress} onChange={(e) => setFormData({ ...formData, propertyAddress: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
+                      <input type="email" required placeholder="EMAIL ADDRESS" className="form-input" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
+                      <input type="text" required placeholder="1234 Main St, Columbus OH 43215" className="form-input" value={formData.propertyAddress} onChange={(e) => setFormData({ ...formData, propertyAddress: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
                     </div>
 
                     {/* SMS CONSENT - TWO CHECKBOXES */}
@@ -362,7 +364,7 @@ const App = () => {
                             {['Morning', 'Afternoon', 'Evening', 'Anytime', 'Text Me First'].map((opt) => {
                               const isSelected = formData.bestTimeToCall === opt;
                               return (
-                                <button key={opt} type="button" onClick={() => setFormData({ ...formData, bestTimeToCall: isSelected ? '' : opt })} style={{ padding: '12px 10px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '2px solid #d0c8b8', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5, textAlign: 'center', transition: 'all 0.15s' }}>
+                                <button key={opt} type="button" onClick={() => setFormData({ ...formData, bestTimeToCall: isSelected ? '' : opt })} className='pref-btn' style={{ padding: '12px 10px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '2px solid #d0c8b8', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5, textAlign: 'center', transition: 'all 0.15s' }}>
                                   {opt}
                                 </button>
                               );
@@ -377,7 +379,7 @@ const App = () => {
                             {['Call', 'Text', 'Email', 'No Call — Text Only'].map((opt) => {
                               const isSelected = formData.preferredContact === opt;
                               return (
-                                <button key={opt} type="button" onClick={() => setFormData({ ...formData, preferredContact: isSelected ? '' : opt })} style={{ padding: '12px 10px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '2px solid #d0c8b8', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5, textAlign: 'center', transition: 'all 0.15s' }}>
+                                <button key={opt} type="button" onClick={() => setFormData({ ...formData, preferredContact: isSelected ? '' : opt })} className='pref-btn' style={{ padding: '12px 10px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '2px solid #d0c8b8', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5, textAlign: 'center', transition: 'all 0.15s' }}>
                                   {opt}
                                 </button>
                               );
