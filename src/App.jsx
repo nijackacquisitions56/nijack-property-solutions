@@ -517,7 +517,7 @@ const App = () => {
               </div>
               <p style={{ margin: 0, overflowWrap: 'break-word', wordBreak: 'break-word' }}>
                 <strong>Business Address:</strong> 6545 Market Ave N, Ste 100, Canton, OH 44721<br />
-                <strong>Contact:</strong> nicole@tektonpropertysolutions.com
+                <strong>Contact:</strong> <a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', fontWeight: 700, textDecoration: 'underline' }}>nicole@tektonpropertysolutions.com</a>
               </p>
             </div>
           </div>
