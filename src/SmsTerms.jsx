@@ -75,7 +75,7 @@ const SmsTerms = () => {
               <p style={{ margin: 0 }}>You may opt out of receiving SMS messages from Tekton Property Solutions LLC at any time by texting <strong>STOP</strong> to any message you receive from us. After opting out, you will receive one final confirmation message and no further SMS messages will be sent.</p>
               <p style={{ margin: '10px 0 0' }}>You may also opt out by contacting us directly:</p>
               <p style={{ margin: '8px 0 0', overflowWrap: 'break-word', wordBreak: 'break-word' }}>
-                Email: <a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', textDecoration: 'underline' }}>nicole@tektonpropertysolutions.com</a>
+                Email: <a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', textDecoration: 'underline' }}>Email Nicole</a>
               </p>
             </section>
 
@@ -85,7 +85,7 @@ const SmsTerms = () => {
               <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>6. How to Get Help</h2>
               <p style={{ margin: 0 }}>For assistance with our SMS program, text <strong>HELP</strong> to any message you receive from us, or contact us at:</p>
               <p style={{ margin: '8px 0 0', overflowWrap: 'break-word', wordBreak: 'break-word' }}>
-                Email: <a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', textDecoration: 'underline' }}>nicole@tektonpropertysolutions.com</a>
+                Email: <a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', textDecoration: 'underline' }}>Email Nicole</a>
               </p>
             </section>
 
@@ -113,7 +113,7 @@ const SmsTerms = () => {
                 <strong>Tekton Property Solutions LLC</strong><br />
                 6545 Market Ave N, Ste 100<br />
                 Canton, OH 44721<br />
-                Email: <a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', textDecoration: 'underline' }}>nicole@tektonpropertysolutions.com</a>
+                Email: <a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', textDecoration: 'underline' }}>Email Nicole</a>
           
               </p>
             </section>
