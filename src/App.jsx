@@ -89,6 +89,8 @@ const App = () => {
           .line-solutions { color: #555555; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 800; line-height: 1.1; margin: 4px 0 2px; }
           .line-relief { color: #A38430; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; line-height: 1.0; font-style: italic; }
           .cta-btn { background: #8B0000; color: #fff; padding: 14px 28px; border-radius: 999px; font-weight: 900; font-size: 15px; text-decoration: none; border: 2px solid #C9A84C; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
+          .cta-btn-short { display: none; }
+          .cta-btn-full { display: inline; }
           @media (max-width: 768px) {
             .hero-section { padding: 70px 16px 80px !important; }
             .nav-container { padding: 6px 10px; gap: 4px; }
@@ -97,7 +99,9 @@ const App = () => {
             .line-tekton { font-size: 18px; line-height: 0.95; }
             .line-solutions { font-size: 8.5px; letter-spacing: 0.9px; margin: 1px 0; line-height: 1.0; }
             .line-relief { font-size: 7.5px; letter-spacing: 1px; line-height: 1.0; }
-            .cta-btn { padding: 8px 14px; font-size: 11px; }
+            .cta-btn { padding: 7px 10px; font-size: 9px; letter-spacing: 0.5px; }
+            .cta-btn-full { display: none; }
+            .cta-btn-short { display: inline; }
           }
         `}</style>
         <div className="nav-container">
@@ -109,7 +113,7 @@ const App = () => {
               <div className="line-relief">RELIEF THAT DELIVERS.</div>
             </div>
           </div>
-          <a href="#property-form" className="cta-btn">Get My Property Review</a>
+          <a href="#property-form" className="cta-btn"><span className="cta-btn-full">Get My Property Review</span><span className="cta-btn-short">Get Offer</span></a>
         </div>
       </nav>
 
