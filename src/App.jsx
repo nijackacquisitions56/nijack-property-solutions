@@ -35,6 +35,19 @@ const App = () => {
     }));
   };
 
+  const isCompleteAddress = (addr) => {
+    if (!addr || addr.trim().length < 10) return false;
+    const hasStreetNumber = /\d+/.test(addr);
+    const hasState = /([A-Z]{2})/.test(addr) || /(ohio|OH|alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new\s+hampshire|new\s+jersey|new\s+mexico|new\s+york|north\s+carolina|north\s+dakota|oregon|pennsylvania|rhode\s+island|south\s+carolina|south\s+dakota|tennessee|texas|utah|vermont|virginia|washington|west\s+virginia|wisconsin|wyoming)/i.test(addr);
+    const hasZip = /\d{5}/.test(addr);
+    const hasCity = addr.trim().split(/[\s,]+/).length >= 4;
+    return hasStreetNumber && (hasState || hasZip) && hasCity;
+  };
+
+  const isValidEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+  };
+
   const selectStyle = {
     width: '100%',
     background: '#ffffff',
@@ -199,7 +212,7 @@ const App = () => {
                     </div>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
                       <input type="email" required placeholder="EMAIL ADDRESS" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
-                      <input type="text" required placeholder="PROPERTY ADDRESS" value={formData.propertyAddress} onChange={(e) => setFormData({ ...formData, propertyAddress: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
+                      <input type="text" required placeholder="FULL ADDRESS: 1234 Main St, City, OH 12345" value={formData.propertyAddress} onChange={(e) => setFormData({ ...formData, propertyAddress: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
                     </div>
 
                     {/* SMS CONSENT - TWO CHECKBOXES */}
@@ -237,6 +250,14 @@ const App = () => {
                     <button type="button" onClick={() => {
                       if (!formData.fullName || !formData.email || !formData.propertyAddress) {
                         setErrors({ step1: 'Please fill out your name, email, and property address before continuing.' });
+                        return;
+                      }
+                      if (!isCompleteAddress(formData.propertyAddress)) {
+                        setErrors({ step1: 'Please enter a complete property address including street number, city, state, and zip code. Example: 1234 Main St, Columbus, OH 43215' });
+                        return;
+                      }
+                      if (!isValidEmail(formData.email)) {
+                        setErrors({ step1: 'Please enter a valid email address. Example: name@email.com' });
                         return;
                       }
                       setErrors({});
