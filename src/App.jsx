@@ -45,7 +45,11 @@ const App = () => {
   };
 
   const isValidEmail = (email) => {
-    return /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(email.trim());
+    const val = email.trim().toLowerCase();
+    if (!/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(val)) return false;
+    const validTLDs = ['com','net','org','edu','gov','mil','int','io','co','us','biz','info','mobi','name','pro','aero','coop','museum','travel','jobs','tel','cat','post','xxx','app','dev','ai','tech','online','site','website','store','shop','blog','news','media','agency','cloud','digital','email','finance','group','health','home','house','live','local','plus','real','realty','solutions','services','support','systems','team','today','top','work','world','zone','in','uk','ca','au','de','fr','es','it','nl','br','mx','jp','cn','ru','kr','se','no','dk','fi','pl','pt','nz','za','sg','hk','ae','sa','il','ng','gh','ke','tz','ug'];
+    const tld = val.split('.').pop();
+    return validTLDs.includes(tld);
   };
 
   const selectStyle = {
@@ -63,12 +67,12 @@ const App = () => {
   };
 
   const repairOptions = [
-    { key: 'roofCondition', label: 'Roof Condition', options: ['Not sure','No known issues','Older but no leaks','Has leaks','Needs repair','Needs full replacement'] },
-    { key: 'hvacCondition', label: 'Heating / Cooling System', options: ['Not sure','Working properly','Older but working','Needs repair','Not working','No central HVAC'] },
-    { key: 'electricalCondition', label: 'Electrical System', options: ['Not sure','Updated / no known issues','Older but working','Fuse box or outdated panel','Known electrical issues','Needs major electrical work'] },
-    { key: 'plumbingCondition', label: 'Plumbing Condition', options: ['Not sure','No known issues','Older but working','Leaks or slow drains','Known plumbing issues','Needs major plumbing work'] },
-    { key: 'foundationCondition', label: 'Foundation / Structural Concerns', options: ['Not sure','No known issues','Minor cracks / settling','Water in basement or crawlspace','Major cracks or movement','Needs foundation repair'] },
-    { key: 'overallCondition', label: 'Overall Property Condition', options: ['Not sure','Move-in ready','Light repairs needed','Moderate repairs needed','Heavy repairs needed','Fire / water damage','Vacant or boarded'] },
+    { key: 'roofCondition', label: 'Roof Condition', required: true, options: ['Not sure','No known issues','Older but no leaks','Has leaks','Needs repair','Needs full replacement'] },
+    { key: 'hvacCondition', label: 'Heating / Cooling System', required: true, options: ['Not sure','Working properly','Older but working','Needs repair','Not working','No central HVAC'] },
+    { key: 'electricalCondition', label: 'Electrical System', required: true, options: ['Not sure','Updated / no known issues','Older but working','Fuse box or outdated panel','Known electrical issues','Needs major electrical work'] },
+    { key: 'plumbingCondition', label: 'Plumbing Condition', required: true, options: ['Not sure','No known issues','Older but working','Leaks or slow drains','Known plumbing issues','Needs major plumbing work'] },
+    { key: 'foundationCondition', label: 'Foundation / Structural Concerns', required: true, options: ['Not sure','No known issues','Minor cracks / settling','Water in basement or crawlspace','Major cracks or movement','Needs foundation repair'] },
+    { key: 'overallCondition', label: 'Overall Property Condition', required: true, options: ['Not sure','Move-in ready','Light repairs needed','Moderate repairs needed','Heavy repairs needed','Fire / water damage','Vacant or boarded'] },
   ];
 
   return (
@@ -322,14 +326,14 @@ const App = () => {
                     {/* Property Condition Questions */}
                     <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
                       <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Property Condition Questions</p>
-                      <p style={{ fontSize: 12, color: '#555', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px', fontWeight: 700 }}>Optional but helpful — answers help us review your property faster</p>
+                      <p style={{ fontSize: 12, color: '#555', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px', fontWeight: 700 }}>Required — "Not Sure" is always a valid answer</p>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                         {repairOptions.map((r) => (
                           <div key={r.key}>
-                            <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>{r.label}</label>
+                            <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>{r.label}{r.required && <span style={{ color: '#8B0000', marginLeft: 4 }}>*</span>}</label>
                             <div style={{ position: 'relative' }}>
                               <select value={formData[r.key]} onChange={(e) => setFormData({ ...formData, [r.key]: e.target.value })} style={selectStyle}>
-                                <option value="">Not Sure...</option>
+                                <option value="">Select one...</option>
                                 {r.options.map(o => <option key={o} value={o}>{o}</option>)}
                               </select>
                               <div style={{ position: 'absolute', right: 15, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', fontSize: 20, fontWeight: 900 }}>▼</div>
@@ -343,7 +347,7 @@ const App = () => {
                     <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
                       <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Contact Preferences</p>
                       <p style={{ fontSize: 12, color: '#555', fontStyle: 'italic', textAlign: 'center', margin: '0 0 4px', fontWeight: 700 }}>This helps us follow up the right way after reviewing your property information.</p>
-                      <p style={{ fontSize: 12, color: '#888', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px' }}>If you'd like a call or text back, please include your phone number and the best time to reach you.</p>
+                      <p style={{ fontSize: 12, color: '#888', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px' }}>If you prefer a call or text, please include your phone number and the best time to reach you.</p>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
 
                         {/* Best Time to Call */}
@@ -400,6 +404,12 @@ const App = () => {
                         if (!formData.timeline) { setErrors({ step2: 'Please select how fast you need to sell before submitting.' }); return; }
                         if (!formData.priceExpectation || formData.priceExpectation.trim() === '') { setErrors({ step2: 'Please enter a price you would consider for a cash offer.' }); return; }
                         if (!formData.additionalNotes || formData.additionalNotes.trim() === '') { setErrors({ step2: 'Please tell us more about the property before submitting.' }); return; }
+                        if (!formData.roofCondition) { setErrors({ step2: 'Please select the Roof Condition before submitting.' }); return; }
+                        if (!formData.hvacCondition) { setErrors({ step2: 'Please select the Heating / Cooling System condition before submitting.' }); return; }
+                        if (!formData.electricalCondition) { setErrors({ step2: 'Please select the Electrical System condition before submitting.' }); return; }
+                        if (!formData.plumbingCondition) { setErrors({ step2: 'Please select the Plumbing Condition before submitting.' }); return; }
+                        if (!formData.foundationCondition) { setErrors({ step2: 'Please select the Foundation / Structural condition before submitting.' }); return; }
+                        if (!formData.overallCondition) { setErrors({ step2: 'Please select the Overall Property Condition before submitting.' }); return; }
                         setErrors({});
                         document.querySelector('form').submit();
                       }} style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '18px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: 'none', cursor: 'pointer', textTransform: 'uppercase', letterSpacing: 1 }}>
