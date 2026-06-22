@@ -383,7 +383,7 @@ const App = () => {
 
                       </div>
 
-                        {(formData.preferredContact === 'Call' || formData.preferredContact === 'Text') && (
+                        {(formData.preferredContact === 'Call' || formData.preferredContact === 'Text' || formData.preferredContact === 'No Call — Text Only') && (
                           <div style={{ marginTop: 16 }}>
                             <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>
                               Phone Number <span style={{ color: '#C9A84C', fontSize: 11 }}>(Required for {formData.preferredContact})</span>
@@ -422,7 +422,12 @@ const App = () => {
                         if (!formData.priceExpectation || formData.priceExpectation.trim() === '') { setErrors({ step2: 'Please enter a price you would consider for a cash offer.' }); return; }
                         if (!formData.additionalNotes || formData.additionalNotes.trim() === '') { setErrors({ step2: 'Please tell us more about the property before submitting.' }); return; }
                         if (!formData.preferredContact) { setErrors({ step2: 'Please select your preferred contact method before submitting.' }); return; }
-                        if ((formData.preferredContact === 'Call' || formData.preferredContact === 'Text') && !formData.phone.trim()) { setErrors({ step2: 'Please enter your phone number since you selected ' + formData.preferredContact + ' as your preferred contact method.' }); return; }
+                        if (
+                          (formData.preferredContact === 'Call' ||
+                           formData.preferredContact === 'Text' ||
+                           formData.preferredContact === 'No Call — Text Only') &&
+                          !formData.phone.trim()
+                        ) { setErrors({ step2: 'Please enter your phone number since you selected ' + formData.preferredContact + ' as your preferred contact method.' }); return; }
                         if (!formData.roofCondition) { setErrors({ step2: 'Please select the Roof Condition before submitting.' }); return; }
                         if (!formData.hvacCondition) { setErrors({ step2: 'Please select the Heating / Cooling System condition before submitting.' }); return; }
                         if (!formData.electricalCondition) { setErrors({ step2: 'Please select the Electrical System condition before submitting.' }); return; }
