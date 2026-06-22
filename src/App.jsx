@@ -37,11 +37,11 @@ const App = () => {
 
   const isCompleteAddress = (addr) => {
     if (!addr || addr.trim().length < 10) return false;
-    const hasStreetNumber = /\d+/.test(addr);
-    const hasState = /([A-Z]{2})/.test(addr) || /(ohio|OH|alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new\s+hampshire|new\s+jersey|new\s+mexico|new\s+york|north\s+carolina|north\s+dakota|oregon|pennsylvania|rhode\s+island|south\s+carolina|south\s+dakota|tennessee|texas|utah|vermont|virginia|washington|west\s+virginia|wisconsin|wyoming)/i.test(addr);
-    const hasZip = /\d{5}/.test(addr);
-    const hasCity = addr.trim().split(/[\s,]+/).length >= 4;
-    return hasStreetNumber && (hasState || hasZip) && hasCity;
+    const hasStreetNumber = /\d/.test(addr);
+    const hasZip = /\d{5}/.test(addr);
+    const hasState = /[A-Za-z]{2}/.test(addr);
+    const wordCount = addr.trim().split(/\s+/).length;
+    return hasStreetNumber && wordCount >= 3 && (hasZip || hasState);
   };
 
   const isValidEmail = (email) => {
