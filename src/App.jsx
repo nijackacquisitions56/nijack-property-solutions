@@ -13,7 +13,7 @@ const App = () => {
     smsConsentMarketing: false,
     roofCondition: '', hvacCondition: '', electricalCondition: '',
     plumbingCondition: '', foundationCondition: '', overallCondition: '',
-    bestTimeToCall: '', preferredContact: ''
+    bestTimeToCall: '', preferredContact: '', otherDescription: ''
   });
 
   const faqs = [
@@ -39,7 +39,7 @@ const App = () => {
     if (!addr || addr.trim().length < 10) return false;
     const hasStreetNumber = /\d/.test(addr);
     const hasZip = /\d{5}/.test(addr);
-    const hasState = /[A-Za-z]{2}/.test(addr);
+    const hasState = /\b[A-Za-z]{2}\b/.test(addr);
     const wordCount = addr.trim().split(/\s+/).length;
     return hasStreetNumber && wordCount >= 3 && (hasZip || hasState);
   };
@@ -205,6 +205,7 @@ const App = () => {
               <input type="hidden" name="overallCondition" value={formData.overallCondition} />
               <input type="hidden" name="bestTimeToCall" value={formData.bestTimeToCall} />
               <input type="hidden" name="preferredContact" value={formData.preferredContact} />
+              <input type="hidden" name="otherDescription" value={formData.otherDescription} />
 
               <div style={{ padding: '40px' }}>
                 {step === 1 ? (
@@ -293,7 +294,7 @@ const App = () => {
                     </div>
 
                     {formData.situation.includes('Other') && (
-                      <input type="text" placeholder="PLEASE DESCRIBE YOUR SITUATION..." value={formData.otherDescription || ''} onChange={e => setFormData({...formData, otherDescription: e.target.value})} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700, boxSizing: 'border-box' }} />
+                      <input type="text" placeholder="PLEASE DESCRIBE YOUR SITUATION..." value={formData.otherDescription} onChange={e => setFormData({...formData, otherDescription: e.target.value})} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700, boxSizing: 'border-box' }} />
                     )}
 
                     {/* Additional Notes */}
@@ -384,7 +385,7 @@ const App = () => {
 
                         {(formData.preferredContact === 'Call' || formData.preferredContact === 'Text') && (
                           <div style={{ marginTop: 16 }}>
-                            <label style={{ display: 'block', fontWeight: 800, color: '#ffffff', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>
+                            <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>
                               Phone Number <span style={{ color: '#C9A84C', fontSize: 11 }}>(Required for {formData.preferredContact})</span>
                             </label>
                             <input
@@ -420,6 +421,7 @@ const App = () => {
                         if (!formData.timeline) { setErrors({ step2: 'Please select how fast you need to sell before submitting.' }); return; }
                         if (!formData.priceExpectation || formData.priceExpectation.trim() === '') { setErrors({ step2: 'Please enter a price you would consider for a cash offer.' }); return; }
                         if (!formData.additionalNotes || formData.additionalNotes.trim() === '') { setErrors({ step2: 'Please tell us more about the property before submitting.' }); return; }
+                        if (!formData.preferredContact) { setErrors({ step2: 'Please select your preferred contact method before submitting.' }); return; }
                         if ((formData.preferredContact === 'Call' || formData.preferredContact === 'Text') && !formData.phone.trim()) { setErrors({ step2: 'Please enter your phone number since you selected ' + formData.preferredContact + ' as your preferred contact method.' }); return; }
                         if (!formData.roofCondition) { setErrors({ step2: 'Please select the Roof Condition before submitting.' }); return; }
                         if (!formData.hvacCondition) { setErrors({ step2: 'Please select the Heating / Cooling System condition before submitting.' }); return; }
