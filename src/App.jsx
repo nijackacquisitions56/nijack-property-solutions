@@ -110,6 +110,8 @@ const App = () => {
             .pref-grid-2 { grid-template-columns: repeat(2, 1fr) !important; }
             .step-btn { font-size: 14px !important; padding: 12px !important; }
             .submit-btn { font-size: 14px !important; padding: 14px !important; }
+            .form-section { padding: 20px 20px 40px !important; }
+            .cta-section-btn { font-size: 14px !important; padding: 14px 24px !important; }
           }
         `}</style>
         <div className="nav-container">
@@ -180,7 +182,7 @@ const App = () => {
       </section>
 
       {/* 5. 2-STEP FORM */}
-      <section id="property-form" style={{ padding: '80px 20px 60px', scrollMarginTop: 100 }}>
+      <section id="property-form" className="form-section" style={{ padding: '80px 20px 60px', scrollMarginTop: 100 }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ background: '#fff', borderRadius: 32, boxShadow: '0 8px 48px rgba(10,22,40,0.14)', border: '1px solid #e8e0d0', overflow: 'hidden' }}>
             <div style={{ background: '#C9A84C', padding: '32px 24px', textAlign: 'center' }}>
@@ -528,7 +530,7 @@ const App = () => {
           <p style={{ color: '#C9A84C', fontWeight: 700, letterSpacing: 4, textTransform: 'uppercase', fontSize: 13, marginBottom: 16 }}>READY TO MOVE FORWARD?</p>
           <h2 style={{ fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(28px,6vw,64px)', lineHeight: 1.1, marginBottom: 24, letterSpacing: -1 }}>Start With Your<br />Property Details</h2>
           <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.85)', marginBottom: 32, fontWeight: 600 }}>No obligation. No pressure. Just see what your options look like.</p>
-          <a href="#property-form" style={{ background: '#C9A84C', color: '#0d0d0d', padding: '20px 48px', borderRadius: 999, fontWeight: 900, textTransform: 'uppercase', letterSpacing: 3, fontSize: 18, textDecoration: 'none', display: 'inline-block' }}>Submit My Details Now</a>
+          <a href="#property-form" className="cta-section-btn" style={{ background: '#C9A84C', color: '#0d0d0d', padding: '20px 48px', borderRadius: 999, fontWeight: 900, textTransform: 'uppercase', letterSpacing: 3, fontSize: 18, textDecoration: 'none', display: 'inline-block' }}>Submit My Details Now</a>
         </div>
       </section>
 
