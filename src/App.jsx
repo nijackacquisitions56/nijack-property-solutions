@@ -12,7 +12,8 @@ const App = () => {
     smsConsentTransactional: false,
     smsConsentMarketing: false,
     roofCondition: '', hvacCondition: '', electricalCondition: '',
-    plumbingCondition: '', foundationCondition: '', overallCondition: ''
+    plumbingCondition: '', foundationCondition: '', overallCondition: '',
+    bestTimeToCall: '', preferredContact: ''
   });
 
   const faqs = [
@@ -185,6 +186,8 @@ const App = () => {
               <input type="hidden" name="plumbingCondition" value={formData.plumbingCondition} />
               <input type="hidden" name="foundationCondition" value={formData.foundationCondition} />
               <input type="hidden" name="overallCondition" value={formData.overallCondition} />
+              <input type="hidden" name="bestTimeToCall" value={formData.bestTimeToCall} />
+              <input type="hidden" name="preferredContact" value={formData.preferredContact} />
 
               <div style={{ padding: '40px' }}>
                 {step === 1 ? (
@@ -313,6 +316,46 @@ const App = () => {
                         ))}
                       </div>
                     </div>
+
+                    {/* ── NEW: Best Time to Call + Preferred Contact ── */}
+                    <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
+                      <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Contact Preferences</p>
+                      <p style={{ fontSize: 12, color: '#888', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px' }}>Optional — helps us reach you at the right time, the right way</p>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+
+                        {/* Best Time to Call */}
+                        <div>
+                          <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Best Time to Call You Back</label>
+                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
+                            {['Morning', 'Afternoon', 'Evening', 'Anytime', 'Text Me First'].map((opt) => {
+                              const isSelected = formData.bestTimeToCall === opt;
+                              return (
+                                <button key={opt} type="button" onClick={() => setFormData({ ...formData, bestTimeToCall: isSelected ? '' : opt })} style={{ padding: '12px 10px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '2px solid #d0c8b8', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5, textAlign: 'center', transition: 'all 0.15s' }}>
+                                  {opt}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </div>
+
+                        {/* Preferred Contact Method */}
+                        <div>
+                          <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Preferred Contact Method</label>
+                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
+                            {['Call', 'Text', 'Email'].map((opt) => {
+                              const isSelected = formData.preferredContact === opt;
+                              return (
+                                <button key={opt} type="button" onClick={() => setFormData({ ...formData, preferredContact: isSelected ? '' : opt })} style={{ padding: '12px 10px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '2px solid #d0c8b8', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5, textAlign: 'center', transition: 'all 0.15s' }}>
+                                  {opt}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    {/* ── END NEW SECTION ── */}
 
                     {/* Disclosure */}
                     <div style={{ border: '2px solid #C9A84C', padding: '14px', borderRadius: 8, background: '#fffcf7' }}>
