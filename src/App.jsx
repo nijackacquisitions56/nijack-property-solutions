@@ -103,7 +103,13 @@ const App = () => {
             .cta-btn-full { display: none; }
             .cta-btn-short { display: inline; }
             .form-input { font-size: 13px !important; padding: 10px !important; }
-            .pref-btn { padding: 8px 6px !important; font-size: 10px !important; }
+            .pref-btn { padding: 8px 6px !important; font-size: 11px !important; }
+            .contact-pref-title { font-size: 15px !important; }
+            .contact-pref-sub { font-size: 13px !important; }
+            .contact-pref-helper { font-size: 12px !important; }
+            .pref-grid-2 { grid-template-columns: repeat(2, 1fr) !important; }
+            .step-btn { font-size: 14px !important; padding: 12px !important; }
+            .submit-btn { font-size: 14px !important; padding: 14px !important; }
           }
         `}</style>
         <div className="nav-container">
@@ -223,7 +229,7 @@ const App = () => {
                     </div>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
                       <input type="email" required placeholder="EMAIL ADDRESS" className="form-input" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
-                      <input type="text" required placeholder="1234 Main St, Columbus OH 43215" className="form-input" value={formData.propertyAddress} onChange={(e) => setFormData({ ...formData, propertyAddress: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
+                      <input type="text" required placeholder="FULL ADDRESS" className="form-input" value={formData.propertyAddress} onChange={(e) => setFormData({ ...formData, propertyAddress: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
                     </div>
 
                     {/* SMS CONSENT - TWO CHECKBOXES */}
@@ -274,7 +280,7 @@ const App = () => {
                       setErrors({});
                       setStep(2);
                       setTimeout(() => { document.getElementById('property-form').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
-                    }} style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '16px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: '2px solid #C9A84C', cursor: 'pointer', marginTop: 4, textTransform: 'uppercase', letterSpacing: 1 }}>
+                    }} className='step-btn' style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '16px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: '2px solid #C9A84C', cursor: 'pointer', marginTop: 4, textTransform: 'uppercase', letterSpacing: 1 }}>
                       Continue to Step 2 →
                     </button>
                   </div>
@@ -352,15 +358,15 @@ const App = () => {
 
                     {/* ── NEW: Best Time to Call + Preferred Contact ── */}
                     <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
-                      <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Contact Preferences</p>
-                      <p style={{ fontSize: 12, color: '#555', fontStyle: 'italic', textAlign: 'center', margin: '0 0 4px', fontWeight: 700 }}>This helps us follow up the right way after reviewing your property information.</p>
-                      <p style={{ fontSize: 12, color: '#888', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px' }}>If you prefer a call or text, please include your phone number so we can follow up the way you requested.</p>
+                      <p className='contact-pref-title' style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Contact Preferences</p>
+                      <p className='contact-pref-sub' style={{ fontSize: 12, color: '#555', fontStyle: 'italic', textAlign: 'center', margin: '0 0 4px', fontWeight: 700 }}>This helps us follow up the right way after reviewing your property information.</p>
+                      <p className='contact-pref-helper' style={{ fontSize: 12, color: '#888', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px' }}>If you prefer a call or text, please include your phone number so we can follow up the way you requested.</p>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
 
                         {/* Best Time to Call */}
                         <div>
                           <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Best Time to Reach You</label>
-                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
+                          <div className='pref-grid-2' style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
                             {['Morning', 'Afternoon', 'Evening', 'Anytime', 'Text Me First'].map((opt) => {
                               const isSelected = formData.bestTimeToCall === opt;
                               return (
@@ -375,7 +381,7 @@ const App = () => {
                         {/* Preferred Contact Method */}
                         <div>
                           <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Preferred Contact Method</label>
-                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
+                          <div className='pref-grid-2' style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
                             {['Call', 'Text', 'Email', 'No Call — Text Only'].map((opt) => {
                               const isSelected = formData.preferredContact === opt;
                               return (
@@ -442,7 +448,7 @@ const App = () => {
                         if (!formData.overallCondition) { setErrors({ step2: 'Please select the Overall Property Condition before submitting.' }); return; }
                         setErrors({});
                         document.querySelector('form').submit();
-                      }} style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '18px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: 'none', cursor: 'pointer', textTransform: 'uppercase', letterSpacing: 1 }}>
+                      }} className='submit-btn' style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '18px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: 'none', cursor: 'pointer', textTransform: 'uppercase', letterSpacing: 1 }}>
                         Submit My Property →
                       </button>
                      <button type="button" onClick={() => { setStep(1); setTimeout(() => { document.getElementById('property-form').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50); }} style={{ background: 'transparent', border: 'none', color: '#666', fontSize: 16, fontWeight: 700, textDecoration: 'underline', cursor: 'pointer' }}>← Back to Step 1</button>
