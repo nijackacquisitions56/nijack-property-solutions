@@ -515,18 +515,11 @@ const App = () => {
                 <p style={{ margin: '0 0 10px' }}>Text <strong>STOP</strong> to unsubscribe at any time. Text <strong>HELP</strong> for help.</p>
                 <p style={{ margin: 0 }}>SMS consent is never required as a condition of any purchase, sale, or service. Mobile phone numbers and SMS consent information will not be sold, rented, shared, or transferred to third parties or affiliates for marketing or promotional purposes.</p>
               </div>
-              <p style={{ margin: 0, overflowWrap: 'break-word', wordBreak: 'break-word' }}>
-                <strong>Business Address:</strong> 6545 Market Ave N, Ste 100, Canton, OH 44721<br />
-              <p style={{ margin: 0, overflowWrap: 'break-word', wordBreak: 'break-word' }}>
+             <p style={{ margin: 0, overflowWrap: 'break-word', wordBreak: 'break-word' }}>
   <strong>Business Address:</strong> 6545 Market Ave N, Ste 100, Canton, OH 44721<br />
-  <strong>Contact:</strong>{' '}
-  <a
-    href="mailto:nicole@tektonpropertysolutions.com"
-    style={{ color: '#8B0000', textDecoration: 'underline', fontWeight: 700 }}
-  >
-    Email Nicole
-  </a>
+  <strong>Contact:</strong>{' '}<a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', fontWeight: 700, textDecoration: 'underline' }}>Email Nicole</a>
 </p>
+ 
               </p>
             </div>
           </div>
