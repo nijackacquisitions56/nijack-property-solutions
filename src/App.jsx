@@ -45,7 +45,7 @@ const App = () => {
   };
 
   const isValidEmail = (email) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+    return /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(email.trim());
   };
 
   const selectStyle = {
@@ -79,11 +79,11 @@ const App = () => {
         <style>{`
           .nav-container { max-width: 1200px; margin: 0 auto; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; gap: 14px; }
           .brand-group { display: flex; align-items: center; gap: 4px; }
-          .logo-img { height: 105px; width: auto; object-fit: contain; }
+          .logo-img { height: 72px; width: auto; object-fit: contain; }
           .logo-text-wrapper { display: flex; flex-direction: column; justify-content: center; }
-          .line-tekton { color: #8B0000; font-weight: 900; font-size: 36px; text-transform: uppercase; line-height: 0.95; letter-spacing: 0.5px; }
-          .line-solutions { color: #555555; font-size: 15px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 800; line-height: 1.1; margin: 4px 0 2px; }
-          .line-relief { color: #A38430; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; line-height: 1.0; font-style: italic; }
+          .line-tekton { color: #8B0000; font-weight: 900; font-size: 28px; text-transform: uppercase; line-height: 0.95; letter-spacing: 0.5px; }
+          .line-solutions { color: #555555; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 800; line-height: 1.1; margin: 4px 0 2px; }
+          .line-relief { color: #A38430; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; line-height: 1.0; font-style: italic; }
           .cta-btn { background: #8B0000; color: #fff; padding: 14px 28px; border-radius: 999px; font-weight: 900; font-size: 15px; text-decoration: none; border: 2px solid #C9A84C; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
           @media (max-width: 768px) {
             .hero-section { padding: 70px 16px 80px !important; }
@@ -118,7 +118,7 @@ const App = () => {
             <p style={{ color: '#C9A84C', fontWeight: 700, letterSpacing: 4, fontSize: 13, textTransform: 'uppercase', margin: 0, fontStyle: 'italic' }}>Ohio &amp; Nationwide</p>
             <div style={{ height: 1, width: 60, background: '#C9A84C', opacity: 0.7 }} />
           </div>
-          <h1 style={{ fontSize: 'clamp(38px, 6.5vw, 72px)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1.05, marginBottom: 20, letterSpacing: -1 }}>
+          <h1 style={{ fontSize: 'clamp(30px, 5vw, 56px)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1.05, marginBottom: 20, letterSpacing: -1 }}>
             Sell Your House <span style={{ color: '#C9A84C' }}>FAST</span><br />For <span style={{ color: '#C9A84C' }}>CASH</span>
           </h1>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginBottom: 20 }}>
@@ -212,7 +212,7 @@ const App = () => {
                     </div>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
                       <input type="email" required placeholder="EMAIL ADDRESS" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
-                      <input type="text" required placeholder="FULL ADDRESS: 1234 Main St, City, OH 12345" value={formData.propertyAddress} onChange={(e) => setFormData({ ...formData, propertyAddress: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
+                      <input type="text" required placeholder="1234 Main St, Columbus OH 43215" value={formData.propertyAddress} onChange={(e) => setFormData({ ...formData, propertyAddress: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
                     </div>
 
                     {/* SMS CONSENT - TWO CHECKBOXES */}
@@ -262,6 +262,7 @@ const App = () => {
                       }
                       setErrors({});
                       setStep(2);
+                      setTimeout(() => { document.getElementById('property-form').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
                     }} style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '16px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: '2px solid #C9A84C', cursor: 'pointer', marginTop: 4, textTransform: 'uppercase', letterSpacing: 1 }}>
                       Continue to Step 2 →
                     </button>
@@ -321,7 +322,7 @@ const App = () => {
                     {/* Property Condition Questions */}
                     <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
                       <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Property Condition Questions</p>
-                      <p style={{ fontSize: 12, color: '#888', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px' }}>Optional but helpful — answers help us review your property faster</p>
+                      <p style={{ fontSize: 12, color: '#555', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px', fontWeight: 700 }}>Optional but helpful — answers help us review your property faster</p>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                         {repairOptions.map((r) => (
                           <div key={r.key}>
@@ -404,7 +405,7 @@ const App = () => {
                       }} style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '18px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: 'none', cursor: 'pointer', textTransform: 'uppercase', letterSpacing: 1 }}>
                         Submit My Property →
                       </button>
-                     <button type="button" onClick={() => { setStep(1); setTimeout(() => { document.getElementById('property-form').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50); }} style={{ background: 'transparent', border: 'none', color: '#666', fontSize: 12, fontWeight: 700, textDecoration: 'underline', cursor: 'pointer' }}>← Back to Step 1</button>
+                     <button type="button" onClick={() => { setStep(1); setTimeout(() => { document.getElementById('property-form').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50); }} style={{ background: 'transparent', border: 'none', color: '#666', fontSize: 16, fontWeight: 700, textDecoration: 'underline', cursor: 'pointer' }}>← Back to Step 1</button>
                     </div>
                   </div>
                 )}
