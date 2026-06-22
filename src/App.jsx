@@ -95,11 +95,11 @@ const App = () => {
             .hero-section { padding: 70px 16px 80px !important; }
             .nav-container { padding: 6px 10px; gap: 4px; }
             .brand-group { gap: 3px; }
-            .logo-img { height: 55px; }
-            .line-tekton { font-size: 18px; line-height: 0.95; }
-            .line-solutions { font-size: 8.5px; letter-spacing: 0.9px; margin: 1px 0; line-height: 1.0; }
-            .line-relief { font-size: 7.5px; letter-spacing: 1px; line-height: 1.0; }
-            .cta-btn { padding: 7px 10px; font-size: 9px; letter-spacing: 0.5px; }
+            .logo-img { height: 65px; }
+            .line-tekton { font-size: 22px; line-height: 0.95; }
+            .line-solutions { font-size: 10px; letter-spacing: 0.9px; margin: 1px 0; line-height: 1.0; }
+            .line-relief { font-size: 9px; letter-spacing: 1px; line-height: 1.0; }
+            .cta-btn { padding: 10px 16px; font-size: 12px; letter-spacing: 0.5px; }
             .cta-btn-full { display: none; }
             .cta-btn-short { display: inline; }
           }
