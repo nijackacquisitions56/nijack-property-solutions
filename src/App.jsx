@@ -326,6 +326,9 @@ const App = () => {
                           <option value="Immediately">Immediately (ASAP)</option>
                           <option value="1-2 Weeks">Within 1-2 Weeks</option>
                           <option value="1 Month">Within a Month</option>
+                          <option value="30-90 Days">30-90 Days</option>
+                          <option value="90-180 Days">90-180 Days</option>
+                          <option value="180 Days+">180 Days+</option>
                           <option value="Just curious">Just testing the market / Curious</option>
                         </select>
                         <div style={{ position: 'absolute', right: 15, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', fontSize: 20, fontWeight: 900 }}>▼</div>
@@ -517,7 +520,7 @@ const App = () => {
               </div>
               <p style={{ margin: 0, overflowWrap: 'break-word', wordBreak: 'break-word' }}>
                 <strong>Business Address:</strong> 6545 Market Ave N, Ste 100, Canton, OH 44721<br />
-                <strong>Contact:</strong> <a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', fontWeight: 700, textDecoration: 'underline' }}>Email Nicole</a>
+                <strong>Contact:</strong> <a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', fontWeight: 700, textDecoration: 'underline' }}>nicole@tektonpropertysolutions.com</a>
               </p>
             </div>
           </div>
@@ -540,7 +543,7 @@ const App = () => {
           <img src="/tekton-emblem.png" alt="Tekton Emblem" style={{ height: 60, width: 'auto', objectFit: 'contain', marginBottom: 16 }} onError={e => e.target.style.display = 'none'} />
           <p style={{ color: '#666', fontWeight: 700, fontSize: 14, textTransform: 'uppercase', letterSpacing: 3, marginBottom: 6 }}>Ohio &amp; Nationwide</p>
           <p style={{ color: '#888', fontSize: 13, marginBottom: 6 }}>6545 Market Ave N, Ste 100, Canton, OH 44721</p>
-          <p style={{ color: '#888', fontSize: 13, marginBottom: 20, overflowWrap: 'break-word', wordBreak: 'break-word' }}><a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', textDecoration: 'underline', fontWeight: 700, display: 'inline' }}>Email Nicole</a></p>
+          <p style={{ color: '#888', fontSize: 13, marginBottom: 20, overflowWrap: 'break-word', wordBreak: 'break-word' }}><a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', textDecoration: 'underline', fontWeight: 700, display: 'inline' }}>nicole@tektonpropertysolutions.com</a></p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: 20, flexWrap: 'wrap', marginBottom: 20 }}>
             <Link to="/privacy-policy" style={{ color: '#8B0000', fontWeight: 900, textDecoration: 'underline', textTransform: 'uppercase', letterSpacing: 2, fontSize: 13 }}>Privacy Policy</Link>
             <span style={{ color: '#ccc', fontSize: 13 }}>|</span>
