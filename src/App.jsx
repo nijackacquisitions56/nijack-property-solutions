@@ -146,9 +146,7 @@ const App = () => {
           </div>
           <p style={{ fontSize: 17, fontWeight: 600, maxWidth: 680, margin: '0 auto 36px', lineHeight: 1.6, textTransform: 'uppercase', letterSpacing: 1 }}>No Repairs. No Agent Commissions. No Obligation.</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 16, marginBottom: 36 }}>
-            <div style={{ background: 'rgba(255,255,255,0.1)', border: '2px solid rgba(201,168,76,0.5)', padding: '14px 28px', borderRadius: 999 }}>
-              <span style={{ fontWeight: 900, fontSize: 14, letterSpacing: 2, textTransform: 'uppercase' }}>14-30 Day Closing</span>
-            </div>
+            
             <a href="#property-form" style={{ background: '#C9A84C', color: '#0d0d0d', padding: '14px 32px', borderRadius: 999, fontWeight: 900, fontSize: 15, textDecoration: 'none', textTransform: 'uppercase', letterSpacing: 2 }}>Get My Property Reviewed</a>
           </div>
           <div style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(201,168,76,0.5)', borderLeft: '4px solid #C9A84C', borderRadius: 16, padding: '16px 24px', maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
