@@ -156,8 +156,7 @@ const App = () => {
             <p style={{ fontSize: 16, fontWeight: 700, margin: 0, lineHeight: 1.6 }}>You'll close the same way traditional sales do — through a licensed Ohio title company that verifies ownership and protects your funds from start to finish. <strong style={{ color: '#C9A84C' }}>Your money is never handled by us.</strong></p>
           </div>
           </div>
-        </div>
-      </section>
+  </section>
 
       {/* 3. TRUST SIGNALS */}
       <section style={{ background: '#8B0000', padding: '10px 20px 40px' }}>
