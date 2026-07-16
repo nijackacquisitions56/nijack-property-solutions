@@ -123,7 +123,7 @@ const App = () => {
               <div className="line-relief">RELIEF THAT DELIVERS.</div>
             </div>
           </div>
-          <a href="#property-form" className="cta-btn"><span className="cta-btn-full">Get My Property Review</span><span className="cta-btn-short">Get Offer</span></a>
+          <a href="#property-form" className="cta-btn"><span className="cta-btn-full">Get My Property Review</span><span className="cta-btn-short">Start Here</span></a>
         </div>
       </nav>
 
