@@ -151,12 +151,13 @@ const App = () => {
             </div>
             <a href="#property-form" style={{ background: '#C9A84C', color: '#0d0d0d', padding: '14px 32px', borderRadius: 999, fontWeight: 900, fontSize: 15, textDecoration: 'none', textTransform: 'uppercase', letterSpacing: 2 }}>Get My Property Reviewed</a>
           </div>
-          <div style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(201,168,76,0.5)', borderLeft: '4px solid #C9A84C', borderRadius: 16, padding: '16px 24px', maxWidth: 680, margin: '0 auto', textAlign: 'left' }}>
+          <div style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(201,168,76,0.5)', borderLeft: '4px solid #C9A84C', borderRadius: 16, padding: '16px 24px', maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
             <p style={{ fontSize: 12, fontWeight: 900, color: '#C9A84C', textTransform: 'uppercase', letterSpacing: 2, margin: '0 0 6px' }}>Secure Closing Guarantee</p>
-            <p style={{ fontSize: 16, fontWeight: 700, margin: 0, lineHeight: 1.6 }}>You'll close the same way traditional sales do — through a licensed Ohio title company that verifies ownership and protects your funds from start to finish. <strong style={{ color: '#C9A84C' }}>Your money is never handled by us.</strong></p>
+            <p style={{ fontSize: 15, fontWeight: 600, margin: '0 0 10px', lineHeight: 1.6 }}>You'll close the same way traditional sales do — through a licensed Ohio title company that verifies ownership and protects your funds from start to finish.</p>
+            <p style={{ fontSize: 18, fontWeight: 900, color: '#C9A84C', margin: 0, letterSpacing: 0.5 }}>Your money is never handled by us.</p>
           </div>
           </div>
-  </section>
+      </section>
 
       {/* 3. TRUST SIGNALS */}
       <section style={{ background: '#8B0000', padding: '10px 20px 40px' }}>
