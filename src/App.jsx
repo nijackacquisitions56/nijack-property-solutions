@@ -182,7 +182,7 @@ const App = () => {
       </section>
 
       {/* 5. 2-STEP FORM */}
-      <section id="property-form" className="form-section" style={{ padding: '80px 20px 60px', scrollMarginTop: 100 }}>
+      <section className="form-section" style={{ padding: '80px 20px 60px' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ background: '#fff', borderRadius: 32, boxShadow: '0 8px 48px rgba(10,22,40,0.14)', border: '1px solid #e8e0d0', overflow: 'hidden' }}>
             <div style={{ background: '#C9A84C', padding: '32px 24px', textAlign: 'center' }}>
