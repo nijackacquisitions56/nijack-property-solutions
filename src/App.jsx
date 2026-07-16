@@ -190,7 +190,7 @@ const App = () => {
               <p style={{ color: '#0d0d0d', fontWeight: 700, fontSize: 14, margin: 0 }}>Takes less than 60 seconds to get started.</p>
             </div>
 
-            <div style={{ display: 'flex', borderBottom: '2px solid #e8e0d0' }}>
+            <div id="form-steps" style={{ display: 'flex', borderBottom: '2px solid #e8e0d0', scrollMarginTop: 100 }}>
               {[1, 2].map(s => (
                 <div key={s} onClick={() => s < step && setStep(s)} style={{ flex: 1, padding: '16px', textAlign: 'center', background: step === s ? '#0d0d0d' : '#f8f6f2', cursor: s < step ? 'pointer' : 'default', borderBottom: step === s ? '4px solid #C9A84C' : '4px solid transparent' }}>
                   <span style={{ color: step === s ? '#C9A84C' : step > s ? '#8B0000' : '#111111', fontWeight: 900, fontSize: 13, textTransform: 'uppercase', letterSpacing: 2 }}>
