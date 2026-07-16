@@ -26,7 +26,7 @@ const App = () => {
     { q: 'IS THIS A LEGITIMATE PROCESS?', a: 'Yes. Transactions are handled through a licensed title company, which helps ensure paperwork, ownership verification, and closing funds are processed securely. You do not pay anything upfront.' },
   ];
 
-  [const situations = ['Probate','Inherited','Divorce','Foreclosure','Tax Delinquent','Code Violations','Fire / Water Damage','Needs Repairs','Tired Landlord','Problem Tenant','Vacant','Expired Listing','Relocating','Health / Medical','Financial Hardship','Trust','Shopping Around','Other'];
+  const situations = ['Probate','Inherited','Divorce','Foreclosure','Tax Delinquent','Code Violations','Fire / Water Damage','Needs Repairs','Tired Landlord','Problem Tenant','Vacant','Expired Listing','Relocating','Health / Medical','Financial Hardship','Trust','Shopping Around','Other'];
 
   const handleCheck = (val) => {
     setFormData(f => ({
