@@ -253,6 +253,11 @@ const App = () => {
                           <input type="text" placeholder="WHAT NAME(S) ARE LEGALLY ON THE DEED?" value={formData.deedOwnerNames} onChange={(e) => setFormData({ ...formData, deedOwnerNames: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700, boxSizing: 'border-box' }} />
                         </div>
                       )}
+                      {(formData.deedOwner === 'No' || formData.deedOwner === 'Not Sure') && (
+                        <div style={{ marginTop: 12 }}>
+                          <input type="text" placeholder="WHAT IS YOUR RELATIONSHIP TO THE PROPERTY? (E.G. HEIR, FAMILY MEMBER, POA, UNDER CONTRACT TO BUY IT)" value={formData.deedOwnerRelationship} onChange={(e) => setFormData({ ...formData, deedOwnerRelationship: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700, boxSizing: 'border-box' }} />
+                        </div>
+                      )}
                     </div>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 16 }}>
