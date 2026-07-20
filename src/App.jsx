@@ -318,6 +318,14 @@ const App = () => {
                         setErrors({ step1: 'Please enter a valid email address. Example: name@email.com' });
                         return;
                       }
+                      if (!formData.deedOwner) {
+                        setErrors({ step1: 'Please let us know if you are the current deed owner before continuing.' });
+                        return;
+                      }
+                      if (!formData.bedrooms || !formData.bathrooms) {
+                        setErrors({ step1: 'Please fill out the number of bedrooms and bathrooms before continuing.' });
+                        return;
+                      }
                       setErrors({});
                       setStep(2);
                       setTimeout(() => { document.getElementById('form-steps').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
