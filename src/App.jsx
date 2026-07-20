@@ -244,7 +244,7 @@ const App = () => {
                       <input type="text" required placeholder="FULL ADDRESS" className="form-input" value={formData.propertyAddress} onChange={(e) => setFormData({ ...formData, propertyAddress: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
                     </div>
                     <div>
-                      <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>Are you the current deed owner / titleholder? <span style={{ color: '#888', fontWeight: 700 }}>(Optional)</span></label>
+  <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* Are you the current deed owner / titleholder?</label>
                       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
                         {['Yes', 'No', 'Not Sure'].map((opt) => {
                           const isSelected = formData.deedOwner === opt;
