@@ -236,7 +236,31 @@ const App = () => {
                       <input type="email" required placeholder="EMAIL ADDRESS" className="form-input" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
                       <input type="text" required placeholder="FULL ADDRESS" className="form-input" value={formData.propertyAddress} onChange={(e) => setFormData({ ...formData, propertyAddress: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700 }} />
                     </div>
+                    <div>
+                      <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>Are you the current deed owner / titleholder? <span style={{ color: '#888', fontWeight: 700 }}>(Optional)</span></label>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
+                        {['Yes', 'No', 'Not Sure'].map((opt) => {
+                          const isSelected = formData.deedOwner === opt;
+                          return (
+                            <button key={opt} type="button" onClick={() => setFormData({ ...formData, deedOwner: isSelected ? '' : opt, deedOwnerNames: (isSelected || opt !== 'Yes') ? '' : formData.deedOwnerNames })} style={{ padding: '12px 10px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '1px solid #ccc', background: isSelected ? '#8B0000' : '#f5f5f3', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5 }}>
+                              {opt}
+                            </button>
+                          );
+                        })}
+                      </div>
+                      {formData.deedOwner === 'Yes' && (
+                        <div style={{ marginTop: 12 }}>
+                          <input type="text" placeholder="WHAT NAME(S) ARE LEGALLY ON THE DEED?" value={formData.deedOwnerNames} onChange={(e) => setFormData({ ...formData, deedOwnerNames: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700, boxSizing: 'border-box' }} />
+                        </div>
+                      )}
+                    </div>
 
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 16 }}>
+                      <input type="text" placeholder="BEDROOMS" value={formData.bedrooms} onChange={(e) => setFormData({ ...formData, bedrooms: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700 }} />
+                      <input type="text" placeholder="BATHROOMS" value={formData.bathrooms} onChange={(e) => setFormData({ ...formData, bathrooms: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700 }} />
+                      <input type="text" placeholder="SQUARE FOOTAGE" value={formData.squareFootage} onChange={(e) => setFormData({ ...formData, squareFootage: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700 }} />
+                      <input type="text" placeholder="LOT SIZE" value={formData.lotSize} onChange={(e) => setFormData({ ...formData, lotSize: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700 }} />
+                    </div>
                     {/* SMS CONSENT - TWO CHECKBOXES */}
                     <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 12, padding: '16px 20px', marginTop: 4 }}>
                       <p style={{ fontSize: 12, fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', letterSpacing: 1, margin: '0 0 12px' }}>Consent Forms</p>
