@@ -13,7 +13,8 @@ const App = () => {
     smsConsentMarketing: false,
     roofCondition: '', hvacCondition: '', electricalCondition: '',
     plumbingCondition: '', foundationCondition: '', overallCondition: '',
-    bestTimeToCall: '', preferredContact: '', otherDescription: ''
+    bestTimeToCall: '', preferredContact: '', otherDescription: '',
+    mortgageStatus: '', mortgagePayoff: ''
   });
 
   const faqs = [
