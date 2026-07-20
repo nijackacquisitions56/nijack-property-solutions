@@ -343,6 +343,25 @@ const App = () => {
                       <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* What price would you consider for a cash offer?</label>
                       <input type="text" required placeholder="EXAMPLE: $150,000" value={formData.priceExpectation} onChange={(e) => setFormData({ ...formData, priceExpectation: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700 }} />
                     </div>
+                    {/* ── MORTGAGE QUESTION ── */}
+                    <div>
+                      <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>Is there a mortgage, lien, or other balance owed on the property? <span style={{ color: '#888', fontWeight: 700 }}>(Optional)</span></label>
+                      <div className='pref-grid-2' style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
+                        {['No — Free and Clear', 'Yes', 'Not Sure'].map((opt) => {
+                          const isSelected = formData.mortgageStatus === opt;
+                          return (
+                            <button key={opt} type="button" onClick={() => setFormData({ ...formData, mortgageStatus: isSelected ? '' : opt, mortgagePayoff: (isSelected || opt !== 'Yes') ? '' : formData.mortgagePayoff })} className='pref-btn' style={{ padding: '12px 10px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '2px solid #d0c8b8', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5, textAlign: 'center', transition: 'all 0.15s' }}>
+                              {opt}
+                            </button>
+                          );
+                        })}
+                      </div>
+                      {formData.mortgageStatus === 'Yes' && (
+                        <div style={{ marginTop: 12 }}>
+                          <input type="text" placeholder="ROUGHLY HOW MUCH IS OWED? A BALLPARK IS FINE" value={formData.mortgagePayoff} onChange={(e) => setFormData({ ...formData, mortgagePayoff: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700, boxSizing: 'border-box' }} />
+                        </div>
+                      )}
+                    </div>
 
                     {/* Property Condition Questions */}
                     <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
