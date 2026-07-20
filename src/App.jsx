@@ -224,7 +224,13 @@ const App = () => {
               <input type="hidden" name="otherDescription" value={formData.otherDescription} />
               <input type="hidden" name="mortgageStatus" value={formData.mortgageStatus} />
               <input type="hidden" name="mortgagePayoff" value={formData.mortgagePayoff} />
-
+               <input type="hidden" name="deedOwner" value={formData.deedOwner} />
+              <input type="hidden" name="deedOwnerNames" value={formData.deedOwnerNames} />
+              <input type="hidden" name="deedOwnerRelationship" value={formData.deedOwnerRelationship} />
+              <input type="hidden" name="bedrooms" value={formData.bedrooms} />
+              <input type="hidden" name="bathrooms" value={formData.bathrooms} />
+              <input type="hidden" name="squareFootage" value={formData.squareFootage} />
+              <input type="hidden" name="lotSize" value={formData.lotSize} />
               <div style={{ padding: '40px' }}>
                 {step === 1 ? (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
