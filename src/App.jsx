@@ -14,7 +14,8 @@ const App = () => {
     roofCondition: '', hvacCondition: '', electricalCondition: '',
     plumbingCondition: '', foundationCondition: '', overallCondition: '',
     bestTimeToCall: '', preferredContact: '', otherDescription: '',
-    mortgageStatus: '', mortgagePayoff: ''
+    mortgageStatus: '', mortgagePayoff: '',
+    deedOwner: '', deedOwnerNames: '', deedOwnerRelationship: '', bedrooms: '', bathrooms: '', squareFootage: '', lotSize: ''
   });
 
   const faqs = [
