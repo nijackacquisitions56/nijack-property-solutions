@@ -221,6 +221,8 @@ const App = () => {
               <input type="hidden" name="bestTimeToCall" value={formData.bestTimeToCall} />
               <input type="hidden" name="preferredContact" value={formData.preferredContact} />
               <input type="hidden" name="otherDescription" value={formData.otherDescription} />
+              <input type="hidden" name="mortgageStatus" value={formData.mortgageStatus} />
+              <input type="hidden" name="mortgagePayoff" value={formData.mortgagePayoff} />
 
               <div style={{ padding: '40px' }}>
                 {step === 1 ? (
