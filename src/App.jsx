@@ -433,8 +433,8 @@ const App = () => {
                     {/* ── NEW: Best Time to Call + Preferred Contact ── */}
                     <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
                       <p className='contact-pref-title' style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Contact Preferences</p>
-                      <p className='contact-pref-sub' style={{ fontSize: 12, color: '#555', fontStyle: 'italic', textAlign: 'center', margin: '0 0 4px', fontWeight: 700 }}>This helps us follow up the right way after reviewing your property information.</p>
-                      <p className='contact-pref-helper' style={{ fontSize: 12, color: '#888', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px' }}>If you prefer a call or text, please include your phone number so we can follow up the way you requested.</p>
+                      <p className='contact-pref-sub' style={{ fontSize: 12, color: '#333', fontStyle: 'italic', textAlign: 'center', margin: '0 0 4px', fontWeight: 700 }}>This helps us follow up the right way after reviewing your property information.</p>
+                      <p className='contact-pref-helper' style={{ fontSize: 12, color: '#333', fontWeight: 600, fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px' }}>If you prefer a call or text, please include your phone number so we can follow up the way you requested.</p>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
 
                         {/* Best Time to Call */}
