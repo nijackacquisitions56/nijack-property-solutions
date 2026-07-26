@@ -6,6 +6,7 @@ const App = () => {
   const [openFaq, setOpenFaq] = useState(null);
   const [step, setStep] = useState(1);
   const [errors, setErrors] = useState({});
+  const [submitStatus, setSubmitStatus] = useState('idle'); // idle | submitting | error
   const [formData, setFormData] = useState({
     fullName: '', phone: '', email: '', propertyAddress: '',
     situation: [], additionalNotes: '', timeline: '', priceExpectation: '',
