@@ -263,7 +263,7 @@ const App = () => {
                       </div>
                       {formData.deedOwner === 'Yes' && (
                         <div style={{ marginTop: 12 }}>
-                          <input type="text" placeholder="WHAT NAME(s) ARE ON THE DEED?" value={formData.deedOwnerNames} onChange={(e) => setFormData({ ...formData, deedOwnerNames: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700, boxSizing: 'border-box' }} />
+                          <input type="text" placeholder="NAME(S) ON THE DEED?" value={formData.deedOwnerNames} onChange={(e) => setFormData({ ...formData, deedOwnerNames: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700, boxSizing: 'border-box' }} />
                         </div>
                       )}
                       {(formData.deedOwner === 'No' || formData.deedOwner === 'Not Sure') && (
