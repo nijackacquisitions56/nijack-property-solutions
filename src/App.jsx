@@ -326,8 +326,7 @@ const App = () => {
   setErrors({ step1: 'Please fill out bedrooms, bathrooms, square footage, and lot size before continuing.' });
   return;
 }
-                      }
-                      setErrors({});
+                       setErrors({});
                       setStep(2);
                       setTimeout(() => { document.getElementById('form-steps').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
                     }} className='step-btn' style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '16px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: '2px solid #C9A84C', cursor: 'pointer', marginTop: 4, textTransform: 'uppercase', letterSpacing: 1 }}>
