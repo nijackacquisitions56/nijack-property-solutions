@@ -54,11 +54,11 @@ const App = () => {
     const tld = val.split('.').pop();
     return validTLDs.includes(tld);
   };
-  
+
   const isValidPhone = (phone) => {
-  const digits = phone.replace(/\D/g, '');
-  return digits.length >= 10;
-};
+    const digits = phone.replace(/\D/g, '');
+    return digits.length >= 10;
+  };
 
   const selectStyle = {
     width: '100%',
@@ -329,10 +329,10 @@ const App = () => {
                         return;
                       }
                       if (!formData.bedrooms || !formData.bathrooms || !formData.squareFootage || !formData.lotSize) {
-  setErrors({ step1: 'Please fill out bedrooms, bathrooms, square footage, and lot size before continuing.' });
-  return;
-}
-                       setErrors({});
+                        setErrors({ step1: 'Please fill out bedrooms, bathrooms, square footage, and lot size before continuing.' });
+                        return;
+                      }
+                      setErrors({});
                       setStep(2);
                       setTimeout(() => { document.getElementById('form-steps').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
                     }} className='step-btn' style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '16px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: '2px solid #C9A84C', cursor: 'pointer', marginTop: 4, textTransform: 'uppercase', letterSpacing: 1 }}>
@@ -397,9 +397,9 @@ const App = () => {
                     <div>
                       <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>Is there a mortgage, lien, or other balance owed on the property? <span style={{ color: '#888', fontWeight: 700 }}>(Optional)</span></label>
                       <p style={{ fontSize: 12, color: '#8B0000', fontWeight: 700, margin: '4px 0 10px', fontStyle: 'italic' }}>
-    Sharing this helps us come up with the most accurate offer for you.
-  </p>
-  <div className='pref-grid-2' style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
+                        Sharing this helps us come up with the most accurate offer for you.
+                      </p>
+                      <div className='pref-grid-2' style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
                         {['No — Free and Clear', 'Yes', 'Not Sure'].map((opt) => {
                           const isSelected = formData.mortgageStatus === opt;
                           return (
@@ -507,32 +507,38 @@ const App = () => {
                       </div>
                     )}
 
+                    {/* Submit failure error */}
+                    {submitStatus === 'error' && (
+                      <div style={{ background: '#fff0f0', border: '2px solid #8B0000', borderRadius: 10, padding: '12px 16px', textAlign: 'center' }}>
+                        <p style={{ color: '#8B0000', fontWeight: 900, fontSize: 14, margin: 0 }}>Something went wrong submitting your information. Please try again, or email us directly at nicole@tektonpropertysolutions.com.</p>
+                      </div>
+                    )}
+
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
-                      <button type="button" onClick={() => {
+                      <button type="button" onClick={async () => {
                         if (formData.situation.length === 0) { setErrors({ step2: 'Please select at least one situation before submitting.' }); return; }
                         if (formData.situation.includes('Other') && (!formData.otherDescription || formData.otherDescription.trim() === '')) {
-  setErrors({ step2: 'Please describe your situation since you selected "Other".' });
-  return;
-}
+                          setErrors({ step2: 'Please describe your situation since you selected "Other".' });
+                          return;
+                        }
                         if (!formData.timeline) { setErrors({ step2: 'Please select how fast you need to sell before submitting.' }); return; }
                         if (!formData.priceExpectation || formData.priceExpectation.trim() === '') { setErrors({ step2: 'Please enter a price you would consider for a cash offer.' }); return; }
                         if (!formData.additionalNotes || formData.additionalNotes.trim() === '') { setErrors({ step2: 'Please give us additonal notes about the property before submitting.' }); return; }
                         if (!formData.preferredContact) { setErrors({ step2: 'Please select your preferred contact method before submitting.' }); return; }
                         if (
-  formData.preferredContact === 'Call' ||
-  formData.preferredContact === 'Text' ||
-  formData.preferredContact === 'No Call — Text Only'
-) {
-  if (!formData.phone.trim()) {
-    setErrors({ step2: 'Please enter your phone number since you selected ' + formData.preferredContact + ' as your preferred contact method.' });
-    return;
-  }
-  if (!isValidPhone(formData.phone)) {
-    setErrors({ step2: 'Please enter a valid phone number (at least 10 digits).' });
-    return;
-  }
-}
-                        ) { setErrors({ step2: 'Please enter your phone number since you selected ' + formData.preferredContact + ' as your preferred contact method.' }); return; }
+                          formData.preferredContact === 'Call' ||
+                          formData.preferredContact === 'Text' ||
+                          formData.preferredContact === 'No Call — Text Only'
+                        ) {
+                          if (!formData.phone.trim()) {
+                            setErrors({ step2: 'Please enter your phone number since you selected ' + formData.preferredContact + ' as your preferred contact method.' });
+                            return;
+                          }
+                          if (!isValidPhone(formData.phone)) {
+                            setErrors({ step2: 'Please enter a valid phone number (at least 10 digits).' });
+                            return;
+                          }
+                        }
                         if (!formData.roofCondition) { setErrors({ step2: 'Please select the Roof Condition before submitting.' }); return; }
                         if (!formData.hvacCondition) { setErrors({ step2: 'Please select the Heating / Cooling System condition before submitting.' }); return; }
                         if (!formData.electricalCondition) { setErrors({ step2: 'Please select the Electrical System condition before submitting.' }); return; }
@@ -540,9 +546,26 @@ const App = () => {
                         if (!formData.foundationCondition) { setErrors({ step2: 'Please select the Foundation / Structural condition before submitting.' }); return; }
                         if (!formData.overallCondition) { setErrors({ step2: 'Please select the Overall Property Condition before submitting.' }); return; }
                         setErrors({});
-                        document.querySelector('form').submit();
-                      }} className='submit-btn' style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '18px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: 'none', cursor: 'pointer', textTransform: 'uppercase', letterSpacing: 1 }}>
-                        Submit My Property →
+                        setSubmitStatus('submitting');
+                        const form = document.querySelector('form');
+                        const data = new FormData(form);
+                        try {
+                          const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: data,
+                            headers: { 'Accept': 'application/json' }
+                          });
+                          if (response.ok) {
+                            setSubmitStatus('success');
+                            form.submit();
+                          } else {
+                            setSubmitStatus('error');
+                          }
+                        } catch (err) {
+                          setSubmitStatus('error');
+                        }
+                      }} disabled={submitStatus === 'submitting'} className='submit-btn' style={{ width: '100%', background: submitStatus === 'submitting' ? '#aaa' : '#8B0000', color: '#fff', padding: '18px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: 'none', cursor: submitStatus === 'submitting' ? 'not-allowed' : 'pointer', textTransform: 'uppercase', letterSpacing: 1 }}>
+                        {submitStatus === 'submitting' ? 'Submitting...' : 'Submit My Property →'}
                       </button>
                      <button type="button" onClick={() => { setStep(1); setTimeout(() => { document.getElementById('property-form').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50); }} style={{ background: 'transparent', border: 'none', color: '#666', fontSize: 16, fontWeight: 700, textDecoration: 'underline', cursor: 'pointer' }}>← Back to Step 1</button>
                     </div>
