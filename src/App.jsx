@@ -322,9 +322,10 @@ const App = () => {
                         setErrors({ step1: 'Please let us know if you are the current deed owner before continuing.' });
                         return;
                       }
-                      if (!formData.bedrooms || !formData.bathrooms) {
-                        setErrors({ step1: 'Please fill out the number of bedrooms and bathrooms before continuing.' });
-                        return;
+                      if (!formData.bedrooms || !formData.bathrooms || !formData.squareFootage || !formData.lotSize) {
+  setErrors({ step1: 'Please fill out bedrooms, bathrooms, square footage, and lot size before continuing.' });
+  return;
+}
                       }
                       setErrors({});
                       setStep(2);
