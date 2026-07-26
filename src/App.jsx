@@ -390,7 +390,10 @@ const App = () => {
                     {/* ── MORTGAGE QUESTION ── */}
                     <div>
                       <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>Is there a mortgage, lien, or other balance owed on the property? <span style={{ color: '#888', fontWeight: 700 }}>(Optional)</span></label>
-                      <div className='pref-grid-2' style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
+                      <p style={{ fontSize: 12, color: '#8B0000', fontWeight: 700, margin: '4px 0 10px', fontStyle: 'italic' }}>
+    Sharing this helps us come up with the most accurate offer for you.
+  </p>
+  <div className='pref-grid-2' style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
                         {['No — Free and Clear', 'Yes', 'Not Sure'].map((opt) => {
                           const isSelected = formData.mortgageStatus === opt;
                           return (
