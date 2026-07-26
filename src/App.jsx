@@ -518,10 +518,19 @@ const App = () => {
                         if (!formData.additionalNotes || formData.additionalNotes.trim() === '') { setErrors({ step2: 'Please give us additonal notes about the property before submitting.' }); return; }
                         if (!formData.preferredContact) { setErrors({ step2: 'Please select your preferred contact method before submitting.' }); return; }
                         if (
-                          (formData.preferredContact === 'Call' ||
-                           formData.preferredContact === 'Text' ||
-                           formData.preferredContact === 'No Call — Text Only') &&
-                          !formData.phone.trim()
+  formData.preferredContact === 'Call' ||
+  formData.preferredContact === 'Text' ||
+  formData.preferredContact === 'No Call — Text Only'
+) {
+  if (!formData.phone.trim()) {
+    setErrors({ step2: 'Please enter your phone number since you selected ' + formData.preferredContact + ' as your preferred contact method.' });
+    return;
+  }
+  if (!isValidPhone(formData.phone)) {
+    setErrors({ step2: 'Please enter a valid phone number (at least 10 digits).' });
+    return;
+  }
+}
                         ) { setErrors({ step2: 'Please enter your phone number since you selected ' + formData.preferredContact + ' as your preferred contact method.' }); return; }
                         if (!formData.roofCondition) { setErrors({ step2: 'Please select the Roof Condition before submitting.' }); return; }
                         if (!formData.hvacCondition) { setErrors({ step2: 'Please select the Heating / Cooling System condition before submitting.' }); return; }
