@@ -53,6 +53,11 @@ const App = () => {
     const tld = val.split('.').pop();
     return validTLDs.includes(tld);
   };
+  
+  const isValidPhone = (phone) => {
+  const digits = phone.replace(/\D/g, '');
+  return digits.length >= 10;
+};
 
   const selectStyle = {
     width: '100%',
