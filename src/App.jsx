@@ -361,7 +361,7 @@ const App = () => {
                     </div>
 
                     {formData.situation.includes('Other') && (
-                      <input type="text" placeholder="PLEASE DESCRIBE YOUR SITUATION..." value={formData.otherDescription} onChange={e => setFormData({...formData, otherDescription: e.target.value})} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700, boxSizing: 'border-box' }} />
+                      <input type="text" placeholder="PLEASE DESCRIBE SITUATION..." value={formData.otherDescription} onChange={e => setFormData({...formData, otherDescription: e.target.value})} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700, boxSizing: 'border-box' }} />
                     )}
 
                     {/* Additional Notes */}
