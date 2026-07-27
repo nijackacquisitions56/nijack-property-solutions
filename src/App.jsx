@@ -411,7 +411,7 @@ const App = () => {
                       </div>
                       {formData.mortgageStatus === 'Yes' && (
                         <div style={{ marginTop: 12 }}>
-                          <input type="text" placeholder="ROUGHLY HOW MUCH IS OWED? A BALLPARK IS FINE" value={formData.mortgagePayoff} onChange={(e) => setFormData({ ...formData, mortgagePayoff: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700, boxSizing: 'border-box' }} />
+                          <input type="text" placeholder="HOW MUCH IS OWED? A BALLPARK IS FINE" value={formData.mortgagePayoff} onChange={(e) => setFormData({ ...formData, mortgagePayoff: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700, boxSizing: 'border-box' }} />
                         </div>
                       )}
                     </div>
