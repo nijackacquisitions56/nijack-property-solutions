@@ -168,7 +168,7 @@ const App = () => {
       {/* 3. TRUST SIGNALS */}
       <section style={{ background: '#8B0000', padding: '10px 20px 40px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px' }}>
-          {[{ icon: '🏛', label: 'Licensed Title Company' },{ icon: '✦', label: '$0 Fees or Commissions' },{ icon: '📅', label: '14–30 Day Closing' },{ icon: '🏠', label: 'As-Is — No Repairs' }].map((t, i) => (
+          {[{ icon: '🏛', label: 'Licensed Title Company' },{ icon: '✦', label: '$0 Fees or Commissions' },{ icon: '📅', label: 'Flexible Closing Timeline' },{ icon: '🏠', label: 'As-Is — No Repairs' }].map((t, i) => (
             <div key={i} style={{ padding: '15px 24px', textAlign: 'center', flex: '1 1 200px', minWidth: '160px' }}>
               <div style={{ color: '#C9A84C', fontSize: 24, marginBottom: 8 }}>{t.icon}</div>
               <div style={{ color: '#fff', fontSize: 12, fontWeight: 700, letterSpacing: 1.5, textTransform: 'uppercase', lineHeight: 1.4 }}>{t.label}</div>
