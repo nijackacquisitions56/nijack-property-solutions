@@ -523,7 +523,7 @@ const App = () => {
                         }
                         if (!formData.timeline) { setErrors({ step2: 'Please select your ideal selling time before submitting.' }); return; }
                         if (!formData.priceExpectation || formData.priceExpectation.trim() === '') { setErrors({ step2: 'Please enter a price you would be comfortable accepting.' }); return; }
-                        if (!formData.additionalNotes || formData.additionalNotes.trim() === '') { setErrors({ step2: 'Please give us additonal notes about the property before submitting.' }); return; }
+                        if (!formData.additionalNotes || formData.additionalNotes.trim() === '') { setErrors({ step2: 'Please give us additional notes about the property before submitting.' }); return; }
                         if (!formData.preferredContact) { setErrors({ step2: 'Please select your preferred contact method before submitting.' }); return; }
                         if (
                           formData.preferredContact === 'Call' ||
