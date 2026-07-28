@@ -179,7 +179,7 @@ const App = () => {
           <h1 className="hero-title" style={{ fontSize: 'clamp(30px, 5vw, 56px)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1.05, marginBottom: 8, letterSpacing: -1 }}>
             SELL YOUR PROPERTY <span style={{ color: '#C9A84C' }}>AS-IS</span><br />ON <span style={{ color: '#C9A84C' }}>YOUR</span> TIMELINE
           </h1>
-          <div className="hero-tagline-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginBottom: 12 }}>
+          <div className="hero-tagline-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginBottom: 56 }}>
             <div style={{ height: 1, width: 40, background: '#C9A84C', opacity: 0.7 }} />
             <p style={{ fontSize: 18, fontWeight: 700, fontStyle: 'italic', textTransform: 'uppercase', letterSpacing: 3, color: '#C9A84C', margin: 0 }}>Relief That Delivers.</p>
             <div style={{ height: 1, width: 40, background: '#C9A84C', opacity: 0.7 }} />
