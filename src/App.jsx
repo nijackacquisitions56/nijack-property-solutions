@@ -182,7 +182,7 @@ const App = () => {
   style={{
     background: '#8B0000',
     padding: '10px 20px 40px',
-    marginTop: '-120px',
+    marginTop: '-200px',
     position: 'relative',
     zIndex: 3
   }}
