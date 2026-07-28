@@ -112,13 +112,19 @@ const App = () => {
           }
 
           @media (max-width: 768px) {
-            .hero-section { padding: 48px 16px 120px !important; }
-            .hero-location-row { margin-bottom: 14px !important; }
-            .hero-title { font-size: clamp(30px, 10vw, 44px) !important; }
-            .hero-tagline-row { margin-bottom: 10px !important; }
-            .hero-benefits { font-size: 15px !important; margin-bottom: 22px !important; }
-            .hero-cta-row { margin-bottom: 24px !important; }
-            .closing-box { margin: 24px auto 0 !important; padding: 16px 18px !important; }
+            .hero-section { padding: 34px 14px 42px !important; }
+            .hero-location-row { margin-bottom: 12px !important; }
+            .hero-title { font-size: clamp(30px, 9vw, 38px) !important; line-height: 1.02 !important; }
+            .hero-tagline-row { margin-bottom: 10px !important; gap: 8px !important; }
+            .hero-tagline-row > div { width: 28px !important; }
+            .hero-tagline-row > p { font-size: 15px !important; letter-spacing: 2px !important; }
+            .hero-benefits { font-size: 14px !important; line-height: 1.45 !important; margin-bottom: 16px !important; }
+            .hero-cta-row { margin-bottom: 12px !important; }
+            .hero-cta-row > a { padding: 12px 22px !important; font-size: 13px !important; letter-spacing: 1.5px !important; }
+            .closing-box { margin: 14px auto 0 !important; padding: 12px 14px !important; border-radius: 14px !important; }
+            .closing-box > p:nth-child(1) { font-size: 11px !important; margin-bottom: 5px !important; }
+            .closing-box > p:nth-child(2) { font-size: 13px !important; line-height: 1.45 !important; margin-bottom: 7px !important; }
+            .closing-box > p:nth-child(3) { font-size: 15px !important; }
             .trust-signals { margin-top: 0 !important; padding: 18px 14px 44px !important; }
             .quick-benefits { margin-top: 18px !important; }
             .nav-container { padding: 6px 10px; gap: 4px; }
