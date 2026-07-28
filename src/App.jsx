@@ -185,7 +185,7 @@ const App = () => {
             <div style={{ height: 1, width: 40, background: '#C9A84C', opacity: 0.7 }} />
           </div>
          <p className="hero-benefits" style={{ fontSize: 19, fontWeight: 600, maxWidth: 680, margin: '0 auto 28px', lineHeight: 1.6, textTransform: 'uppercase', letterSpacing: 1 }}>No Repairs • No Agent Commissions • No Obligation</p>
-          <div className="hero-cta-row" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 16, marginBottom: 12 }}>
+          <div className="hero-cta-row" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 16, marginBottom: 60 }}>
             
             <a href="#property-form" style={{ background: '#C9A84C', color: '#0d0d0d', padding: '14px 32px', borderRadius: 999, fontWeight: 900, fontSize: 15, textDecoration: 'none', textTransform: 'uppercase', letterSpacing: 2 }}>Get My Property Review</a>
           </div>
