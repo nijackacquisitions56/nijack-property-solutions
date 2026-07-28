@@ -181,7 +181,7 @@ const App = () => {
       <section
   style={{
     background: '#8B0000',
-    padding: '10px 20px 40px',
+    padding: '10px 20px 70px',
     marginTop: '-85px',
     position: 'relative',
     zIndex: 3
