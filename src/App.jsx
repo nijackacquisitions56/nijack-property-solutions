@@ -141,7 +141,7 @@ const App = () => {
         <div style={{ maxWidth: 900, margin: '0 auto', position: 'relative', zIndex: 2 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginBottom: 20 }}>
             <div style={{ height: 1, width: 60, background: '#C9A84C', opacity: 0.7 }} />
-            <p style={{ color: '#C9A84C', fontWeight: 700, letterSpacing: 4, fontSize: 13, textTransform: 'uppercase', margin: 0, fontStyle: 'italic' }}>Ohio &amp; Nationwide</p>
+            <p style={{ color: '#C9A84C', fontWeight: 700, letterSpacing: 4, fontSize: 13, textTransform: 'uppercase', margin: 0, fontStyle: 'italic' }}><p ...>Ohio</p>
             <div style={{ height: 1, width: 60, background: '#C9A84C', opacity: 0.7 }} />
           </div>
           <h1 style={{ fontSize: 'clamp(30px, 5vw, 56px)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1.05, marginBottom: 8, letterSpacing: -1 }}>
