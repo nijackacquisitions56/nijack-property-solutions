@@ -382,7 +382,7 @@ const App = () => {
                           <option value="30-90 Days">30-90 Days</option>
                           <option value="90-180 Days">90-180 Days</option>
                           <option value="180 Days+">180 Days+</option>
-                          <option value="Just curious">Just testing the market / Curious</option>
+                          <option value="Just curious">Just exploring my options</option>
                         </select>
                         <div style={{ position: 'absolute', right: 15, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', fontSize: 20, fontWeight: 900 }}>▼</div>
                       </div>
