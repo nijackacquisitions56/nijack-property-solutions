@@ -99,8 +99,28 @@ const App = () => {
           .cta-btn { background: #8B0000; color: #fff; padding: 14px 28px; border-radius: 999px; font-weight: 900; font-size: 15px; text-decoration: none; border: 2px solid #C9A84C; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
           .cta-btn-short { display: none; }
           .cta-btn-full { display: inline; }
+
+          /* Keep the primary CTA visible on shorter desktop/laptop screens. */
+          @media (min-width: 769px) and (max-height: 800px) {
+            .hero-section { padding: 42px 20px 185px !important; }
+            .hero-location-row { margin-bottom: 12px !important; }
+            .hero-title { font-size: clamp(34px, 4.6vw, 52px) !important; }
+            .hero-tagline-row { margin-bottom: 8px !important; }
+            .hero-benefits { margin-bottom: 18px !important; }
+            .hero-cta-row { margin-bottom: 22px !important; }
+            .closing-box { margin-top: 22px !important; }
+          }
+
           @media (max-width: 768px) {
-            .hero-section { padding: 70px 16px 80px !important; }
+            .hero-section { padding: 48px 16px 80px !important; }
+            .hero-location-row { margin-bottom: 14px !important; }
+            .hero-title { font-size: clamp(30px, 10vw, 44px) !important; }
+            .hero-tagline-row { margin-bottom: 10px !important; }
+            .hero-benefits { font-size: 15px !important; margin-bottom: 22px !important; }
+            .hero-cta-row { margin-bottom: 24px !important; }
+            .closing-box { margin: 24px auto 0 !important; padding: 16px 18px !important; }
+            .trust-signals { margin-top: 0 !important; padding: 18px 14px 44px !important; }
+            .quick-benefits { margin-top: 18px !important; }
             .nav-container { padding: 6px 10px; gap: 4px; }
             .brand-group { gap: 3px; }
             .logo-img { height: 65px; }
@@ -139,7 +159,7 @@ const App = () => {
       <section className="hero-section" style={{ position: 'relative', color: '#fff', padding: '95px 20px 230px', borderBottom: '8px solid #C9A84C', textAlign: 'center', backgroundImage: 'url(https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, rgba(80,10,10,0.78) 100%)' }} />
         <div style={{ maxWidth: 900, margin: '0 auto', position: 'relative', zIndex: 2 }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginBottom: 20 }}>
+          <div className="hero-location-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginBottom: 20 }}>
             <div style={{ height: 1, width: 60, background: '#C9A84C', opacity: 0.7 }} />
           <p
   style={{
@@ -156,20 +176,20 @@ const App = () => {
 </p>
             <div style={{ height: 1, width: 60, background: '#C9A84C', opacity: 0.7 }} />
           </div>
-          <h1 style={{ fontSize: 'clamp(30px, 5vw, 56px)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1.05, marginBottom: 8, letterSpacing: -1 }}>
+          <h1 className="hero-title" style={{ fontSize: 'clamp(30px, 5vw, 56px)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1.05, marginBottom: 8, letterSpacing: -1 }}>
             SELL YOUR PROPERTY <span style={{ color: '#C9A84C' }}>AS-IS</span><br />ON <span style={{ color: '#C9A84C' }}>YOUR</span> TIMELINE
           </h1>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginBottom: 12 }}>
+          <div className="hero-tagline-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginBottom: 12 }}>
             <div style={{ height: 1, width: 40, background: '#C9A84C', opacity: 0.7 }} />
             <p style={{ fontSize: 18, fontWeight: 700, fontStyle: 'italic', textTransform: 'uppercase', letterSpacing: 3, color: '#C9A84C', margin: 0 }}>Relief That Delivers.</p>
             <div style={{ height: 1, width: 40, background: '#C9A84C', opacity: 0.7 }} />
           </div>
-         <p style={{ fontSize: 19, fontWeight: 600, maxWidth: 680, margin: '0 auto 28px', lineHeight: 1.6, textTransform: 'uppercase', letterSpacing: 1 }}>No Repairs • No Agent Commissions • No Obligation</p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 16, marginBottom: 36 }}>
+         <p className="hero-benefits" style={{ fontSize: 19, fontWeight: 600, maxWidth: 680, margin: '0 auto 28px', lineHeight: 1.6, textTransform: 'uppercase', letterSpacing: 1 }}>No Repairs • No Agent Commissions • No Obligation</p>
+          <div className="hero-cta-row" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 16, marginBottom: 36 }}>
             
             <a href="#property-form" style={{ background: '#C9A84C', color: '#0d0d0d', padding: '14px 32px', borderRadius: 999, fontWeight: 900, fontSize: 15, textDecoration: 'none', textTransform: 'uppercase', letterSpacing: 2 }}>Get My Property Review</a>
           </div>
-          <div style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(201,168,76,0.5)', borderLeft: '4px solid #C9A84C', borderRadius: 16, padding: '16px 24px', maxWidth: 680, margin: '40px auto 0', textAlign: 'center' }}>
+          <div className="closing-box" style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(201,168,76,0.5)', borderLeft: '4px solid #C9A84C', borderRadius: 16, padding: '16px 24px', maxWidth: 680, margin: '40px auto 0', textAlign: 'center' }}>
             <p style={{ fontSize: 12, fontWeight: 900, color: '#C9A84C', textTransform: 'uppercase', letterSpacing: 2, margin: '0 0 6px' }}>Secure Closing Process</p>
             <p style={{ fontSize: 15, fontWeight: 600, margin: '0 0 10px', lineHeight: 1.6 }}>You'll close the same way traditional sales do — through a licensed Ohio title company that verifies ownership and protects your funds from start to finish.</p>
             <p style={{ fontSize: 18, fontWeight: 900, color: '#C9A84C', margin: 0, letterSpacing: 0.5 }}>Your money is never handled by us.</p>
@@ -179,6 +199,7 @@ const App = () => {
 
       {/* 3. TRUST SIGNALS */}
       <section
+  className="trust-signals"
   style={{
     background: '#8B0000',
     padding: '10px 20px 70px',
@@ -198,7 +219,7 @@ const App = () => {
       </section>
 
       {/* 4. QUICK BENEFITS */}
-      <section style={{ maxWidth: 1000, margin: '24px auto 0', padding: '0 20px 20px', position: 'relative', zIndex: 10 }}>
+      <section className="quick-benefits" style={{ maxWidth: 1000, margin: '24px auto 0', padding: '0 20px 20px', position: 'relative', zIndex: 10 }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20 }}>
           {[{ title: 'No Repairs Needed', desc: 'Sell your property as-is without cleaning, fixing, or updating it first.' },{ title: 'No Commissions', desc: 'No agent fees or commissions. Just a direct review of your property.' },{ title: 'Flexible Closing', desc: 'We work with different timelines and aim to find a solution that fits your situation.' }].map((b) => (
             <div key={b.title} style={{ background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px rgba(10,22,40,0.12)', padding: '24px 20px', borderTop: '4px solid #8B0000' }}>
