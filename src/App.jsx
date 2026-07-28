@@ -654,7 +654,18 @@ const App = () => {
       <footer style={{ background: '#fff', padding: '48px 20px', borderTop: '6px solid #0d0d0d', textAlign: 'center' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <img src="/tekton-emblem.png" alt="Tekton Emblem" style={{ height: 60, width: 'auto', objectFit: 'contain', marginBottom: 16 }} onError={e => e.target.style.display = 'none'} />
-          <p style={{ color: '#666', fontWeight: 700, fontSize: 14, textTransform: 'uppercase', letterSpacing: 3, marginBottom: 6 }}>Ohio &amp; Nationwide</p>
+          <p
+  style={{
+    color: '#666',
+    fontWeight: 700,
+    fontSize: 14,
+    textTransform: 'uppercase',
+    letterSpacing: 3,
+    marginBottom: 6
+  }}
+>
+  Ohio
+</p>
           <p style={{ color: '#888', fontSize: 13, marginBottom: 6 }}>6545 Market Ave N, Ste 100, Canton, OH 44721</p>
           <p style={{ color: '#888', fontSize: 13, marginBottom: 20, overflowWrap: 'break-word', wordBreak: 'break-word' }}><a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', textDecoration: 'underline', fontWeight: 700, display: 'inline' }}>nicole@tektonpropertysolutions.com</a></p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: 20, flexWrap: 'wrap', marginBottom: 20 }}>
