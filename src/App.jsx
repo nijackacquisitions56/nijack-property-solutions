@@ -197,7 +197,7 @@ const App = () => {
           <div style={{ background: '#fff', borderRadius: 32, boxShadow: '0 8px 48px rgba(10,22,40,0.14)', border: '1px solid #e8e0d0', overflow: 'hidden' }}>
             <div style={{ background: '#C9A84C', padding: '32px 24px', textAlign: 'center' }}>
               <h2 style={{ color: '#0d0d0d', fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(18px,4vw,26px)', letterSpacing: 2, margin: '0 0 8px' }}>Start Your Property Review</h2>
-              <p style={{ color: '#0d0d0d', fontWeight: 700, fontSize: 14, margin: 0 }}>Most sellers finish in about 3-5 minutes.</p>
+              <p style={{ color: '#0d0d0d', fontWeight: 700, fontSize: 14, margin: 0 }}>Most sellers finish in about 3~5 minutes.</p>
             </div>
 
             <div id="form-steps" style={{ display: 'flex', borderBottom: '2px solid #e8e0d0', scrollMarginTop: 100 }}>
