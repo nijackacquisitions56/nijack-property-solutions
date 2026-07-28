@@ -372,7 +372,7 @@ const App = () => {
 
                     {/* Timeline */}
                     <div>
-                      <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* How fast do you need to sell? <span style={{ color: '#C9A84C' }}>— Click black down arrow on right below</span></label>
+                      <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* What is your ideal selling timeline? <span style={{ color: '#C9A84C' }}>— Click black down arrow on right below</span></label>
                       <div style={{ position: 'relative' }}>
                         <select value={formData.timeline} onChange={(e) => setFormData({ ...formData, timeline: e.target.value })} style={selectStyle}>
                           <option value="">Select timeline here...</option>
