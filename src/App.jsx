@@ -178,7 +178,15 @@ const App = () => {
       </section>
 
       {/* 3. TRUST SIGNALS */}
-      <section style={{ background: '#8B0000', padding: '10px 20px 40px' }}>
+      <section
+  style={{
+    background: '#8B0000',
+    padding: '10px 20px 40px',
+    marginTop: '-120px',
+    position: 'relative',
+    zIndex: 3
+  }}
+>
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px' }}>
           {[{ icon: '🏛', label: 'Licensed Title Company' },{ icon: '✦', label: '$0 Fees or Commissions' },{ icon: '📅', label: 'Flexible Closing Timeline' },{ icon: '🏠', label: 'As-Is — No Repairs' }].map((t, i) => (
             <div key={i} style={{ padding: '15px 24px', textAlign: 'center', flex: '1 1 200px', minWidth: '160px' }}>
