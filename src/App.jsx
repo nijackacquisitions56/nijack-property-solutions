@@ -556,8 +556,9 @@ const App = () => {
                             headers: { 'Accept': 'application/json' }
                           });
                           if (response.ok) {
-                            setSubmitStatus('success');
-                            form.submit();
+  setSubmitStatus('success');
+  window.location.href = '/thank-you';
+}
                           } else {
                             setSubmitStatus('error');
                           }
