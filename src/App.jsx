@@ -125,7 +125,8 @@ const App = () => {
             .closing-box > p:nth-child(1) { font-size: 11px !important; margin-bottom: 5px !important; }
             .closing-box > p:nth-child(2) { font-size: 13px !important; line-height: 1.45 !important; margin-bottom: 7px !important; }
             .closing-box > p:nth-child(3) { font-size: 15px !important; }
-            .trust-signals { margin-top: 0 !important; padding: 18px 14px 44px !important; }
+            .trust-signals { margin-top: 0 !important; padding: 4px 14px 36px !important; }
+            .trust-signals > div > div { padding-top: 8px !important; padding-bottom: 10px !important; }
             .quick-benefits { margin-top: 18px !important; }
             .nav-container { padding: 6px 10px; gap: 4px; }
             .brand-group { gap: 3px; }
