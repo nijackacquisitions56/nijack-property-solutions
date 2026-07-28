@@ -112,7 +112,7 @@ const App = () => {
           }
 
           @media (max-width: 768px) {
-            .hero-section { padding: 48px 16px 80px !important; }
+            .hero-section { padding: 48px 16px 120px !important; }
             .hero-location-row { margin-bottom: 14px !important; }
             .hero-title { font-size: clamp(30px, 10vw, 44px) !important; }
             .hero-tagline-row { margin-bottom: 10px !important; }
@@ -179,17 +179,17 @@ const App = () => {
           <h1 className="hero-title" style={{ fontSize: 'clamp(30px, 5vw, 56px)', fontWeight: 900, textTransform: 'uppercase', lineHeight: 1.05, marginBottom: 8, letterSpacing: -1 }}>
             SELL YOUR PROPERTY <span style={{ color: '#C9A84C' }}>AS-IS</span><br />ON <span style={{ color: '#C9A84C' }}>YOUR</span> TIMELINE
           </h1>
-          <div className="hero-tagline-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginBottom: 56 }}>
+          <div className="hero-tagline-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginBottom: 12 }}>
             <div style={{ height: 1, width: 40, background: '#C9A84C', opacity: 0.7 }} />
             <p style={{ fontSize: 18, fontWeight: 700, fontStyle: 'italic', textTransform: 'uppercase', letterSpacing: 3, color: '#C9A84C', margin: 0 }}>Relief That Delivers.</p>
             <div style={{ height: 1, width: 40, background: '#C9A84C', opacity: 0.7 }} />
           </div>
          <p className="hero-benefits" style={{ fontSize: 19, fontWeight: 600, maxWidth: 680, margin: '0 auto 28px', lineHeight: 1.6, textTransform: 'uppercase', letterSpacing: 1 }}>No Repairs • No Agent Commissions • No Obligation</p>
-          <div className="hero-cta-row" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 16, marginBottom: 12 }}>
+          <div className="hero-cta-row" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 16, marginBottom: 36 }}>
             
             <a href="#property-form" style={{ background: '#C9A84C', color: '#0d0d0d', padding: '14px 32px', borderRadius: 999, fontWeight: 900, fontSize: 15, textDecoration: 'none', textTransform: 'uppercase', letterSpacing: 2 }}>Get My Property Review</a>
           </div>
-          <div className="closing-box" style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(201,168,76,0.5)', borderLeft: '4px solid #C9A84C', borderRadius: 16, padding: '16px 24px', maxWidth: 680, margin: '20px auto 0', textAlign: 'center' }}>
+          <div className="closing-box" style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(201,168,76,0.5)', borderLeft: '4px solid #C9A84C', borderRadius: 16, padding: '16px 24px', maxWidth: 680, margin: '40px auto 0', textAlign: 'center' }}>
             <p style={{ fontSize: 12, fontWeight: 900, color: '#C9A84C', textTransform: 'uppercase', letterSpacing: 2, margin: '0 0 6px' }}>Secure Closing Process</p>
             <p style={{ fontSize: 15, fontWeight: 600, margin: '0 0 10px', lineHeight: 1.6 }}>You'll close the same way traditional sales do — through a licensed Ohio title company that verifies ownership and protects your funds from start to finish.</p>
             <p style={{ fontSize: 18, fontWeight: 900, color: '#C9A84C', margin: 0, letterSpacing: 0.5 }}>Your money is never handled by us.</p>
