@@ -66,6 +66,61 @@ const App = () => {
     return digits.length >= 10;
   };
 
+  const isCurrentValidationAnswered = (targetId) => {
+    switch (targetId) {
+      case 'field-situation':
+        return formData.situation.length > 0;
+      case 'field-other-description':
+        return formData.otherDescription.trim() !== '';
+      case 'field-occupancy':
+        return formData.occupancyStatus !== '';
+      case 'field-vacancy-length':
+        return formData.vacancyLength !== '';
+      case 'field-written-lease':
+        return formData.leaseStatus !== '';
+      case 'field-tenant-current':
+        return formData.tenantCurrent !== '';
+      case 'field-delivery-status':
+        return formData.deliveryStatus !== '';
+      case 'field-vacant-by-closing':
+        return formData.vacantByClosing !== '';
+      case 'field-timeline':
+        return formData.timeline !== '';
+      case 'field-price':
+        return formData.priceExpectation.trim() !== '';
+      case 'field-additional-notes':
+        return formData.additionalNotes.trim() !== '';
+      case 'field-contact-preferences':
+        return Boolean(
+          formData.preferredContact &&
+          (!['Call', 'Text'].includes(formData.preferredContact) || isValidPhone(formData.phone))
+        );
+      case 'field-roofCondition':
+        return formData.roofCondition !== '';
+      case 'field-hvacCondition':
+        return formData.hvacCondition !== '';
+      case 'field-electricalCondition':
+        return formData.electricalCondition !== '';
+      case 'field-plumbingCondition':
+        return formData.plumbingCondition !== '';
+      case 'field-foundationCondition':
+        return formData.foundationCondition !== '';
+      case 'field-overallCondition':
+        return formData.overallCondition !== '';
+      default:
+        return false;
+    }
+  };
+
+  useEffect(() => {
+    if (!errors.step2 || !validationTarget) return;
+
+    if (isCurrentValidationAnswered(validationTarget)) {
+      setErrors((current) => ({ ...current, step2: '' }));
+      setValidationTarget('');
+    }
+  }, [formData, errors.step2, validationTarget]);
+
   const scrollToValidationTarget = (targetId) => {
     const target = document.getElementById(targetId);
     if (!target) return;
