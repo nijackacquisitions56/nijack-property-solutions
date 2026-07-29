@@ -1003,6 +1003,18 @@ const App = () => {
                           letterSpacing: 1
                         }}
                       >
+                        Please Read Before Submitting
+                      </p>
+
+                      <p
+                        style={{
+                          fontSize: 17,
+                          color: '#8B0000',
+                          fontWeight: 900,
+                          textAlign: 'center',
+                          margin: '0 0 14px'
+                        }}
+                      >
                         Important Wholesaler Disclosure
                       </p>
 
