@@ -286,7 +286,9 @@ const App = () => {
           <div style={{ background: '#fff', borderRadius: 32, boxShadow: '0 8px 48px rgba(10,22,40,0.14)', border: '1px solid #e8e0d0', overflow: 'hidden' }}>
             <div style={{ background: '#C9A84C', padding: '32px 24px', textAlign: 'center' }}>
               <h2 style={{ color: '#0d0d0d', fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(18px,4vw,26px)', letterSpacing: 2, margin: '0 0 8px' }}>Start Your Property Review</h2>
-              <p style={{ color: '#0d0d0d', fontWeight: 700, fontSize: 14, margin: 0 }}>Most sellers finish in about 3-5 minutes.</p>
+              <p style={{ color: '#0d0d0d', fontWeight: 700, fontSize: 14, margin: 0 }}>
+                {submitStatus === 'success' ? "We'll begin reviewing your information shortly." : 'Most sellers finish in about 3-5 minutes.'}
+              </p>
             </div>
 
             {submitStatus !== 'success' && (
@@ -344,7 +346,7 @@ const App = () => {
               <input type="hidden" name="deliveryStatus" value={formData.deliveryStatus} />
               <input type="hidden" name="vacantByClosing" value={formData.vacantByClosing} />
               {submitStatus === 'success' ? (
-                <div style={{ padding: '52px 28px', textAlign: 'center' }}>
+                <div style={{ padding: '30px 28px 44px', textAlign: 'center' }}>
                   <div style={{ width: 76, height: 76, borderRadius: '50%', background: '#C9A84C', color: '#0d0d0d', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 38, fontWeight: 900, margin: '0 auto 22px' }}>✓</div>
                   <h3 style={{ color: '#0d0d0d', fontSize: 'clamp(26px,5vw,38px)', fontWeight: 900, textTransform: 'uppercase', letterSpacing: 1, margin: '0 0 14px' }}>Thank You!</h3>
                   <p style={{ color: '#444', fontSize: 17, lineHeight: 1.7, fontWeight: 700, maxWidth: 620, margin: '0 auto 12px' }}>
