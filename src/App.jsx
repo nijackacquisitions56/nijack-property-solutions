@@ -289,15 +289,17 @@ const App = () => {
               <p style={{ color: '#0d0d0d', fontWeight: 700, fontSize: 14, margin: 0 }}>Most sellers finish in about 3-5 minutes.</p>
             </div>
 
-            <div id="form-steps" style={{ display: 'flex', borderBottom: '2px solid #e8e0d0', scrollMarginTop: 100 }}>
-              {[1, 2].map(s => (
-                <div key={s} onClick={() => s < step && setStep(s)} style={{ flex: 1, padding: '16px', textAlign: 'center', background: step === s ? '#0d0d0d' : '#f8f6f2', cursor: s < step ? 'pointer' : 'default', borderBottom: step === s ? '4px solid #C9A84C' : '4px solid transparent' }}>
-                  <span style={{ color: step === s ? '#C9A84C' : step > s ? '#8B0000' : '#111111', fontWeight: 900, fontSize: 13, textTransform: 'uppercase', letterSpacing: 2 }}>
-                    {step > s ? '✓ ' : ''}{s === 1 ? 'Step 1: Contact Info' : 'Step 2: Property Details'}
-                  </span>
-                </div>
-              ))}
-            </div>
+            {submitStatus !== 'success' && (
+              <div id="form-steps" style={{ display: 'flex', borderBottom: '2px solid #e8e0d0', scrollMarginTop: 100 }}>
+                {[1, 2].map(s => (
+                  <div key={s} onClick={() => s < step && setStep(s)} style={{ flex: 1, padding: '16px', textAlign: 'center', background: step === s ? '#0d0d0d' : '#f8f6f2', cursor: s < step ? 'pointer' : 'default', borderBottom: step === s ? '4px solid #C9A84C' : '4px solid transparent' }}>
+                    <span style={{ color: step === s ? '#C9A84C' : step > s ? '#8B0000' : '#111111', fontWeight: 900, fontSize: 13, textTransform: 'uppercase', letterSpacing: 2 }}>
+                      {step > s ? '✓ ' : ''}{s === 1 ? 'Step 1: Contact Info' : 'Step 2: Property Details'}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
 
             <form action="https://formspree.io/f/xwvjklgy" method="POST">
               <input type="hidden" name="fullName" value={formData.fullName} />
@@ -341,7 +343,24 @@ const App = () => {
               <input type="hidden" name="tenantCurrent" value={formData.tenantCurrent} />
               <input type="hidden" name="deliveryStatus" value={formData.deliveryStatus} />
               <input type="hidden" name="vacantByClosing" value={formData.vacantByClosing} />
-              <div style={{ padding: '40px' }}>
+              {submitStatus === 'success' ? (
+                <div style={{ padding: '52px 28px', textAlign: 'center' }}>
+                  <div style={{ width: 76, height: 76, borderRadius: '50%', background: '#C9A84C', color: '#0d0d0d', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 38, fontWeight: 900, margin: '0 auto 22px' }}>✓</div>
+                  <h3 style={{ color: '#0d0d0d', fontSize: 'clamp(26px,5vw,38px)', fontWeight: 900, textTransform: 'uppercase', letterSpacing: 1, margin: '0 0 14px' }}>Thank You!</h3>
+                  <p style={{ color: '#444', fontSize: 17, lineHeight: 1.7, fontWeight: 700, maxWidth: 620, margin: '0 auto 12px' }}>
+                    Your property information has been received successfully.
+                  </p>
+                  <p style={{ color: '#666', fontSize: 15, lineHeight: 1.7, maxWidth: 620, margin: '0 auto 24px' }}>
+                    We will carefully review the details you provided and follow up using your preferred contact method. Please check your email for a confirmation and preliminary property information.
+                  </p>
+                  <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 14, padding: '16px 18px', maxWidth: 560, margin: '0 auto' }}>
+                    <p style={{ color: '#555', fontSize: 13, lineHeight: 1.6, fontWeight: 700, margin: 0 }}>
+                      Have photos or an important update? Reply to the confirmation email so we can include them in the review.
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <div style={{ padding: '40px' }}>
                 {step === 1 ? (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                     <p style={{ color: '#555', fontSize: 14, textAlign: 'center', margin: '0 0 8px', fontWeight: 600 }}>No obligation. No pressure. Just explore your options.</p>
@@ -472,11 +491,11 @@ const App = () => {
 
                     {/* Property Occupancy */}
                     <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
-                      <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Property Occupancy</p>
-                      <p style={{ fontSize: 12, color: '#555', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px', fontWeight: 700 }}>This helps us understand access, timing, and any occupancy considerations.</p>
+                      <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Property Occupancy — Required</p>
+                      <p style={{ fontSize: 12, color: '#8B0000', textAlign: 'center', margin: '0 0 20px', fontWeight: 800, lineHeight: 1.6 }}>Accurate occupancy details are essential because they affect property access, tenant or move-out considerations, and the most realistic path to closing. Please answer the follow-up question shown after your selection.</p>
 
                       <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 8, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>
-                        * Is the property currently vacant or occupied?
+                        * Is the property currently vacant or occupied? This answer is required.
                       </label>
 
                       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(145px, 1fr))', gap: 10 }}>
@@ -867,6 +886,31 @@ const App = () => {
                           setErrors({ step2: 'Please let us know whether the property is vacant or occupied before submitting.' });
                           return;
                         }
+                        if (formData.occupancyStatus === 'Vacant' && !formData.vacancyLength) {
+                          setErrors({ step2: 'Please tell us approximately how long the property has been vacant.' });
+                          return;
+                        }
+                        if (formData.occupancyStatus === 'Tenant Occupied') {
+                          if (!formData.leaseStatus) {
+                            setErrors({ step2: 'Please let us know whether there is a written lease.' });
+                            return;
+                          }
+                          if (!formData.tenantCurrent) {
+                            setErrors({ step2: 'Please let us know whether the tenant is current on rent.' });
+                            return;
+                          }
+                          if (!formData.deliveryStatus) {
+                            setErrors({ step2: 'Please let us know whether the property would be delivered occupied or vacant.' });
+                            return;
+                          }
+                        }
+                        if (
+                          ['Owner Occupied', 'Occupied by Family / Other', 'Partially Occupied'].includes(formData.occupancyStatus) &&
+                          !formData.vacantByClosing
+                        ) {
+                          setErrors({ step2: 'Please let us know whether the property would be vacant by closing.' });
+                          return;
+                        }
                         if (!formData.timeline) { setErrors({ step2: 'Please select your ideal selling timeline before submitting.' }); return; }
                         if (!formData.priceExpectation || formData.priceExpectation.trim() === '') { setErrors({ step2: 'Please enter a price you would be comfortable accepting.' }); return; }
                         if (!formData.additionalNotes || formData.additionalNotes.trim() === '') { setErrors({ step2: 'Please give us additional notes about the property before submitting.' }); return; }
@@ -901,10 +945,12 @@ const App = () => {
                             body: data,
                             headers: { 'Accept': 'application/json' }
                           });
-                     if (response.ok) {
-  setSubmitStatus('success');
-  window.location.href = '/thank-you';
-} else {
+                          if (response.ok) {
+                            setSubmitStatus('success');
+                            setTimeout(() => {
+                              document.getElementById('property-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }, 50);
+                          } else {
   setSubmitStatus('error');
                           }
                         } catch (err) {
@@ -917,7 +963,8 @@ const App = () => {
                     </div>
                   </div>
                 )}
-              </div>
+                </div>
+              )}
             </form>
           </div>
         </div>
