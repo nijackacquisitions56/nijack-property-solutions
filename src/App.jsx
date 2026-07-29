@@ -1,51 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const App = () => {
-  useEffect(() => { window.scrollTo(0, 0); }, []);
-  const [openFaq, setOpenFaq] = useState(null);
-  const [step, setStep] = useState(1);
-  const [errors, setErrors] = useState({});
-  const [submitStatus, setSubmitStatus] = useState('idle'); // idle | submitting | error
-  const [formData, setFormData] = useState({
-    fullName: '', phone: '', email: '', propertyAddress: '',
-    situation: [], additionalNotes: '', timeline: '', priceExpectation: '',
-    smsConsentTransactional: false,
-    smsConsentMarketing: false,
-    roofCondition: '', hvacCondition: '', electricalCondition: '',
-    plumbingCondition: '', foundationCondition: '', overallCondition: '',
-    bestTimeToCall: '', preferredContact: '', otherDescription: '',
-    mortgageStatus: '', mortgagePayoff: '',
-    deedOwner: '', deedOwnerNames: '', deedOwnerRelationship: '', bedrooms: '', bathrooms: '', squareFootage: '', lotSize: '',
-    renovationsCompleted: '', renovationTypes: [], renovationDescription: '', renovationWhen: '',
-    licensedContractor: '', renovationDocuments: '',
-    occupancyStatus: '', vacancyLength: '', leaseStatus: '', monthlyRent: '',
-    leaseEnd: '', tenantCurrent: '', deliveryStatus: '', vacantByClosing: ''
-  });
-
-  const faqs = [
-    { q: 'DO I NEED TO MAKE REPAIRS?', a: 'No. We review houses in as-is condition, so there is no need to clean, fix, or update the property before reaching out.' },
-    { q: 'HOW IS MY CASH OFFER DETERMINED?', a: 'Our review is based on the property condition, location, timeline, market activity, and the overall situation. Every property is different.' },
-    { q: 'DO I NEED TO CLEAN OUT THE PROPERTY?', a: 'In many situations, no. We understand some properties are overwhelming, and we work to keep the process as simple as possible.' },
-    { q: 'WHAT IF I STILL OWE MONEY ON THE PROPERTY?', a: 'That does not automatically stop the process. We can review the situation and discuss possible next steps based on the property and payoff amount.' },
-    { q: 'HOW FAST CAN THE PROCESS MOVE?', a: 'Some situations can move quickly depending on title, property details, and seller timeline. The sooner we receive your information, the sooner we can review it.' },
-    { q: 'ARE THERE COMMISSIONS?', a: 'No. We are direct buyers, not agents. You pay zero agent fees or commissions.' },
-    { q: 'IS THIS A LEGITIMATE PROCESS?', a: 'Yes. Transactions are handled through a licensed title company, which helps ensure paperwork, ownership verification, and closing funds are processed securely. You do not pay anything upfront.' },
-  ];
-
-  const situations = ['Probate','Inherited','Divorce','Foreclosure','Tax Delinquent','Code Violations','Fire / Water Damage','Needs Repairs','Tired Landlord','Problem Tenant','Expired Listing','Relocating','Health / Medical','Financial Hardship','Trust','Considering My Options','Other'];
-
-  const renovationOptions = ['Roof','HVAC (Heating & Cooling)','Plumbing','Electrical','Kitchen','Bathrooms','Windows','Flooring','Foundation','Other'];
-
-  const handleCheck = (val) => {
-    setFormData(f => ({
-      ...f,
-      situation: f.situation.includes(val) ? f.situation.filter(s => s !== val) : [...f.situation, val]
-    }));
-  };
-
-  const isCompleteAddress = (addr) => {
-    if (!addr || addr.trim().length < 10) return false;
+const App = () =>I agree to receive text messages from Tekton Property Solutions LLC regarding my property inquiry, offer, appointment scheduling, and transaction updates. Message frequency varies. Message & data rates may apply. Reply STOP to opt out or HELP for assistance. Consent is not a condition of any purchase or sale.< 10) return false;
     const hasStreetNumber = /\d/.test(addr);
     const hasZip = /\d{5}/.test(addr);
     const hasState = /\b[A-Za-z]{2}\b/.test(addr);
