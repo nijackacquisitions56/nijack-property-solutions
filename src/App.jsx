@@ -121,42 +121,6 @@ const App = () => {
     }
   }, [formData, errors.step2, validationTarget]);
 
-  useEffect(() => {
-    if (step !== 1 || submitStatus === 'success') return;
-
-    const keepStepOneInView = () => {
-      const continueButton = document.getElementById('continue-to-step-2');
-      if (!continueButton) return;
-
-      const buttonBottom =
-        continueButton.getBoundingClientRect().bottom + window.scrollY;
-
-      // Keep the Continue button visible near the bottom of the screen
-      // on both desktop and mobile while Step 1 is active.
-      const bottomSpacing = window.innerWidth <= 768 ? 20 : 32;
-      const maximumScroll = Math.max(
-        0,
-        buttonBottom - window.innerHeight + bottomSpacing
-      );
-
-      if (window.scrollY > maximumScroll) {
-        window.scrollTo({ top: maximumScroll, behavior: 'auto' });
-      }
-    };
-
-    window.addEventListener('scroll', keepStepOneInView, { passive: true });
-    window.addEventListener('resize', keepStepOneInView);
-    window.addEventListener('orientationchange', keepStepOneInView);
-
-    keepStepOneInView();
-
-    return () => {
-      window.removeEventListener('scroll', keepStepOneInView);
-      window.removeEventListener('resize', keepStepOneInView);
-      window.removeEventListener('orientationchange', keepStepOneInView);
-    };
-  }, [step, submitStatus]);
-
   const scrollToValidationTarget = (targetId) => {
     const target = document.getElementById(targetId);
     if (!target) return;
@@ -389,6 +353,27 @@ const App = () => {
             <p style={{ fontSize: 12, fontWeight: 900, color: '#C9A84C', textTransform: 'uppercase', letterSpacing: 2, margin: '0 0 8px' }}>Secure Closing Process</p>
             <p style={{ color: '#fff', fontSize: 15, fontWeight: 600, margin: '0 0 10px', lineHeight: 1.65 }}>Every closing is handled through a licensed Ohio title company, helping protect all parties throughout the transaction.</p>
             <p style={{ fontSize: 18, fontWeight: 900, color: '#C9A84C', margin: 0, letterSpacing: 0.5 }}>Your money is never handled by us.</p>
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: 32 }}>
+            <a
+              href="#property-form"
+              style={{
+                display: 'inline-block',
+                background: '#8B0000',
+                color: '#fff',
+                border: '2px solid #C9A84C',
+                borderRadius: 999,
+                padding: '15px 30px',
+                fontWeight: 900,
+                fontSize: 14,
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+                letterSpacing: 1.5
+              }}
+            >
+              Get My Property Review
+            </a>
           </div>
         </div>
       </section>
@@ -1011,7 +996,7 @@ const App = () => {
                     )}
 
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
-                      <button type="button" onClick={async () => {
+                      <button id="submit-my-property" type="button" onClick={async () => {
                         if (formData.situation.length === 0) { showStep2ValidationError('Please select at least one situation before submitting.', 'field-situation'); return; }
                         if (formData.situation.includes('Other') && (!formData.otherDescription || formData.otherDescription.trim() === '')) {
                           showStep2ValidationError('Please describe your situation since you selected "Other".', 'field-other-description');
@@ -1121,6 +1106,27 @@ const App = () => {
               </div>
             ))}
           </div>
+
+          <div style={{ textAlign: 'center', marginTop: 34 }}>
+            <a
+              href="#property-form"
+              style={{
+                display: 'inline-block',
+                background: '#C9A84C',
+                color: '#0d0d0d',
+                border: '2px solid #fff',
+                borderRadius: 999,
+                padding: '15px 30px',
+                fontWeight: 900,
+                fontSize: 14,
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+                letterSpacing: 1.5
+              }}
+            >
+              Get My Property Review
+            </a>
+          </div>
         </div>
       </section>
 
@@ -1138,6 +1144,27 @@ const App = () => {
                 {openFaq === i && <div style={{ padding: '0 24px 20px', color: '#555', fontSize: 15, lineHeight: 1.7, fontWeight: 600 }}>{faq.a}</div>}
               </div>
             ))}
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: 32 }}>
+            <a
+              href="#property-form"
+              style={{
+                display: 'inline-block',
+                background: '#8B0000',
+                color: '#fff',
+                border: '2px solid #C9A84C',
+                borderRadius: 999,
+                padding: '15px 30px',
+                fontWeight: 900,
+                fontSize: 14,
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+                letterSpacing: 1.5
+              }}
+            >
+              Get My Property Review
+            </a>
           </div>
         </div>
       </section>
@@ -1165,6 +1192,27 @@ const App = () => {
               </p>
             </div>
           </div>
+
+          <div style={{ textAlign: 'center', marginTop: 32 }}>
+            <a
+              href="#property-form"
+              style={{
+                display: 'inline-block',
+                background: '#8B0000',
+                color: '#fff',
+                border: '2px solid #C9A84C',
+                borderRadius: 999,
+                padding: '15px 30px',
+                fontWeight: 900,
+                fontSize: 14,
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+                letterSpacing: 1.5
+              }}
+            >
+              Get My Property Review
+            </a>
+          </div>
         </div>
       </section>
 
@@ -1174,7 +1222,7 @@ const App = () => {
           <p style={{ color: '#C9A84C', fontWeight: 700, letterSpacing: 4, textTransform: 'uppercase', fontSize: 13, marginBottom: 16 }}>READY TO MOVE FORWARD?</p>
           <h2 style={{ fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(28px,6vw,64px)', lineHeight: 1.1, marginBottom: 24, letterSpacing: -1 }}>Start With Your<br />Property Details</h2>
           <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.85)', marginBottom: 32, fontWeight: 600 }}>No obligation. No pressure. Just see what your options look like.</p>
-          <a href="#property-form" className="cta-section-btn" style={{ background: '#C9A84C', color: '#0d0d0d', padding: '20px 48px', borderRadius: 999, fontWeight: 900, textTransform: 'uppercase', letterSpacing: 3, fontSize: 18, textDecoration: 'none', display: 'inline-block' }}>Submit My Details Now</a>
+          <a href="#property-form" className="cta-section-btn" style={{ background: '#C9A84C', color: '#0d0d0d', padding: '20px 48px', borderRadius: 999, fontWeight: 900, textTransform: 'uppercase', letterSpacing: 3, fontSize: 18, textDecoration: 'none', display: 'inline-block' }}>Get My Property Review</a>
         </div>
       </section>
 
