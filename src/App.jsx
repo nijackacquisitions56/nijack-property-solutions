@@ -18,7 +18,9 @@ const App = () => {
     mortgageStatus: '', mortgagePayoff: '',
     deedOwner: '', deedOwnerNames: '', deedOwnerRelationship: '', bedrooms: '', bathrooms: '', squareFootage: '', lotSize: '',
     renovationsCompleted: '', renovationTypes: [], renovationDescription: '', renovationWhen: '',
-    licensedContractor: '', renovationDocuments: ''
+    licensedContractor: '', renovationDocuments: '',
+    occupancyStatus: '', vacancyLength: '', leaseStatus: '', monthlyRent: '',
+    leaseEnd: '', tenantCurrent: '', deliveryStatus: '', vacantByClosing: ''
   });
 
   const faqs = [
@@ -31,7 +33,7 @@ const App = () => {
     { q: 'IS THIS A LEGITIMATE PROCESS?', a: 'Yes. Transactions are handled through a licensed title company, which helps ensure paperwork, ownership verification, and closing funds are processed securely. You do not pay anything upfront.' },
   ];
 
-  const situations = ['Probate','Inherited','Divorce','Foreclosure','Tax Delinquent','Code Violations','Fire / Water Damage','Needs Repairs','Tired Landlord','Problem Tenant','Vacant','Expired Listing','Relocating','Health / Medical','Financial Hardship','Trust','Shopping Around','Other'];
+  const situations = ['Probate','Inherited','Divorce','Foreclosure','Tax Delinquent','Code Violations','Fire / Water Damage','Needs Repairs','Tired Landlord','Problem Tenant','Expired Listing','Relocating','Health / Medical','Financial Hardship','Trust','Considering My Options','Other'];
 
   const renovationOptions = ['Roof','HVAC (Heating & Cooling)','Plumbing','Electrical','Kitchen','Bathrooms','Windows','Flooring','Foundation','Other'];
 
@@ -341,6 +343,14 @@ const App = () => {
               <input type="hidden" name="renovationWhen" value={formData.renovationWhen} />
               <input type="hidden" name="licensedContractor" value={formData.licensedContractor} />
               <input type="hidden" name="renovationDocuments" value={formData.renovationDocuments} />
+              <input type="hidden" name="occupancyStatus" value={formData.occupancyStatus} />
+              <input type="hidden" name="vacancyLength" value={formData.vacancyLength} />
+              <input type="hidden" name="leaseStatus" value={formData.leaseStatus} />
+              <input type="hidden" name="monthlyRent" value={formData.monthlyRent} />
+              <input type="hidden" name="leaseEnd" value={formData.leaseEnd} />
+              <input type="hidden" name="tenantCurrent" value={formData.tenantCurrent} />
+              <input type="hidden" name="deliveryStatus" value={formData.deliveryStatus} />
+              <input type="hidden" name="vacantByClosing" value={formData.vacantByClosing} />
               <div style={{ padding: '40px' }}>
                 {step === 1 ? (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
@@ -468,10 +478,123 @@ const App = () => {
                       <input type="text" placeholder="PLEASE DESCRIBE SITUATION..." value={formData.otherDescription} onChange={e => setFormData({...formData, otherDescription: e.target.value})} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700, boxSizing: 'border-box' }} />
                     )}
 
+                    {/* Property Occupancy */}
+                    <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
+                      <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Property Occupancy</p>
+                      <p style={{ fontSize: 12, color: '#555', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px', fontWeight: 700 }}>This helps us understand access, timing, and any occupancy considerations.</p>
+
+                      <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 8, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>
+                        * Is the property currently vacant or occupied?
+                      </label>
+
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(145px, 1fr))', gap: 10 }}>
+                        {['Vacant', 'Owner Occupied', 'Tenant Occupied', 'Occupied by Family / Other', 'Partially Occupied', 'Not Sure'].map((opt) => {
+                          const isSelected = formData.occupancyStatus === opt;
+                          return (
+                            <button
+                              key={opt}
+                              type="button"
+                              onClick={() => setFormData({
+                                ...formData,
+                                occupancyStatus: isSelected ? '' : opt,
+                                vacancyLength: opt === 'Vacant' && !isSelected ? formData.vacancyLength : '',
+                                leaseStatus: opt === 'Tenant Occupied' && !isSelected ? formData.leaseStatus : '',
+                                monthlyRent: opt === 'Tenant Occupied' && !isSelected ? formData.monthlyRent : '',
+                                leaseEnd: opt === 'Tenant Occupied' && !isSelected ? formData.leaseEnd : '',
+                                tenantCurrent: opt === 'Tenant Occupied' && !isSelected ? formData.tenantCurrent : '',
+                                deliveryStatus: opt === 'Tenant Occupied' && !isSelected ? formData.deliveryStatus : '',
+                                vacantByClosing: ['Owner Occupied', 'Occupied by Family / Other', 'Partially Occupied'].includes(opt) && !isSelected ? formData.vacantByClosing : ''
+                              })}
+                              style={{
+                                padding: '12px 10px',
+                                borderRadius: 8,
+                                border: isSelected ? '2px solid #8B0000' : '2px solid #d0c8b8',
+                                background: isSelected ? '#8B0000' : '#fff',
+                                color: isSelected ? '#fff' : '#555',
+                                fontWeight: 800,
+                                cursor: 'pointer',
+                                fontSize: 11,
+                                textTransform: 'uppercase',
+                                letterSpacing: 0.5,
+                                textAlign: 'center'
+                              }}
+                            >
+                              {opt}
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      {formData.occupancyStatus === 'Vacant' && (
+                        <div style={{ marginTop: 16 }}>
+                          <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Approximately how long has it been vacant?</label>
+                          <div style={{ position: 'relative' }}>
+                            <select value={formData.vacancyLength} onChange={(e) => setFormData({ ...formData, vacancyLength: e.target.value })} style={selectStyle}>
+                              <option value="">Select one...</option>
+                              <option value="Less than 30 days">Less than 30 days</option>
+                              <option value="1-3 months">1-3 months</option>
+                              <option value="3-6 months">3-6 months</option>
+                              <option value="6-12 months">6-12 months</option>
+                              <option value="More than 1 year">More than 1 year</option>
+                              <option value="Not sure">Not sure</option>
+                            </select>
+                            <div style={{ position: 'absolute', right: 15, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', fontSize: 20, fontWeight: 900 }}>▼</div>
+                          </div>
+                        </div>
+                      )}
+
+                      {formData.occupancyStatus === 'Tenant Occupied' && (
+                        <div style={{ marginTop: 18, display: 'flex', flexDirection: 'column', gap: 14 }}>
+                          <div>
+                            <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Is there a written lease?</label>
+                            <div className='pref-grid-2' style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
+                              {['Yes', 'No', 'Not Sure'].map((opt) => (
+                                <button key={opt} type="button" onClick={() => setFormData({ ...formData, leaseStatus: formData.leaseStatus === opt ? '' : opt })} className='pref-btn' style={{ padding: '10px 8px', borderRadius: 8, border: formData.leaseStatus === opt ? '2px solid #8B0000' : '2px solid #d0c8b8', background: formData.leaseStatus === opt ? '#8B0000' : '#fff', color: formData.leaseStatus === opt ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase' }}>{opt}</button>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 12 }}>
+                            <input type="text" placeholder="CURRENT MONTHLY RENT (OPTIONAL)" value={formData.monthlyRent} onChange={(e) => setFormData({ ...formData, monthlyRent: e.target.value })} style={{ width: '100%', background: '#fff', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 13, fontWeight: 700, boxSizing: 'border-box' }} />
+                            <input type="text" placeholder="WHEN DOES THE LEASE END? (OPTIONAL)" value={formData.leaseEnd} onChange={(e) => setFormData({ ...formData, leaseEnd: e.target.value })} style={{ width: '100%', background: '#fff', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 13, fontWeight: 700, boxSizing: 'border-box' }} />
+                          </div>
+
+                          <div>
+                            <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Is the tenant current on rent?</label>
+                            <div className='pref-grid-2' style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
+                              {['Yes', 'No', 'Not Sure'].map((opt) => (
+                                <button key={opt} type="button" onClick={() => setFormData({ ...formData, tenantCurrent: formData.tenantCurrent === opt ? '' : opt })} className='pref-btn' style={{ padding: '10px 8px', borderRadius: 8, border: formData.tenantCurrent === opt ? '2px solid #8B0000' : '2px solid #d0c8b8', background: formData.tenantCurrent === opt ? '#8B0000' : '#fff', color: formData.tenantCurrent === opt ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase' }}>{opt}</button>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div>
+                            <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Would the property be delivered occupied or vacant?</label>
+                            <div className='pref-grid-2' style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
+                              {['Occupied', 'Vacant', 'Not Sure'].map((opt) => (
+                                <button key={opt} type="button" onClick={() => setFormData({ ...formData, deliveryStatus: formData.deliveryStatus === opt ? '' : opt })} className='pref-btn' style={{ padding: '10px 8px', borderRadius: 8, border: formData.deliveryStatus === opt ? '2px solid #8B0000' : '2px solid #d0c8b8', background: formData.deliveryStatus === opt ? '#8B0000' : '#fff', color: formData.deliveryStatus === opt ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase' }}>{opt}</button>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {['Owner Occupied', 'Occupied by Family / Other', 'Partially Occupied'].includes(formData.occupancyStatus) && (
+                        <div style={{ marginTop: 16 }}>
+                          <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Would the property be vacant by closing?</label>
+                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: 10 }}>
+                            {['Yes', 'No', 'Not Sure', 'Depends on Closing Date'].map((opt) => (
+                              <button key={opt} type="button" onClick={() => setFormData({ ...formData, vacantByClosing: formData.vacantByClosing === opt ? '' : opt })} style={{ padding: '10px 8px', borderRadius: 8, border: formData.vacantByClosing === opt ? '2px solid #8B0000' : '2px solid #d0c8b8', background: formData.vacantByClosing === opt ? '#8B0000' : '#fff', color: formData.vacantByClosing === opt ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase' }}>{opt}</button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
                     {/* Additional Notes */}
                     <div>
                       <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* Additional Notes</label>
-                      <textarea rows={4} placeholder="Tell us anything else about the property — repairs needed, current occupancy, access issues, unique features, or anything that may affect the value or timeline. The more you share, the better we can help you." value={formData.additionalNotes} onChange={(e) => setFormData({ ...formData, additionalNotes: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontFamily: 'inherit', lineHeight: 1.6 }} />
+                      <textarea rows={4} placeholder="Tell us anything else about the property — repairs needed, access issues, unique features, or anything that may affect the value or timeline. The more you share, the better we can help you." value={formData.additionalNotes} onChange={(e) => setFormData({ ...formData, additionalNotes: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontFamily: 'inherit', lineHeight: 1.6 }} />
                     </div>
 
                     {/* Timeline */}
@@ -746,6 +869,10 @@ const App = () => {
                         if (formData.situation.length === 0) { setErrors({ step2: 'Please select at least one situation before submitting.' }); return; }
                         if (formData.situation.includes('Other') && (!formData.otherDescription || formData.otherDescription.trim() === '')) {
                           setErrors({ step2: 'Please describe your situation since you selected "Other".' });
+                          return;
+                        }
+                        if (!formData.occupancyStatus) {
+                          setErrors({ step2: 'Please let us know whether the property is vacant or occupied before submitting.' });
                           return;
                         }
                         if (!formData.timeline) { setErrors({ step2: 'Please select your ideal selling timeline before submitting.' }); return; }
