@@ -33,7 +33,7 @@ const App = () => {
 
   const situations = ['Probate','Inherited','Divorce','Foreclosure','Tax Delinquent','Code Violations','Fire / Water Damage','Needs Repairs','Tired Landlord','Problem Tenant','Vacant','Expired Listing','Relocating','Health / Medical','Financial Hardship','Trust','Shopping Around','Other'];
 
-  const renovationOptions = ['Roof','HVAC','Plumbing','Electrical','Kitchen','Bathrooms','Windows','Flooring','Foundation','Other'];
+  const renovationOptions = ['Roof','HVAC (Heating & Cooling)','Plumbing','Electrical','Kitchen','Bathrooms','Windows','Flooring','Foundation','Other'];
 
   const handleCheck = (val) => {
     setFormData(f => ({
@@ -241,7 +241,53 @@ const App = () => {
         </div>
       </section>
 
-      {/* 5. 2-STEP FORM */}
+      {/* 5. HONEST OFFERS / VALUES */}
+      <section style={{ padding: '64px 20px', background: '#fff' }}>
+        <div style={{ maxWidth: 1050, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', maxWidth: 820, margin: '0 auto 42px' }}>
+            <p style={{ color: '#8B0000', fontWeight: 900, letterSpacing: 3, fontSize: 12, textTransform: 'uppercase', margin: '0 0 12px', fontStyle: 'italic' }}>
+              A More Thoughtful Approach
+            </p>
+            <h2 style={{ color: '#0d0d0d', fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(27px,5vw,46px)', lineHeight: 1.1, margin: '0 0 20px', letterSpacing: -0.5 }}>
+              Honest Offers. Realistic Paths to Closing.
+            </h2>
+            <p style={{ color: '#444', fontSize: 17, lineHeight: 1.8, margin: '0 auto 24px', fontWeight: 600 }}>
+              At Tekton Property Solutions LLC, we believe homeowners deserve honest answers—not unrealistic promises. Every property is carefully reviewed before an offer is presented because our goal is not simply to sign a contract. Our goal is to help create a transaction with a realistic path to closing.
+            </p>
+            <div style={{ background: '#f8f6f2', borderLeft: '6px solid #C9A84C', borderRadius: 14, padding: '22px 26px', maxWidth: 720, margin: '0 auto' }}>
+              <p style={{ color: '#0d0d0d', fontWeight: 900, fontSize: 'clamp(17px,3vw,23px)', lineHeight: 1.5, margin: 0, fontStyle: 'italic' }}>
+                “We would rather lose a deal than make a promise we cannot keep.”
+              </p>
+            </div>
+          </div>
+
+          <div style={{ background: '#0d0d0d', borderRadius: 28, padding: '38px 28px', border: '2px solid #C9A84C' }}>
+            <h3 style={{ color: '#C9A84C', textAlign: 'center', fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(21px,4vw,32px)', letterSpacing: 1.5, margin: '0 0 28px' }}>
+              Why Homeowners Choose Tekton
+            </h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: 14 }}>
+              {[
+                'Honest property evaluations',
+                'No-pressure conversations',
+                'Clear communication',
+                'As-is property purchases',
+                'Flexible closing timelines',
+                'Licensed Ohio title company closings',
+                'Transparent wholesaler disclosures',
+                'Respect for your decision',
+                'If we are not the right solution, we will tell you'
+              ].map((item) => (
+                <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, background: '#1a1a1a', border: '1px solid rgba(201,168,76,0.35)', borderRadius: 12, padding: '16px' }}>
+                  <span style={{ color: '#C9A84C', fontWeight: 900, fontSize: 18, lineHeight: 1 }}>✓</span>
+                  <span style={{ color: '#fff', fontSize: 14, lineHeight: 1.5, fontWeight: 700 }}>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. 2-STEP FORM */}
       <section className="form-section" style={{ padding: '80px 20px 60px' }}>
         <div id="property-form" style={{ maxWidth: 860, margin: '0 auto', scrollMarginTop: 110 }}>
           <div style={{ background: '#fff', borderRadius: 32, boxShadow: '0 8px 48px rgba(10,22,40,0.14)', border: '1px solid #e8e0d0', overflow: 'hidden' }}>
@@ -476,8 +522,8 @@ const App = () => {
 
                     {/* Updates / Renovations */}
                     <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
-                      <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Updates &amp; Renovations</p>
-                      <p style={{ fontSize: 12, color: '#555', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px', fontWeight: 700 }}>This helps us understand the property's current condition and prepare a more accurate review.</p>
+                      <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Property Updates</p>
+                      <p style={{ fontSize: 12, color: '#555', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px', fontWeight: 700 }}>Knowing what has been updated helps us prepare a more accurate property review.</p>
 
                       <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 8, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>
                         Have any updates or renovations been completed since you purchased the property?
