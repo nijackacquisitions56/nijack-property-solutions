@@ -121,6 +121,42 @@ const App = () => {
     }
   }, [formData, errors.step2, validationTarget]);
 
+  useEffect(() => {
+    if (step !== 1 || submitStatus === 'success') return;
+
+    const keepStepOneInView = () => {
+      const continueButton = document.getElementById('continue-to-step-2');
+      if (!continueButton) return;
+
+      const buttonBottom =
+        continueButton.getBoundingClientRect().bottom + window.scrollY;
+
+      // Keep the Continue button visible near the bottom of the screen
+      // on both desktop and mobile while Step 1 is active.
+      const bottomSpacing = window.innerWidth <= 768 ? 20 : 32;
+      const maximumScroll = Math.max(
+        0,
+        buttonBottom - window.innerHeight + bottomSpacing
+      );
+
+      if (window.scrollY > maximumScroll) {
+        window.scrollTo({ top: maximumScroll, behavior: 'auto' });
+      }
+    };
+
+    window.addEventListener('scroll', keepStepOneInView, { passive: true });
+    window.addEventListener('resize', keepStepOneInView);
+    window.addEventListener('orientationchange', keepStepOneInView);
+
+    keepStepOneInView();
+
+    return () => {
+      window.removeEventListener('scroll', keepStepOneInView);
+      window.removeEventListener('resize', keepStepOneInView);
+      window.removeEventListener('orientationchange', keepStepOneInView);
+    };
+  }, [step, submitStatus]);
+
   const scrollToValidationTarget = (targetId) => {
     const target = document.getElementById(targetId);
     if (!target) return;
@@ -542,7 +578,7 @@ const App = () => {
                       setErrors({});
                       setStep(2);
                       setTimeout(() => { document.getElementById('form-steps').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
-                    }} className='step-btn' style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '16px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: '2px solid #C9A84C', cursor: 'pointer', marginTop: 4, textTransform: 'uppercase', letterSpacing: 1 }}>
+                    }} id="continue-to-step-2" className='step-btn' style={{ width: '100%', background: '#8B0000', color: '#fff', padding: '16px', borderRadius: 999, fontWeight: 900, fontSize: 18, border: '2px solid #C9A84C', cursor: 'pointer', marginTop: 4, textTransform: 'uppercase', letterSpacing: 1 }}>
                       Continue to Step 2 →
                     </button>
                   </div>
