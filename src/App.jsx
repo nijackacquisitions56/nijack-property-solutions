@@ -16,7 +16,9 @@ const App = () => {
     plumbingCondition: '', foundationCondition: '', overallCondition: '',
     bestTimeToCall: '', preferredContact: '', otherDescription: '',
     mortgageStatus: '', mortgagePayoff: '',
-    deedOwner: '', deedOwnerNames: '', deedOwnerRelationship: '', bedrooms: '', bathrooms: '', squareFootage: '', lotSize: ''
+    deedOwner: '', deedOwnerNames: '', deedOwnerRelationship: '', bedrooms: '', bathrooms: '', squareFootage: '', lotSize: '',
+    renovationsCompleted: '', renovationTypes: [], renovationDescription: '', renovationWhen: '',
+    licensedContractor: '', renovationDocuments: ''
   });
 
   const faqs = [
@@ -30,6 +32,8 @@ const App = () => {
   ];
 
   const situations = ['Probate','Inherited','Divorce','Foreclosure','Tax Delinquent','Code Violations','Fire / Water Damage','Needs Repairs','Tired Landlord','Problem Tenant','Vacant','Expired Listing','Relocating','Health / Medical','Financial Hardship','Trust','Shopping Around','Other'];
+
+  const renovationOptions = ['Roof','HVAC','Plumbing','Electrical','Kitchen','Bathrooms','Windows','Flooring','Foundation','Other'];
 
   const handleCheck = (val) => {
     setFormData(f => ({
@@ -285,6 +289,12 @@ const App = () => {
               <input type="hidden" name="bathrooms" value={formData.bathrooms} />
               <input type="hidden" name="squareFootage" value={formData.squareFootage} />
               <input type="hidden" name="lotSize" value={formData.lotSize} />
+              <input type="hidden" name="renovationsCompleted" value={formData.renovationsCompleted} />
+              <input type="hidden" name="renovationTypes" value={formData.renovationTypes.join(', ')} />
+              <input type="hidden" name="renovationDescription" value={formData.renovationDescription} />
+              <input type="hidden" name="renovationWhen" value={formData.renovationWhen} />
+              <input type="hidden" name="licensedContractor" value={formData.licensedContractor} />
+              <input type="hidden" name="renovationDocuments" value={formData.renovationDocuments} />
               <div style={{ padding: '40px' }}>
                 {step === 1 ? (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
@@ -460,6 +470,129 @@ const App = () => {
                       {formData.mortgageStatus === 'Yes' && (
                         <div style={{ marginTop: 12 }}>
                           <input type="text" placeholder="HOW MUCH IS OWED? A BALLPARK IS FINE" value={formData.mortgagePayoff} onChange={(e) => setFormData({ ...formData, mortgagePayoff: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700, boxSizing: 'border-box' }} />
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Updates / Renovations */}
+                    <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
+                      <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Updates &amp; Renovations</p>
+                      <p style={{ fontSize: 12, color: '#555', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px', fontWeight: 700 }}>This helps us understand the property's current condition and prepare a more accurate review.</p>
+
+                      <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 8, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>
+                        Have any updates or renovations been completed since you purchased the property?
+                      </label>
+
+                      <div className='pref-grid-2' style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(130px, 1fr))', gap: 10 }}>
+                        {['Yes', 'No'].map((opt) => {
+                          const isSelected = formData.renovationsCompleted === opt;
+                          return (
+                            <button
+                              key={opt}
+                              type="button"
+                              onClick={() => setFormData({
+                                ...formData,
+                                renovationsCompleted: isSelected ? '' : opt,
+                                renovationTypes: opt === 'Yes' && !isSelected ? formData.renovationTypes : [],
+                                renovationDescription: opt === 'Yes' && !isSelected ? formData.renovationDescription : '',
+                                renovationWhen: opt === 'Yes' && !isSelected ? formData.renovationWhen : '',
+                                licensedContractor: opt === 'Yes' && !isSelected ? formData.licensedContractor : '',
+                                renovationDocuments: opt === 'Yes' && !isSelected ? formData.renovationDocuments : ''
+                              })}
+                              className='pref-btn'
+                              style={{ padding: '12px 10px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '2px solid #d0c8b8', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5, textAlign: 'center', transition: 'all 0.15s' }}
+                            >
+                              {opt}
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      {formData.renovationsCompleted === 'Yes' && (
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: 18, marginTop: 20 }}>
+                          <div>
+                            <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 8, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>
+                              What updates were completed? <span style={{ color: '#888', fontWeight: 700 }}>(Select all that apply)</span>
+                            </label>
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
+                              {renovationOptions.map((item) => {
+                                const isSelected = formData.renovationTypes.includes(item);
+                                return (
+                                  <button
+                                    key={item}
+                                    type="button"
+                                    onClick={() => setFormData({
+                                      ...formData,
+                                      renovationTypes: isSelected
+                                        ? formData.renovationTypes.filter((type) => type !== item)
+                                        : [...formData.renovationTypes, item]
+                                    })}
+                                    style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '11px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '1px solid #ccc', background: isSelected ? '#fff0f0' : '#fff', color: isSelected ? '#8B0000' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase', letterSpacing: 0.4, textAlign: 'left' }}
+                                  >
+                                    <span style={{ width: 14, height: 14, border: '1px solid #8B0000', background: isSelected ? '#8B0000' : 'transparent', color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', borderRadius: 2, flexShrink: 0 }}>
+                                      {isSelected ? '✓' : ''}
+                                    </span>
+                                    {item}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </div>
+
+                          <div>
+                            <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Please briefly describe the updates.</label>
+                            <textarea
+                              rows={3}
+                              placeholder="Example: New roof, updated kitchen cabinets, replaced furnace..."
+                              value={formData.renovationDescription}
+                              onChange={(e) => setFormData({ ...formData, renovationDescription: e.target.value })}
+                              style={{ width: '100%', background: '#fff', border: '1px solid #ccc', borderBottom: '2px solid #8B0000', borderRadius: 8, padding: '14px', fontSize: 14, fontFamily: 'inherit', lineHeight: 1.5, boxSizing: 'border-box' }}
+                            />
+                          </div>
+
+                          <div>
+                            <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Approximately when were they completed?</label>
+                            <div style={{ position: 'relative' }}>
+                              <select value={formData.renovationWhen} onChange={(e) => setFormData({ ...formData, renovationWhen: e.target.value })} style={selectStyle}>
+                                <option value="">Select one...</option>
+                                <option value="Within the last year">Within the last year</option>
+                                <option value="1-3 years ago">1-3 years ago</option>
+                                <option value="3-5 years ago">3-5 years ago</option>
+                                <option value="More than 5 years ago">More than 5 years ago</option>
+                                <option value="Completed at different times">Completed at different times</option>
+                                <option value="Not sure">Not sure</option>
+                              </select>
+                              <div style={{ position: 'absolute', right: 15, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', fontSize: 20, fontWeight: 900 }}>▼</div>
+                            </div>
+                          </div>
+
+                          <div>
+                            <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 8, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Were the updates completed by a licensed contractor?</label>
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
+                              {['Yes', 'No', 'A mix of contractor and DIY', 'Not sure'].map((opt) => {
+                                const isSelected = formData.licensedContractor === opt;
+                                return (
+                                  <button key={opt} type="button" onClick={() => setFormData({ ...formData, licensedContractor: isSelected ? '' : opt })} className='pref-btn' style={{ padding: '12px 10px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '2px solid #d0c8b8', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase', letterSpacing: 0.4, textAlign: 'center' }}>
+                                    {opt}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </div>
+
+                          <div>
+                            <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 8, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Are any receipts, permits, or warranties available?</label>
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
+                              {['Yes', 'No', 'Some documents', 'Not sure'].map((opt) => {
+                                const isSelected = formData.renovationDocuments === opt;
+                                return (
+                                  <button key={opt} type="button" onClick={() => setFormData({ ...formData, renovationDocuments: isSelected ? '' : opt })} className='pref-btn' style={{ padding: '12px 10px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '2px solid #d0c8b8', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase', letterSpacing: 0.4, textAlign: 'center' }}>
+                                    {opt}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </div>
                         </div>
                       )}
                     </div>
