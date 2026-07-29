@@ -1,7 +1,50 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const App = () =>I agree to receive text messages from Tekton Property Solutions LLC regarding my property inquiry, offer, appointment scheduling, and transaction updates. Message frequency varies. Message & data rates may apply. Reply STOP to opt out or HELP for assistance. Consent is not a condition of any purchase or sale.< 10) return false;
+const App = () => {
+  useEffect(() => { window.scrollTo(0, 0); }, []);
+  const [openFaq, setOpenFaq] = useState(null);
+  const [step, setStep] = useState(1);
+  const [errors, setErrors] = useState({});
+  const [submitStatus, setSubmitStatus] = useState('idle'); // idle | submitting | error
+  const [formData, setFormData] = useState({
+    fullName: '', phone: '', email: '', propertyAddress: '',
+    situation: [], additionalNotes: '', timeline: '', priceExpectation: '',
+    smsConsentTransactional: false,
+    roofCondition: '', hvacCondition: '', electricalCondition: '',
+    plumbingCondition: '', foundationCondition: '', overallCondition: '',
+    bestTimeToCall: '', preferredContact: '', otherDescription: '',
+    mortgageStatus: '', mortgagePayoff: '',
+    deedOwner: '', deedOwnerNames: '', deedOwnerRelationship: '', bedrooms: '', bathrooms: '', squareFootage: '', lotSize: '',
+    renovationsCompleted: '', renovationTypes: [], renovationDescription: '', renovationWhen: '',
+    licensedContractor: '', renovationDocuments: '',
+    occupancyStatus: '', vacancyLength: '', leaseStatus: '', monthlyRent: '',
+    leaseEnd: '', tenantCurrent: '', deliveryStatus: '', vacantByClosing: ''
+  });
+
+  const faqs = [
+    { q: 'DO I NEED TO MAKE REPAIRS?', a: 'No. We review houses in as-is condition, so there is no need to clean, fix, or update the property before reaching out.' },
+    { q: 'HOW IS MY CASH OFFER DETERMINED?', a: 'Our review is based on the property condition, location, timeline, market activity, and the overall situation. Every property is different.' },
+    { q: 'DO I NEED TO CLEAN OUT THE PROPERTY?', a: 'In many situations, no. We understand some properties are overwhelming, and we work to keep the process as simple as possible.' },
+    { q: 'WHAT IF I STILL OWE MONEY ON THE PROPERTY?', a: 'That does not automatically stop the process. We can review the situation and discuss possible next steps based on the property and payoff amount.' },
+    { q: 'HOW FAST CAN THE PROCESS MOVE?', a: 'Some situations can move quickly depending on title, property details, and seller timeline. The sooner we receive your information, the sooner we can review it.' },
+    { q: 'ARE THERE COMMISSIONS?', a: 'No. We are direct buyers, not agents. You pay zero agent fees or commissions.' },
+    { q: 'IS THIS A LEGITIMATE PROCESS?', a: 'Yes. Transactions are handled through a licensed title company, which helps ensure paperwork, ownership verification, and closing funds are processed securely. You do not pay anything upfront.' },
+  ];
+
+  const situations = ['Probate','Inherited','Divorce','Foreclosure','Tax Delinquent','Code Violations','Fire / Water Damage','Needs Repairs','Tired Landlord','Problem Tenant','Expired Listing','Relocating','Health / Medical','Financial Hardship','Trust','Considering My Options','Other'];
+
+  const renovationOptions = ['Roof','HVAC (Heating & Cooling)','Plumbing','Electrical','Kitchen','Bathrooms','Windows','Flooring','Foundation','Other'];
+
+  const handleCheck = (val) => {
+    setFormData(f => ({
+      ...f,
+      situation: f.situation.includes(val) ? f.situation.filter(s => s !== val) : [...f.situation, val]
+    }));
+  };
+
+  const isCompleteAddress = (addr) => {
+    if (!addr || addr.trim().length < 10) return false;
     const hasStreetNumber = /\d/.test(addr);
     const hasZip = /\d{5}/.test(addr);
     const hasState = /\b[A-Za-z]{2}\b/.test(addr);
@@ -160,7 +203,7 @@ const App = () =>I agree to receive text messages from Tekton Property Solutions
           </div>
           <div className="closing-box" style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(201,168,76,0.5)', borderLeft: '4px solid #C9A84C', borderRadius: 16, padding: '16px 24px', maxWidth: 680, margin: '20px auto 0', textAlign: 'center' }}>
             <p style={{ fontSize: 12, fontWeight: 900, color: '#C9A84C', textTransform: 'uppercase', letterSpacing: 2, margin: '0 0 6px' }}>Secure Closing Process</p>
-            <p style={{ fontSize: 15, fontWeight: 600, margin: '0 0 10px', lineHeight: 1.6 }}>You'll close the same way traditional sales do — through a licensed Ohio title company that verifies ownership and protects your funds from start to finish.</p>
+            <p style={{ fontSize: 15, fontWeight: 600, margin: '0 0 10px', lineHeight: 1.6 }}>Every closing is handled through a licensed Ohio title company, helping protect all parties throughout the transaction.</p>
             <p style={{ fontSize: 18, fontWeight: 900, color: '#C9A84C', margin: 0, letterSpacing: 0.5 }}>Your money is never handled by us.</p>
           </div>
           </div>
@@ -274,7 +317,6 @@ const App = () =>I agree to receive text messages from Tekton Property Solutions
               <input type="hidden" name="timeline" value={formData.timeline} />
               <input type="hidden" name="priceExpectation" value={formData.priceExpectation} />
               <input type="hidden" name="smsConsentTransactional" value={formData.smsConsentTransactional ? 'Yes - consented to transactional SMS' : 'No'} />
-              <input type="hidden" name="smsConsentMarketing" value={formData.smsConsentMarketing ? 'Yes - consented to marketing SMS' : 'No'} />
               <input type="hidden" name="roofCondition" value={formData.roofCondition} />
               <input type="hidden" name="hvacCondition" value={formData.hvacCondition} />
               <input type="hidden" name="electricalCondition" value={formData.electricalCondition} />
@@ -349,24 +391,26 @@ const App = () =>I agree to receive text messages from Tekton Property Solutions
                       <input type="text" placeholder="SQUARE FOOTAGE" value={formData.squareFootage} onChange={(e) => setFormData({ ...formData, squareFootage: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700 }} />
                       <input type="text" placeholder="LOT SIZE" value={formData.lotSize} onChange={(e) => setFormData({ ...formData, lotSize: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700 }} />
                     </div>
-                    {/* SMS CONSENT - TWO CHECKBOXES */}
+                    {/* SMS CONSENT */}
                     <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 12, padding: '16px 20px', marginTop: 4 }}>
-                      <p style={{ fontSize: 12, fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', letterSpacing: 1, margin: '0 0 12px' }}>Consent Forms</p>
+                      <p style={{ fontSize: 12, fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', letterSpacing: 1, margin: '0 0 12px' }}>Text Message Consent</p>
 
                       <label style={{ display: 'flex', alignItems: 'flex-start', gap: 12, cursor: 'pointer', marginBottom: 12 }}>
-                        <input type="checkbox" checked={formData.smsConsentTransactional} onChange={(e) => setFormData({ ...formData, smsConsentTransactional: e.target.checked })} style={{ marginTop: 3, width: 18, height: 18, accentColor: '#8B0000', flexShrink: 0 }} />
+                        <input
+                          type="checkbox"
+                          checked={formData.smsConsentTransactional}
+                          onChange={(e) => setFormData({ ...formData, smsConsentTransactional: e.target.checked })}
+                          style={{ marginTop: 3, width: 18, height: 18, accentColor: '#8B0000', flexShrink: 0 }}
+                        />
                         <span style={{ fontSize: 13, color: '#555', lineHeight: 1.6, fontWeight: 600 }}>
-  I consent to receive non-marketing text messages from Tekton Property Solutions LLC at the phone number provided about my property inquiry, appointment reminders, offer discussions, and transaction updates. Message frequency may vary. Message &amp; data rates may apply. Text <strong>HELP</strong> for help. Text <strong>STOP</strong> to unsubscribe at any time. Consent is not a condition of any purchase or service.
-</span>
+                          I agree to receive text messages from Tekton Property Solutions LLC regarding my property inquiry, offer, appointment scheduling, and transaction updates. Message frequency varies. Message &amp; data rates may apply. Reply <strong>STOP</strong> to opt out or <strong>HELP</strong> for assistance. Consent is not a condition of any purchase or sale.
+                        </span>
                       </label>
 
-                      <label style={{ display: 'flex', alignItems: 'flex-start', gap: 12, cursor: 'pointer', marginBottom: 12 }}>
-                        <input type="checkbox" checked={formData.smsConsentMarketing} onChange={(e) => setFormData({ ...formData, smsConsentMarketing: e.target.checked })} style={{ marginTop: 3, width: 18, height: 18, accentColor: '#8B0000', flexShrink: 0 }} />
-                        <span style={{ fontSize: 13, color: '#555', lineHeight: 1.6, fontWeight: 600 }}>
-  I consent to receive promotional or marketing text messages from Tekton Property Solutions LLC at the phone number provided, including property-related follow-up messages, updates, and other promotional communications. Message frequency may vary. Message &amp; data rates may apply. Text <strong>HELP</strong> for help. Text <strong>STOP</strong> to unsubscribe at any time. Consent is not a condition of any purchase or service.
-</span>
-                      </label>
-<p style={{ fontSize: 11, color: '#666', margin: '8px 0 4px', fontStyle: 'italic', fontWeight: 600 }}>Checking either SMS consent box is optional. If you do not consent to text messages, we may contact you by email.</p>
+                      <p style={{ fontSize: 11, color: '#666', margin: '8px 0 4px', fontStyle: 'italic', fontWeight: 600 }}>
+                        Text message consent is optional. If you do not consent to text messages, we may contact you by email or phone.
+                      </p>
+
                       <p style={{ fontSize: 11, color: '#888', margin: '4px 0 0', textAlign: 'center' }}>
                         <Link to="/privacy-policy" style={{ color: '#8B0000', textDecoration: 'underline', fontWeight: 700 }}>Privacy Policy</Link>
                         {' | '}
