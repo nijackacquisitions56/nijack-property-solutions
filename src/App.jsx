@@ -65,6 +65,22 @@ const App = () => {
     return digits.length >= 10;
   };
 
+  const showStep2ValidationError = (message, targetId) => {
+    setErrors({ step2: message });
+
+    window.setTimeout(() => {
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      const focusable = target.querySelector('input, select, textarea, button');
+      if (focusable && typeof focusable.focus === 'function') {
+        window.setTimeout(() => focusable.focus({ preventScroll: true }), 350);
+      }
+    }, 50);
+  };
+
   const selectStyle = {
     width: '100%',
     background: '#ffffff',
@@ -473,7 +489,7 @@ const App = () => {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
 
                     {/* Situation */}
-                    <div style={{ background: '#222222', padding: '24px', borderRadius: 16, border: '1px solid #444' }}>
+                    <div id="field-situation" style={{ background: '#222222', padding: '24px', borderRadius: 16, border: '1px solid #444', scrollMarginTop: 110 }}>
                       <label style={{ display: 'block', fontWeight: 900, color: '#C9A84C', marginBottom: 16, textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, textAlign: 'center' }}>* What is the situation? (Check all that apply)</label>
                       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
                         {situations.map((sit) => {
@@ -491,11 +507,11 @@ const App = () => {
                     </div>
 
                     {formData.situation.includes('Other') && (
-                      <input type="text" placeholder="PLEASE DESCRIBE SITUATION..." value={formData.otherDescription} onChange={e => setFormData({...formData, otherDescription: e.target.value})} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700, boxSizing: 'border-box' }} />
+                      <input id="field-other-description" type="text" placeholder="PLEASE DESCRIBE SITUATION..." value={formData.otherDescription} onChange={e => setFormData({...formData, otherDescription: e.target.value})} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 15, fontWeight: 700, boxSizing: 'border-box' }} />
                     )}
 
                     {/* Property Occupancy */}
-                    <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
+                    <div id="field-occupancy" style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px', scrollMarginTop: 110 }}>
                       <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Property Occupancy — Required</p>
                       <p style={{ fontSize: 12, color: '#8B0000', textAlign: 'center', margin: '0 0 20px', fontWeight: 800, lineHeight: 1.6 }}>Accurate occupancy details are essential because they affect property access, tenant or move-out considerations, and the most realistic path to closing. Please answer the follow-up question shown after your selection.</p>
 
@@ -542,7 +558,7 @@ const App = () => {
                       </div>
 
                       {formData.occupancyStatus === 'Vacant' && (
-                        <div style={{ marginTop: 16 }}>
+                        <div id="field-vacancy-length" style={{ marginTop: 16, scrollMarginTop: 110 }}>
                           <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Approximately how long has it been vacant?</label>
                           <div style={{ position: 'relative' }}>
                             <select value={formData.vacancyLength} onChange={(e) => setFormData({ ...formData, vacancyLength: e.target.value })} style={selectStyle}>
@@ -561,7 +577,7 @@ const App = () => {
 
                       {formData.occupancyStatus === 'Tenant Occupied' && (
                         <div style={{ marginTop: 18, display: 'flex', flexDirection: 'column', gap: 14 }}>
-                          <div>
+                          <div id="field-written-lease" style={{ scrollMarginTop: 110 }}>
                             <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Is there a written lease?</label>
                             <div className='pref-grid-2' style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
                               {['Yes', 'No', 'Not Sure'].map((opt) => (
@@ -570,12 +586,36 @@ const App = () => {
                             </div>
                           </div>
 
-                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 12 }}>
-                            <input type="text" placeholder="CURRENT MONTHLY RENT (OPTIONAL)" value={formData.monthlyRent} onChange={(e) => setFormData({ ...formData, monthlyRent: e.target.value })} style={{ width: '100%', background: '#fff', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 13, fontWeight: 700, boxSizing: 'border-box' }} />
-                            <input type="text" placeholder="WHEN DOES THE LEASE END? (OPTIONAL)" value={formData.leaseEnd} onChange={(e) => setFormData({ ...formData, leaseEnd: e.target.value })} style={{ width: '100%', background: '#fff', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 13, fontWeight: 700, boxSizing: 'border-box' }} />
+                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 16 }}>
+                            <div>
+                              <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5 }}>
+                                Current Monthly Rent <span style={{ color: '#777', fontWeight: 700 }}>(Optional)</span>
+                              </label>
+                              <input
+                                type="text"
+                                inputMode="decimal"
+                                placeholder="Enter monthly rent"
+                                value={formData.monthlyRent}
+                                onChange={(e) => setFormData({ ...formData, monthlyRent: e.target.value })}
+                                style={{ width: '100%', background: '#fff', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 13, fontWeight: 700, boxSizing: 'border-box' }}
+                              />
+                            </div>
+
+                            <div>
+                              <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5 }}>
+                                When Does the Lease End? <span style={{ color: '#777', fontWeight: 700 }}>(Optional)</span>
+                              </label>
+                              <input
+                                type="text"
+                                placeholder="Enter lease end date"
+                                value={formData.leaseEnd}
+                                onChange={(e) => setFormData({ ...formData, leaseEnd: e.target.value })}
+                                style={{ width: '100%', background: '#fff', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 13, fontWeight: 700, boxSizing: 'border-box' }}
+                              />
+                            </div>
                           </div>
 
-                          <div>
+                          <div id="field-tenant-current" style={{ scrollMarginTop: 110 }}>
                             <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Is the tenant current on rent?</label>
                             <div className='pref-grid-2' style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
                               {['Yes', 'No', 'Not Sure'].map((opt) => (
@@ -584,7 +624,7 @@ const App = () => {
                             </div>
                           </div>
 
-                          <div>
+                          <div id="field-delivery-status" style={{ scrollMarginTop: 110 }}>
                             <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Would the property be delivered occupied or vacant?</label>
                             <div className='pref-grid-2' style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
                               {['Occupied', 'Vacant', 'Not Sure'].map((opt) => (
@@ -596,7 +636,7 @@ const App = () => {
                       )}
 
                       {['Owner Occupied', 'Occupied by Family / Other', 'Partially Occupied'].includes(formData.occupancyStatus) && (
-                        <div style={{ marginTop: 16 }}>
+                        <div id="field-vacant-by-closing" style={{ marginTop: 16, scrollMarginTop: 110 }}>
                           <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Would the property be vacant by closing?</label>
                           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: 10 }}>
                             {['Yes', 'No', 'Not Sure', 'Depends on Closing Date'].map((opt) => (
@@ -608,13 +648,13 @@ const App = () => {
                     </div>
 
                     {/* Additional Notes */}
-                    <div>
+                    <div id="field-additional-notes" style={{ scrollMarginTop: 110 }}>
                       <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* Additional Notes</label>
                       <textarea rows={4} placeholder="Tell us anything else about the property — repairs needed, access issues, unique features, or anything that may affect the value or timeline. The more you share, the better we can help you." value={formData.additionalNotes} onChange={(e) => setFormData({ ...formData, additionalNotes: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontFamily: 'inherit', lineHeight: 1.6 }} />
                     </div>
 
                     {/* Timeline */}
-                    <div>
+                    <div id="field-timeline" style={{ scrollMarginTop: 110 }}>
                       <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* What is your ideal selling timeline? <span style={{ color: '#C9A84C' }}>— Click black down arrow on right below</span></label>
                       <div style={{ position: 'relative' }}>
                         <select value={formData.timeline} onChange={(e) => setFormData({ ...formData, timeline: e.target.value })} style={selectStyle}>
@@ -632,7 +672,7 @@ const App = () => {
                     </div>
 
                     {/* Price */}
-                    <div>
+                    <div id="field-price" style={{ scrollMarginTop: 110 }}>
                       <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* What price would you be comfortable accepting?</label>
                       <input type="text" required placeholder="EXAMPLE: $150,000" value={formData.priceExpectation} onChange={(e) => setFormData({ ...formData, priceExpectation: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700 }} />
                     </div>
@@ -788,7 +828,7 @@ const App = () => {
                       <p style={{ fontSize: 12, color: '#555', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px', fontWeight: 700 }}>Required — "Not Sure" is always a valid answer</p>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                         {repairOptions.map((r) => (
-                          <div key={r.key}>
+                          <div key={r.key} id={`field-${r.key}`} style={{ scrollMarginTop: 110 }}>
                             <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>{r.label}{r.required && <span style={{ color: '#8B0000', marginLeft: 4 }}>*</span>}</label>
                             <div style={{ position: 'relative' }}>
                               <select value={formData[r.key]} onChange={(e) => setFormData({ ...formData, [r.key]: e.target.value })} style={selectStyle}>
@@ -803,7 +843,7 @@ const App = () => {
                     </div>
 
                     {/* ── NEW: Best Time to Call + Preferred Contact ── */}
-                    <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
+                    <div id="field-contact-preferences" style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px', scrollMarginTop: 110 }}>
                       <p className='contact-pref-title' style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Contact Preferences</p>
                       <p className='contact-pref-sub' style={{ fontSize: 12, color: '#333', fontStyle: 'italic', textAlign: 'center', margin: '0 0 4px', fontWeight: 700 }}>This helps us follow up the right way after reviewing your property information.</p>
                       <p className='contact-pref-helper' style={{ fontSize: 12, color: '#333', fontWeight: 600, fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px' }}>If you prefer a call or text, please include your phone number so we can follow up the way you requested.</p>
@@ -882,30 +922,30 @@ const App = () => {
 
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
                       <button type="button" onClick={async () => {
-                        if (formData.situation.length === 0) { setErrors({ step2: 'Please select at least one situation before submitting.' }); return; }
+                        if (formData.situation.length === 0) { showStep2ValidationError('Please select at least one situation before submitting.', 'field-situation'); return; }
                         if (formData.situation.includes('Other') && (!formData.otherDescription || formData.otherDescription.trim() === '')) {
-                          setErrors({ step2: 'Please describe your situation since you selected "Other".' });
+                          showStep2ValidationError('Please describe your situation since you selected "Other".', 'field-other-description');
                           return;
                         }
                         if (!formData.occupancyStatus) {
-                          setErrors({ step2: 'Please let us know whether the property is vacant or occupied before submitting.' });
+                          showStep2ValidationError('Please let us know whether the property is vacant or occupied before submitting.', 'field-occupancy');
                           return;
                         }
                         if (formData.occupancyStatus === 'Vacant' && !formData.vacancyLength) {
-                          setErrors({ step2: 'Please tell us approximately how long the property has been vacant.' });
+                          showStep2ValidationError('Please tell us approximately how long the property has been vacant.', 'field-vacancy-length');
                           return;
                         }
                         if (formData.occupancyStatus === 'Tenant Occupied') {
                           if (!formData.leaseStatus) {
-                            setErrors({ step2: 'Please let us know whether there is a written lease.' });
+                            showStep2ValidationError('Please let us know whether there is a written lease.', 'field-written-lease');
                             return;
                           }
                           if (!formData.tenantCurrent) {
-                            setErrors({ step2: 'Please let us know whether the tenant is current on rent.' });
+                            showStep2ValidationError('Please let us know whether the tenant is current on rent.', 'field-tenant-current');
                             return;
                           }
                           if (!formData.deliveryStatus) {
-                            setErrors({ step2: 'Please let us know whether the property would be delivered occupied or vacant.' });
+                            showStep2ValidationError('Please let us know whether the property would be delivered occupied or vacant.', 'field-delivery-status');
                             return;
                           }
                         }
@@ -913,33 +953,33 @@ const App = () => {
                           ['Owner Occupied', 'Occupied by Family / Other', 'Partially Occupied'].includes(formData.occupancyStatus) &&
                           !formData.vacantByClosing
                         ) {
-                          setErrors({ step2: 'Please let us know whether the property would be vacant by closing.' });
+                          showStep2ValidationError('Please let us know whether the property would be vacant by closing.', 'field-vacant-by-closing');
                           return;
                         }
-                        if (!formData.timeline) { setErrors({ step2: 'Please select your ideal selling timeline before submitting.' }); return; }
-                        if (!formData.priceExpectation || formData.priceExpectation.trim() === '') { setErrors({ step2: 'Please enter a price you would be comfortable accepting.' }); return; }
-                        if (!formData.additionalNotes || formData.additionalNotes.trim() === '') { setErrors({ step2: 'Please give us additional notes about the property before submitting.' }); return; }
-                        if (!formData.preferredContact) { setErrors({ step2: 'Please select your preferred contact method before submitting.' }); return; }
+                        if (!formData.timeline) { showStep2ValidationError('Please select your ideal selling timeline before submitting.', 'field-timeline'); return; }
+                        if (!formData.priceExpectation || formData.priceExpectation.trim() === '') { showStep2ValidationError('Please enter a price you would be comfortable accepting.', 'field-price'); return; }
+                        if (!formData.additionalNotes || formData.additionalNotes.trim() === '') { showStep2ValidationError('Please give us additional notes about the property before submitting.', 'field-additional-notes'); return; }
+                        if (!formData.preferredContact) { showStep2ValidationError('Please select your preferred contact method before submitting.', 'field-contact-preferences'); return; }
                         if (
                           formData.preferredContact === 'Call' ||
                           formData.preferredContact === 'Text' ||
                           formData.preferredContact === 'No Call — Text Only'
                         ) {
                           if (!formData.phone.trim()) {
-                            setErrors({ step2: 'Please enter your phone number since you selected ' + formData.preferredContact + ' as your preferred contact method.' });
+                            showStep2ValidationError('Please enter your phone number since you selected ' + formData.preferredContact + ' as your preferred contact method.', 'field-contact-preferences');
                             return;
                           }
                           if (!isValidPhone(formData.phone)) {
-                            setErrors({ step2: 'Please enter a valid phone number (at least 10 digits).' });
+                            showStep2ValidationError('Please enter a valid phone number (at least 10 digits).', 'field-contact-preferences');
                             return;
                           }
                         }
-                        if (!formData.roofCondition) { setErrors({ step2: 'Please select the Roof Condition before submitting.' }); return; }
-                        if (!formData.hvacCondition) { setErrors({ step2: 'Please select the Heating / Cooling System condition before submitting.' }); return; }
-                        if (!formData.electricalCondition) { setErrors({ step2: 'Please select the Electrical System condition before submitting.' }); return; }
-                        if (!formData.plumbingCondition) { setErrors({ step2: 'Please select the Plumbing Condition before submitting.' }); return; }
-                        if (!formData.foundationCondition) { setErrors({ step2: 'Please select the Foundation / Structural condition before submitting.' }); return; }
-                        if (!formData.overallCondition) { setErrors({ step2: 'Please select the Overall Property Condition before submitting.' }); return; }
+                        if (!formData.roofCondition) { showStep2ValidationError('Please select the Roof Condition before submitting.', 'field-roofCondition'); return; }
+                        if (!formData.hvacCondition) { showStep2ValidationError('Please select the Heating / Cooling System condition before submitting.', 'field-hvacCondition'); return; }
+                        if (!formData.electricalCondition) { showStep2ValidationError('Please select the Electrical System condition before submitting.', 'field-electricalCondition'); return; }
+                        if (!formData.plumbingCondition) { showStep2ValidationError('Please select the Plumbing Condition before submitting.', 'field-plumbingCondition'); return; }
+                        if (!formData.foundationCondition) { showStep2ValidationError('Please select the Foundation / Structural condition before submitting.', 'field-foundationCondition'); return; }
+                        if (!formData.overallCondition) { showStep2ValidationError('Please select the Overall Property Condition before submitting.', 'field-overallCondition'); return; }
                         setErrors({});
                         setSubmitStatus('submitting');
                         const form = document.querySelector('form');
