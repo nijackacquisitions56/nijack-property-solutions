@@ -6,6 +6,7 @@ const App = () => {
   const [openFaq, setOpenFaq] = useState(null);
   const [step, setStep] = useState(1);
   const [errors, setErrors] = useState({});
+  const [validationTarget, setValidationTarget] = useState('');
   const [submitStatus, setSubmitStatus] = useState('idle'); // idle | submitting | error
   const [formData, setFormData] = useState({
     fullName: '', phone: '', email: '', propertyAddress: '',
@@ -65,19 +66,24 @@ const App = () => {
     return digits.length >= 10;
   };
 
+  const scrollToValidationTarget = (targetId) => {
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    const focusable = target.querySelector('input, select, textarea, button');
+    if (focusable && typeof focusable.focus === 'function') {
+      window.setTimeout(() => focusable.focus({ preventScroll: true }), 350);
+    }
+  };
+
   const showStep2ValidationError = (message, targetId) => {
     setErrors({ step2: message });
+    setValidationTarget(targetId);
 
     window.setTimeout(() => {
-      const target = document.getElementById(targetId);
-      if (!target) return;
-
-      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-      const focusable = target.querySelector('input, select, textarea, button');
-      if (focusable && typeof focusable.focus === 'function') {
-        window.setTimeout(() => focusable.focus({ preventScroll: true }), 350);
-      }
+      scrollToValidationTarget(targetId);
     }, 50);
   };
 
@@ -906,13 +912,6 @@ const App = () => {
                       </p>
                     </div>
 
-                    {/* Inline validation error */}
-                    {errors.step2 && (
-                      <div style={{ background: '#fff0f0', border: '2px solid #8B0000', borderRadius: 10, padding: '12px 16px', textAlign: 'center' }}>
-                        <p style={{ color: '#8B0000', fontWeight: 900, fontSize: 14, margin: 0 }}>{errors.step2}</p>
-                      </div>
-                    )}
-
                     {/* Submit failure error */}
                     {submitStatus === 'error' && (
                       <div style={{ background: '#fff0f0', border: '2px solid #8B0000', borderRadius: 10, padding: '12px 16px', textAlign: 'center' }}>
@@ -992,6 +991,8 @@ const App = () => {
                           });
                           if (response.ok) {
                             setSubmitStatus('success');
+                            setErrors({});
+                            setValidationTarget('');
                             setTimeout(() => {
                               document.getElementById('property-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                             }, 50);
@@ -1085,6 +1086,84 @@ const App = () => {
           <a href="#property-form" className="cta-section-btn" style={{ background: '#C9A84C', color: '#0d0d0d', padding: '20px 48px', borderRadius: 999, fontWeight: 900, textTransform: 'uppercase', letterSpacing: 3, fontSize: 18, textDecoration: 'none', display: 'inline-block' }}>Submit My Details Now</a>
         </div>
       </section>
+
+      {/* FLOATING REQUIRED-QUESTION MESSAGE */}
+      {errors.step2 && submitStatus !== 'success' && (
+        <div
+          role="alert"
+          aria-live="assertive"
+          style={{
+            position: 'fixed',
+            left: '50%',
+            bottom: 18,
+            transform: 'translateX(-50%)',
+            width: 'calc(100% - 28px)',
+            maxWidth: 720,
+            background: '#fff',
+            border: '3px solid #8B0000',
+            borderRadius: 14,
+            boxShadow: '0 12px 35px rgba(0,0,0,0.28)',
+            padding: '14px 16px',
+            zIndex: 9999,
+            boxSizing: 'border-box'
+          }}
+        >
+          <button
+            type="button"
+            aria-label="Dismiss validation message"
+            onClick={() => {
+              setErrors((current) => ({ ...current, step2: '' }));
+              setValidationTarget('');
+            }}
+            style={{
+              position: 'absolute',
+              top: 6,
+              right: 8,
+              border: 'none',
+              background: 'transparent',
+              color: '#777',
+              fontSize: 22,
+              fontWeight: 900,
+              cursor: 'pointer',
+              lineHeight: 1
+            }}
+          >
+            ×
+          </button>
+
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 14, flexWrap: 'wrap', paddingRight: 18 }}>
+            <div style={{ flex: '1 1 320px' }}>
+              <p style={{ color: '#8B0000', fontSize: 11, fontWeight: 900, textTransform: 'uppercase', letterSpacing: 1.2, margin: '0 0 4px' }}>
+                Please complete this question
+              </p>
+              <p style={{ color: '#222', fontSize: 14, lineHeight: 1.45, fontWeight: 800, margin: 0 }}>
+                {errors.step2}
+              </p>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => scrollToValidationTarget(validationTarget)}
+              style={{
+                flex: '0 0 auto',
+                background: '#8B0000',
+                color: '#fff',
+                border: '2px solid #C9A84C',
+                borderRadius: 999,
+                padding: '11px 18px',
+                fontSize: 12,
+                fontWeight: 900,
+                textTransform: 'uppercase',
+                letterSpacing: 1,
+                cursor: 'pointer',
+                whiteSpace: 'nowrap'
+              }}
+            >
+              Answer This Question
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* FOOTER */}
       <footer style={{ background: '#fff', padding: '48px 20px', borderTop: '6px solid #0d0d0d', textAlign: 'center' }}>
