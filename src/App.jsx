@@ -385,7 +385,7 @@ const App = () => {
             <div style={{ background: '#C9A84C', padding: '32px 24px', textAlign: 'center' }}>
               <h2 style={{ color: '#0d0d0d', fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(18px,4vw,26px)', letterSpacing: 2, margin: '0 0 8px' }}>Start Your Property Review</h2>
               <p style={{ color: '#0d0d0d', fontWeight: 700, fontSize: 14, margin: 0 }}>
-                {submitStatus === 'success' ? "We'll begin reviewing your information shortly." : 'Most sellers finish in about 3-5 minutes.'}
+                {submitStatus === 'success' ? "We'll begin reviewing your information shortly." : 'Most sellers finish in about 5-7 minutes.'}
               </p>
             </div>
 
@@ -1003,18 +1003,6 @@ const App = () => {
                           letterSpacing: 1
                         }}
                       >
-                        Please Read Before Submitting
-                      </p>
-
-                      <p
-                        style={{
-                          fontSize: 17,
-                          color: '#8B0000',
-                          fontWeight: 900,
-                          textAlign: 'center',
-                          margin: '0 0 14px'
-                        }}
-                      >
                         Important Wholesaler Disclosure
                       </p>
 
@@ -1029,10 +1017,12 @@ const App = () => {
                         }}
                       >
                         Tekton Property Solutions LLC is a real estate wholesaler, not a licensed
-                        real estate agent. We may purchase properties below market value and assign
-                        contracts to third-party buyers for a profit. A written Wholesaler
-                        Disclosure Statement will be provided before any contract is binding.
-                        There is no obligation to sell.
+                        real estate agent. Depending on the property and circumstances, we may
+                        purchase the property ourselves or assign our contractual interest to
+                        another buyer for a profit. Before entering into any binding agreement
+                        involving a wholesale transaction, you will receive the separate written
+                        disclosure required by Ohio law. There is no obligation to accept an offer
+                        or sell your property.
                       </p>
                     </div>
 
