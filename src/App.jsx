@@ -93,7 +93,7 @@ const App = () => {
       case 'field-contact-preferences':
         return Boolean(
           formData.preferredContact &&
-          (!['Call', 'Text'].includes(formData.preferredContact) || isValidPhone(formData.phone))
+          (!['Call', 'Text', 'No Call — Text Only'].includes(formData.preferredContact) || isValidPhone(formData.phone))
         );
       case 'field-roofCondition':
         return formData.roofCondition !== '';
@@ -1031,10 +1031,50 @@ const App = () => {
                           showStep2ValidationError('Please let us know whether the property would be vacant by closing.', 'field-vacant-by-closing');
                           return;
                         }
-                        if (!formData.timeline) { showStep2ValidationError('Please select your ideal selling timeline before submitting.', 'field-timeline'); return; }
-                        if (!formData.priceExpectation || formData.priceExpectation.trim() === '') { showStep2ValidationError('Please enter a price you would be comfortable accepting.', 'field-price'); return; }
-                        if (!formData.additionalNotes || formData.additionalNotes.trim() === '') { showStep2ValidationError('Please give us additional notes about the property before submitting.', 'field-additional-notes'); return; }
-                        if (!formData.preferredContact) { showStep2ValidationError('Please select your preferred contact method before submitting.', 'field-contact-preferences'); return; }
+                        // Validate in the same top-to-bottom order the questions appear on the page.
+                        if (!formData.additionalNotes || formData.additionalNotes.trim() === '') {
+                          showStep2ValidationError('Please give us additional notes about the property before submitting.', 'field-additional-notes');
+                          return;
+                        }
+                        if (!formData.timeline) {
+                          showStep2ValidationError('Please select your ideal selling timeline before submitting.', 'field-timeline');
+                          return;
+                        }
+                        if (!formData.priceExpectation || formData.priceExpectation.trim() === '') {
+                          showStep2ValidationError('Please enter a price you would be comfortable accepting.', 'field-price');
+                          return;
+                        }
+
+                        if (!formData.roofCondition) {
+                          showStep2ValidationError('Please select the Roof Condition before submitting.', 'field-roofCondition');
+                          return;
+                        }
+                        if (!formData.hvacCondition) {
+                          showStep2ValidationError('Please select the Heating / Cooling System condition before submitting.', 'field-hvacCondition');
+                          return;
+                        }
+                        if (!formData.electricalCondition) {
+                          showStep2ValidationError('Please select the Electrical System condition before submitting.', 'field-electricalCondition');
+                          return;
+                        }
+                        if (!formData.plumbingCondition) {
+                          showStep2ValidationError('Please select the Plumbing Condition before submitting.', 'field-plumbingCondition');
+                          return;
+                        }
+                        if (!formData.foundationCondition) {
+                          showStep2ValidationError('Please select the Foundation / Structural condition before submitting.', 'field-foundationCondition');
+                          return;
+                        }
+                        if (!formData.overallCondition) {
+                          showStep2ValidationError('Please select the Overall Property Condition before submitting.', 'field-overallCondition');
+                          return;
+                        }
+
+                        // Contact Preferences is intentionally validated last.
+                        if (!formData.preferredContact) {
+                          showStep2ValidationError('Please select your preferred contact method before submitting.', 'field-contact-preferences');
+                          return;
+                        }
                         if (
                           formData.preferredContact === 'Call' ||
                           formData.preferredContact === 'Text' ||
@@ -1049,12 +1089,6 @@ const App = () => {
                             return;
                           }
                         }
-                        if (!formData.roofCondition) { showStep2ValidationError('Please select the Roof Condition before submitting.', 'field-roofCondition'); return; }
-                        if (!formData.hvacCondition) { showStep2ValidationError('Please select the Heating / Cooling System condition before submitting.', 'field-hvacCondition'); return; }
-                        if (!formData.electricalCondition) { showStep2ValidationError('Please select the Electrical System condition before submitting.', 'field-electricalCondition'); return; }
-                        if (!formData.plumbingCondition) { showStep2ValidationError('Please select the Plumbing Condition before submitting.', 'field-plumbingCondition'); return; }
-                        if (!formData.foundationCondition) { showStep2ValidationError('Please select the Foundation / Structural condition before submitting.', 'field-foundationCondition'); return; }
-                        if (!formData.overallCondition) { showStep2ValidationError('Please select the Overall Property Condition before submitting.', 'field-overallCondition'); return; }
                         setErrors({});
                         setSubmitStatus('submitting');
                         const form = document.querySelector('form');
