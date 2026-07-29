@@ -348,16 +348,19 @@ const App = () => {
                   <div style={{ width: 76, height: 76, borderRadius: '50%', background: '#C9A84C', color: '#0d0d0d', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 38, fontWeight: 900, margin: '0 auto 22px' }}>✓</div>
                   <h3 style={{ color: '#0d0d0d', fontSize: 'clamp(26px,5vw,38px)', fontWeight: 900, textTransform: 'uppercase', letterSpacing: 1, margin: '0 0 14px' }}>Thank You!</h3>
                   <p style={{ color: '#444', fontSize: 17, lineHeight: 1.7, fontWeight: 700, maxWidth: 620, margin: '0 auto 12px' }}>
-                    Your property information has been received successfully.
+                    We've received your property review request.
                   </p>
                   <p style={{ color: '#666', fontSize: 15, lineHeight: 1.7, maxWidth: 620, margin: '0 auto 24px' }}>
-                    We will carefully review the details you provided and follow up using your preferred contact method. Please check your email for a confirmation and preliminary property information.
+                    We'll carefully review the information you submitted and prepare a preliminary property review. You'll receive a confirmation email shortly, and we'll follow up using your preferred contact method if we need any additional information.
                   </p>
                   <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 14, padding: '16px 18px', maxWidth: 560, margin: '0 auto' }}>
                     <p style={{ color: '#555', fontSize: 13, lineHeight: 1.6, fontWeight: 700, margin: 0 }}>
-                      Have photos or an important update? Reply to the confirmation email so we can include them in the review.
+                      Have photos or additional information you'd like us to consider? Simply reply to your confirmation email and we'll include it as part of your property review.
                     </p>
                   </div>
+                  <p style={{ color: '#777', fontSize: 13, lineHeight: 1.7, maxWidth: 620, margin: '20px auto 0', fontWeight: 600 }}>
+                    There is no obligation to accept an offer. Our goal is simply to provide an honest property review and help you understand your options.
+                  </p>
                 </div>
               ) : (
                 <div style={{ padding: '40px' }}>
