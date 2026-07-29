@@ -981,10 +981,46 @@ const App = () => {
                     </div>
                     {/* ── END NEW SECTION ── */}
 
-                    {/* Disclosure */}
-                    <div style={{ border: '2px solid #C9A84C', padding: '14px', borderRadius: 8, background: '#fffcf7' }}>
-                      <p style={{ fontSize: 11, color: '#444', lineHeight: 1.5, margin: 0, fontWeight: 600 }}>
-                        <strong>Disclosure:</strong> Tekton Property Solutions LLC is a real estate wholesaler, not a licensed agent. We may purchase properties below market value and assign contracts to third-party buyers for a profit. A written Wholesaler Disclosure Statement will be provided before any contract is binding. No obligation to sell.
+                    {/* Wholesaler Disclosure */}
+                    <div
+                      style={{
+                        border: '3px solid #8B0000',
+                        padding: '20px',
+                        borderRadius: 12,
+                        background: '#fff7f7',
+                        boxShadow: '0 6px 18px rgba(139, 0, 0, 0.12)'
+                      }}
+                    >
+                      <p
+                        style={{
+                          fontSize: 18,
+                          color: '#8B0000',
+                          lineHeight: 1.5,
+                          margin: '0 0 10px',
+                          fontWeight: 900,
+                          textAlign: 'center',
+                          textTransform: 'uppercase',
+                          letterSpacing: 1
+                        }}
+                      >
+                        Important Wholesaler Disclosure
+                      </p>
+
+                      <p
+                        style={{
+                          fontSize: 15,
+                          color: '#222',
+                          lineHeight: 1.7,
+                          margin: 0,
+                          fontWeight: 700,
+                          textAlign: 'center'
+                        }}
+                      >
+                        Tekton Property Solutions LLC is a real estate wholesaler, not a licensed
+                        real estate agent. We may purchase properties below market value and assign
+                        contracts to third-party buyers for a profit. A written Wholesaler
+                        Disclosure Statement will be provided before any contract is binding.
+                        There is no obligation to sell.
                       </p>
                     </div>
 
