@@ -173,7 +173,7 @@ const App = () => {
         <style>{`
           .nav-container { max-width: 1200px; margin: 0 auto; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; gap: 14px; }
           .brand-group { display: flex; align-items: center; gap: 4px; }
-          .logo-img { height: 108px; width: auto; object-fit: contain; transform: scale(1.12); transform-origin: center; margin-right: -18px; flex-shrink: 0; }
+          .logo-img { height: 108px; width: auto; object-fit: contain; transform: scale(1.12); transform-origin: center; margin-right: -30px; flex-shrink: 0; }
           .logo-text-wrapper { display: flex; flex-direction: column; justify-content: center; }
           .line-tekton { color: #8B0000; font-weight: 900; font-size: 28px; text-transform: uppercase; line-height: 0.95; letter-spacing: 0.5px; }
           .line-solutions { color: #143A9B; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 800; line-height: 1.1; margin: 4px 0 2px; }
