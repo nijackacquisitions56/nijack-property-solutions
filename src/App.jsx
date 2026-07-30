@@ -229,7 +229,7 @@ const App = () => {
         `}</style>
         <div className="nav-container">
           <div className="brand-group">
-            <img src="/tekton-emblem.png" alt="Tekton Logo" className="logo-img" onError={e => { e.target.style.display = 'none'; }} />
+            <img src="/New TPS Business LOG 7_30_26.png" alt="Tekton Logo" className="logo-img" onError={e => { e.target.style.display = 'none'; }} />
             <div className="logo-text-wrapper">
               <div className="line-tekton">TEKTON</div>
               <div className="line-solutions">PROPERTY SOLUTIONS LLC</div>
@@ -1379,7 +1379,7 @@ const App = () => {
       {/* FOOTER */}
       <footer style={{ background: '#fff', padding: '48px 20px', borderTop: '6px solid #0d0d0d', textAlign: 'center' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          <img src="/tekton-emblem.png" alt="Tekton Emblem" style={{ height: 60, width: 'auto', objectFit: 'contain', marginBottom: 16 }} onError={e => e.target.style.display = 'none'} />
+          <img src="/New TPS Business LOG 7_30_26.png" alt="Tekton Emblem" style={{ height: 60, width: 'auto', objectFit: 'contain', marginBottom: 16 }} onError={e => e.target.style.display = 'none'} />
           <p
   style={{
     color: '#666',
