@@ -173,7 +173,7 @@ const App = () => {
         <style>{`
           .nav-container { max-width: 1200px; margin: 0 auto; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; gap: 14px; }
           .brand-group { display: flex; align-items: center; gap: 4px; }
-          .logo-img { height: 92px; width: auto; object-fit: contain; }
+          .logo-img { height: 92px; width: 92px; object-fit: contain; object-position: center; flex-shrink: 0; }
           .logo-text-wrapper { display: flex; flex-direction: column; justify-content: center; }
           .line-tekton { color: #8B0000; font-weight: 900; font-size: 28px; text-transform: uppercase; line-height: 0.95; letter-spacing: 0.5px; }
           .line-solutions { color: #1D4ED8; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 800; line-height: 1.1; margin: 4px 0 2px; }
@@ -208,7 +208,7 @@ const App = () => {
             .quick-benefits { margin-top: 18px !important; }
             .nav-container { padding: 6px 10px; gap: 4px; }
             .brand-group { gap: 3px; }
-            .logo-img { height: 76px; }
+            .logo-img { height: 76px; width: 76px; }
             .line-tekton { font-size: 22px; line-height: 0.95; }
             .line-solutions { font-size: 10px; letter-spacing: 0.9px; margin: 1px 0; line-height: 1.0; }
             .line-relief { font-size: 9px; letter-spacing: 1px; line-height: 1.0; }
