@@ -50,7 +50,7 @@ const SmsTerms = () => {
 
             <section>
               <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>2. How to Opt In</h2>
-              <p style={{ margin: 0 }}>You opt in to receive SMS messages from Tekton Property Solutions LLC by checking one or more SMS consent checkboxes on our property inquiry form at tektonpropertysolutions.com. Checking a box confirms your agreement to these SMS Terms &amp; Conditions.</p>
+              <p style={{ margin: 0 }}>You opt in to receive SMS messages from Tekton Property Solutions LLC by checking the SMS consent checkbox on our property inquiry form at tektonpropertysolutions.com. Checking the checkbox confirms your agreement to these SMS Terms & Conditions. Checking a box confirms your agreement to these SMS Terms &amp; Conditions.</p>
               <p style={{ margin: '10px 0 0' }}>Consent is not required as a condition of purchasing any property, receiving any service, or submitting a property inquiry.</p>
             </section>
 
