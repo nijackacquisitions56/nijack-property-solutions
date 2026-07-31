@@ -36,7 +36,7 @@ const PrivacyPolicy = () => {
 
             <section>
               <h2 style={{ color: '#8B0000', fontWeight: 900, textTransform: 'uppercase', fontSize: 16, letterSpacing: 1, marginBottom: 10 }}>1. Who We Are</h2>
-              <p style={{ margin: 0 }}>Tekton Property Solutions LLC is a real estate solutions company based in Ohio. We help property owners explore options for selling residential and other real estate directly, often in as-is condition. We are not licensed real estate agents. We operate in Ohio and nationwide.</p>
+              <p style={{ margin: 0 }}>Tekton Property Solutions LLC is a real estate solutions company based in Ohio. We help property owners explore options for selling residential and other real estate directly, often in as-is condition. We are not licensed real estate agents. We operate in Ohio.</p>
               <p style={{ margin: '10px 0 0', wordBreak: 'break-word' }}>
                 <strong>Business Address:</strong> 6545 Market Ave N, Ste 100, Canton, OH 44721<br />
                 <strong>Email:</strong> <a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', textDecoration: 'underline' }}>Email Nicole</a>
