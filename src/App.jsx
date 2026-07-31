@@ -296,10 +296,20 @@ const App = () => {
       {/* 4. QUICK BENEFITS */}
       <section className="quick-benefits" style={{ maxWidth: 1000, margin: '24px auto 0', padding: '0 20px 20px', position: 'relative', zIndex: 10 }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20 }}>
-          {[{ title: 'No Repairs Needed', desc: 'Sell your property as-is without cleaning, fixing, or updating it first.' },{ title: 'No Commissions', desc: '{
-  title: 'No Agent Commissions',
-  desc: 'No agent commissions or Tekton service fees. Just a direct review of your property.'
-}.' },{ title: 'Flexible Closing', desc: 'We work with different timelines and aim to find a solution that fits your situation.' }].map((b) => (
+{[
+  {
+    title: 'No Repairs Needed',
+    desc: 'Sell your property as-is without cleaning, fixing, or updating it first.'
+  },
+  {
+    title: 'No Agent Commissions',
+    desc: 'No agent commissions or Tekton service fees. Just a direct review of your property.'
+  },
+  {
+    title: 'Flexible Closing',
+    desc: 'We work with different timelines and aim to find a solution that fits your situation.'
+  }
+].map((b) => (
             <div key={b.title} style={{ background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px rgba(10,22,40,0.12)', padding: '24px 20px', borderTop: '4px solid #8B0000' }}>
               <p style={{ color: '#0d0d0d', fontWeight: 900, fontSize: 16, textTransform: 'uppercase', marginBottom: 8, letterSpacing: 1 }}>{b.title}</p>
               <p style={{ color: '#555', fontSize: 15, lineHeight: 1.6, margin: 0 }}>{b.desc}</p>
