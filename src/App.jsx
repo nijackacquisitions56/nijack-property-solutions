@@ -19,6 +19,8 @@ const App = () => {
     bestTimeToCall: '', preferredContact: '', otherDescription: '',
     mortgageStatus: '', mortgagePayoff: '',
     deedOwner: '', deedOwnerNames: '', deedOwnerRelationship: '', bedrooms: '', bathrooms: '', squareFootage: '', lotSize: '',
+    storyCount: '', propertyStyle: '', exteriorMaterial: '',
+    garageType: '', garageCondition: '',
     renovationsCompleted: '', renovationTypes: [], renovationDescription: '', renovationWhen: '',
     licensedContractor: '', renovationDocuments: '',
     occupancyStatus: '', vacancyLength: '', leaseStatus: '', monthlyRent: '',
@@ -465,6 +467,11 @@ const App = () => {
               <input type="hidden" name="Bathrooms" value={formData.bathrooms || 'Not provided'} />
               <input type="hidden" name="Square Footage" value={formData.squareFootage || 'Not provided'} />
               <input type="hidden" name="Lot Size" value={formData.lotSize || 'Not provided'} />
+              <input type="hidden" name="Number of Stories" value={formData.storyCount || 'Not provided'} />
+              <input type="hidden" name="Property Style" value={formData.propertyStyle || 'Not provided'} />
+              <input type="hidden" name="Main Exterior Material" value={formData.exteriorMaterial || 'Not provided'} />
+              <input type="hidden" name="Garage or Carport" value={formData.garageType || 'Not provided'} />
+              <input type="hidden" name="Garage or Carport Condition" value={formData.garageCondition || 'Not applicable'} />
               <input type="hidden" name="Renovations Completed" value={formData.renovationsCompleted || 'Not provided'} />
               <input type="hidden" name="Types of Renovations" value={formData.renovationTypes.join(', ') || 'None selected'} />
               <input type="hidden" name="Renovation Description" value={formData.renovationDescription || 'Not applicable'} />
@@ -541,6 +548,84 @@ const App = () => {
                       <input type="text" placeholder="SQUARE FOOTAGE" value={formData.squareFootage} onChange={(e) => setFormData({ ...formData, squareFootage: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700 }} />
                       <input type="text" placeholder="LOT SIZE" value={formData.lotSize} onChange={(e) => setFormData({ ...formData, lotSize: e.target.value })} style={{ background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700 }} />
                     </div>
+                    <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 12, padding: '18px 20px' }}>
+                      <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Property Description</p>
+                      <p style={{ fontSize: 12, color: '#555', fontStyle: 'italic', textAlign: 'center', margin: '0 0 18px', fontWeight: 700 }}>Please answer based on what you know about the property. “Not sure” is always acceptable.</p>
+
+                      <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 10, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* How many stories is the property?</label>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: 10, marginBottom: 18 }}>
+                        {['1 Story', '1½ Stories', '2 Stories', '2½ Stories', '3+ Stories', 'Split-Level', 'Not Sure'].map((opt) => {
+                          const isSelected = formData.storyCount === opt;
+                          return (
+                            <button key={opt} type="button" onClick={() => setFormData({ ...formData, storyCount: isSelected ? '' : opt })} style={{ padding: '11px 9px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '1px solid #ccc', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase', letterSpacing: 0.4 }}>
+                              {opt}
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 10, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* Which style best describes the property?</label>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(135px, 1fr))', gap: 10, marginBottom: 18 }}>
+                        {['Ranch', 'Cape Cod', 'Colonial', 'Bungalow', 'Split-Level', 'Bi-Level', 'Tudor', 'Contemporary', 'Manufactured / Mobile Home', 'Other', 'Not Sure'].map((opt) => {
+                          const isSelected = formData.propertyStyle === opt;
+                          return (
+                            <button key={opt} type="button" onClick={() => setFormData({ ...formData, propertyStyle: isSelected ? '' : opt })} style={{ padding: '11px 9px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '1px solid #ccc', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase', letterSpacing: 0.4 }}>
+                              {opt}
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 10, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* What is the main exterior material?</label>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(135px, 1fr))', gap: 10 }}>
+                        {['Brick', 'Vinyl Siding', 'Aluminum Siding', 'Wood Siding', 'Stucco', 'Stone', 'Fiber Cement', 'Mixed Materials', 'Other', 'Not Sure'].map((opt) => {
+                          const isSelected = formData.exteriorMaterial === opt;
+                          return (
+                            <button key={opt} type="button" onClick={() => setFormData({ ...formData, exteriorMaterial: isSelected ? '' : opt })} style={{ padding: '11px 9px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '1px solid #ccc', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase', letterSpacing: 0.4 }}>
+                              {opt}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 12, padding: '18px 20px' }}>
+                      <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 10, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* Does the property have a garage or carport?</label>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 10 }}>
+                        {['No', '1-Car Attached Garage', '2-Car Attached Garage', '3+ Car Attached Garage', '1-Car Detached Garage', '2-Car Detached Garage', '3+ Car Detached Garage', 'Carport', 'Garage and Carport', 'Not Sure'].map((opt) => {
+                          const isSelected = formData.garageType === opt;
+                          return (
+                            <button
+                              key={opt}
+                              type="button"
+                              onClick={() => setFormData({
+                                ...formData,
+                                garageType: isSelected ? '' : opt,
+                                garageCondition: (isSelected || opt === 'No' || opt === 'Not Sure') ? '' : formData.garageCondition
+                              })}
+                              style={{ padding: '11px 9px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '1px solid #ccc', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase', letterSpacing: 0.4 }}
+                            >
+                              {opt}
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      {formData.garageType && !['No', 'Not Sure'].includes(formData.garageType) && (
+                        <div style={{ marginTop: 14 }}>
+                          <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5 }}>
+                            Anything we should know about its condition? <span style={{ color: '#777', fontWeight: 700 }}>(Optional)</span>
+                          </label>
+                          <input
+                            type="text"
+                            placeholder="Example: Garage door does not work, roof leaks, structure needs repair, or it is in good condition."
+                            value={formData.garageCondition}
+                            onChange={(e) => setFormData({ ...formData, garageCondition: e.target.value })}
+                            style={{ width: '100%', background: '#fff', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 13, fontWeight: 700, boxSizing: 'border-box' }}
+                          />
+                        </div>
+                      )}
+                    </div>
                     {/* SMS CONSENT */}
                     <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 12, padding: '16px 20px', marginTop: 4 }}>
                       <p style={{ fontSize: 12, fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', letterSpacing: 1, margin: '0 0 12px' }}>Text Message Consent</p>
@@ -594,6 +679,14 @@ const App = () => {
                       }
                       if (!formData.bedrooms || !formData.bathrooms || !formData.squareFootage || !formData.lotSize) {
                         setErrors({ step1: 'Please fill out bedrooms, bathrooms, square footage, and lot size before continuing.' });
+                        return;
+                      }
+                      if (!formData.storyCount || !formData.propertyStyle || !formData.exteriorMaterial) {
+                        setErrors({ step1: 'Please select the number of stories, property style, and main exterior material before continuing. “Not sure” is acceptable.' });
+                        return;
+                      }
+                      if (!formData.garageType) {
+                        setErrors({ step1: 'Please let us know whether the property has a garage or carport before continuing.' });
                         return;
                       }
                       setErrors({});
