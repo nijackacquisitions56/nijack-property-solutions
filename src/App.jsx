@@ -14,6 +14,8 @@ const App = () => {
     smsConsentTransactional: false,
     roofCondition: '', hvacCondition: '', electricalCondition: '',
     plumbingCondition: '', foundationCondition: '', overallCondition: '',
+    livedThereLast12Months: '', livability: '', conditionDetails: '',
+    animalStatus: '', animalDetails: '',
     bestTimeToCall: '', preferredContact: '', otherDescription: '',
     mortgageStatus: '', mortgagePayoff: '',
     deedOwner: '', deedOwnerNames: '', deedOwnerRelationship: '', bedrooms: '', bathrooms: '', squareFootage: '', lotSize: '',
@@ -88,8 +90,16 @@ const App = () => {
         return formData.timeline !== '';
       case 'field-price':
         return formData.priceExpectation.trim() !== '';
-      case 'field-additional-notes':
-        return formData.additionalNotes.trim() !== '';
+      case 'field-lived-last-12-months':
+        return formData.livedThereLast12Months !== '';
+      case 'field-livability':
+        return formData.livability !== '';
+      case 'field-condition-details':
+        return formData.conditionDetails.trim() !== '';
+      case 'field-animal-status':
+        return formData.animalStatus !== '';
+      case 'field-animal-details':
+        return formData.animalDetails.trim() !== '';
       case 'field-contact-preferences':
         return Boolean(
           formData.preferredContact &&
@@ -162,7 +172,7 @@ const App = () => {
     { key: 'electricalCondition', label: 'Electrical System', required: true, options: ['Not sure','Updated / no known issues','Older but working','Fuse box or outdated panel','Known electrical issues','Needs major electrical work'] },
     { key: 'plumbingCondition', label: 'Plumbing Condition', required: true, options: ['Not sure','No known issues','Older but working','Leaks or slow drains','Known plumbing issues','Needs major plumbing work'] },
     { key: 'foundationCondition', label: 'Foundation / Structural Concerns', required: true, options: ['Not sure','No known issues','Minor cracks / settling','Water in basement or crawlspace','Major cracks or movement','Needs foundation repair'] },
-    { key: 'overallCondition', label: 'Overall Property Condition', required: true, options: ['Not sure','Move-in ready','Light repairs needed','Moderate repairs needed','Heavy repairs needed','Fire / water damage','Vacant or boarded'] },
+    { key: 'overallCondition', label: 'Which Best Describes the Property Today?', required: true, options: ['Not sure','Fully updated / move-in ready','Livable with some updates','Livable but mostly original (grandma house)','Mostly original condition','Needs significant repairs but is livable','Fire or major water damage','Vacant or boarded'] },
   ];
 
   return (
@@ -431,6 +441,11 @@ const App = () => {
               <input type="hidden" name="Plumbing Condition" value={formData.plumbingCondition || 'Not provided'} />
               <input type="hidden" name="Foundation Condition" value={formData.foundationCondition || 'Not provided'} />
               <input type="hidden" name="Overall Property Condition" value={formData.overallCondition || 'Not provided'} />
+              <input type="hidden" name="Lived in Property Within Last 12 Months" value={formData.livedThereLast12Months || 'Not provided'} />
+              <input type="hidden" name="Property Currently Livable" value={formData.livability || 'Not provided'} />
+              <input type="hidden" name="Condition Details" value={formData.conditionDetails || 'Not provided'} />
+              <input type="hidden" name="Pets or Animals" value={formData.animalStatus || 'Not provided'} />
+              <input type="hidden" name="Animal Details" value={formData.animalDetails || 'Not applicable'} />
               <input type="hidden" name="Best Time to Call" value={formData.bestTimeToCall || 'Not provided'} />
               <input type="hidden" name="Preferred Contact Method" value={formData.preferredContact || 'Not provided'} />
               <input type="hidden" name="Other Situation Description" value={formData.otherDescription || 'Not applicable'} />
@@ -743,12 +758,6 @@ const App = () => {
                       )}
                     </div>
 
-                    {/* Additional Notes */}
-                    <div id="field-additional-notes" style={{ scrollMarginTop: 110 }}>
-                      <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* Additional Notes</label>
-                      <textarea rows={4} placeholder="Tell us anything else about the property — repairs needed, access issues, unique features, or anything that may affect the value or timeline. The more you share, the better we can help you." value={formData.additionalNotes} onChange={(e) => setFormData({ ...formData, additionalNotes: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontFamily: 'inherit', lineHeight: 1.6 }} />
-                    </div>
-
                     {/* Timeline */}
                     <div id="field-timeline" style={{ scrollMarginTop: 110 }}>
                       <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* What is your ideal selling timeline? <span style={{ color: '#C9A84C' }}>— Click black down arrow on right below</span></label>
@@ -918,6 +927,30 @@ const App = () => {
                       )}
                     </div>
 
+                    {/* Seller Knowledge + Overall Condition */}
+                    <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
+                      <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Overall Property Condition</p>
+                      <p style={{ fontSize: 12, color: '#555', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px', fontWeight: 700 }}>A few quick answers help us understand the property before we follow up.</p>
+
+                      <div id="field-lived-last-12-months" style={{ marginBottom: 20, scrollMarginTop: 110 }}>
+                        <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 8, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>* Have you personally lived in the property at any time during the last 12 months?</label>
+                        <div className='pref-grid-2' style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
+                          {['Yes', 'No', 'Not Sure'].map((opt) => (
+                            <button key={opt} type="button" onClick={() => setFormData({ ...formData, livedThereLast12Months: formData.livedThereLast12Months === opt ? '' : opt })} className='pref-btn' style={{ padding: '10px 8px', borderRadius: 8, border: formData.livedThereLast12Months === opt ? '2px solid #8B0000' : '2px solid #d0c8b8', background: formData.livedThereLast12Months === opt ? '#8B0000' : '#fff', color: formData.livedThereLast12Months === opt ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase' }}>{opt}</button>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div id="field-livability" style={{ scrollMarginTop: 110 }}>
+                        <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 8, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>* Is the property currently livable?</label>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(145px, 1fr))', gap: 10 }}>
+                          {['Yes', 'Yes, but repairs are needed', 'No', 'Not Sure'].map((opt) => (
+                            <button key={opt} type="button" onClick={() => setFormData({ ...formData, livability: formData.livability === opt ? '' : opt })} className='pref-btn' style={{ padding: '10px 8px', borderRadius: 8, border: formData.livability === opt ? '2px solid #8B0000' : '2px solid #d0c8b8', background: formData.livability === opt ? '#8B0000' : '#fff', color: formData.livability === opt ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase' }}>{opt}</button>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
                     {/* Property Condition Questions */}
                     <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
                       <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Property Condition Questions</p>
@@ -936,6 +969,50 @@ const App = () => {
                           </div>
                         ))}
                       </div>
+                    </div>
+
+                    {(() => {
+                      const issueAnswers = [
+                        formData.livability === 'Yes, but repairs are needed',
+                        formData.livability === 'No',
+                        ['Livable but mostly original (grandma house)', 'Mostly original condition', 'Needs significant repairs but is livable', 'Fire or major water damage', 'Vacant or boarded'].includes(formData.overallCondition),
+                        ['Has leaks', 'Needs repair', 'Needs full replacement'].includes(formData.roofCondition),
+                        ['Needs repair', 'Not working', 'No central HVAC'].includes(formData.hvacCondition),
+                        ['Fuse box or outdated panel', 'Known electrical issues', 'Needs major electrical work'].includes(formData.electricalCondition),
+                        ['Leaks or slow drains', 'Known plumbing issues', 'Needs major plumbing work'].includes(formData.plumbingCondition),
+                        ['Water in basement or crawlspace', 'Major cracks or movement', 'Needs foundation repair'].includes(formData.foundationCondition)
+                      ];
+                      return issueAnswers.some(Boolean);
+                    })() && (
+                      <div id="field-condition-details" style={{ scrollMarginTop: 110 }}>
+                        <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* Please tell us a little more about the property's condition.</label>
+                        <p style={{ fontSize: 12, color: '#555', margin: '0 0 8px', fontWeight: 700, fontStyle: 'italic' }}>A sentence or two is enough.</p>
+                        <textarea rows={4} placeholder="Example: Roof leaks near the chimney. Furnace works but A/C does not. Basement gets water after heavy rain. Kitchen and bathrooms are original." value={formData.conditionDetails} onChange={(e) => setFormData({ ...formData, conditionDetails: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontFamily: 'inherit', lineHeight: 1.6, boxSizing: 'border-box' }} />
+                      </div>
+                    )}
+
+                    {/* Pets / Animals */}
+                    <div id="field-animal-status" style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px', scrollMarginTop: 110 }}>
+                      <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 16px', textAlign: 'center' }}>Pets or Animals</p>
+                      <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 8, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>* Are there currently pets or signs of animals in the property?</label>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 10 }}>
+                        {['No', 'Yes — pets currently live there', 'Pets lived there previously', 'Stray or wild animals may have entered', 'Not Sure'].map((opt) => (
+                          <button key={opt} type="button" onClick={() => setFormData({ ...formData, animalStatus: formData.animalStatus === opt ? '' : opt, animalDetails: opt === 'No' ? '' : formData.animalDetails })} className='pref-btn' style={{ padding: '10px 8px', borderRadius: 8, border: formData.animalStatus === opt ? '2px solid #8B0000' : '2px solid #d0c8b8', background: formData.animalStatus === opt ? '#8B0000' : '#fff', color: formData.animalStatus === opt ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase' }}>{opt}</button>
+                        ))}
+                      </div>
+
+                      {formData.animalStatus && formData.animalStatus !== 'No' && (
+                        <div id="field-animal-details" style={{ marginTop: 16, scrollMarginTop: 110 }}>
+                          <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>* Please briefly describe.</label>
+                          <textarea rows={3} placeholder="Example: Two dogs currently live there. There may be pet odor or stained carpet in one bedroom." value={formData.animalDetails} onChange={(e) => setFormData({ ...formData, animalDetails: e.target.value })} style={{ width: '100%', background: '#fff', border: '1px solid #ccc', borderBottom: '2px solid #8B0000', borderRadius: 8, padding: '14px', fontSize: 14, fontFamily: 'inherit', lineHeight: 1.5, boxSizing: 'border-box' }} />
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Anything Else */}
+                    <div style={{ scrollMarginTop: 110 }}>
+                      <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 6, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>Is there anything else you'd like us to know about the property? <span style={{ color: '#888', fontWeight: 700 }}>(Optional)</span></label>
+                      <textarea rows={4} placeholder="Example: Access instructions, title concerns, unique features, utilities turned off, or anything else that would help us understand the property." value={formData.additionalNotes} onChange={(e) => setFormData({ ...formData, additionalNotes: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontFamily: 'inherit', lineHeight: 1.6, boxSizing: 'border-box' }} />
                     </div>
 
                     {/* ── NEW: Best Time to Call + Preferred Contact ── */}
@@ -1083,16 +1160,21 @@ const App = () => {
                           return;
                         }
                         // Validate in the same top-to-bottom order the questions appear on the page.
-                        if (!formData.additionalNotes || formData.additionalNotes.trim() === '') {
-                          showStep2ValidationError('Please give us additional notes about the property before submitting.', 'field-additional-notes');
-                          return;
-                        }
                         if (!formData.timeline) {
                           showStep2ValidationError('Please select your ideal selling timeline before submitting.', 'field-timeline');
                           return;
                         }
                         if (!formData.priceExpectation || formData.priceExpectation.trim() === '') {
                           showStep2ValidationError('Please enter a price you would be comfortable accepting.', 'field-price');
+                          return;
+                        }
+
+                        if (!formData.livedThereLast12Months) {
+                          showStep2ValidationError('Please let us know whether you have personally lived in the property during the last 12 months.', 'field-lived-last-12-months');
+                          return;
+                        }
+                        if (!formData.livability) {
+                          showStep2ValidationError('Please let us know whether the property is currently livable.', 'field-livability');
                           return;
                         }
 
@@ -1118,6 +1200,29 @@ const App = () => {
                         }
                         if (!formData.overallCondition) {
                           showStep2ValidationError('Please select the Overall Property Condition before submitting.', 'field-overallCondition');
+                          return;
+                        }
+
+                        const conditionDetailsRequired = [
+                          formData.livability === 'Yes, but repairs are needed',
+                          formData.livability === 'No',
+                          ['Livable but mostly original (grandma house)', 'Mostly original condition', 'Needs significant repairs but is livable', 'Fire or major water damage', 'Vacant or boarded'].includes(formData.overallCondition),
+                          ['Has leaks', 'Needs repair', 'Needs full replacement'].includes(formData.roofCondition),
+                          ['Needs repair', 'Not working', 'No central HVAC'].includes(formData.hvacCondition),
+                          ['Fuse box or outdated panel', 'Known electrical issues', 'Needs major electrical work'].includes(formData.electricalCondition),
+                          ['Leaks or slow drains', 'Known plumbing issues', 'Needs major plumbing work'].includes(formData.plumbingCondition),
+                          ['Water in basement or crawlspace', 'Major cracks or movement', 'Needs foundation repair'].includes(formData.foundationCondition)
+                        ].some(Boolean);
+                        if (conditionDetailsRequired && !formData.conditionDetails.trim()) {
+                          showStep2ValidationError('Please briefly describe the property condition or repairs you selected.', 'field-condition-details');
+                          return;
+                        }
+                        if (!formData.animalStatus) {
+                          showStep2ValidationError('Please let us know whether there are pets or signs of animals in the property.', 'field-animal-status');
+                          return;
+                        }
+                        if (formData.animalStatus !== 'No' && !formData.animalDetails.trim()) {
+                          showStep2ValidationError('Please briefly describe the pets, animals, or related property concerns.', 'field-animal-details');
                           return;
                         }
 
