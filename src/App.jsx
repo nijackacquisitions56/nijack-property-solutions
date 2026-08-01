@@ -19,7 +19,7 @@ const App = () => {
     bestTimeToCall: '', preferredContact: '', otherDescription: '',
     mortgageStatus: '', mortgagePayoff: '',
     deedOwner: '', deedOwnerNames: '', deedOwnerRelationship: '', bedrooms: '', bathrooms: '', squareFootage: '', lotSize: '',
-    storyCount: '', propertyStyle: '', exteriorMaterial: '',
+    storyCount: '', propertyStyle: '', propertyStyleOther: '', exteriorMaterial: '', exteriorMaterialDetails: '',
     garageType: '', garageCondition: '',
     renovationsCompleted: '', renovationTypes: [], renovationDescription: '', renovationWhen: '',
     licensedContractor: '', renovationDocuments: '',
@@ -469,7 +469,9 @@ const App = () => {
               <input type="hidden" name="Lot Size" value={formData.lotSize || 'Not provided'} />
               <input type="hidden" name="Number of Stories" value={formData.storyCount || 'Not provided'} />
               <input type="hidden" name="Property Style" value={formData.propertyStyle || 'Not provided'} />
+              <input type="hidden" name="Property Style Details" value={formData.propertyStyleOther || 'Not applicable'} />
               <input type="hidden" name="Main Exterior Material" value={formData.exteriorMaterial || 'Not provided'} />
+              <input type="hidden" name="Exterior Material Details" value={formData.exteriorMaterialDetails || 'Not applicable'} />
               <input type="hidden" name="Garage or Carport" value={formData.garageType || 'Not provided'} />
               <input type="hidden" name="Garage or Carport Condition" value={formData.garageCondition || 'Not applicable'} />
               <input type="hidden" name="Renovations Completed" value={formData.renovationsCompleted || 'Not provided'} />
@@ -569,24 +571,48 @@ const App = () => {
                         {['Ranch', 'Cape Cod', 'Colonial', 'Bungalow', 'Split-Level', 'Bi-Level', 'Tudor', 'Contemporary', 'Manufactured / Mobile Home', 'Other', 'Not Sure'].map((opt) => {
                           const isSelected = formData.propertyStyle === opt;
                           return (
-                            <button key={opt} type="button" onClick={() => setFormData({ ...formData, propertyStyle: isSelected ? '' : opt })} style={{ padding: '11px 9px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '1px solid #ccc', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase', letterSpacing: 0.4 }}>
+                            <button key={opt} type="button" onClick={() => setFormData({ ...formData, propertyStyle: isSelected ? '' : opt, propertyStyleOther: (!isSelected && opt === 'Other') ? formData.propertyStyleOther : '' })} style={{ padding: '11px 9px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '1px solid #ccc', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase', letterSpacing: 0.4 }}>
                               {opt}
                             </button>
                           );
                         })}
                       </div>
+                      {formData.propertyStyle === 'Other' && (
+                        <div style={{ marginBottom: 18 }}>
+                          <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5 }}>Please describe the property style.</label>
+                          <input
+                            type="text"
+                            placeholder="Example: Farmhouse, Victorian, duplex conversion, log home, or another style."
+                            value={formData.propertyStyleOther}
+                            onChange={(e) => setFormData({ ...formData, propertyStyleOther: e.target.value })}
+                            style={{ width: '100%', background: '#fff', border: '1px solid #ccc', borderBottom: '2px solid #8B0000', borderRadius: 8, padding: '14px', fontSize: 14, fontWeight: 700, boxSizing: 'border-box' }}
+                          />
+                        </div>
+                      )}
 
                       <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 10, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>* What is the main exterior material?</label>
                       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(135px, 1fr))', gap: 10 }}>
                         {['Brick', 'Vinyl Siding', 'Aluminum Siding', 'Wood Siding', 'Stucco', 'Stone', 'Fiber Cement', 'Mixed Materials', 'Other', 'Not Sure'].map((opt) => {
                           const isSelected = formData.exteriorMaterial === opt;
                           return (
-                            <button key={opt} type="button" onClick={() => setFormData({ ...formData, exteriorMaterial: isSelected ? '' : opt })} style={{ padding: '11px 9px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '1px solid #ccc', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase', letterSpacing: 0.4 }}>
+                            <button key={opt} type="button" onClick={() => setFormData({ ...formData, exteriorMaterial: isSelected ? '' : opt, exteriorMaterialDetails: (!isSelected && ['Mixed Materials', 'Other'].includes(opt)) ? formData.exteriorMaterialDetails : '' })} style={{ padding: '11px 9px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '1px solid #ccc', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase', letterSpacing: 0.4 }}>
                               {opt}
                             </button>
                           );
                         })}
                       </div>
+                      {['Mixed Materials', 'Other'].includes(formData.exteriorMaterial) && (
+                        <div style={{ marginTop: 14 }}>
+                          <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5 }}>Please describe the exterior materials.</label>
+                          <input
+                            type="text"
+                            placeholder="Example: Brick front with vinyl siding, stone and stucco, or another exterior finish."
+                            value={formData.exteriorMaterialDetails}
+                            onChange={(e) => setFormData({ ...formData, exteriorMaterialDetails: e.target.value })}
+                            style={{ width: '100%', background: '#fff', border: '1px solid #ccc', borderBottom: '2px solid #8B0000', borderRadius: 8, padding: '14px', fontSize: 14, fontWeight: 700, boxSizing: 'border-box' }}
+                          />
+                        </div>
+                      )}
                     </div>
 
                     <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 12, padding: '18px 20px' }}>
@@ -683,6 +709,14 @@ const App = () => {
                       }
                       if (!formData.storyCount || !formData.propertyStyle || !formData.exteriorMaterial) {
                         setErrors({ step1: 'Please select the number of stories, property style, and main exterior material before continuing. “Not sure” is acceptable.' });
+                        return;
+                      }
+                      if (formData.propertyStyle === 'Other' && !formData.propertyStyleOther.trim()) {
+                        setErrors({ step1: 'Please briefly describe the property style since you selected Other.' });
+                        return;
+                      }
+                      if (['Mixed Materials', 'Other'].includes(formData.exteriorMaterial) && !formData.exteriorMaterialDetails.trim()) {
+                        setErrors({ step1: 'Please briefly describe the exterior materials.' });
                         return;
                       }
                       if (!formData.garageType) {
