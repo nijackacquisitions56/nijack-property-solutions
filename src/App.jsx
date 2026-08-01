@@ -167,13 +167,20 @@ const App = () => {
   };
 
   const repairOptions = [
-    { key: 'roofCondition', label: 'Roof Condition', required: true, options: ['Not sure','No known issues','Older but no leaks','Has leaks','Needs repair','Needs full replacement'] },
-    { key: 'hvacCondition', label: 'Heating / Cooling System', required: true, options: ['Not sure','Working properly','Older but working','Needs repair','Not working','No central HVAC'] },
-    { key: 'electricalCondition', label: 'Electrical System', required: true, options: ['Not sure','Updated / no known issues','Older but working','Fuse box or outdated panel','Known electrical issues','Needs major electrical work'] },
-    { key: 'plumbingCondition', label: 'Plumbing Condition', required: true, options: ['Not sure','No known issues','Older but working','Leaks or slow drains','Known plumbing issues','Needs major plumbing work'] },
-    { key: 'foundationCondition', label: 'Foundation / Structural Concerns', required: true, options: ['Not sure','No known issues','Minor cracks / settling','Water in basement or crawlspace','Major cracks or movement','Needs foundation repair'] },
+    { key: 'roofCondition', renovationType: 'Roof', label: 'Roof Condition', required: true, options: ['Not sure','No known issues','Older but no leaks','Has leaks','Needs repair','Needs full replacement'] },
+    { key: 'hvacCondition', renovationType: 'HVAC (Heating & Cooling)', label: 'Heating / Cooling System', required: true, options: ['Not sure','Working properly','Older but working','Needs repair','Not working','No central HVAC'] },
+    { key: 'electricalCondition', renovationType: 'Electrical', label: 'Electrical System', required: true, options: ['Not sure','Updated / no known issues','Older but working','Fuse box or outdated panel','Known electrical issues','Needs major electrical work'] },
+    { key: 'plumbingCondition', renovationType: 'Plumbing', label: 'Plumbing Condition', required: true, options: ['Not sure','No known issues','Older but working','Leaks or slow drains','Known plumbing issues','Needs major plumbing work'] },
+    { key: 'foundationCondition', renovationType: 'Foundation', label: 'Foundation / Structural Concerns', required: true, options: ['Not sure','No known issues','Minor cracks / settling','Water in basement or crawlspace','Major cracks or movement','Needs foundation repair'] },
     { key: 'overallCondition', label: 'Which Best Describes the Property Today?', required: true, options: ['Not sure','Fully updated / move-in ready','Livable with some updates','Livable but mostly original (grandma house)','Mostly original condition','Needs significant repairs but is livable','Fire or major water damage','Vacant or boarded'] },
   ];
+
+  const visibleRepairOptions = repairOptions.filter((repair) =>
+    !repair.renovationType || !formData.renovationTypes.includes(repair.renovationType)
+  );
+
+  const isSystemCoveredByUpdates = (renovationType) =>
+    formData.renovationsCompleted === 'Yes' && formData.renovationTypes.includes(renovationType);
 
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: '#f9f7f4', color: '#1a1a1a', minHeight: '100vh' }}>
@@ -435,11 +442,11 @@ const App = () => {
               <input type="hidden" name="Desired Selling Timeline" value={formData.timeline || 'Not provided'} />
               <input type="hidden" name="Price Seller Would Accept" value={formData.priceExpectation || 'Not provided'} />
               <input type="hidden" name="SMS Consent" value={formData.smsConsentTransactional ? 'Yes — consented to transactional SMS' : 'No'} />
-              <input type="hidden" name="Roof Condition" value={formData.roofCondition || 'Not provided'} />
-              <input type="hidden" name="HVAC Condition" value={formData.hvacCondition || 'Not provided'} />
-              <input type="hidden" name="Electrical Condition" value={formData.electricalCondition || 'Not provided'} />
-              <input type="hidden" name="Plumbing Condition" value={formData.plumbingCondition || 'Not provided'} />
-              <input type="hidden" name="Foundation Condition" value={formData.foundationCondition || 'Not provided'} />
+              <input type="hidden" name="Roof Condition" value={isSystemCoveredByUpdates('Roof') ? 'Listed as updated above' : (formData.roofCondition || 'Not provided')} />
+              <input type="hidden" name="HVAC Condition" value={isSystemCoveredByUpdates('HVAC (Heating & Cooling)') ? 'Listed as updated above' : (formData.hvacCondition || 'Not provided')} />
+              <input type="hidden" name="Electrical Condition" value={isSystemCoveredByUpdates('Electrical') ? 'Listed as updated above' : (formData.electricalCondition || 'Not provided')} />
+              <input type="hidden" name="Plumbing Condition" value={isSystemCoveredByUpdates('Plumbing') ? 'Listed as updated above' : (formData.plumbingCondition || 'Not provided')} />
+              <input type="hidden" name="Foundation Condition" value={isSystemCoveredByUpdates('Foundation') ? 'Listed as updated above' : (formData.foundationCondition || 'Not provided')} />
               <input type="hidden" name="Overall Property Condition" value={formData.overallCondition || 'Not provided'} />
               <input type="hidden" name="Lived in Property Within Last 12 Months" value={formData.livedThereLast12Months || 'Not provided'} />
               <input type="hidden" name="Property Currently Livable" value={formData.livability || 'Not provided'} />
@@ -851,12 +858,23 @@ const App = () => {
                                   <button
                                     key={item}
                                     type="button"
-                                    onClick={() => setFormData({
-                                      ...formData,
-                                      renovationTypes: isSelected
-                                        ? formData.renovationTypes.filter((type) => type !== item)
-                                        : [...formData.renovationTypes, item]
-                                    })}
+                                    onClick={() => {
+                                      const conditionKeyByUpdate = {
+                                        'Roof': 'roofCondition',
+                                        'HVAC (Heating & Cooling)': 'hvacCondition',
+                                        'Electrical': 'electricalCondition',
+                                        'Plumbing': 'plumbingCondition',
+                                        'Foundation': 'foundationCondition'
+                                      };
+                                      const conditionKey = conditionKeyByUpdate[item];
+                                      setFormData({
+                                        ...formData,
+                                        renovationTypes: isSelected
+                                          ? formData.renovationTypes.filter((type) => type !== item)
+                                          : [...formData.renovationTypes, item],
+                                        ...(conditionKey ? { [conditionKey]: '' } : {})
+                                      });
+                                    }}
                                     style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '11px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '1px solid #ccc', background: isSelected ? '#fff0f0' : '#fff', color: isSelected ? '#8B0000' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase', letterSpacing: 0.4, textAlign: 'left' }}
                                   >
                                     <span style={{ width: 14, height: 14, border: '1px solid #8B0000', background: isSelected ? '#8B0000' : 'transparent', color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', borderRadius: 2, flexShrink: 0 }}>
@@ -953,10 +971,10 @@ const App = () => {
 
                     {/* Property Condition Questions */}
                     <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 16, padding: '24px 20px' }}>
-                      <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Property Condition Questions</p>
-                      <p style={{ fontSize: 12, color: '#555', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px', fontWeight: 700 }}>Required — "Not Sure" is always a valid answer</p>
+                      <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1, margin: '0 0 6px', textAlign: 'center' }}>Current Property Condition</p>
+                      <p style={{ fontSize: 12, color: '#555', fontStyle: 'italic', textAlign: 'center', margin: '0 0 20px', fontWeight: 700 }}>We skipped any major systems you already listed as updated. Please answer the remaining questions — "Not Sure" is always acceptable.</p>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-                        {repairOptions.map((r) => (
+                        {visibleRepairOptions.map((r) => (
                           <div key={r.key} id={`field-${r.key}`} style={{ scrollMarginTop: 110 }}>
                             <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>{r.label}{r.required && <span style={{ color: '#8B0000', marginLeft: 4 }}>*</span>}</label>
                             <div style={{ position: 'relative' }}>
@@ -1178,23 +1196,23 @@ const App = () => {
                           return;
                         }
 
-                        if (!formData.roofCondition) {
+                        if (!isSystemCoveredByUpdates('Roof') && !formData.roofCondition) {
                           showStep2ValidationError('Please select the Roof Condition before submitting.', 'field-roofCondition');
                           return;
                         }
-                        if (!formData.hvacCondition) {
+                        if (!isSystemCoveredByUpdates('HVAC (Heating & Cooling)') && !formData.hvacCondition) {
                           showStep2ValidationError('Please select the Heating / Cooling System condition before submitting.', 'field-hvacCondition');
                           return;
                         }
-                        if (!formData.electricalCondition) {
+                        if (!isSystemCoveredByUpdates('Electrical') && !formData.electricalCondition) {
                           showStep2ValidationError('Please select the Electrical System condition before submitting.', 'field-electricalCondition');
                           return;
                         }
-                        if (!formData.plumbingCondition) {
+                        if (!isSystemCoveredByUpdates('Plumbing') && !formData.plumbingCondition) {
                           showStep2ValidationError('Please select the Plumbing Condition before submitting.', 'field-plumbingCondition');
                           return;
                         }
-                        if (!formData.foundationCondition) {
+                        if (!isSystemCoveredByUpdates('Foundation') && !formData.foundationCondition) {
                           showStep2ValidationError('Please select the Foundation / Structural condition before submitting.', 'field-foundationCondition');
                           return;
                         }
