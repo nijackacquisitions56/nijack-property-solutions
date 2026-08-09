@@ -1171,7 +1171,7 @@ const App = () => {
                         {/* Best Time to Call */}
                         <div>
                           <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Best Time to Call You</label>
-                          <div className='pref-grid-2' style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 10 }}>
+                           <div className='pref-grid-2' style={{ display: 'grid', gridTemplateColumns: '1.05fr 1.35fr 1.2fr 0.75fr', gap: 10 }}>
                             {['Morning 9 AM–12 PM', 'Afternoon 12 PM–4 PM', 'Evening 5 PM–8 PM', 'Anytime'].map((opt) => {
                               const isSelected = formData.bestTimeToCall === opt;
                               return (
