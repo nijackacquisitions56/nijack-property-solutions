@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -434,60 +435,80 @@ const App = () => {
               </div>
             )}
 
-            <form action="https://formspree.io/f/xwvjklgy" method="POST">
-              <input type="hidden" name="_subject" value="New Property Inquiry — Tekton Property Solutions" />
-              <input type="hidden" name="Full Name" value={formData.fullName} />
-              <input type="hidden" name="Phone Number" value={formData.phone || 'Not provided'} />
-              <input type="hidden" name="Email Address" value={formData.email} />
-              <input type="hidden" name="Property Address" value={formData.propertyAddress} />
-              <input type="hidden" name="Seller Situation" value={formData.situation.join(', ') || 'Not provided'} />
-              <input type="hidden" name="Additional Notes" value={formData.additionalNotes || 'Not provided'} />
-              <input type="hidden" name="Desired Selling Timeline" value={formData.timeline || 'Not provided'} />
-              <input type="hidden" name="Price Seller Would Accept" value={formData.priceExpectation || 'Not provided'} />
-              <input type="hidden" name="SMS Consent" value={formData.smsConsentTransactional ? 'Yes — consented to transactional SMS' : 'No'} />
-              <input type="hidden" name="Roof Condition" value={isSystemCoveredByUpdates('Roof') ? 'Listed as updated above' : (formData.roofCondition || 'Not provided')} />
-              <input type="hidden" name="HVAC Condition" value={isSystemCoveredByUpdates('HVAC (Heating & Cooling)') ? 'Listed as updated above' : (formData.hvacCondition || 'Not provided')} />
-              <input type="hidden" name="Electrical Condition" value={isSystemCoveredByUpdates('Electrical') ? 'Listed as updated above' : (formData.electricalCondition || 'Not provided')} />
-              <input type="hidden" name="Plumbing Condition" value={isSystemCoveredByUpdates('Plumbing') ? 'Listed as updated above' : (formData.plumbingCondition || 'Not provided')} />
-              <input type="hidden" name="Foundation Condition" value={isSystemCoveredByUpdates('Foundation') ? 'Listed as updated above' : (formData.foundationCondition || 'Not provided')} />
-              <input type="hidden" name="Overall Property Condition" value={formData.overallCondition || 'Not provided'} />
-              <input type="hidden" name="Lived in Property Within Last 12 Months" value={formData.livedThereLast12Months || 'Not provided'} />
-              <input type="hidden" name="Property Currently Livable" value={formData.livability || 'Not provided'} />
-              <input type="hidden" name="Condition Details" value={formData.conditionDetails || 'Not provided'} />
-              <input type="hidden" name="Pets or Animals" value={formData.animalStatus || 'Not provided'} />
-              <input type="hidden" name="Animal Details" value={formData.animalDetails || 'Not applicable'} />
-              <input type="hidden" name="Best Time to Call" value={formData.bestTimeToCall || 'Not provided'} />
-              <input type="hidden" name="Preferred Contact Method" value={formData.preferredContact || 'Not provided'} />
-              <input type="hidden" name="Other Situation Description" value={formData.otherDescription || 'Not applicable'} />
-              <input type="hidden" name="Mortgage or Lien Status" value={formData.mortgageStatus || 'Not provided'} />
-              <input type="hidden" name="Estimated Mortgage or Lien Payoff" value={formData.mortgagePayoff || 'Not applicable'} />
-              <input type="hidden" name="Current Deed Owner or Titleholder" value={formData.deedOwner || 'Not provided'} />
-              <input type="hidden" name="Name(s) on Deed" value={formData.deedOwnerNames || 'Not applicable'} />
-              <input type="hidden" name="Relationship to Property" value={formData.deedOwnerRelationship || 'Not applicable'} />
-              <input type="hidden" name="Bedrooms" value={formData.bedrooms || 'Not provided'} />
-              <input type="hidden" name="Bathrooms" value={formData.bathrooms || 'Not provided'} />
-              <input type="hidden" name="Square Footage" value={formData.squareFootage || 'Not provided'} />
-              <input type="hidden" name="Lot Size" value={formData.lotSize || 'Not provided'} />
-              <input type="hidden" name="Number of Stories" value={formData.storyCount || 'Not provided'} />
-              <input type="hidden" name="Property Style" value={formData.propertyStyle || 'Not provided'} />
-              <input type="hidden" name="Property Style Details" value={formData.propertyStyleOther || 'Not applicable'} />
-              <input type="hidden" name="Main Exterior Material" value={formData.exteriorMaterial || 'Not provided'} />
-              <input type="hidden" name="Exterior Material Details" value={formData.exteriorMaterialDetails || 'Not applicable'} />
-              <input type="hidden" name="Garage or Carport" value={formData.garageType || 'Not provided'} />
-              <input type="hidden" name="Garage or Carport Condition" value={formData.garageCondition || 'Not applicable'} />
-              <input type="hidden" name="Renovations Completed" value={formData.renovationsCompleted || 'Not provided'} />
-              <input type="hidden" name="Types of Renovations" value={formData.renovationTypes.join(', ') || 'None selected'} />
-              <input type="hidden" name="Renovation Description" value={formData.renovationDescription || 'Not applicable'} />
-              <input type="hidden" name="When Renovations Were Completed" value={formData.renovationWhen || 'Not applicable'} />
-              <input type="hidden" name="Licensed Contractor Used" value={formData.licensedContractor || 'Not provided'} />
-              <input type="hidden" name="Renovation Documentation Available" value={formData.renovationDocuments || 'Not provided'} />
-              <input type="hidden" name="Occupancy Status" value={formData.occupancyStatus || 'Not provided'} />
-              <input type="hidden" name="Length of Vacancy" value={formData.vacancyLength || 'Not applicable'} />
-              <input type="hidden" name="Written Lease Status" value={formData.leaseStatus || 'Not applicable'} />
-              <input type="hidden" name="Current Monthly Rent" value={formData.monthlyRent || 'Not applicable'} />
-              <input type="hidden" name="Lease End Date" value={formData.leaseEnd || 'Not applicable'} />
-              <input type="hidden" name="Tenant Current on Rent" value={formData.tenantCurrent || 'Not applicable'} />
-              <input type="hidden" name="Property Delivery Status" value={formData.deliveryStatus || 'Not applicable'} />
+            <input type="hidden" name="_subject" value="New Property Inquiry — Tekton Property Solutions" />
+
+{/* CONTACT INFORMATION */}
+<input type="hidden" name="Full Name" value={formData.fullName} />
+<input type="hidden" name="Phone Number" value={formData.phone || 'Not provided'} />
+<input type="hidden" name="Email Address" value={formData.email} />
+<input type="hidden" name="Property Address" value={formData.propertyAddress} />
+
+{/* OWNERSHIP */}
+<input type="hidden" name="Current Deed Owner or Titleholder" value={formData.deedOwner || 'Not provided'} />
+<input type="hidden" name="Name(s) on Deed" value={formData.deedOwnerNames || 'Not applicable'} />
+<input type="hidden" name="Relationship to Property" value={formData.deedOwnerRelationship || 'Not applicable'} />
+
+{/* PROPERTY BASICS */}
+<input type="hidden" name="Bedrooms" value={formData.bedrooms || 'Not provided'} />
+<input type="hidden" name="Bathrooms" value={formData.bathrooms || 'Not provided'} />
+<input type="hidden" name="Square Footage" value={formData.squareFootage || 'Not provided'} />
+<input type="hidden" name="Lot Size" value={formData.lotSize || 'Not provided'} />
+<input type="hidden" name="Number of Stories" value={formData.storyCount || 'Not provided'} />
+<input type="hidden" name="Property Style" value={formData.propertyStyle || 'Not provided'} />
+<input type="hidden" name="Property Style Details" value={formData.propertyStyleOther || 'Not applicable'} />
+<input type="hidden" name="Main Exterior Material" value={formData.exteriorMaterial || 'Not provided'} />
+<input type="hidden" name="Exterior Material Details" value={formData.exteriorMaterialDetails || 'Not applicable'} />
+<input type="hidden" name="Garage or Carport" value={formData.garageType || 'Not provided'} />
+<input type="hidden" name="Garage or Carport Condition" value={formData.garageCondition || 'Not applicable'} />
+<input type="hidden" name="SMS Consent" value={formData.smsConsentTransactional ? 'Yes — consented to transactional SMS' : 'No'} />
+
+{/* SELLER SITUATION */}
+<input type="hidden" name="Seller Situation" value={formData.situation.join(', ') || 'Not provided'} />
+<input type="hidden" name="Other Situation Description" value={formData.otherDescription || 'Not applicable'} />
+
+{/* OCCUPANCY */}
+<input type="hidden" name="Occupancy Status" value={formData.occupancyStatus || 'Not provided'} />
+<input type="hidden" name="Length of Vacancy" value={formData.vacancyLength || 'Not applicable'} />
+<input type="hidden" name="Written Lease Status" value={formData.leaseStatus || 'Not applicable'} />
+<input type="hidden" name="Current Monthly Rent" value={formData.monthlyRent || 'Not applicable'} />
+<input type="hidden" name="Lease End Date" value={formData.leaseEnd || 'Not applicable'} />
+<input type="hidden" name="Tenant Current on Rent" value={formData.tenantCurrent || 'Not applicable'} />
+<input type="hidden" name="Property Delivery Status" value={formData.deliveryStatus || 'Not applicable'} />
+<input type="hidden" name="Vacant by Closing" value={formData.vacantByClosing || 'Not applicable'} />
+
+{/* SELLING TERMS */}
+<input type="hidden" name="Desired Selling Timeline" value={formData.timeline || 'Not provided'} />
+<input type="hidden" name="Price Seller Would Accept" value={formData.priceExpectation || 'Not provided'} />
+<input type="hidden" name="Mortgage or Lien Status" value={formData.mortgageStatus || 'Not provided'} />
+<input type="hidden" name="Estimated Mortgage or Lien Payoff" value={formData.mortgagePayoff || 'Not applicable'} />
+
+{/* RENOVATIONS */}
+<input type="hidden" name="Renovations Completed" value={formData.renovationsCompleted || 'Not provided'} />
+<input type="hidden" name="Types of Renovations" value={formData.renovationTypes.join(', ') || 'None selected'} />
+<input type="hidden" name="Renovation Description" value={formData.renovationDescription || 'Not applicable'} />
+<input type="hidden" name="When Renovations Were Completed" value={formData.renovationWhen || 'Not applicable'} />
+<input type="hidden" name="Licensed Contractor Used" value={formData.licensedContractor || 'Not provided'} />
+<input type="hidden" name="Renovation Documentation Available" value={formData.renovationDocuments || 'Not provided'} />
+
+{/* PROPERTY CONDITION */}
+<input type="hidden" name="Lived in Property Within Last 12 Months" value={formData.livedThereLast12Months || 'Not provided'} />
+<input type="hidden" name="Property Currently Livable" value={formData.livability || 'Not provided'} />
+<input type="hidden" name="Roof Condition" value={isSystemCoveredByUpdates('Roof') ? 'Listed as updated above' : (formData.roofCondition || 'Not provided')} />
+<input type="hidden" name="HVAC Condition" value={isSystemCoveredByUpdates('HVAC (Heating & Cooling)') ? 'Listed as updated above' : (formData.hvacCondition || 'Not provided')} />
+<input type="hidden" name="Electrical Condition" value={isSystemCoveredByUpdates('Electrical') ? 'Listed as updated above' : (formData.electricalCondition || 'Not provided')} />
+<input type="hidden" name="Plumbing Condition" value={isSystemCoveredByUpdates('Plumbing') ? 'Listed as updated above' : (formData.plumbingCondition || 'Not provided')} />
+<input type="hidden" name="Foundation Condition" value={isSystemCoveredByUpdates('Foundation') ? 'Listed as updated above' : (formData.foundationCondition || 'Not provided')} />
+<input type="hidden" name="Overall Property Condition" value={formData.overallCondition || 'Not provided'} />
+<input type="hidden" name="Condition Details" value={formData.conditionDetails || 'Not provided'} />
+
+{/* ANIMALS */}
+<input type="hidden" name="Pets or Animals" value={formData.animalStatus || 'Not provided'} />
+<input type="hidden" name="Animal Details" value={formData.animalDetails || 'Not applicable'} />
+
+{/* CONTACT PREFERENCES & NOTES */}
+<input type="hidden" name="Best Time to Call" value={formData.bestTimeToCall || 'Not provided'} />
+<input type="hidden" name="Preferred Contact Method" value={formData.preferredContact || 'Not provided'} />
+<input type="hidden" name="Additional Notes" value={formData.additionalNotes || 'Not provided'} />
               <input type="hidden" name="Vacant by Closing" value={formData.vacantByClosing || 'Not applicable'} />
               {submitStatus === 'success' ? (
                 <div style={{ padding: '30px 28px 44px', textAlign: 'center' }}>
