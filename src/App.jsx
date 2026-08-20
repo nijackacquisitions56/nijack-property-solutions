@@ -435,8 +435,8 @@ const App = () => {
               </div>
             )}
 
-            <input type="hidden" name="_subject" value="New Property Inquiry — Tekton Property Solutions" />
-
+            <form action="https://formspree.io/f/xwvjklgy" method="POST">
+<input type="hidden" name="_subject" value="New Property Inquiry — Tekton Property Solutions" />
 {/* CONTACT INFORMATION */}
 <input type="hidden" name="Full Name" value={formData.fullName} />
 <input type="hidden" name="Phone Number" value={formData.phone || 'Not provided'} />
@@ -509,7 +509,7 @@ const App = () => {
 <input type="hidden" name="Best Time to Call" value={formData.bestTimeToCall || 'Not provided'} />
 <input type="hidden" name="Preferred Contact Method" value={formData.preferredContact || 'Not provided'} />
 <input type="hidden" name="Additional Notes" value={formData.additionalNotes || 'Not provided'} />
-              <input type="hidden" name="Vacant by Closing" value={formData.vacantByClosing || 'Not applicable'} />
+              
               {submitStatus === 'success' ? (
                 <div style={{ padding: '30px 28px 44px', textAlign: 'center' }}>
                   <div style={{ width: 76, height: 76, borderRadius: '50%', background: '#C9A84C', color: '#0d0d0d', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 38, fontWeight: 900, margin: '0 auto 22px' }}>✓</div>
