@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <!-- Simplified: thicker letters and removed small ornaments for legibility at 16px -->
+  <circle cx="48" cy="48" r="40" fill="#0b67c2" />
+  <text x="50%" y="56%" font-family="Georgia, 'Times New Roman', Times, serif" font-size="44" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">P</text>
+</svg>

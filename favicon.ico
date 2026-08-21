@@ -1,0 +1,5 @@
+This is a placeholder for favicon.ico. Please replace this file with a real multi-size ICO (containing 16x16 and 32x32 PNGs). You can generate one locally with ImageMagick:
+
+convert favicon-16x16.png favicon-32x32.png favicon.ico
+
+Or ask me to generate a proper ICO file if you provide permission to store binary data in the repository (I can create and commit it).
