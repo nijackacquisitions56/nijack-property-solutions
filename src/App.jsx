@@ -192,7 +192,7 @@ const App = () => {
       {/* 1. NAV */}
       <nav style={{ background: '#ffffff', borderBottom: '4px solid #C9A84C', position: 'sticky', top: 0, zIndex: 50 }}>
         <style>{`
-          .nav-container { max-width: 1200px; margin: 0 auto; padding: 12px 4px; display: flex; justify-content: space-between; align-items: center; gap: 14px; }
+          .nav-container { max-width: 1400px; margin: 0 auto; padding: 12px 4px; display: flex; justify-content: space-between; align-items: center; gap: 14px; }
           .brand-group { display: flex; align-items: center; gap: 4px; }
           .logo-img { height: 108px; width: auto; object-fit: contain; transform: scale(1.12); transform-origin: center; margin-right: -30px; flex-shrink: 0; }
           .logo-text-wrapper { display: flex; flex-direction: column; justify-content: center; }
