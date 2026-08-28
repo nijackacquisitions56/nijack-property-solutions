@@ -231,7 +231,7 @@ const App = () => {
             .brand-group { gap: 3px; }
             .logo-img { height: 84px; transform: scale(1.08); margin-right: -28px; }
             .line-tekton { font-size: 22px; line-height: 0.95; }
-            .line-solutions { font-size: 10px; letter-spacing: 0.9px; margin: 1px 0; line-height: 1.0; }
+            .line-solutions { font-size: 10px; letter-spacing: 0.3px; margin: 1px 0; line-height: 1.0; white-space: nowrap; }
             .line-relief { font-size: 9px; letter-spacing: 1px; line-height: 1.0; }
             .cta-btn { padding: 10px 16px; font-size: 12px; letter-spacing: 0.5px; }
             .cta-btn-full { display: none; }
