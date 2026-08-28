@@ -229,7 +229,7 @@ const App = () => {
             .quick-benefits { margin-top: 18px !important; }
             .nav-container { padding: 6px 4px; gap: 4px; }
             .brand-group { gap: 3px; }
-            .logo-img { height: 84px; transform: scale(1.08); margin-right: -20px; }
+            .logo-img { height: 84px; transform: scale(1.08); margin-right: -28px; }
             .line-tekton { font-size: 22px; line-height: 0.95; }
             .line-solutions { font-size: 10px; letter-spacing: 0.9px; margin: 1px 0; line-height: 1.0; }
             .line-relief { font-size: 9px; letter-spacing: 1px; line-height: 1.0; }
