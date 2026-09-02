@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -13,8 +12,12 @@ const App = () => {
     fullName: '', phone: '', email: '', propertyAddress: '',
     situation: [], additionalNotes: '', timeline: '', priceExpectation: '',
     smsConsentTransactional: false,
-    roofCondition: '', hvacCondition: '', electricalCondition: '',
-    plumbingCondition: '', foundationCondition: '', overallCondition: '',
+    roofCondition: '', roofConditionDetails: '',
+    hvacCondition: '', hvacConditionDetails: '',
+    electricalCondition: '', electricalConditionDetails: '',
+    plumbingCondition: '', plumbingConditionDetails: '',
+    foundationCondition: '', foundationConditionDetails: '',
+    overallCondition: '', overallConditionDetails: '',
     livedThereLast12Months: '', livability: '', conditionDetails: '',
     animalStatus: '', animalDetails: '',
     bestTimeToCall: '', preferredContact: '', otherDescription: '',
@@ -25,7 +28,7 @@ const App = () => {
     renovationsCompleted: '', renovationTypes: [], renovationDescription: '', renovationWhen: '',
     licensedContractor: '', renovationDocuments: '',
     occupancyStatus: '', vacancyLength: '', leaseStatus: '', monthlyRent: '',
-    leaseEnd: '', tenantCurrent: '', deliveryStatus: '', vacantByClosing: ''
+    leaseEnd: '', tenantCurrent: '', deliveryStatus: '', vacantByClosing: '', vacantByClosingDetails: ''
   });
 
   const faqs = [
@@ -171,12 +174,12 @@ const App = () => {
   };
 
   const repairOptions = [
-    { key: 'roofCondition', renovationType: 'Roof', label: 'Roof Condition', required: true, options: ['Not sure','No known issues','Older but no leaks','Has leaks','Needs repair','Needs full replacement'] },
-    { key: 'hvacCondition', renovationType: 'HVAC (Heating & Cooling)', label: 'Heating / Cooling System', required: true, options: ['Not sure','Working properly','Older but working','Needs repair','Not working','No central HVAC'] },
-    { key: 'electricalCondition', renovationType: 'Electrical', label: 'Electrical System', required: true, options: ['Not sure','Updated / no known issues','Older but working','Fuse box or outdated panel','Known electrical issues','Needs major electrical work'] },
-    { key: 'plumbingCondition', renovationType: 'Plumbing', label: 'Plumbing Condition', required: true, options: ['Not sure','No known issues','Older but working','Leaks or slow drains','Known plumbing issues','Needs major plumbing work'] },
-    { key: 'foundationCondition', renovationType: 'Foundation', label: 'Foundation / Structural Concerns', required: true, options: ['Not sure','No known issues','Minor cracks / settling','Water in basement or crawlspace','Major cracks or movement','Needs foundation repair'] },
-    { key: 'overallCondition', label: 'Which Best Describes the Property Today?', required: true, options: ['Not sure','Fully updated / move-in ready','Livable with some updates','Livable but mostly original (grandma house)','Mostly original condition','Needs significant repairs but is livable','Fire or major water damage','Vacant or boarded'] },
+    { key: 'roofCondition', renovationType: 'Roof', label: 'Roof Condition', required: true, options: ['Not sure','No known issues','Older but no leaks','Has leaks','Needs repair','Needs full replacement','Other / Explain'] },
+    { key: 'hvacCondition', renovationType: 'HVAC (Heating & Cooling)', label: 'Heating / Cooling System', required: true, options: ['Not sure','Working properly','Older but working','Needs repair','Not working','No central HVAC','Other / Explain'] },
+    { key: 'electricalCondition', renovationType: 'Electrical', label: 'Electrical System', required: true, options: ['Not sure','Updated / no known issues','Older but working','Fuse box or outdated panel','Known electrical issues','Needs major electrical work','Other / Explain'] },
+    { key: 'plumbingCondition', renovationType: 'Plumbing', label: 'Plumbing Condition', required: true, options: ['Not sure','No known issues','Older but working','Leaks or slow drains','Known plumbing issues','Needs major plumbing work','Other / Explain'] },
+    { key: 'foundationCondition', renovationType: 'Foundation', label: 'Foundation / Structural Concerns', required: true, options: ['Not sure','No known issues','Minor cracks / settling','Water in basement or crawlspace','Major cracks or movement','Needs foundation repair','Other / Explain'] },
+    { key: 'overallCondition', label: 'Which Best Describes the Property Today?', required: true, options: ['Not sure','Fully updated / move-in ready','Livable with some updates','Livable but mostly original (grandma house)','Mostly original condition','Needs significant repairs but is livable','Fire or major water damage','Vacant or boarded','Other / Explain'] },
   ];
 
   const visibleRepairOptions = repairOptions.filter((repair) =>
@@ -475,6 +478,7 @@ const App = () => {
 <input type="hidden" name="Tenant Current on Rent" value={formData.tenantCurrent || 'Not applicable'} />
 <input type="hidden" name="Property Delivery Status" value={formData.deliveryStatus || 'Not applicable'} />
 <input type="hidden" name="Vacant by Closing" value={formData.vacantByClosing || 'Not applicable'} />
+<input type="hidden" name="Vacant by Closing Details" value={formData.vacantByClosingDetails || 'Not applicable'} />
 
 {/* SELLING TERMS */}
 <input type="hidden" name="Desired Selling Timeline" value={formData.timeline || 'Not provided'} />
@@ -498,7 +502,13 @@ const App = () => {
 <input type="hidden" name="Electrical Condition" value={isSystemCoveredByUpdates('Electrical') ? 'Listed as updated above' : (formData.electricalCondition || 'Not provided')} />
 <input type="hidden" name="Plumbing Condition" value={isSystemCoveredByUpdates('Plumbing') ? 'Listed as updated above' : (formData.plumbingCondition || 'Not provided')} />
 <input type="hidden" name="Foundation Condition" value={isSystemCoveredByUpdates('Foundation') ? 'Listed as updated above' : (formData.foundationCondition || 'Not provided')} />
+<input type="hidden" name="Roof Condition Details" value={formData.roofConditionDetails || 'Not applicable'} />
+<input type="hidden" name="HVAC Condition Details" value={formData.hvacConditionDetails || 'Not applicable'} />
+<input type="hidden" name="Electrical Condition Details" value={formData.electricalConditionDetails || 'Not applicable'} />
+<input type="hidden" name="Plumbing Condition Details" value={formData.plumbingConditionDetails || 'Not applicable'} />
+<input type="hidden" name="Foundation Condition Details" value={formData.foundationConditionDetails || 'Not applicable'} />
 <input type="hidden" name="Overall Property Condition" value={formData.overallCondition || 'Not provided'} />
+<input type="hidden" name="Overall Property Condition Details" value={formData.overallConditionDetails || 'Not applicable'} />
 <input type="hidden" name="Condition Details" value={formData.conditionDetails || 'Not provided'} />
 
 {/* ANIMALS */}
@@ -802,7 +812,8 @@ const App = () => {
                                 leaseEnd: opt === 'Tenant Occupied' && !isSelected ? formData.leaseEnd : '',
                                 tenantCurrent: opt === 'Tenant Occupied' && !isSelected ? formData.tenantCurrent : '',
                                 deliveryStatus: opt === 'Tenant Occupied' && !isSelected ? formData.deliveryStatus : '',
-                                vacantByClosing: ['Owner Occupied', 'Occupied by Family / Other', 'Partially Occupied'].includes(opt) && !isSelected ? formData.vacantByClosing : ''
+                                vacantByClosing: ['Owner Occupied', 'Occupied by Family / Other', 'Partially Occupied'].includes(opt) && !isSelected ? formData.vacantByClosing : '',
+                                vacantByClosingDetails: ['Owner Occupied', 'Occupied by Family / Other', 'Partially Occupied'].includes(opt) && !isSelected ? formData.vacantByClosingDetails : ''
                               })}
                               style={{
                                 padding: '12px 10px',
@@ -906,10 +917,36 @@ const App = () => {
                         <div id="field-vacant-by-closing" style={{ marginTop: 16, scrollMarginTop: 110 }}>
                           <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>Would the property be vacant by closing?</label>
                           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: 10 }}>
-                            {['Yes', 'No', 'Not Sure', 'Depends on Closing Date'].map((opt) => (
-                              <button key={opt} type="button" onClick={() => setFormData({ ...formData, vacantByClosing: formData.vacantByClosing === opt ? '' : opt })} style={{ padding: '10px 8px', borderRadius: 8, border: formData.vacantByClosing === opt ? '2px solid #8B0000' : '2px solid #d0c8b8', background: formData.vacantByClosing === opt ? '#8B0000' : '#fff', color: formData.vacantByClosing === opt ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase' }}>{opt}</button>
+                            {['Yes', 'No', 'Not Sure', 'Depends on Closing Date', 'Other / Explain'].map((opt) => (
+                              <button
+                                key={opt}
+                                type="button"
+                                onClick={() => {
+                                  const isSelected = formData.vacantByClosing === opt;
+                                  setFormData({
+                                    ...formData,
+                                    vacantByClosing: isSelected ? '' : opt,
+                                    vacantByClosingDetails: (!isSelected && opt === 'Other / Explain') ? formData.vacantByClosingDetails : ''
+                                  });
+                                }}
+                                style={{ padding: '10px 8px', borderRadius: 8, border: formData.vacantByClosing === opt ? '2px solid #8B0000' : '2px solid #d0c8b8', background: formData.vacantByClosing === opt ? '#8B0000' : '#fff', color: formData.vacantByClosing === opt ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase' }}
+                              >
+                                {opt}
+                              </button>
                             ))}
                           </div>
+                          {formData.vacantByClosing === 'Other / Explain' && (
+                            <div style={{ marginTop: 12 }}>
+                              <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5 }}>Please explain the move-out / occupancy situation.</label>
+                              <textarea
+                                rows={3}
+                                placeholder="Example: Seller needs time after an agreed closing date to coordinate new housing and move belongings."
+                                value={formData.vacantByClosingDetails}
+                                onChange={(e) => setFormData({ ...formData, vacantByClosingDetails: e.target.value })}
+                                style={{ width: '100%', background: '#fff', border: '1px solid #ccc', borderBottom: '2px solid #8B0000', borderRadius: 8, padding: '14px', fontSize: 13, fontFamily: 'inherit', lineHeight: 1.5, boxSizing: 'border-box' }}
+                              />
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>
@@ -1127,12 +1164,36 @@ const App = () => {
                           <div key={r.key} id={`field-${r.key}`} style={{ scrollMarginTop: 110 }}>
                             <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 13, textTransform: 'uppercase', letterSpacing: 0.5 }}>{r.label}{r.required && <span style={{ color: '#8B0000', marginLeft: 4 }}>*</span>}</label>
                             <div style={{ position: 'relative' }}>
-                              <select value={formData[r.key]} onChange={(e) => setFormData({ ...formData, [r.key]: e.target.value })} style={selectStyle}>
+                              <select
+                                value={formData[r.key]}
+                                onChange={(e) => {
+                                  const value = e.target.value;
+                                  const detailKey = `${r.key}Details`;
+                                  setFormData({
+                                    ...formData,
+                                    [r.key]: value,
+                                    [detailKey]: value === 'Other / Explain' ? formData[detailKey] : ''
+                                  });
+                                }}
+                                style={selectStyle}
+                              >
                                 <option value="">Select one...</option>
                                 {r.options.map(o => <option key={o} value={o}>{o}</option>)}
                               </select>
                               <div style={{ position: 'absolute', right: 15, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', fontSize: 20, fontWeight: 900 }}>▼</div>
                             </div>
+                            {formData[r.key] === 'Other / Explain' && (
+                              <div style={{ marginTop: 10 }}>
+                                <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 6, fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5 }}>Please explain.</label>
+                                <textarea
+                                  rows={3}
+                                  placeholder={`Describe the ${r.label.toLowerCase()} in your own words.`}
+                                  value={formData[`${r.key}Details`] || ''}
+                                  onChange={(e) => setFormData({ ...formData, [`${r.key}Details`]: e.target.value })}
+                                  style={{ width: '100%', background: '#fff', border: '1px solid #ccc', borderBottom: '2px solid #8B0000', borderRadius: 8, padding: '14px', fontSize: 13, fontFamily: 'inherit', lineHeight: 1.5, boxSizing: 'border-box' }}
+                                />
+                              </div>
+                            )}
                           </div>
                         ))}
                       </div>
@@ -1326,6 +1387,13 @@ const App = () => {
                           showStep2ValidationError('Please let us know whether the property would be vacant by closing.', 'field-vacant-by-closing');
                           return;
                         }
+                        if (
+                          formData.vacantByClosing === 'Other / Explain' &&
+                          !formData.vacantByClosingDetails.trim()
+                        ) {
+                          showStep2ValidationError('Please briefly explain the move-out or occupancy situation.', 'field-vacant-by-closing');
+                          return;
+                        }
                         // Validate in the same top-to-bottom order the questions appear on the page.
                         if (!formData.timeline) {
                           showStep2ValidationError('Please select your ideal selling timeline before submitting.', 'field-timeline');
@@ -1368,6 +1436,21 @@ const App = () => {
                         if (!formData.overallCondition) {
                           showStep2ValidationError('Please select the Overall Property Condition before submitting.', 'field-overallCondition');
                           return;
+                        }
+
+                        const conditionOtherFields = [
+                          ['roofCondition', 'Roof Condition'],
+                          ['hvacCondition', 'Heating / Cooling System'],
+                          ['electricalCondition', 'Electrical System'],
+                          ['plumbingCondition', 'Plumbing Condition'],
+                          ['foundationCondition', 'Foundation / Structural condition'],
+                          ['overallCondition', 'Overall Property Condition']
+                        ];
+                        for (const [key, label] of conditionOtherFields) {
+                          if (formData[key] === 'Other / Explain' && !formData[`${key}Details`].trim()) {
+                            showStep2ValidationError(`Please briefly explain the ${label} selection.`, `field-${key}`);
+                            return;
+                          }
                         }
 
                         const conditionDetailsRequired = [
