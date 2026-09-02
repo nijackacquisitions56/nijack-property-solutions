@@ -22,7 +22,7 @@ const App = () => {
     animalStatus: '', animalDetails: '',
     bestTimeToCall: '', preferredContact: '', otherDescription: '',
     mortgageStatus: '', mortgagePayoff: '',
-    deedOwner: '', deedOwnerNames: '', deedOwnerRelationship: '', bedrooms: '', bathrooms: '', squareFootage: '', lotSize: '',
+    deedOwner: '', deedOwnerNames: '', deedOwnerRelationship: '', includeAdditionalPerson: '', additionalPersonName: '', additionalPersonRelationship: '', additionalPersonRelationshipOther: '', additionalPersonPhone: '', additionalPersonEmail: '', additionalPersonDeedOwner: '', additionalPersonNotes: '', bedrooms: '', bathrooms: '', squareFootage: '', lotSize: '',
     storyCount: '', propertyStyle: '', propertyStyleOther: '', exteriorMaterial: '', exteriorMaterialDetails: '',
     garageType: '', garageCondition: '',
     renovationsCompleted: '', renovationTypes: [], renovationDescription: '', renovationWhen: '',
@@ -450,6 +450,13 @@ const App = () => {
 <input type="hidden" name="Current Deed Owner or Titleholder" value={formData.deedOwner || 'Not provided'} />
 <input type="hidden" name="Name(s) on Deed" value={formData.deedOwnerNames || 'Not applicable'} />
 <input type="hidden" name="Relationship to Property" value={formData.deedOwnerRelationship || 'Not applicable'} />
+<input type="hidden" name="Additional Person Included" value={formData.includeAdditionalPerson || 'No'} />
+<input type="hidden" name="Additional Person Name" value={formData.additionalPersonName || 'Not applicable'} />
+<input type="hidden" name="Additional Person Relationship" value={formData.additionalPersonRelationship === 'Other' ? (formData.additionalPersonRelationshipOther || 'Other') : (formData.additionalPersonRelationship || 'Not applicable')} />
+<input type="hidden" name="Additional Person Phone" value={formData.additionalPersonPhone || 'Not applicable'} />
+<input type="hidden" name="Additional Person Email" value={formData.additionalPersonEmail || 'Not applicable'} />
+<input type="hidden" name="Additional Person Also on Deed" value={formData.additionalPersonDeedOwner || 'Not applicable'} />
+<input type="hidden" name="Additional Person Role or Notes" value={formData.additionalPersonNotes || 'Not applicable'} />
 
 {/* PROPERTY BASICS */}
 <input type="hidden" name="Bedrooms" value={formData.bedrooms || 'Not provided'} />
@@ -572,6 +579,62 @@ const App = () => {
                       {(formData.deedOwner === 'No' || formData.deedOwner === 'Not Sure') && (
                         <div style={{ marginTop: 12 }}>
                           <input type="text" placeholder="WHAT IS YOUR RELATIONSHIP TO THE PROPERTY? (E.G. HEIR, FAMILY MEMBER, POA)" value={formData.deedOwnerRelationship} onChange={(e) => setFormData({ ...formData, deedOwnerRelationship: e.target.value })} style={{ width: '100%', background: '#f5f5f3', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700, boxSizing: 'border-box' }} />
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Optional Additional Person */}
+                    <div style={{ background: '#f8f6f2', border: '1px solid #e0d8c8', borderRadius: 12, padding: '18px 20px' }}>
+                      <label style={{ display: 'block', fontWeight: 900, color: '#1a1a1a', marginBottom: 10, textTransform: 'uppercase', fontSize: 12, letterSpacing: 0.5, fontStyle: 'italic' }}>
+                        Is there anyone else you would like us to include in conversations about the property? <span style={{ color: '#777', fontWeight: 700 }}>(Optional)</span>
+                      </label>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(120px, 1fr))', gap: 10 }}>
+                        {['Yes', 'No'].map((opt) => {
+                          const isSelected = formData.includeAdditionalPerson === opt;
+                          return (
+                            <button key={opt} type="button" onClick={() => setFormData({
+                              ...formData,
+                              includeAdditionalPerson: isSelected ? '' : opt,
+                              additionalPersonName: (!isSelected && opt === 'Yes') ? formData.additionalPersonName : '',
+                              additionalPersonRelationship: (!isSelected && opt === 'Yes') ? formData.additionalPersonRelationship : '',
+                              additionalPersonRelationshipOther: (!isSelected && opt === 'Yes') ? formData.additionalPersonRelationshipOther : '',
+                              additionalPersonPhone: (!isSelected && opt === 'Yes') ? formData.additionalPersonPhone : '',
+                              additionalPersonEmail: (!isSelected && opt === 'Yes') ? formData.additionalPersonEmail : '',
+                              additionalPersonDeedOwner: (!isSelected && opt === 'Yes') ? formData.additionalPersonDeedOwner : '',
+                              additionalPersonNotes: (!isSelected && opt === 'Yes') ? formData.additionalPersonNotes : ''
+                            })} style={{ padding: '12px 10px', borderRadius: 8, border: isSelected ? '2px solid #8B0000' : '1px solid #ccc', background: isSelected ? '#8B0000' : '#fff', color: isSelected ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5 }}>
+                              {opt}
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      {formData.includeAdditionalPerson === 'Yes' && (
+                        <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                          <p style={{ fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 12, letterSpacing: 1, margin: 0 }}>Additional Person to Include</p>
+                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12 }}>
+                            <input type="text" placeholder="NAME" value={formData.additionalPersonName} onChange={(e) => setFormData({ ...formData, additionalPersonName: e.target.value })} style={{ background: '#fff', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700 }} />
+                            <select value={formData.additionalPersonRelationship} onChange={(e) => setFormData({ ...formData, additionalPersonRelationship: e.target.value, additionalPersonRelationshipOther: e.target.value === 'Other' ? formData.additionalPersonRelationshipOther : '' })} style={selectStyle}>
+                              <option value="">Relationship...</option>
+                              {['Spouse','Daughter','Son','Family Member','Attorney','POA','Other'].map(o => <option key={o} value={o}>{o}</option>)}
+                            </select>
+                          </div>
+                          {formData.additionalPersonRelationship === 'Other' && (
+                            <input type="text" placeholder="PLEASE DESCRIBE RELATIONSHIP" value={formData.additionalPersonRelationshipOther} onChange={(e) => setFormData({ ...formData, additionalPersonRelationshipOther: e.target.value })} style={{ width: '100%', background: '#fff', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700, boxSizing: 'border-box' }} />
+                          )}
+                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12 }}>
+                            <input type="tel" placeholder="PHONE (OPTIONAL)" value={formData.additionalPersonPhone} onChange={(e) => setFormData({ ...formData, additionalPersonPhone: e.target.value })} style={{ background: '#fff', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700 }} />
+                            <input type="email" placeholder="EMAIL (OPTIONAL)" value={formData.additionalPersonEmail} onChange={(e) => setFormData({ ...formData, additionalPersonEmail: e.target.value })} style={{ background: '#fff', border: 'none', borderBottom: '2px solid #8B0000', padding: '14px', fontSize: 14, fontWeight: 700 }} />
+                          </div>
+                          <div>
+                            <label style={{ display: 'block', fontWeight: 800, color: '#1a1a1a', marginBottom: 8, fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.5 }}>Is this person also a deed owner / titleholder?</label>
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(100px, 1fr))', gap: 10 }}>
+                              {['Yes', 'No', 'Not Sure'].map((opt) => (
+                                <button key={opt} type="button" onClick={() => setFormData({ ...formData, additionalPersonDeedOwner: formData.additionalPersonDeedOwner === opt ? '' : opt })} style={{ padding: '10px 8px', borderRadius: 8, border: formData.additionalPersonDeedOwner === opt ? '2px solid #8B0000' : '1px solid #ccc', background: formData.additionalPersonDeedOwner === opt ? '#8B0000' : '#fff', color: formData.additionalPersonDeedOwner === opt ? '#fff' : '#555', fontWeight: 800, cursor: 'pointer', fontSize: 11, textTransform: 'uppercase' }}>{opt}</button>
+                              ))}
+                            </div>
+                          </div>
+                          <textarea rows={3} placeholder="ROLE / ANYTHING WE SHOULD KNOW? (OPTIONAL)" value={formData.additionalPersonNotes} onChange={(e) => setFormData({ ...formData, additionalPersonNotes: e.target.value })} style={{ width: '100%', background: '#fff', border: '1px solid #ccc', borderBottom: '2px solid #8B0000', borderRadius: 8, padding: '14px', fontSize: 13, fontFamily: 'inherit', lineHeight: 1.5, boxSizing: 'border-box' }} />
                         </div>
                       )}
                     </div>
@@ -735,6 +798,25 @@ const App = () => {
                         setErrors({ step1: 'Please let us know if you are the current deed owner before continuing.' });
                         return;
                       }
+                      if (formData.includeAdditionalPerson === 'Yes') {
+                        if (!formData.additionalPersonName.trim() || !formData.additionalPersonRelationship || !formData.additionalPersonDeedOwner) {
+                          setErrors({ step1: 'Please enter the additional person’s name, relationship, and whether they are also a deed owner / titleholder.' });
+                          return;
+                        }
+                        if (formData.additionalPersonRelationship === 'Other' && !formData.additionalPersonRelationshipOther.trim()) {
+                          setErrors({ step1: 'Please briefly describe the additional person’s relationship.' });
+                          return;
+                        }
+                        if (formData.additionalPersonPhone && !isValidPhone(formData.additionalPersonPhone)) {
+                          setErrors({ step1: 'Please enter a valid phone number for the additional person, or leave it blank.' });
+                          return;
+                        }
+                        if (formData.additionalPersonEmail && !isValidEmail(formData.additionalPersonEmail)) {
+                          setErrors({ step1: 'Please enter a valid email address for the additional person, or leave it blank.' });
+                          return;
+                        }
+                      }
+
                       if (!formData.bedrooms || !formData.bathrooms || !formData.squareFootage || !formData.lotSize) {
                         setErrors({ step1: 'Please fill out bedrooms, bathrooms, square footage, and lot size before continuing.' });
                         return;
