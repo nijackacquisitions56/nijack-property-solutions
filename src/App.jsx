@@ -438,7 +438,7 @@ const App = () => {
               </div>
             )}
 
-            <form action="https://formspree.io/f/xwvjklgy" method="POST">
+            <form action="https://formspree.io/f/xeaqzler" method="POST">
 <input type="hidden" name="_subject" value="New Property Inquiry — Tekton Property Solutions" />
 {/* CONTACT INFORMATION */}
 <input type="hidden" name="Full Name" value={formData.fullName} />
