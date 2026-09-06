@@ -37,9 +37,9 @@ const App = () => {
     { q: 'DO I NEED TO CLEAN OUT THE PROPERTY?', a: 'In many situations, no. We understand some properties are overwhelming, and we work to keep the process as simple as possible.' },
     { q: 'WHAT IF I STILL OWE MONEY ON THE PROPERTY?', a: 'That does not automatically stop the process. We can review the situation and discuss possible next steps based on the property and payoff amount.' },
     { q: 'HOW FAST CAN THE PROCESS MOVE?', a: 'Some situations can move quickly depending on title, property details, and seller timeline. The sooner we receive your information, the sooner we can review it.' },
-    { q: 'ARE THERE COMMISSIONS?', a: 'No. Because Tekton is not acting as your real estate agent, there are no agent commissions or Tekton service fees. Any normal closing-related charges, lien payoffs, taxes, or prorations are handled through the appropriate local title company, closing professional, or real estate attorney' },
+    { q: 'ARE THERE COMMISSIONS?', a: 'No. Because Tekton is not acting as your real estate agent, there are no agent commissions or Tekton service fees. Any normal closing-related charges, lien payoffs, taxes, or prorations are handled through the appropriate local title company, closing professional, or real estate attorney and reviewed as part of the transaction.' },
     { q: 'WHEN IS PROOF OF FUNDS PROVIDED?', a: 'Proof of funds is provided within 72 hours after the purchase agreement becomes effective. It may be supplied by Tekton Property Solutions LLC, a purchasing partner, or an assignee involved in the transaction. If valid proof of funds is not provided within that period, the seller may terminate the agreement according to its terms.' },
-    { q: 'IS THIS A LEGITIMATE PROCESS?', a: 'Tekton operates as a real estate wholesaler, not as a licensed real estate agent or broker. Depending on the property and circumstances, we may purchase the property ourselves or assign our contractual interest to another buyer for a profit. Every closing is handled through a licensed Ohio title company, which verifies ownership, coordinates the paperwork, and processes closing funds. Before any wholesale purchase agreement becomes binding, the property owner will receive the separate written Ohio Wholesaler Disclosure Statement required by law.' },
+    { q: 'IS THIS A LEGITIMATE PROCESS?', a: 'Tekton Property Solutions LLC reviews properties nationwide and may work with purchasing partners depending on the property and circumstances. Tekton is not acting as your licensed real estate agent or broker. If we move forward with your property, the transaction is handled through an appropriate licensed local title company, closing professional, or real estate attorney for the property's location.' },
   ];
 
   const situations = ['Probate','Inherited','Divorce','Foreclosure','Tax Delinquent','Code Violations','Fire / Water Damage','Needs Repairs','Tired Landlord','Problem Tenant','Expired Listing','Relocating','Health / Medical','Financial Hardship','Trust','Considering My Options','Other'];
@@ -308,7 +308,7 @@ const App = () => {
   }}
 >
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px' }}>
-          {[{ icon: '🏛', label: 'Licensed Ohio Title Company' },{ icon: '✦', label: 'No Agent Commissions or Tekton Service Fees' },{ icon: '📅', label: 'Flexible Closing Timeline' },{ icon: '🏠', label: 'As-Is — No Repairs' }].map((t, i) => (
+          {[{ icon: '🏛', label: 'Licensed Local Title & Closing Professionals' },{ icon: '✦', label: 'No Agent Commissions or Tekton Service Fees' },{ icon: '📅', label: 'Flexible Closing Timeline' },{ icon: '🏠', label: 'As-Is — No Repairs' }].map((t, i) => (
             <div key={i} style={{ padding: '15px 24px', textAlign: 'center', flex: '1 1 200px', minWidth: '160px' }}>
               <div style={{ color: '#C9A84C', fontSize: 24, marginBottom: 8 }}>{t.icon}</div>
               <div style={{ color: '#fff', fontSize: 12, fontWeight: 700, letterSpacing: 1.5, textTransform: 'uppercase', lineHeight: 1.4 }}>{t.label}</div>
@@ -373,7 +373,7 @@ const App = () => {
                 'Clear communication',
                 'As-is property purchases',
                 'Flexible closing timelines',
-                'Licensed Ohio title company closings',
+                'Closings handled through qualified local closing professionals',
                 'Transparent wholesaler disclosures',
                 'Respect for your decision',
                 'If we are not the right solution, we will tell you'
@@ -388,8 +388,8 @@ const App = () => {
 
           <div className="closing-box" style={{ background: '#0d0d0d', border: '2px solid #C9A84C', borderRadius: 20, padding: '26px 24px', maxWidth: 760, margin: '28px auto 0', textAlign: 'center' }}>
             <p style={{ fontSize: 12, fontWeight: 900, color: '#C9A84C', textTransform: 'uppercase', letterSpacing: 2, margin: '0 0 8px' }}>Secure Closing Process</p>
-            <p style={{ color: '#fff', fontSize: 15, fontWeight: 600, margin: '0 0 10px', lineHeight: 1.65 }}>Every closing is handled through a licensed Ohio title company, helping protect all parties throughout the transaction.</p>
-            <p style={{ fontSize: 18, fontWeight: 900, color: '#C9A84C', margin: 0, letterSpacing: 0.5 }}>Your sale proceeds are handled through the licensed Ohio title company—not directly by Tekton.</p>
+            <p style={{ color: '#fff', fontSize: 15, fontWeight: 600, margin: '0 0 10px', lineHeight: 1.65 }}>We work with licensed local title companies, closing professionals, and real estate attorneys nationwide. If we move forward with your property, your transaction will be handled through the appropriate closing professional for your property's location.</p>
+            <p style={{ fontSize: 18, fontWeight: 900, color: '#C9A84C', margin: 0, letterSpacing: 0.5 }}>Your sale proceeds are handled through the appropriate local title company, closing professional, or real estate attorney—not directly by Tekton.</p>
           </div>
 
           <div style={{ textAlign: 'center', marginTop: 32 }}>
@@ -1417,12 +1417,10 @@ const App = () => {
                           textAlign: 'center'
                         }}
                       >
-                        In compliance with Ohio law, Tekton Property Solutions LLC discloses that we operate as real estate
-                        wholesalers—not as licensed real estate agents or brokers—and act on our own behalf in these transactions.
-                        Depending on the property and circumstances, we may purchase the property ourselves or assign our contractual
-                        interest to another buyer for a profit. Before any purchase agreement becomes binding, the property owner will
-                        receive a separate written Ohio Wholesaler Disclosure Statement for review and signature. There is no obligation
-                        to accept an offer or sell your property.
+                        Tekton Property Solutions LLC reviews properties nationwide and may work with purchasing partners depending on the
+                        property and circumstances. Tekton is not acting as your licensed real estate agent or broker. If we move forward with
+                        your property, any required disclosures and transaction documents will be provided as applicable based on the property
+                        location and transaction. There is no obligation to accept an offer or sell your property.
                       </p>
                     </div>
 
@@ -1620,7 +1618,7 @@ const App = () => {
           <p style={{ color: '#C9A84C', fontWeight: 700, letterSpacing: 4, fontSize: 12, textTransform: 'uppercase', marginBottom: 12, fontStyle: 'italic' }}>Our Simple Process</p>
           <h2 style={{ color: '#fff', fontWeight: 900, textTransform: 'uppercase', fontSize: 'clamp(28px,5vw,52px)', marginBottom: 48, letterSpacing: -1 }}>How It Works</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px,1fr))', gap: 24 }}>
-            {[{n:'1',t:'SHARE INFO',d:'Tell us about the property and your situation through the form above.'},{n:'2',t:'REVIEW OPTIONS',d:'We review the details, property condition, and your timeline to see if a solution makes sense.'},{n:'3',t:'CLOSE SAFELY',d:'If the numbers work, we move forward through a licensed Ohio title company for a smooth closing process.'}].map(s => (
+            {[{n:'1',t:'SHARE INFO',d:'Tell us about the property and your situation through the form above.'},{n:'2',t:'REVIEW OPTIONS',d:'We review the details, property condition, and your timeline to see if a solution makes sense.'},{n:'3',t:'CLOSE SAFELY',d:'If the property fits our buying criteria and the numbers work, we discuss the next steps with you and coordinate the appropriate closing process.'}].map(s => (
               <div key={s.n} style={{ background: '#1a1a1a', borderRadius: 24, padding: '36px 24px', border: '1px solid rgba(201,168,76,0.3)', borderBottom: '6px solid #C9A84C' }}>
                 <div style={{ width: 64, height: 64, borderRadius: '50%', background: '#C9A84C', color: '#0d0d0d', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 28, margin: '0 auto 20px' }}>{s.n}</div>
                 <h3 style={{ color: '#fff', fontWeight: 900, textTransform: 'uppercase', fontSize: 18, letterSpacing: 2, marginBottom: 12 }}>{s.t}</h3>
@@ -1697,9 +1695,9 @@ const App = () => {
           <div style={{ background: '#f8f6f2', borderRadius: 32, padding: '48px 40px', border: '2px solid #e8e0d0' }}>
             <h2 style={{ color: '#0d0d0d', fontWeight: 900, textTransform: 'uppercase', textAlign: 'center', fontSize: 'clamp(22px,4vw,36px)', marginBottom: 32 }}>Your Trust Is Our Priority</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16, fontSize: 15, lineHeight: 1.8, color: '#444', fontWeight: 600 }}>
-              <p style={{ margin: 0 }}>Tekton Property Solutions LLC values your privacy. In compliance with Ohio law, Tekton Property Solutions LLC discloses that we operate as real estate wholesalers—not as licensed real estate agents or brokers—and act on our own behalf in these transactions.</p>
+              <p style={{ margin: 0 }}>Tekton Property Solutions LLC values your privacy. Tekton reviews properties nationwide and may work with purchasing partners depending on the property and circumstances. Tekton is not acting as your licensed real estate agent or broker.</p>
               <p style={{ margin: 0 }}>We may enter into purchase agreements at below-market value and assign them to third-party buyers for a profit.</p>
-              <div style={{ background: '#fff', padding: '20px 24px', borderRadius: 12, borderLeft: '6px solid #C9A84C', fontSize: 14, fontStyle: 'italic' }}>Before any purchase agreement becomes binding, the property owner will receive a separate written Ohio Wholesaler Disclosure Statement for review and signature. You have the right to seek legal or professional advice before signing.</div>
+              <div style={{ background: '#fff', padding: '20px 24px', borderRadius: 12, borderLeft: '6px solid #C9A84C', fontSize: 14, fontStyle: 'italic' }}>Any required disclosures or transaction documents will be provided as applicable based on the property location and transaction. You have the right to seek legal or professional advice before signing any agreement.</div>
               <p style={{ margin: 0 }}>Your information is collected solely to review your property and discuss possible options. We do not sell your personal information to third parties.</p>
               <div style={{ background: '#fff', border: '1px solid #e0d8c8', borderRadius: 12, padding: '20px 24px', marginTop: 8 }}>
                 <p style={{ margin: '0 0 10px', fontWeight: 900, color: '#0d0d0d', textTransform: 'uppercase', fontSize: 13, letterSpacing: 1 }}>SMS &amp; Text Message Policy</p>
@@ -1840,7 +1838,7 @@ const App = () => {
     marginBottom: 6
   }}
 >
-  Ohio
+  Nationwide
 </p>
           <p style={{ color: '#888', fontSize: 13, marginBottom: 6 }}>6545 Market Ave N, Ste 100, Canton, OH 44721</p>
           <p style={{ color: '#888', fontSize: 13, marginBottom: 20, overflowWrap: 'break-word', wordBreak: 'break-word' }}><a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', textDecoration: 'underline', fontWeight: 700, display: 'inline' }}>nicole@tektonpropertysolutions.com</a></p>
