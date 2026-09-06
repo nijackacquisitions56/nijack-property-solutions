@@ -1404,7 +1404,7 @@ const App = () => {
                           letterSpacing: 1
                         }}
                       >
-                        Important Wholesaler Disclosure
+                        Important Disclosure
                       </p>
 
                       <p
