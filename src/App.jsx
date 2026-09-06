@@ -281,7 +281,7 @@ const App = () => {
     fontStyle: 'italic'
   }}
 >
-  Ohio
+  Nationwide
 </p>
             <div style={{ height: 1, width: 60, background: '#C9A84C', opacity: 0.7 }} />
           </div>
