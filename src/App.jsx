@@ -39,7 +39,7 @@ const App = () => {
     { q: 'HOW FAST CAN THE PROCESS MOVE?', a: 'Some situations can move quickly depending on title, property details, and seller timeline. The sooner we receive your information, the sooner we can review it.' },
     { q: 'ARE THERE COMMISSIONS?', a: 'No. Because Tekton is not acting as your real estate agent, there are no agent commissions or Tekton service fees. Any normal closing-related charges, lien payoffs, taxes, or prorations are handled through the appropriate local title company, closing professional, or real estate attorney and reviewed as part of the transaction.' },
     { q: 'WHEN IS PROOF OF FUNDS PROVIDED?', a: 'Proof of funds is provided within 72 hours after the purchase agreement becomes effective. It may be supplied by Tekton Property Solutions LLC, a purchasing partner, or an assignee involved in the transaction. If valid proof of funds is not provided within that period, the seller may terminate the agreement according to its terms.' },
-    { q: 'IS THIS A LEGITIMATE PROCESS?', a: 'Tekton Property Solutions LLC reviews properties nationwide and may work with purchasing partners depending on the property and circumstances. Tekton is not acting as your licensed real estate agent or broker. If we move forward with your property, the transaction is handled through an appropriate licensed local title company, closing professional, or real estate attorney for the property location.' },
+    { q: 'IS THIS A LEGITIMATE PROCESS?', a: 'Tekton Property Solutions LLC reviews properties throughout Northeast Ohio and may work with purchasing partners depending on the property and circumstances. Tekton is not acting as your licensed real estate agent or broker. If we move forward with your property, the transaction is handled through an appropriate licensed local title company, closing professional, or real estate attorney for the property location.' },
   ];
 
   const situations = ['Probate','Inherited','Divorce','Foreclosure','Tax Delinquent','Code Violations','Fire / Water Damage','Needs Repairs','Tired Landlord','Problem Tenant','Expired Listing','Relocating','Health / Medical','Financial Hardship','Trust','Considering My Options','Other'];
@@ -281,7 +281,7 @@ const App = () => {
     fontStyle: 'italic'
   }}
 >
-  Nationwide
+  Northeast Ohio
 </p>
             <div style={{ height: 1, width: 60, background: '#C9A84C', opacity: 0.7 }} />
           </div>
@@ -388,7 +388,7 @@ const App = () => {
 
           <div className="closing-box" style={{ background: '#0d0d0d', border: '2px solid #C9A84C', borderRadius: 20, padding: '26px 24px', maxWidth: 760, margin: '28px auto 0', textAlign: 'center' }}>
             <p style={{ fontSize: 12, fontWeight: 900, color: '#C9A84C', textTransform: 'uppercase', letterSpacing: 2, margin: '0 0 8px' }}>Secure Closing Process</p>
-            <p style={{ color: '#fff', fontSize: 15, fontWeight: 600, margin: '0 0 10px', lineHeight: 1.65 }}>We work with licensed local title companies, closing professionals, and real estate attorneys nationwide. If we move forward with your property, your transaction will be handled through the appropriate closing professional for your property's location.</p>
+            <p style={{ color: '#fff', fontSize: 15, fontWeight: 600, margin: '0 0 10px', lineHeight: 1.65 }}>We work with licensed local title companies, closing professionals, and real estate attorneys. If we move forward with your property, your transaction will be handled through the appropriate closing professional for your property's location.</p>
             <p style={{ fontSize: 18, fontWeight: 900, color: '#C9A84C', margin: 0, letterSpacing: 0.5 }}>Your sale proceeds are handled through the appropriate local title company, closing professional, or real estate attorney—not directly by Tekton.</p>
           </div>
 
@@ -1417,7 +1417,7 @@ const App = () => {
                           textAlign: 'center'
                         }}
                       >
-                        Tekton Property Solutions LLC reviews properties nationwide and may work with purchasing partners depending on the
+                        Tekton Property Solutions LLC reviews properties throughout Northeast Ohio and may work with purchasing partners depending on the
                         property and circumstances. Tekton is not acting as your licensed real estate agent or broker. If we move forward with
                         your property, any required disclosures and transaction documents will be provided as applicable based on the property
                         location and transaction. There is no obligation to accept an offer or sell your property.
@@ -1695,7 +1695,7 @@ const App = () => {
           <div style={{ background: '#f8f6f2', borderRadius: 32, padding: '48px 40px', border: '2px solid #e8e0d0' }}>
             <h2 style={{ color: '#0d0d0d', fontWeight: 900, textTransform: 'uppercase', textAlign: 'center', fontSize: 'clamp(22px,4vw,36px)', marginBottom: 32 }}>Your Trust Is Our Priority</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16, fontSize: 15, lineHeight: 1.8, color: '#444', fontWeight: 600 }}>
-              <p style={{ margin: 0 }}>Tekton Property Solutions LLC values your privacy. Tekton reviews properties nationwide and may work with purchasing partners depending on the property and circumstances. Tekton is not acting as your licensed real estate agent or broker.</p>
+              <p style={{ margin: 0 }}>Tekton Property Solutions LLC values your privacy. Tekton reviews properties throughout Northeast Ohio and may work with purchasing partners depending on the property and circumstances. Tekton is not acting as your licensed real estate agent or broker.</p>
               <p style={{ margin: 0 }}>We may enter into purchase agreements at below-market value and assign them to third-party buyers for a profit.</p>
               <div style={{ background: '#fff', padding: '20px 24px', borderRadius: 12, borderLeft: '6px solid #C9A84C', fontSize: 14, fontStyle: 'italic' }}>Any required disclosures or transaction documents will be provided as applicable based on the property location and transaction. You have the right to seek legal or professional advice before signing any agreement.</div>
               <p style={{ margin: 0 }}>Your information is collected solely to review your property and discuss possible options. We do not sell your personal information to third parties.</p>
@@ -1838,7 +1838,7 @@ const App = () => {
     marginBottom: 6
   }}
 >
-  Nationwide
+  Northeast Ohio
 </p>
           <p style={{ color: '#888', fontSize: 13, marginBottom: 6 }}>6545 Market Ave N, Ste 100, Canton, OH 44721</p>
           <p style={{ color: '#888', fontSize: 13, marginBottom: 20, overflowWrap: 'break-word', wordBreak: 'break-word' }}><a href="mailto:nicole@tektonpropertysolutions.com" style={{ color: '#8B0000', textDecoration: 'underline', fontWeight: 700, display: 'inline' }}>nicole@tektonpropertysolutions.com</a></p>
@@ -1857,4 +1857,3 @@ const App = () => {
   );
 };
 export default App;
-
